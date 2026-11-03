@@ -15,7 +15,7 @@ class AI_Act_Labels_AC_Column extends \AC\Column {
 	/** The type and its name in „Spalte hinzufügen“. */
 	public function __construct() {
 		$this->set_type( AI_Act_Labels_Admin_Columns::TYPE );
-		$this->set_label( __( 'AI label (AI Act)', 'ai-act-labels' ) );
+		$this->set_label( __( 'AI label (AI Act)', 'ai-act-image-labels' ) );
 		$this->set_group( 'plugin' );
 	}
 

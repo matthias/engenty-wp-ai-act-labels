@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AI Act Image Labels 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-labels\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
 "POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
 "PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
 "Last-Translator: engenty\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Domain: ai-act-labels\n"
+"X-Domain: ai-act-image-labels\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
@@ -22,8 +22,8 @@ msgstr "AI Act Image Labels"
 
 #. Plugin URI of the plugin
 #: ai-act-labels.php
-msgid "https://engenty.ai/ai-act-labels"
-msgstr "https://engenty.ai/ai-act-labels"
+msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
 
 #. Description of the plugin
 #: ai-act-labels.php

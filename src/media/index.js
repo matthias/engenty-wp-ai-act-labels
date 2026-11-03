@@ -33,7 +33,7 @@ function decorate( view ) {
 		tile.className = 'ai-act-tile is-suggest';
 		tile.title = sprintf(
 			/* translators: %s: KI-generiert or Mit KI verändert */
-			__( 'Suggestion: %s', 'ai-act-labels' ),
+			__( 'Suggestion: %s', 'ai-act-image-labels' ),
 			data.states?.[ ai.suggests ] || ''
 		);
 	} else {
@@ -126,7 +126,7 @@ document.addEventListener( 'click', ( event ) => {
 	const id = Number( button.dataset.aiActAnalyze );
 	const status = button.parentElement.querySelector( '.ai-act-box__status' );
 	button.disabled = true;
-	status.textContent = __( 'Analyzing …', 'ai-act-labels' );
+	status.textContent = __( 'Analyzing …', 'ai-act-image-labels' );
 	apiFetch( {
 		path: '/ai-act-labels/v1/review',
 		method: 'POST',
@@ -139,7 +139,8 @@ document.addEventListener( 'click', ( event ) => {
 			const note = document.createElement( 'p' );
 			note.className = 'ai-act-box__note is-analysis';
 			const b = document.createElement( 'b' );
-			b.textContent = __( 'Image analysis (AI):', 'ai-act-labels' ) + ' ';
+			b.textContent =
+				__( 'Image analysis (AI):', 'ai-act-image-labels' ) + ' ';
 			note.append( b, r.hint?.reason || '' );
 			button.parentElement.before( note );
 			// The tile in the grid follows the new suggestion.
@@ -150,7 +151,10 @@ document.addEventListener( 'click', ( event ) => {
 			if ( e.code === 'ai_act_labels_no_provider' && data.connectors ) {
 				const link = document.createElement( 'a' );
 				link.href = data.connectors;
-				link.textContent = __( 'Open Connectors', 'ai-act-labels' );
+				link.textContent = __(
+					'Open Connectors',
+					'ai-act-image-labels'
+				);
 				status.append( link );
 			}
 		} )

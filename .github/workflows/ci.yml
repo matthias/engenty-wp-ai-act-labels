@@ -36,8 +36,8 @@ jobs:
       - run: sh bin/zip.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: ai-act-labels
-          path: ai-act-labels.zip
+          name: ai-act-image-labels
+          path: ai-act-image-labels.zip
 
   test:
     runs-on: ubuntu-latest

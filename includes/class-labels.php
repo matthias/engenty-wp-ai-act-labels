@@ -261,9 +261,9 @@ class AI_Act_Labels {
 	public static function label_text( $kind ) {
 		$texts = self::settings()['texts'];
 		if ( 'modified' === $kind ) {
-			return '' !== $texts['modified'] ? $texts['modified'] : __( 'Modified with AI', 'ai-act-labels' );
+			return '' !== $texts['modified'] ? $texts['modified'] : __( 'Modified with AI', 'ai-act-image-labels' );
 		}
-		return '' !== $texts['generated'] ? $texts['generated'] : __( 'AI-generated', 'ai-act-labels' );
+		return '' !== $texts['generated'] ? $texts['generated'] : __( 'AI-generated', 'ai-act-image-labels' );
 	}
 
 	/**
@@ -281,16 +281,16 @@ class AI_Act_Labels {
 		}
 		$notices = array(
 			'generated' => array(
-				'image' => __( 'This image was created with AI.', 'ai-act-labels' ),
-				'video' => __( 'This video was created with AI.', 'ai-act-labels' ),
-				'audio' => __( 'This recording was created with AI.', 'ai-act-labels' ),
-				'file'  => __( 'This content was created with AI.', 'ai-act-labels' ),
+				'image' => __( 'This image was created with AI.', 'ai-act-image-labels' ),
+				'video' => __( 'This video was created with AI.', 'ai-act-image-labels' ),
+				'audio' => __( 'This recording was created with AI.', 'ai-act-image-labels' ),
+				'file'  => __( 'This content was created with AI.', 'ai-act-image-labels' ),
 			),
 			'modified'  => array(
-				'image' => __( 'This image was modified with AI.', 'ai-act-labels' ),
-				'video' => __( 'This video was modified with AI.', 'ai-act-labels' ),
-				'audio' => __( 'This recording was modified with AI.', 'ai-act-labels' ),
-				'file'  => __( 'This content was modified with AI.', 'ai-act-labels' ),
+				'image' => __( 'This image was modified with AI.', 'ai-act-image-labels' ),
+				'video' => __( 'This video was modified with AI.', 'ai-act-image-labels' ),
+				'audio' => __( 'This recording was modified with AI.', 'ai-act-image-labels' ),
+				'file'  => __( 'This content was modified with AI.', 'ai-act-image-labels' ),
 			),
 		);
 		$kind    = 'modified' === $kind ? 'modified' : 'generated';
@@ -312,7 +312,7 @@ class AI_Act_Labels {
 		$tool = trim( (string) get_post_meta( $id, self::META_TOOL, true ) );
 		if ( '' !== $tool ) {
 			/* translators: %s: the AI tool, e.g. Midjourney */
-			$notice = rtrim( $notice ) . ' ' . sprintf( __( 'Tool: %s.', 'ai-act-labels' ), $tool );
+			$notice = rtrim( $notice ) . ' ' . sprintf( __( 'Tool: %s.', 'ai-act-image-labels' ), $tool );
 		}
 		return $notice;
 	}

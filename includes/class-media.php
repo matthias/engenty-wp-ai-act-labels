@@ -62,10 +62,10 @@ class AI_Act_Labels_Media {
 	 */
 	public static function state_labels() {
 		return array(
-			''          => __( 'Not decided yet', 'ai-act-labels' ),
-			'generated' => __( 'AI-generated', 'ai-act-labels' ),
-			'modified'  => __( 'Modified with AI', 'ai-act-labels' ),
-			'none'      => __( 'No label needed', 'ai-act-labels' ),
+			''          => __( 'Not decided yet', 'ai-act-image-labels' ),
+			'generated' => __( 'AI-generated', 'ai-act-image-labels' ),
+			'modified'  => __( 'Modified with AI', 'ai-act-image-labels' ),
+			'none'      => __( 'No label needed', 'ai-act-image-labels' ),
 		);
 	}
 
@@ -81,7 +81,7 @@ class AI_Act_Labels_Media {
 			return $fields;
 		}
 		$fields['ai_act'] = array(
-			'label' => __( 'AI label (AI Act)', 'ai-act-labels' ),
+			'label' => __( 'AI label (AI Act)', 'ai-act-image-labels' ),
 			'input' => 'html',
 			'html'  => self::box( (int) $post->ID, 'attachments[' . (int) $post->ID . ']' ),
 		);
@@ -97,7 +97,7 @@ class AI_Act_Labels_Media {
 		if ( 'file' === AI_Act_Labels::media_type( $post->ID ) ) {
 			return;
 		}
-		add_meta_box( 'ai-act-labels', __( 'AI label (AI Act)', 'ai-act-labels' ), array( __CLASS__, 'render_box' ), 'attachment', 'side', 'default' );
+		add_meta_box( 'ai-act-image-labels', __( 'AI label (AI Act)', 'ai-act-image-labels' ), array( __CLASS__, 'render_box' ), 'attachment', 'side', 'default' );
 	}
 
 	/**
@@ -122,7 +122,7 @@ class AI_Act_Labels_Media {
 		$state   = AI_Act_Labels::get( $id );
 		$suggest = AI_Act_Labels::suggestion( $id );
 		$field   = static fn( $key ) => '' === $name ? $key : $name . '[' . $key . ']';
-		$html    = '<div class="ai-act-box"><fieldset><legend class="screen-reader-text">' . esc_html__( 'AI labels', 'ai-act-labels' ) . '</legend>';
+		$html    = '<div class="ai-act-box"><fieldset><legend class="screen-reader-text">' . esc_html__( 'AI labels', 'ai-act-image-labels' ) . '</legend>';
 		foreach ( self::state_labels() as $value => $label ) {
 			$icon  = in_array( $value, AI_Act_Labels::KINDS, true ) ? AI_Act_Labels_Icons::svg( 'basic' ) : '';
 			$html .= sprintf(
@@ -133,43 +133,43 @@ class AI_Act_Labels_Media {
 				checked( $state, $value, false ),
 				$icon,
 				esc_html( $label ),
-				'' === $state && $value === $suggest && '' !== $value ? '<em class="ai-act-box__sug">' . esc_html__( 'Suggestion', 'ai-act-labels' ) . '</em>' : ''
+				'' === $state && $value === $suggest && '' !== $value ? '<em class="ai-act-box__sug">' . esc_html__( 'Suggestion', 'ai-act-image-labels' ) . '</em>' : ''
 			);
 		}
 		$html   .= '</fieldset>';
 		$signals = get_post_meta( $id, AI_Act_Labels::META_SIGNALS, true );
 		if ( is_array( $signals ) && ! empty( $signals['items'] ) ) {
 			$labels = array_slice( array_filter( array_column( $signals['items'], 'label' ) ), 0, 3 );
-			$html  .= '<p class="ai-act-box__note"><b>' . esc_html__( 'In the file:', 'ai-act-labels' ) . '</b> ' . esc_html( implode( ', ', $labels ) ) . '</p>';
+			$html  .= '<p class="ai-act-box__note"><b>' . esc_html__( 'In the file:', 'ai-act-image-labels' ) . '</b> ' . esc_html( implode( ', ', $labels ) ) . '</p>';
 		}
 		$hint = get_post_meta( $id, AI_Act_Labels::META_HINT, true );
 		if ( is_array( $hint ) && ! empty( $hint['reason'] ) ) {
-			$html .= '<p class="ai-act-box__note is-analysis"><b>' . esc_html__( 'Image analysis (AI):', 'ai-act-labels' ) . '</b> ' . esc_html( $hint['reason'] ) . '</p>';
+			$html .= '<p class="ai-act-box__note is-analysis"><b>' . esc_html__( 'Image analysis (AI):', 'ai-act-image-labels' ) . '</b> ' . esc_html( $hint['reason'] ) . '</p>';
 		}
 		$html       .= sprintf(
 			'<p class="ai-act-box__analyze"><button type="button" class="button" data-ai-act-analyze="%1$d">%2$s</button><span class="ai-act-box__status" role="status"></span></p>',
 			$id,
-			esc_html__( 'Analyze image (AI)', 'ai-act-labels' )
+			esc_html__( 'Analyze image (AI)', 'ai-act-image-labels' )
 		);
 		$placeholder = AI_Act_Labels::default_notice( in_array( $state, AI_Act_Labels::KINDS, true ) ? $state : ( in_array( $suggest, AI_Act_Labels::KINDS, true ) ? $suggest : 'generated' ), AI_Act_Labels::media_type( $id ) );
 		$html       .= sprintf(
 			'<div class="ai-act-box__more"><label for="ai-act-tool-%1$d">%2$s</label><input type="text" class="widefat" id="ai-act-tool-%1$d" name="%3$s" value="%4$s" placeholder="%5$s"><label for="ai-act-notice-%1$d">%6$s</label><input type="text" class="widefat" id="ai-act-notice-%1$d" name="%7$s" value="%8$s" placeholder="%9$s"><p class="description">%10$s</p></div>',
 			$id,
-			esc_html__( 'AI tool', 'ai-act-labels' ),
+			esc_html__( 'AI tool', 'ai-act-image-labels' ),
 			esc_attr( $field( 'ai_act_tool' ) ),
 			esc_attr( (string) get_post_meta( $id, AI_Act_Labels::META_TOOL, true ) ),
-			esc_attr__( 'optional, e.g. Midjourney', 'ai-act-labels' ),
-			esc_html__( 'Own notice', 'ai-act-labels' ),
+			esc_attr__( 'optional, e.g. Midjourney', 'ai-act-image-labels' ),
+			esc_html__( 'Own notice', 'ai-act-image-labels' ),
 			esc_attr( $field( 'ai_act_notice' ) ),
 			esc_attr( (string) get_post_meta( $id, AI_Act_Labels::META_NOTICE, true ) ),
 			esc_attr( $placeholder ),
-			esc_html__( 'Empty: the default. The tool then appears in the notice.', 'ai-act-labels' )
+			esc_html__( 'Empty: the default. The tool then appears in the notice.', 'ai-act-image-labels' )
 		);
 		$html       .= sprintf(
 			'<p class="description ai-act-box__rule">%1$s</p><p class="ai-act-box__link"><a href="%2$s">%3$s</a></p></div>',
-			esc_html__( 'AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none.', 'ai-act-labels' ),
+			esc_html__( 'AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none.', 'ai-act-image-labels' ),
 			esc_url( AI_Act_Labels_Admin::url() ),
-			esc_html__( 'Review all media →', 'ai-act-labels' )
+			esc_html__( 'Review all media →', 'ai-act-image-labels' )
 		);
 		return $html;
 	}
@@ -283,10 +283,10 @@ class AI_Act_Labels_Media {
 		foreach ( $columns as $key => $label ) {
 			$out[ $key ] = $label;
 			if ( 'title' === $key ) {
-				$out['ai_act'] = __( 'AI', 'ai-act-labels' );
+				$out['ai_act'] = __( 'AI', 'ai-act-image-labels' );
 			}
 		}
-		return isset( $out['ai_act'] ) ? $out : array_merge( $out, array( 'ai_act' => __( 'AI', 'ai-act-labels' ) ) );
+		return isset( $out['ai_act'] ) ? $out : array_merge( $out, array( 'ai_act' => __( 'AI', 'ai-act-image-labels' ) ) );
 	}
 
 	/**
@@ -322,7 +322,7 @@ class AI_Act_Labels_Media {
 		}
 		if ( $suggest && 'none' !== $suggest ) {
 			/* translators: %s: KI-generiert or Mit KI verändert */
-			return '<span class="ai-act-cell is-suggest">' . esc_html( sprintf( __( 'Suggestion: %s', 'ai-act-labels' ), $labels[ $suggest ] ?? '' ) ) . '</span>';
+			return '<span class="ai-act-cell is-suggest">' . esc_html( sprintf( __( 'Suggestion: %s', 'ai-act-image-labels' ), $labels[ $suggest ] ?? '' ) ) . '</span>';
 		}
 		return '<span class="ai-act-cell is-open" aria-label="' . esc_attr( $labels[''] ) . '">–</span>';
 	}
@@ -334,14 +334,14 @@ class AI_Act_Labels_Media {
 	 */
 	public static function filters() {
 		return array(
-			''          => __( 'AI: all', 'ai-act-labels' ),
-			'labelled'  => __( 'Labeled', 'ai-act-labels' ),
-			'generated' => __( 'AI-generated', 'ai-act-labels' ),
-			'modified'  => __( 'Modified with AI', 'ai-act-labels' ),
-			'suggested' => __( 'Suggestions', 'ai-act-labels' ),
-			'unchecked' => __( 'Used, not decided', 'ai-act-labels' ),
-			'undecided' => __( 'Not decided', 'ai-act-labels' ),
-			'none'      => __( 'No label needed', 'ai-act-labels' ),
+			''          => __( 'AI: all', 'ai-act-image-labels' ),
+			'labelled'  => __( 'Labeled', 'ai-act-image-labels' ),
+			'generated' => __( 'AI-generated', 'ai-act-image-labels' ),
+			'modified'  => __( 'Modified with AI', 'ai-act-image-labels' ),
+			'suggested' => __( 'Suggestions', 'ai-act-image-labels' ),
+			'unchecked' => __( 'Used, not decided', 'ai-act-image-labels' ),
+			'undecided' => __( 'Not decided', 'ai-act-image-labels' ),
+			'none'      => __( 'No label needed', 'ai-act-image-labels' ),
 		);
 	}
 
@@ -356,7 +356,7 @@ class AI_Act_Labels_Media {
 		}
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- a list filter.
 		$current = isset( $_GET['ai_act'] ) ? sanitize_key( wp_unslash( $_GET['ai_act'] ) ) : '';
-		echo '<label for="ai-act-filter" class="screen-reader-text">' . esc_html__( 'Filter by AI label', 'ai-act-labels' ) . '</label><select name="ai_act" id="ai-act-filter">';
+		echo '<label for="ai-act-filter" class="screen-reader-text">' . esc_html__( 'Filter by AI label', 'ai-act-image-labels' ) . '</label><select name="ai_act" id="ai-act-filter">';
 		foreach ( self::filters() as $value => $label ) {
 			printf( '<option value="%s"%s>%s</option>', esc_attr( $value ), selected( $current, $value, false ), esc_html( $label ) );
 		}
@@ -395,10 +395,10 @@ class AI_Act_Labels_Media {
 	 * @return array
 	 */
 	public static function bulk_actions( $actions ) {
-		$actions['ai_act_generated'] = __( 'Label as AI-generated', 'ai-act-labels' );
-		$actions['ai_act_modified']  = __( 'Label as modified with AI', 'ai-act-labels' );
-		$actions['ai_act_none']      = __( 'AI: no label needed', 'ai-act-labels' );
-		$actions['ai_act_clear']     = __( 'Remove AI label', 'ai-act-labels' );
+		$actions['ai_act_generated'] = __( 'Label as AI-generated', 'ai-act-image-labels' );
+		$actions['ai_act_modified']  = __( 'Label as modified with AI', 'ai-act-image-labels' );
+		$actions['ai_act_none']      = __( 'AI: no label needed', 'ai-act-image-labels' );
+		$actions['ai_act_clear']     = __( 'Remove AI label', 'ai-act-image-labels' );
 		return $actions;
 	}
 
@@ -441,9 +441,9 @@ class AI_Act_Labels_Media {
 			$state = isset( $_GET['ai_act_state'] ) ? sanitize_key( wp_unslash( $_GET['ai_act_state'] ) ) : '';
 			$text  = 'clear' === $state
 				/* translators: %d: number of files */
-				? sprintf( _n( 'Removed the AI label from %d file.', 'Removed the AI label from %d files.', $done, 'ai-act-labels' ), $done )
+				? sprintf( _n( 'Removed the AI label from %d file.', 'Removed the AI label from %d files.', $done, 'ai-act-image-labels' ), $done )
 				/* translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig */
-				: sprintf( _n( '%1$d file: %2$s.', '%1$d files: %2$s.', $done, 'ai-act-labels' ), $done, self::state_labels()[ $state ] ?? '' );
+				: sprintf( _n( '%1$d file: %2$s.', '%1$d files: %2$s.', $done, 'ai-act-image-labels' ), $done, self::state_labels()[ $state ] ?? '' );
 			printf( '<div class="notice notice-success is-dismissible"><p>%s</p></div>', esc_html( $text ) );
 		}
 		// phpcs:enable
@@ -456,13 +456,13 @@ class AI_Act_Labels_Media {
 		}
 		printf(
 			'<div class="notice notice-info ai-act-notice"><p><strong>%1$s</strong> %2$s <a class="button button-primary" href="%3$s">%4$s</a> <a class="ai-act-notice__later" href="%5$s">%6$s</a></p></div>',
-			esc_html__( 'AI labels:', 'ai-act-labels' ),
+			esc_html__( 'AI labels:', 'ai-act-image-labels' ),
 			/* translators: %d: number of files */
-			esc_html( sprintf( _n( '%d file carries traces of AI and has no decision yet.', '%d files carry traces of AI and have no decision yet.', $open, 'ai-act-labels' ), $open ) ),
+			esc_html( sprintf( _n( '%d file carries traces of AI and has no decision yet.', '%d files carry traces of AI and have no decision yet.', $open, 'ai-act-image-labels' ), $open ) ),
 			esc_url( AI_Act_Labels_Admin::url( 'review', 'suggested' ) ),
-			esc_html__( 'View', 'ai-act-labels' ),
+			esc_html__( 'View', 'ai-act-image-labels' ),
 			esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=ai_act_labels_dismiss&n=' . $open ), 'ai_act_labels_dismiss' ) ),
-			esc_html__( 'Later', 'ai-act-labels' )
+			esc_html__( 'Later', 'ai-act-image-labels' )
 		);
 	}
 
@@ -517,12 +517,12 @@ class AI_Act_Labels_Media {
 					),
 					'tool'       => AI_Act_Labels_Admin::url(),
 					'connectors' => admin_url( 'options-connectors.php' ),
-					'label'      => __( 'AI labels', 'ai-act-labels' ),
+					'label'      => __( 'AI labels', 'ai-act-image-labels' ),
 				)
 			) . ';',
 			'before'
 		);
-		wp_set_script_translations( 'ai-act-labels-media', 'ai-act-labels', AI_ACT_LABELS_DIR . 'languages' );
+		wp_set_script_translations( 'ai-act-labels-media', 'ai-act-image-labels', AI_ACT_LABELS_DIR . 'languages' );
 	}
 
 	/**

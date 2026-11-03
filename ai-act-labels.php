@@ -10,7 +10,7 @@
  * Author URI:        https://engenty.ai
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       ai-act-labels
+ * Text Domain:       ai-act-image-labels
  * Domain Path:       /languages
  *
  * @package AI_Act_Labels
@@ -99,7 +99,7 @@ add_action(
 	static function () {
 		// The plugin's own translations (de_DE, en_GB); the scripts' come through wp_set_script_translations().
 		$locale = determine_locale();
-		load_textdomain( 'ai-act-labels', AI_ACT_LABELS_DIR . 'languages/ai-act-labels-' . $locale . '.mo', $locale );
+		load_textdomain( 'ai-act-image-labels', AI_ACT_LABELS_DIR . 'languages/ai-act-image-labels-' . $locale . '.mo', $locale );
 		AI_Act_Labels_Front::init();
 		AI_Act_Labels_Media::init();
 		AI_Act_Labels_Rest::init();
