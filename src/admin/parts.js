@@ -198,8 +198,8 @@ const DUTY = {
 	unsure: __( 'unclear', 'ai-act-image-labels' ),
 };
 
-export function HintLine( { hint } ) {
-	if ( ! hint?.reason ) {
+export function HintLine( { hint, conflict } ) {
+	if ( ! hint?.reason && ! conflict ) {
 		return null;
 	}
 	return (
@@ -211,6 +211,14 @@ export function HintLine( { hint } ) {
 				</b>{ ' ' }
 				{ hint.reason }
 				{ hint.question ? <em> { hint.question }</em> : null }
+				{ conflict ? (
+					<em>
+						{ __(
+							'Strong file metadata conflicts with the AI assessment. Review before applying.',
+							'ai-act-labels'
+						) }
+					</em>
+				) : null }
 			</span>
 		</span>
 	);

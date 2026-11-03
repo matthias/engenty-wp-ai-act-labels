@@ -1,16 +1,15 @@
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: AI Act Image Labels 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
-"POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
-"PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
 "Last-Translator: engenty\n"
 "Language-Team: engenty\n"
-"Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
+"PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
+"Language: cs_CZ\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Domain: ai-act-image-labels\n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -22,19 +21,13 @@ msgstr "AI Act Image Labels"
 
 #. Plugin URI of the plugin
 #: ai-act-labels.php
-msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
-msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgid "https://engenty.ai/ai-act-labels"
+msgstr "https://engenty.ai/ai-act-labels"
 
 #. Description of the plugin
 #: ai-act-labels.php
-msgid ""
-"Marks AI-generated and AI-modified media as the EU AI Act asks – right in "
-"the media library, with the EU's official icons on the site, and an "
-"assistant that finds what needs a label."
-msgstr ""
-"Označuje média vytvořená nebo upravená AI, jak vyžaduje akt EU o umělé "
-"inteligenci (AI Act) – přímo v knihovně médií, s oficiálními ikonami EU na "
-"webu a s asistentem, který najde, co potřebuje označení."
+msgid "Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label."
+msgstr "Označuje média vytvořená nebo upravená AI, jak vyžaduje akt EU o umělé inteligenci (AI Act) – přímo v knihovně médií, s oficiálními ikonami EU na webu a s asistentem, který najde, co potřebuje označení."
 
 #. Author of the plugin
 #: ai-act-labels.php
@@ -46,18 +39,23 @@ msgstr "engenty"
 msgid "https://engenty.ai"
 msgstr "https://engenty.ai"
 
-#: includes/admin-columns/class-ac-column.php:18 includes/class-media.php:84
+#: includes/admin-columns/class-ac-column.php:18
+#: includes/class-media.php:84
 #: includes/class-media.php:100
 msgid "AI label (AI Act)"
 msgstr "Označení AI (AI Act)"
 
-#: includes/class-admin.php:49 includes/class-admin.php:50
-#: includes/class-media.php:125 includes/class-media.php:523
-#: src/admin/index.js:54 src/admin/parts.js:126
+#: includes/class-admin.php:49
+#: includes/class-admin.php:50
+#: includes/class-media.php:125
+#: includes/class-media.php:523
+#: src/admin/index.js:54
+#: src/admin/parts.js:126
 msgid "AI labels"
 msgstr "Označení AI"
 
-#: includes/class-admin.php:67 src/admin/index.js:101
+#: includes/class-admin.php:67
+#: src/admin/index.js:101
 msgid "AI labels are loading …"
 msgstr "Označení AI se načítají …"
 
@@ -65,123 +63,134 @@ msgstr "Označení AI se načítají …"
 msgid "Open"
 msgstr "Otevřít"
 
-#: includes/class-assistant.php:133
+#: includes/class-assistant.php:141
 msgid "Image analysis (AI) needs WordPress 7.0 or newer."
 msgstr "Analýza obrázků (AI) potřebuje WordPress 7.0 nebo novější."
 
-#: includes/class-assistant.php:167
+#: includes/class-assistant.php:187
 msgid "The answer was not JSON. Try again."
 msgstr "Odpověď nebyla JSON. Zkuste to znovu."
 
-#: includes/class-assistant.php:277 includes/class-rest.php:154
-#: includes/class-rest.php:280
+#: includes/class-assistant.php:315
+#: includes/class-rest.php:157
+#: includes/class-rest.php:283
 msgid "This file does not exist."
 msgstr "Tento soubor neexistuje."
 
 #. translators: %s: tool name
-#: includes/class-detect.php:282
+#: includes/class-detect.php:328
 #, php-format
 msgid "XMP names %s"
 msgstr "XMP uvádí %s"
 
-#: includes/class-detect.php:300
+#: includes/class-detect.php:346
 msgid "IPTC: created with AI"
 msgstr "IPTC: vytvořeno pomocí AI"
 
-#: includes/class-detect.php:302
+#: includes/class-detect.php:348
 msgid "IPTC: photo with AI parts"
 msgstr "IPTC: fotka s částmi z AI"
 
-#: includes/class-detect.php:304
+#: includes/class-detect.php:350
 msgid "IPTC: enhanced with AI (minor)"
 msgstr "IPTC: vylepšeno pomocí AI (drobně)"
 
 #. translators: %s: IPTC code like digitalCapture
-#: includes/class-detect.php:307
+#: includes/class-detect.php:353
 #, php-format
 msgid "IPTC: no AI (%s)"
 msgstr "IPTC: bez AI (%s)"
 
-#: includes/class-detect.php:331
+#: includes/class-detect.php:377
 msgid "Content Credentials (C2PA): modified with AI"
 msgstr "Content Credentials (C2PA): upraveno pomocí AI"
 
-#: includes/class-detect.php:331
+#: includes/class-detect.php:377
 msgid "Content Credentials (C2PA): created with AI"
 msgstr "Content Credentials (C2PA): vytvořeno pomocí AI"
 
-#: includes/class-detect.php:354
+#: includes/class-detect.php:400
 msgid "Content Credentials (C2PA): camera capture"
 msgstr "Content Credentials (C2PA): záznam z fotoaparátu"
 
 #. translators: %s: tool name
-#: includes/class-detect.php:356
+#: includes/class-detect.php:402
 #, php-format
 msgid "Content Credentials (C2PA) from %s"
 msgstr "Content Credentials (C2PA) od %s"
 
-#: includes/class-detect.php:357
+#: includes/class-detect.php:403
 msgid "Content Credentials (C2PA) present"
 msgstr "Content Credentials (C2PA) přítomny"
 
-#: includes/class-detect.php:426 includes/class-detect.php:477
+#: includes/class-detect.php:472
+#: includes/class-detect.php:523
 msgid "Stable Diffusion generation data"
 msgstr "Data generování Stable Diffusion"
 
-#: includes/class-detect.php:429
+#: includes/class-detect.php:475
 msgid "ComfyUI generation data"
 msgstr "Data generování ComfyUI"
 
-#: includes/class-detect.php:432
+#: includes/class-detect.php:478
 msgid "InvokeAI generation data"
 msgstr "Data generování InvokeAI"
 
-#: includes/class-detect.php:435
+#: includes/class-detect.php:481
 msgid "NovelAI generation data"
 msgstr "Data generování NovelAI"
 
 #. translators: %s: tool name
-#: includes/class-detect.php:447
+#: includes/class-detect.php:493
 #, php-format
 msgid "PNG text names %s"
 msgstr "Text PNG uvádí %s"
 
 #. translators: %s: tool name
-#: includes/class-detect.php:490
+#: includes/class-detect.php:536
 #, php-format
 msgid "EXIF names %s"
 msgstr "EXIF uvádí %s"
 
 #. translators: %s: tool name
-#: includes/class-detect.php:513
+#: includes/class-detect.php:559
 #, php-format
 msgid "Tags name %s"
 msgstr "Štítky uvádějí %s"
 
 #. translators: %s: tool name
-#: includes/class-detect.php:537
+#: includes/class-detect.php:583
 #, php-format
 msgid "File name as %s gives it"
 msgstr "Název souboru, jak ho dává %s"
 
-#: includes/class-detect.php:538
+#: includes/class-detect.php:584
 msgid "File name points to AI"
 msgstr "Název souboru ukazuje na AI"
 
-#: includes/class-labels.php:264 includes/class-media.php:67
-#: includes/class-media.php:343 includes/class-rest.php:62
-#: src/admin/Knowledge.js:288 src/admin/Look.js:462 src/admin/parts.js:8
+#: includes/class-labels.php:264
+#: includes/class-media.php:67
+#: includes/class-media.php:343
+#: includes/class-rest.php:65
+#: src/admin/Knowledge.js:288
+#: src/admin/Look.js:462
+#: src/admin/parts.js:8
 msgid "Modified with AI"
 msgstr "Upraveno pomocí AI"
 
-#: includes/class-labels.php:266 includes/class-media.php:66
-#: includes/class-media.php:342 includes/class-rest.php:61
-#: src/admin/Knowledge.js:292 src/admin/Look.js:112 src/admin/Look.js:453
+#: includes/class-labels.php:266
+#: includes/class-media.php:66
+#: includes/class-media.php:342
+#: includes/class-rest.php:64
+#: src/admin/Knowledge.js:292
+#: src/admin/Look.js:112
+#: src/admin/Look.js:453
 #: src/admin/parts.js:7
 msgid "AI-generated"
 msgstr "Vygenerováno AI"
 
-#: includes/class-labels.php:284 includes/class-rest.php:63
+#: includes/class-labels.php:284
+#: includes/class-rest.php:66
 #: src/admin/Look.js:151
 msgid "This image was created with AI."
 msgstr "Tento obrázek byl vytvořen pomocí AI."
@@ -198,7 +207,8 @@ msgstr "Tato nahrávka byla vytvořena pomocí AI."
 msgid "This content was created with AI."
 msgstr "Tento obsah byl vytvořen pomocí AI."
 
-#: includes/class-labels.php:290 includes/class-rest.php:64
+#: includes/class-labels.php:290
+#: includes/class-rest.php:67
 #: src/admin/Look.js:146
 msgid "This image was modified with AI."
 msgstr "Tento obrázek byl upraven pomocí AI."
@@ -225,12 +235,15 @@ msgstr "Nástroj: %s."
 msgid "Not decided yet"
 msgstr "Zatím nerozhodnuto"
 
-#: includes/class-media.php:68 includes/class-media.php:347
-#: src/admin/parts.js:9 src/admin/Review.js:22
+#: includes/class-media.php:68
+#: includes/class-media.php:347
+#: src/admin/parts.js:9
+#: src/admin/Review.js:23
 msgid "No label needed"
 msgstr "Označení není potřeba"
 
-#: includes/class-media.php:136 src/admin/parts.js:142
+#: includes/class-media.php:136
+#: src/admin/parts.js:142
 msgid "Suggestion"
 msgstr "Návrh"
 
@@ -238,19 +251,18 @@ msgstr "Návrh"
 msgid "In the file:"
 msgstr "V souboru:"
 
-#: includes/class-media.php:147 src/media/index.js:142
+#: includes/class-media.php:147
+#: src/media/index.js:142
 msgid "Image analysis (AI):"
 msgstr "Analýza obrázku (AI):"
 
-#: includes/class-media.php:150 src/admin/parts.js:212
-msgid ""
-"Strong file metadata conflicts with the AI assessment. Review before "
-"applying."
-msgstr ""
-"Výrazná metadata souboru jsou v rozporu s posouzením AI. Před použitím to "
-"zkontrolujte."
+#: includes/class-media.php:150
+#: src/admin/parts.js:212
+msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
+msgstr "Výrazná metadata souboru jsou v rozporu s posouzením AI. Před použitím to zkontrolujte."
 
-#: includes/class-media.php:155 src/admin/Review.js:256
+#: includes/class-media.php:155
+#: src/admin/Review.js:300
 msgid "Analyze image (AI)"
 msgstr "Analyzovat obrázek (AI)"
 
@@ -271,24 +283,22 @@ msgid "Empty: the default. The tool then appears in the notice."
 msgstr "Prázdné: výchozí. V upozornění se pak objeví nástroj."
 
 #: includes/class-media.php:173
-msgid ""
-"AI Act, Article 50: the label is required when real or plausible people, "
-"places or events look real. Ordinary photo editing needs none."
-msgstr ""
-"AI Act, článek 50: označení je povinné, když skuteční nebo věrohodní lidé, "
-"místa nebo události vypadají skutečně. Běžná úprava fotek ho nepotřebuje."
+msgid "AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none."
+msgstr "AI Act, článek 50: označení je povinné, když skuteční nebo věrohodní lidé, místa nebo události vypadají skutečně. Běžná úprava fotek ho nepotřebuje."
 
 #: includes/class-media.php:175
 msgid "Review all media →"
 msgstr "Zkontrolovat všechna média →"
 
-#: includes/class-media.php:289 includes/class-media.php:292
+#: includes/class-media.php:289
+#: includes/class-media.php:292
 msgid "AI"
 msgstr "AI"
 
 #. translators: %s: KI-generiert or Mit KI verändert
-#: includes/class-media.php:328 src/media/index.js:36
-#, php-format, js-format
+#: includes/class-media.php:328
+#: src/media/index.js:36
+#, php-format,js-format
 msgid "Suggestion: %s"
 msgstr "Návrh: %s"
 
@@ -296,19 +306,24 @@ msgstr "Návrh: %s"
 msgid "AI: all"
 msgstr "AI: vše"
 
-#: includes/class-media.php:341 src/admin/Review.js:21
+#: includes/class-media.php:341
+#: src/admin/Review.js:22
 msgid "Labeled"
 msgstr "Označeno"
 
-#: includes/class-media.php:344 src/admin/Review.js:19 src/admin/Review.js:118
+#: includes/class-media.php:344
+#: src/admin/Review.js:20
+#: src/admin/Review.js:134
 msgid "Suggestions"
 msgstr "Návrhy"
 
-#: includes/class-media.php:345 src/admin/Review.js:20
+#: includes/class-media.php:345
+#: src/admin/Review.js:21
 msgid "Used, not decided"
 msgstr "Použito, nerozhodnuto"
 
-#: includes/class-media.php:346 src/admin/parts.js:10
+#: includes/class-media.php:346
+#: src/admin/parts.js:10
 msgid "Not decided"
 msgstr "Nerozhodnuto"
 
@@ -341,8 +356,7 @@ msgstr[0] "Označení AI odebráno u %d souboru."
 msgstr[1] "Označení AI odebráno u %d souborů."
 msgstr[2] "Označení AI odebráno u %d souborů."
 
-#. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein
-#. Hinweis nötig
+#. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig
 #: includes/class-media.php:449
 #, php-format
 msgid "%1$d file: %2$s."
@@ -372,43 +386,43 @@ msgstr "Zobrazit"
 msgid "Later"
 msgstr "Později"
 
-#: includes/class-rest.php:168
+#: includes/class-rest.php:171
 msgid "Decide on at most 200 files per request."
 msgstr "Rozhodněte nejvýše o 200 souborech na jeden požadavek."
 
-#: includes/class-rest.php:172
+#: includes/class-rest.php:175
 msgid "This label does not exist."
 msgstr "Toto označení neexistuje."
 
-#: includes/class-rest.php:217
+#: includes/class-rest.php:220
 msgid "Only site administrators can run a site-wide check."
 msgstr "Kontrolu celého webu mohou spustit jen správci webu."
 
-#: includes/class-rest.php:241
-msgid ""
-"For the image analysis, WordPress needs an AI provider (Settings › "
-"Connectors)."
-msgstr ""
-"Pro analýzu obrázků potřebuje WordPress poskytovatele AI (Nastavení › "
-"Konektory)."
+#: includes/class-rest.php:244
+#: includes/class-rest.php:316
+msgid "For the image analysis, WordPress needs an AI provider (Settings › Connectors)."
+msgstr "Pro analýzu obrázků potřebuje WordPress poskytovatele AI (Nastavení › Konektory)."
 
-#: includes/class-rest.php:283
+#: includes/class-rest.php:286
 msgid "You cannot edit this file."
 msgstr "Tento soubor nemůžete upravovat."
 
-#: includes/class-usage.php:461 includes/class-usage.php:487
+#: includes/class-usage.php:471
+#: includes/class-usage.php:497
 msgid "Website"
 msgstr "Web"
 
-#: includes/class-usage.php:481
+#: includes/class-usage.php:491
 msgid "Site logo"
 msgstr "Logo webu"
 
-#: includes/class-usage.php:483 src/admin/parts.js:38
+#: includes/class-usage.php:493
+#: src/admin/parts.js:38
 msgid "Site icon"
 msgstr "Ikona webu"
 
-#: includes/class-usage.php:485 src/admin/parts.js:39
+#: includes/class-usage.php:495
+#: src/admin/parts.js:39
 msgid "Header image"
 msgstr "Obrázek záhlaví"
 
@@ -437,33 +451,24 @@ msgid "Image analysis (AI) needs WordPress 7.0"
 msgstr "Analýza obrázků (AI) potřebuje WordPress 7.0"
 
 #: src/admin/Assistant.js:30
-msgid ""
-"From 7.0, the image analysis uses the AI provider you set up under Settings "
-"› Connectors. Labeling, the check and the traces in files already work."
-msgstr ""
-"Od verze 7.0 používá analýza obrázků poskytovatele AI, kterého nastavíte v "
-"Nastavení › Konektory. Označování, kontrola a stopy v souborech fungují už "
-"teď."
+msgid "From 7.0, the image analysis uses the AI provider you set up under Settings › Connectors. Labeling, the check and the traces in files already work."
+msgstr "Od verze 7.0 používá analýza obrázků poskytovatele AI, kterého nastavíte v Nastavení › Konektory. Označování, kontrola a stopy v souborech fungují už teď."
 
 #: src/admin/Assistant.js:37
 msgid "Update WordPress"
 msgstr "Aktualizovat WordPress"
 
-#: src/admin/Assistant.js:49 src/admin/Assistant.js:127
+#: src/admin/Assistant.js:49
+#: src/admin/Assistant.js:127
 msgid "Set up an AI provider first"
 msgstr "Nejdřív nastavte poskytovatele AI"
 
 #: src/admin/Assistant.js:52
-msgid ""
-"The image analysis uses the provider you set up in WordPress under Settings "
-"› Connectors – your API key stays there. Labeling, the check and the traces "
-"in files work without it."
-msgstr ""
-"Analýza obrázků používá poskytovatele, kterého nastavíte ve WordPressu v "
-"Nastavení › Konektory – váš API klíč zůstává tam. Označování, kontrola a "
-"stopy v souborech fungují i bez něj."
+msgid "The image analysis uses the provider you set up in WordPress under Settings › Connectors – your API key stays there. Labeling, the check and the traces in files work without it."
+msgstr "Analýza obrázků používá poskytovatele, kterého nastavíte ve WordPressu v Nastavení › Konektory – váš API klíč zůstává tam. Označování, kontrola a stopy v souborech fungují i bez něj."
 
-#: src/admin/Assistant.js:85 src/media/index.js:153
+#: src/admin/Assistant.js:85
+#: src/media/index.js:153
 msgid "Open Connectors"
 msgstr "Otevřít Konektory"
 
@@ -472,12 +477,8 @@ msgid "Install Vercel AI Gateway"
 msgstr "Instalovat Vercel AI Gateway"
 
 #: src/admin/Assistant.js:95
-msgid ""
-"No contract with a provider? Vercel AI Gateway gives $5 a month free, no "
-"credit card."
-msgstr ""
-"Nemáte smlouvu s poskytovatelem? Vercel AI Gateway dává 5 $ měsíčně zdarma, "
-"bez platební karty."
+msgid "No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card."
+msgstr "Nemáte smlouvu s poskytovatelem? Vercel AI Gateway dává 5 $ měsíčně zdarma, bez platební karty."
 
 #: src/admin/Assistant.js:136
 msgid "Close"
@@ -580,98 +581,59 @@ msgid "Since 2 August 2026, what AI made has to be visible."
 msgstr "Od 2. srpna 2026 musí být vidět, co vytvořila AI."
 
 #: src/admin/Knowledge.js:118
-msgid ""
-"A business that publishes images, videos or recordings that look real but "
-"were created or modified with AI has to label them – visibly, at the latest "
-"at first sight. The duty is yours as the site owner, not the AI tool "
-"maker's."
-msgstr ""
-"Firma, která zveřejňuje obrázky, videa nebo nahrávky, jež vypadají skutečně,"
-" ale byly vytvořeny nebo upraveny pomocí AI, je musí označit – viditelně, "
-"nejpozději na první pohled. Povinnost máte vy jako provozovatel webu, ne "
-"výrobce nástroje AI."
+msgid "A business that publishes images, videos or recordings that look real but were created or modified with AI has to label them – visibly, at the latest at first sight. The duty is yours as the site owner, not the AI tool maker's."
+msgstr "Firma, která zveřejňuje obrázky, videa nebo nahrávky, jež vypadají skutečně, ale byly vytvořeny nebo upraveny pomocí AI, je musí označit – viditelně, nejpozději na první pohled. Povinnost máte vy jako provozovatel webu, ne výrobce nástroje AI."
 
 #: src/admin/Knowledge.js:136
 msgid "You have to label"
 msgstr "Označit musíte"
 
 #: src/admin/Knowledge.js:139
-msgid ""
-"Deepfakes: AI images, videos, audio that show real or plausible people, "
-"things, places or events and look real – also an invented but photorealistic"
-" person."
-msgstr ""
-"Deepfaky: AI obrázky, videa, zvuk, které ukazují skutečné nebo věrohodné "
-"lidi, věci, místa nebo události a vypadají skutečně – i vymyšlenou, ale "
-"fotorealistickou osobu."
+msgid "Deepfakes: AI images, videos, audio that show real or plausible people, things, places or events and look real – also an invented but photorealistic person."
+msgstr "Deepfaky: AI obrázky, videa, zvuk, které ukazují skutečné nebo věrohodné lidi, věci, místa nebo události a vypadají skutečně – i vymyšlenou, ale fotorealistickou osobu."
 
 #: src/admin/Knowledge.js:145
-msgid ""
-"AI texts that inform the public on matters of public interest – unless a "
-"person reviewed them and takes responsibility."
-msgstr ""
-"AI texty, které informují veřejnost o věcech veřejného zájmu – pokud je "
-"nezkontroloval člověk, který za ně přebírá odpovědnost."
+msgid "AI texts that inform the public on matters of public interest – unless a person reviewed them and takes responsibility."
+msgstr "AI texty, které informují veřejnost o věcech veřejného zájmu – pokud je nezkontroloval člověk, který za ně přebírá odpovědnost."
 
 #: src/admin/Knowledge.js:151
-msgid ""
-"Whether you meant to deceive does not matter. What your audience believes "
-"counts."
-msgstr ""
-"Nezáleží na tom, zda jste chtěli klamat. Počítá se, čemu vaše publikum "
-"uvěří."
+msgid "Whether you meant to deceive does not matter. What your audience believes counts."
+msgstr "Nezáleží na tom, zda jste chtěli klamat. Počítá se, čemu vaše publikum uvěří."
 
 #: src/admin/Knowledge.js:162
 msgid "No label needed for"
 msgstr "Označení není potřeba u"
 
 #: src/admin/Knowledge.js:165
-msgid ""
-"Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI "
-"tools."
-msgstr ""
-"Běžné úpravy: výřez, světlo, barvy, šum, prach, zvětšení – i nástroji AI."
+msgid "Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI tools."
+msgstr "Běžné úpravy: výřez, světlo, barvy, šum, prach, zvětšení – i nástroji AI."
 
 #: src/admin/Knowledge.js:171
-msgid ""
-"Obviously artificial images (illustration, comic, abstract): voluntary, but "
-"good for trust."
-msgstr ""
-"Zjevně umělé obrázky (ilustrace, komiks, abstrakce): dobrovolné, ale dobré "
-"pro důvěru."
+msgid "Obviously artificial images (illustration, comic, abstract): voluntary, but good for trust."
+msgstr "Zjevně umělé obrázky (ilustrace, komiks, abstrakce): dobrovolné, ale dobré pro důvěru."
 
 #: src/admin/Knowledge.js:177
 msgid "Content created before 2 August 2026 – nothing applies retroactively."
 msgstr "Obsah vytvořený před 2. srpnem 2026 – nic neplatí zpětně."
 
 #: src/admin/Knowledge.js:183
-msgid ""
-"Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the"
-" caption)."
-msgstr ""
-"Umění, satira, fikce: ano, ale tak, aby dílo neutrpělo (např. v popisku)."
+msgid "Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the caption)."
+msgstr "Umění, satira, fikce: ano, ale tak, aby dílo neutrpělo (např. v popisku)."
 
 #: src/admin/Knowledge.js:194
 msgid "Where the label goes"
 msgstr "Kam označení patří"
 
 #: src/admin/Knowledge.js:197
-msgid ""
-"On or right at the content, visible without a click – not only in the "
-"imprint."
+msgid "On or right at the content, visible without a click – not only in the imprint."
 msgstr "Na obsahu nebo přímo u něj, viditelně bez kliknutí – ne jen v tiráži."
 
 #: src/admin/Knowledge.js:203
-msgid ""
-"Plain words: “AI-generated”, “Modified with AI”. For screen readers as the "
-"icon's name, never instead of the alt text."
-msgstr ""
-"Prostá slova: „Vygenerováno AI“, „Upraveno pomocí AI“. Pro čtečky obrazovky "
-"jako název ikony, nikdy místo alternativního textu."
+msgid "Plain words: “AI-generated”, “Modified with AI”. For screen readers as the icon's name, never instead of the alt text."
+msgstr "Prostá slova: „Vygenerováno AI“, „Upraveno pomocí AI“. Pro čtečky obrazovky jako název ikony, nikdy místo alternativního textu."
 
 #: src/admin/Knowledge.js:209
-msgid ""
-"Videos: in a corner the whole time. Audio: at the player and in the artwork."
+msgid "Videos: in a corner the whole time. Audio: at the player and in the artwork."
 msgstr "Videa: v rohu po celou dobu. Zvuk: u přehrávače a v obalu."
 
 #: src/admin/Knowledge.js:215
@@ -683,12 +645,8 @@ msgid "The EU's icons"
 msgstr "Ikony EU"
 
 #: src/admin/Knowledge.js:226
-msgid ""
-"From the Commission since June 2026, free to use, no attribution. Optional –"
-" an equivalent label is allowed too."
-msgstr ""
-"Od Komise od června 2026, volně k použití, bez uvedení zdroje. Nepovinné – "
-"rovnocenné označení je dovolené také."
+msgid "From the Commission since June 2026, free to use, no attribution. Optional – an equivalent label is allowed too."
+msgstr "Od Komise od června 2026, volně k použití, bez uvedení zdroje. Nepovinné – rovnocenné označení je dovolené také."
 
 #: src/admin/Knowledge.js:234
 msgid "AI GENERATED"
@@ -712,12 +670,8 @@ msgid "AI"
 msgstr "AI"
 
 #: src/admin/Knowledge.js:262
-msgid ""
-"The basic icon: with your own text, with a second layer or where space is "
-"short."
-msgstr ""
-"Základní ikona: s vlastním textem, s druhou vrstvou nebo tam, kde je málo "
-"místa."
+msgid "The basic icon: with your own text, with a second layer or where space is short."
+msgstr "Základní ikona: s vlastním textem, s druhou vrstvou nebo tam, kde je málo místa."
 
 #: src/admin/Knowledge.js:271
 msgid "Typical cases"
@@ -727,7 +681,8 @@ msgstr "Typické případy"
 msgid "File"
 msgstr "Soubor"
 
-#: src/admin/Knowledge.js:276 src/admin/Look.js:107
+#: src/admin/Knowledge.js:276
+#: src/admin/Look.js:107
 msgid "Kind"
 msgstr "Druh"
 
@@ -740,44 +695,20 @@ msgid "How the plugin recognizes AI"
 msgstr "Jak plugin rozpozná AI"
 
 #: src/admin/Knowledge.js:319
-msgid ""
-"Many AI tools write into the file that it was made with AI: Content "
-"Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC "
-"value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and"
-" ComfyUI. The plugin reads them on upload and with every check – on your "
-"server, nothing leaves it."
-msgstr ""
-"Mnoho nástrojů AI zapisuje do souboru, že vznikl pomocí AI: Content "
-"Credentials (C2PA) z ChatGPT, Gemini, Firefly nebo Photoshopu, hodnota IPTC "
-"„trainedAlgorithmicMedia“, data generování Stable Diffusion a ComfyUI. "
-"Plugin je čte při nahrání a při každé kontrole – na vašem serveru, nic ho "
-"neopouští."
+msgid "Many AI tools write into the file that it was made with AI: Content Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and ComfyUI. The plugin reads them on upload and with every check – on your server, nothing leaves it."
+msgstr "Mnoho nástrojů AI zapisuje do souboru, že vznikl pomocí AI: Content Credentials (C2PA) z ChatGPT, Gemini, Firefly nebo Photoshopu, hodnota IPTC „trainedAlgorithmicMedia“, data generování Stable Diffusion a ComfyUI. Plugin je čte při nahrání a při každé kontrole – na vašem serveru, nic ho neopouští."
 
 #: src/admin/Knowledge.js:325
-msgid ""
-"A missing trace means nothing: screenshots, exports and image optimizers "
-"remove them. That is why “Used, not decided” shows everything visible on "
-"your site that has no decision yet. Only you know for sure how an image was "
-"made."
-msgstr ""
-"Chybějící stopa nic neznamená: snímky obrazovky, exporty a optimalizátory "
-"obrázků je odstraňují. Proto „Použito, nerozhodnuto“ ukazuje všechno, co je "
-"na vašem webu vidět a zatím nemá rozhodnutí. Jak obrázek vznikl, víte jistě "
-"jen vy."
+msgid "A missing trace means nothing: screenshots, exports and image optimizers remove them. That is why “Used, not decided” shows everything visible on your site that has no decision yet. Only you know for sure how an image was made."
+msgstr "Chybějící stopa nic neznamená: snímky obrazovky, exporty a optimalizátory obrázků je odstraňují. Proto „Použito, nerozhodnuto“ ukazuje všechno, co je na vašem webu vidět a zatím nemá rozhodnutí. Jak obrázek vznikl, víte jistě jen vy."
 
 #: src/admin/Knowledge.js:333
 msgid "This knowledge as a skill"
 msgstr "Tyto znalosti jako skill"
 
 #: src/admin/Knowledge.js:337
-msgid ""
-"The image analysis thinks with a skill: a guide to the AI Act with sources, "
-"in the plugin under skills/eu-ai-act-labels. You can give the same files to "
-"any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
-msgstr ""
-"Analýza obrázků přemýšlí se skillem: průvodcem AI Actem se zdroji, v pluginu"
-" ve složce skills/eu-ai-act-labels. Stejné soubory můžete dát kterémukoli AI"
-" agentovi, který čte Agent Skills – Claude, Cursor, Codex a dalším."
+msgid "The image analysis thinks with a skill: a guide to the AI Act with sources, in the plugin under skills/eu-ai-act-labels. You can give the same files to any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
+msgstr "Analýza obrázků přemýšlí se skillem: průvodcem AI Actem se zdroji, v pluginu ve složce skills/eu-ai-act-labels. Stejné soubory můžete dát kterémukoli AI agentovi, který čte Agent Skills – Claude, Cursor, Codex a dalším."
 
 #: src/admin/Knowledge.js:349
 msgid "View SKILL.md"
@@ -819,11 +750,14 @@ msgstr "Tmavá"
 msgid "Light"
 msgstr "Světlá"
 
-#: src/admin/Look.js:32 src/admin/parts.js:27
+#: src/admin/Look.js:32
+#: src/admin/parts.js:27
 msgid "Image"
 msgstr "Obrázek"
 
-#: src/admin/Look.js:33 src/admin/Look.js:336 src/admin/Look.js:339
+#: src/admin/Look.js:33
+#: src/admin/Look.js:336
+#: src/admin/Look.js:339
 msgid "Color"
 msgstr "Barva"
 
@@ -856,19 +790,12 @@ msgid "Our workshop in autumn"
 msgstr "Naše dílna na podzim"
 
 #: src/admin/Look.js:175
-msgid ""
-"On small images (under 400 px) the plugin uses the round icon instead of the"
-" wide one."
-msgstr ""
-"U malých obrázků (pod 400 px) používá plugin kulatou ikonu místo široké."
+msgid "On small images (under 400 px) the plugin uses the round icon instead of the wide one."
+msgstr "U malých obrázků (pod 400 px) používá plugin kulatou ikonu místo široké."
 
 #: src/admin/Look.js:183
-msgid ""
-"Hover over the icon: the second layer shows the notice. Screen readers read "
-"it as the icon's name – the image's alt text stays as it is."
-msgstr ""
-"Přejeďte myší přes ikonu: druhá vrstva ukáže upozornění. Čtečky obrazovky ho"
-" čtou jako název ikony – alternativní text obrázku zůstává, jak je."
+msgid "Hover over the icon: the second layer shows the notice. Screen readers read it as the icon's name – the image's alt text stays as it is."
+msgstr "Přejeďte myší přes ikonu: druhá vrstva ukáže upozornění. Čtečky obrazovky ho čtou jako název ikony – alternativní text obrázku zůstává, jak je."
 
 #: src/admin/Look.js:223
 msgid "Choose your own icon"
@@ -883,29 +810,23 @@ msgid "Icon"
 msgstr "Ikona"
 
 #: src/admin/Look.js:270
-msgid ""
-"The default is the European Commission's icons – free to use, no "
-"attribution."
-msgstr ""
-"Výchozí jsou ikony Evropské komise – volně k použití, bez uvedení zdroje."
+msgid "The default is the European Commission's icons – free to use, no attribution."
+msgstr "Výchozí jsou ikony Evropské komise – volně k použití, bez uvedení zdroje."
 
 #: src/admin/Look.js:322
 msgid "Choose another icon"
 msgstr "Vybrat jinou ikonu"
 
 #: src/admin/Look.js:327
-msgid ""
-"Your own mark is allowed if it is as clear as the EU icon. The EU icon is "
-"the safer choice."
-msgstr ""
-"Vlastní značka je dovolená, pokud je stejně jasná jako ikona EU. Ikona EU je"
-" bezpečnější volba."
+msgid "Your own mark is allowed if it is as clear as the EU icon. The EU icon is the safer choice."
+msgstr "Vlastní značka je dovolená, pokud je stejně jasná jako ikona EU. Ikona EU je bezpečnější volba."
 
 #: src/admin/Look.js:367
 msgid "Pick a color"
 msgstr "Vyberte barvu"
 
-#: src/admin/Look.js:373 src/admin/Look.js:381
+#: src/admin/Look.js:373
+#: src/admin/Look.js:381
 msgid "Transparency"
 msgstr "Průhlednost"
 
@@ -919,11 +840,13 @@ msgstr "Tvaru; písmena zůstávají plná."
 msgid "%d%%"
 msgstr "%d %%"
 
-#: src/admin/Look.js:393 src/admin/Look.js:396
+#: src/admin/Look.js:393
+#: src/admin/Look.js:396
 msgid "Size"
 msgstr "Velikost"
 
-#: src/admin/Look.js:406 src/admin/Look.js:415
+#: src/admin/Look.js:406
+#: src/admin/Look.js:415
 msgid "Corner"
 msgstr "Roh"
 
@@ -975,7 +898,8 @@ msgstr "Videa"
 msgid "Video block, cover with video, [video]"
 msgstr "Blok Video, obal s videem, [video]"
 
-#: src/admin/Look.js:534 src/admin/parts.js:32
+#: src/admin/Look.js:534
+#: src/admin/parts.js:32
 msgid "Audio"
 msgstr "Zvuk"
 
@@ -983,7 +907,8 @@ msgstr "Zvuk"
 msgid "a line above the player"
 msgstr "řádek nad přehrávačem"
 
-#: src/admin/Look.js:553 src/admin/Look.js:564
+#: src/admin/Look.js:553
+#: src/admin/Look.js:564
 msgid "Notice in captions"
 msgstr "Upozornění v popiscích"
 
@@ -991,7 +916,8 @@ msgstr "Upozornění v popiscích"
 msgid "Only where there is one already – never in the alt text."
 msgstr "Jen tam, kde popisek už je – nikdy v alternativním textu."
 
-#: src/admin/Look.js:573 src/admin/Look.js:584
+#: src/admin/Look.js:573
+#: src/admin/Look.js:584
 msgid "Second layer on hover"
 msgstr "Druhá vrstva při přejetí myší"
 
@@ -1003,7 +929,8 @@ msgstr "Celé upozornění, s nástrojem."
 msgid "On upload"
 msgstr "Při nahrání"
 
-#: src/admin/Look.js:598 src/admin/Look.js:609
+#: src/admin/Look.js:598
+#: src/admin/Look.js:609
 msgid "Check files for traces of AI"
 msgstr "Kontrolovat soubory na stopy AI"
 
@@ -1011,7 +938,8 @@ msgstr "Kontrolovat soubory na stopy AI"
 msgid "C2PA, IPTC, generation data, file names – on your server."
 msgstr "C2PA, IPTC, data generování, názvy souborů – na vašem serveru."
 
-#: src/admin/Look.js:618 src/admin/Look.js:629
+#: src/admin/Look.js:618
+#: src/admin/Look.js:629
 msgid "Apply unambiguous traces right away"
 msgstr "Jednoznačné stopy použít hned"
 
@@ -1116,178 +1044,143 @@ msgstr "Nenalezeno na žádné stránce"
 msgid "and %d more"
 msgstr "a dalších %d"
 
-#: src/admin/Review.js:23
+#: src/admin/Review.js:24
 msgid "All"
 msgstr "Vše"
 
-#: src/admin/Review.js:28
-msgid ""
-"No file carries traces of AI without a decision. Traces are often missing – "
-"go through “Used, not decided” too."
-msgstr ""
-"Žádný soubor nenese stopy AI bez rozhodnutí. Stopy často chybějí – projděte "
-"i „Použito, nerozhodnuto“."
+#: src/admin/Review.js:29
+msgid "No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too."
+msgstr "Žádný soubor nenese stopy AI bez rozhodnutí. Stopy často chybějí – projděte i „Použito, nerozhodnuto“."
 
-#: src/admin/Review.js:32
-msgid ""
-"Everything used on your site has a decision. Or the site has not been "
-"checked yet."
-msgstr ""
-"Všechno použité na vašem webu má rozhodnutí. Nebo web ještě nebyl "
-"zkontrolován."
+#: src/admin/Review.js:33
+msgid "Everything used on your site has a decision. Or the site has not been checked yet."
+msgstr "Všechno použité na vašem webu má rozhodnutí. Nebo web ještě nebyl zkontrolován."
 
-#: src/admin/Review.js:36
+#: src/admin/Review.js:37
 msgid "No file labeled yet."
 msgstr "Zatím není označen žádný soubor."
 
-#: src/admin/Review.js:37
+#: src/admin/Review.js:38
 msgid "No file decided as needing no label yet."
 msgstr "Zatím u žádného souboru nebylo rozhodnuto, že označení nepotřebuje."
 
-#: src/admin/Review.js:38
+#: src/admin/Review.js:39
 msgid "No images, videos or recordings."
 msgstr "Žádné obrázky, videa ani nahrávky."
 
-#: src/admin/Review.js:84
+#: src/admin/Review.js:114
 msgid "Reading your pages and posts …"
 msgstr "Čtení vašich stránek a příspěvků …"
 
-#: src/admin/Review.js:85
+#: src/admin/Review.js:115
 msgid "Reading the traces in your files …"
 msgstr "Čtení stop ve vašich souborech …"
 
-#: src/admin/Review.js:89
+#: src/admin/Review.js:119
 msgid "Done."
 msgstr "Hotovo."
 
-#: src/admin/Review.js:101
+#: src/admin/Review.js:148
 msgid "labeled"
 msgstr "označeno"
 
 #. translators: 1: generated count, 2: modified count
-#: src/admin/Review.js:105
+#: src/admin/Review.js:151
 #, js-format
 msgid "%1$d AI-generated · %2$d modified"
 msgstr "%1$d vygenerováno AI · %2$d upraveno"
 
-#: src/admin/Review.js:120
+#: src/admin/Review.js:135
 msgid "traces of AI, no decision"
 msgstr "stopy AI, bez rozhodnutí"
 
-#: src/admin/Review.js:130
+#: src/admin/Review.js:141
 msgid "used, not decided"
 msgstr "použito, nerozhodnuto"
 
-#: src/admin/Review.js:132
+#: src/admin/Review.js:142
 msgid "visible on your site"
 msgstr "viditelné na vašem webu"
 
 #. translators: 1: date, 2: pages, 3: files in use
-#: src/admin/Review.js:157
+#: src/admin/Review.js:197
 #, js-format
 msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
-msgstr ""
-"Poslední kontrola %1$s: %2$d stránek a příspěvků, %3$d používaných souborů."
+msgstr "Poslední kontrola %1$s: %2$d stránek a příspěvků, %3$d používaných souborů."
 
-#: src/admin/Review.js:165
-msgid ""
-"Not checked yet: where your media is used and which traces of AI it carries."
-msgstr ""
-"Zatím nezkontrolováno: kde se vaše média používají a jaké stopy AI nesou."
+#: src/admin/Review.js:205
+msgid "Not checked yet: where your media is used and which traces of AI it carries."
+msgstr "Zatím nezkontrolováno: kde se vaše média používají a jaké stopy AI nesou."
 
-#: src/admin/Review.js:177
-msgid "Check again"
-msgstr "Zkontrolovat znovu"
-
-#: src/admin/Review.js:178
+#: src/admin/Review.js:220
 msgid "Check site"
 msgstr "Zkontrolovat web"
 
-#: src/admin/Review.js:216
+#: src/admin/Review.js:260
 msgid "Open in the Media Library"
 msgstr "Otevřít v knihovně médií"
 
-#: src/admin/Review.js:246
+#: src/admin/Review.js:290
 msgid "Check on the site"
 msgstr "Zkontrolovat na webu"
 
-#: src/admin/Review.js:338
+#: src/admin/Review.js:394
 msgid "Some labels could not be undone. Retry the remaining files."
-msgstr ""
-"Některá označení se nepodařilo vrátit. Zkuste to znovu u zbývajících "
-"souborů."
+msgstr "Některá označení se nepodařilo vrátit. Zkuste to znovu u zbývajících souborů."
 
-#: src/admin/Review.js:472
+#: src/admin/Review.js:550
 msgid "Media"
 msgstr "Média"
 
-#: src/admin/Review.js:473
-msgid ""
-"Decide per file: AI-generated, modified with AI or no label needed. The "
-"label is required when something looks real that did not happen that way."
-msgstr ""
-"Rozhodněte u každého souboru: vygenerováno AI, upraveno pomocí AI nebo "
-"označení není potřeba. Označení je povinné, když něco vypadá skutečně, ale "
-"tak se to nestalo."
+#: src/admin/Review.js:551
+msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
+msgstr "Rozhodněte u každého souboru: vygenerováno AI, upraveno pomocí AI nebo označení není potřeba. Označení je povinné, když něco vypadá skutečně, ale tak se to nestalo."
 
-#: src/admin/Review.js:483
+#: src/admin/Review.js:561
 msgid "Search"
 msgstr "Hledat"
 
-#: src/admin/Review.js:484
+#: src/admin/Review.js:562
 msgid "Search media"
 msgstr "Hledat média"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:529
+#: src/admin/Review.js:607
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Použít všechny návrhy (%d)"
 
 #. translators: 1: done, 2: total
-#: src/admin/Review.js:549
+#: src/admin/Run.js:488
 #, js-format
 msgid "Analyzing … %1$d of %2$d"
 msgstr "Analýza … %1$d z %2$d"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:558
-#, js-format
-msgid "Analyze %d image (AI)"
-msgid_plural "Analyze %d images (AI)"
-msgstr[0] "Analyzovat %d obrázek (AI)"
-msgstr[1] "Analyzovat %d obrázky (AI)"
-msgstr[2] "Analyzovat %d obrázků (AI)"
-
-#. translators: %d: number of files
-#: src/admin/Review.js:574
+#: src/admin/Review.js:621
 #, js-format
 msgid "%d suggestions applied."
 msgstr "Použité návrhy: %d."
 
-#: src/admin/Review.js:583
+#: src/admin/Review.js:630
 msgid "Undo"
 msgstr "Zpět"
 
-#: src/admin/Review.js:588
+#: src/admin/Review.js:635
 msgid "Loading …"
 msgstr "Načítání …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:624
+#: src/admin/Review.js:673
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Stránka %1$d z %2$d"
 
-#: src/admin/Review.js:639
-msgid ""
-"Also in the Media Library: the “AI” filter, a column and bulk actions in the"
-" list view."
-msgstr ""
-"Také v knihovně médií: filtr „AI“, sloupec a hromadné akce v zobrazení "
-"seznamu."
+#: src/admin/Review.js:688
+msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
+msgstr "Také v knihovně médií: filtr „AI“, sloupec a hromadné akce v zobrazení seznamu."
 
-#: src/admin/Review.js:644
+#: src/admin/Review.js:693
 msgid "Open Media Library"
 msgstr "Otevřít knihovnu médií"
 
@@ -1302,6 +1195,169 @@ msgstr "změněno"
 #: src/media/index.js:129
 msgid "Analyzing …"
 msgstr "Analýza …"
+
+#. translators: %d: minutes
+#: src/admin/Run.js:76
+#, js-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuta"
+msgstr[1] "%d minuty"
+msgstr[2] "%d minut"
+
+#. translators: %s: hours, e.g. 2.5
+#: src/admin/Run.js:81
+#, js-format
+msgid "%s hours"
+msgstr "%s h"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:416
+#, js-format
+msgid "%d picture without a decision or an assessment"
+msgid_plural "%d pictures without a decision or an assessment"
+msgstr[0] "%d obrázek bez rozhodnutí či posouzení"
+msgstr[1] "%d obrázky bez rozhodnutí či posouzení"
+msgstr[2] "%d obrázků bez rozhodnutí či posouzení"
+
+#: src/admin/Run.js:476
+msgid "Image generators for everyone came in 2022 – older uploads rarely need a check."
+msgstr "Generátory obrázků pro každého existují od roku 2022 – starší nahrané soubory kontrolu potřebují jen zřídka."
+
+#: src/admin/Run.js:497
+msgid "Stop"
+msgstr "Zastavit"
+
+#: src/admin/Run.js:531
+msgid "Test with 10"
+msgstr "Otestovat na 10"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:551
+#, js-format
+msgid "Analyze %d picture"
+msgid_plural "Analyze %d pictures"
+msgstr[0] "Analyzovat %d obrázek"
+msgstr[1] "Analyzovat %d obrázky"
+msgstr[2] "Analyzovat %d obrázků"
+
+#. translators: %d: seconds
+#: src/admin/Run.js:68
+#, js-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekunda"
+msgstr[1] "%d sekundy"
+msgstr[2] "%d sekund"
+
+#. translators: %s: number of tokens
+#: src/admin/Run.js:98
+#, js-format
+msgid "%s tokens"
+msgstr "Tokeny: %s"
+
+#. translators: 1: number of pictures, 2: what they would take
+#: src/admin/Run.js:429
+#, js-format
+msgid "All %1$d: about %2$s"
+msgstr "Všechny (%1$d): přibližně %2$s"
+
+#. translators: 1: number of pictures, 2: what they took
+#: src/admin/Run.js:439
+#, js-format
+msgid "Measured in the test with %1$d pictures: %2$s"
+msgstr "Změřeno v testu s %1$d obrázky: %2$s"
+
+#: src/admin/Review.js:534
+#: src/admin/Run.js:162
+msgid "Analyze image content (AI)"
+msgstr "Analyzovat obsah obrázků (AI)"
+
+#: src/admin/Run.js:205
+msgid "Every picture used on your site has a decision or an assessment."
+msgstr "Každý obrázek použitý na vašem webu má rozhodnutí nebo posouzení."
+
+#. translators: %s: names of the AI providers
+#: src/admin/Run.js:167
+#, js-format
+msgid "The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing."
+msgstr "AI si prohlédne každý obrázek použitý na vašem webu, který ještě nemá rozhodnutí, a navrhne: vygenerováno AI, upraveno pomocí AI nebo označení není potřeba – rozhodujete vy. WordPress k tomu posílá každý obrázek v šířce 768 pixelů spolu s názvem a místem použití vašemu poskytovateli AI (%s). Poskytovatel účtuje každou analýzu na váš účet u něj; tento plugin ani engenty nic neúčtují."
+
+#. translators: %d: number of analyses
+#: src/admin/Run.js:449
+#, js-format
+msgid "Estimated from %d analysis on this site this month."
+msgid_plural "Estimated from %d analyses on this site this month."
+msgstr[0] "Odhad z %d analýzy na tomto webu tento měsíc."
+msgstr[1] "Odhad z %d analýz na tomto webu tento měsíc."
+msgstr[2] "Odhad z %d analýz na tomto webu tento měsíc."
+
+#: src/admin/Run.js:458
+msgid "No estimate: there was no analysis on this site this month yet."
+msgstr "Bez odhadu: tento měsíc na tomto webu zatím neproběhla žádná analýza."
+
+#: src/admin/Run.js:462
+msgid "First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them."
+msgstr "Nejdřív test s 10 obrázky: ukáže, kolik analýza na tomto webu stojí, než spustíte všechny."
+
+#: src/admin/Run.js:469
+msgid "Your provider does not report costs: its price per token tells what this costs."
+msgstr "Váš poskytovatel neuvádí náklady: rozhoduje jeho cena za token."
+
+#: src/admin/Run.js:538
+msgid "Skip test"
+msgstr "Přeskočit test"
+
+#: src/admin/Review.js:219
+msgid "Quick check"
+msgstr "Rychlá kontrola"
+
+#: includes/class-analysis.php:70
+msgid "An analysis is already running."
+msgstr "Analýza už běží."
+
+#. translators: 1: first day, 2: last day
+#: src/admin/Run.js:337
+#, js-format
+msgid "Uploaded from %1$s to %2$s"
+msgstr "Nahráno od %1$s do %2$s"
+
+#: src/admin/Run.js:362
+msgid "From"
+msgstr "Od"
+
+#: src/admin/Run.js:374
+msgid "To"
+msgstr "Do"
+
+#: src/admin/Run.js:501
+msgid "Waiting for WP-Cron: the next step comes with the next visit to the site."
+msgstr "Čeká se na WP-Cron: další krok přijde s další návštěvou webu."
+
+#. translators: %s: name of the person who started it
+#: src/admin/Run.js:507
+#, js-format
+msgid "Runs on the server, started by %s – you can close this page."
+msgstr "Běží na serveru, spustil(a) %s – tuto stránku můžete zavřít."
+
+#: src/admin/Run.js:517
+msgid "Every picture in this time has a decision or an assessment."
+msgstr "Každý obrázek z tohoto období má rozhodnutí nebo posouzení."
+
+#. translators: %s: the provider's error
+#: src/admin/Run.js:568
+#, js-format
+msgid "The analysis stopped after three failures in a row: %s"
+msgstr "Analýza se zastavila po třech chybách za sebou: %s"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:401
+#, js-format
+msgid "%d picture already analyzed"
+msgid_plural "%d pictures already analyzed"
+msgstr[0] "%d obrázek už analyzován"
+msgstr[1] "%d obrázky už analyzovány"
+msgstr[2] "%d obrázků už analyzováno"
 
 #: includes/class-promo.php
 msgid "From engenty, the makers of this plugin"

@@ -92,6 +92,10 @@ class AI_Act_Labels_Usage {
 				$batch = array_slice( $run['files'], $run['done'], self::FILES_PER_STEP );
 				update_meta_cache( 'post', $batch );
 				foreach ( $batch as $attachment_id ) {
+					// CLI is an explicit site-wide operation; web callers must be allowed to edit each file.
+					if ( ! ( defined( 'WP_CLI' ) && WP_CLI ) && ! current_user_can( 'edit_post', $attachment_id ) ) {
+						continue;
+					}
 					$signals = AI_Act_Labels_Detect::attachment( $attachment_id );
 					if ( $auto && 'strong' === $signals['strength'] && '' === AI_Act_Labels::get( $attachment_id ) ) {
 						AI_Act_Labels::set( $attachment_id, $signals['kind'], 'metadata', $signals['tool'] ? array( 'tool' => $signals['tool'] ) : array() );
@@ -137,12 +141,22 @@ class AI_Act_Labels_Usage {
 	 * @param array $run The run.
 	 */
 	private static function finish( array $run ) {
+		global $wpdb;
 		delete_post_meta_by_key( AI_Act_Labels::META_USAGE );
-		foreach ( $run['map'] as $attachment_id => $uses ) {
-			if ( 'attachment' === get_post_type( (int) $attachment_id ) ) {
-				update_post_meta( (int) $attachment_id, AI_Act_Labels::META_USAGE, array_values( array_unique( $uses, SORT_REGULAR ) ) );
+		// One statement per 500 files: thousands of single updates take longer than a request may.
+		// rebuild_open() empties the meta cache afterwards.
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared -- the plugin's own meta, IDs are integers, rows are prepared.
+		foreach ( array_chunk( array_map( 'intval', array_keys( $run['map'] ) ), 500 ) as $chunk ) {
+			$ids  = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'attachment' AND ID IN (" . implode( ',', $chunk ) . ')' );
+			$rows = array();
+			foreach ( array_map( 'intval', $ids ) as $id ) {
+				$rows[] = $wpdb->prepare( '(%d, %s, %s)', $id, AI_Act_Labels::META_USAGE, maybe_serialize( array_values( array_unique( $run['map'][ $id ], SORT_REGULAR ) ) ) );
+			}
+			if ( $rows ) {
+				$wpdb->query( "INSERT INTO {$wpdb->postmeta} (post_id, meta_key, meta_value) VALUES " . implode( ',', $rows ) );
 			}
 		}
+		// phpcs:enable
 		AI_Act_Labels::rebuild_open();
 		update_option(
 			self::LAST,

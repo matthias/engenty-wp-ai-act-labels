@@ -354,6 +354,7 @@ class AI_Act_Labels {
 			'signals'  => is_array( $signals ) ? $signals : null,
 			'hint'     => is_array( $hint ) ? $hint : null,
 			'suggests' => self::suggestion( $id ),
+			'conflict' => self::suggestion_conflict( $id ),
 		);
 		if ( $full ) {
 			$out['usage'] = AI_Act_Labels_Usage::for_attachment( $id );
@@ -372,14 +373,28 @@ class AI_Act_Labels {
 	 */
 	public static function suggestion( $id ) {
 		$signals = get_post_meta( $id, self::META_SIGNALS, true );
-		if ( is_array( $signals ) && ! empty( $signals['kind'] ) ) {
-			return (string) $signals['kind'];
+		$hint    = get_post_meta( $id, self::META_HINT, true );
+		$kind    = is_array( $signals ) ? (string) ( $signals['kind'] ?? '' ) : '';
+		// Provenance survives an uncertain visual assessment; weak names do not overrule a review.
+		if ( is_array( $signals ) && 'strong' === ( $signals['strength'] ?? '' ) && in_array( $kind, self::KINDS, true ) ) {
+			return $kind;
 		}
-		$hint = get_post_meta( $id, self::META_HINT, true );
-		if ( is_array( $hint ) && in_array( $hint['kind'] ?? '', self::STATES, true ) ) {
-			return (string) $hint['kind'];
+		if ( is_array( $hint ) && in_array( $hint['kind'] ?? '', array_merge( self::STATES, array( 'unsure' ) ), true ) ) {
+			return 'unsure' === $hint['kind'] ? '' : (string) $hint['kind'];
 		}
-		return '';
+		return in_array( $kind, self::KINDS, true ) ? $kind : '';
+	}
+
+	/**
+	 * Whether a review disagrees with the retained strong metadata suggestion.
+	 *
+	 * @param int $id Attachment ID.
+	 * @return bool
+	 */
+	public static function suggestion_conflict( $id ) {
+		$signals = get_post_meta( $id, self::META_SIGNALS, true );
+		$hint    = get_post_meta( $id, self::META_HINT, true );
+		return is_array( $signals ) && 'strong' === ( $signals['strength'] ?? '' ) && in_array( $signals['kind'] ?? '', self::KINDS, true ) && is_array( $hint ) && in_array( $hint['kind'] ?? '', array_merge( self::STATES, array( 'unsure' ) ), true ) && $hint['kind'] !== $signals['kind'];
 	}
 
 	/**

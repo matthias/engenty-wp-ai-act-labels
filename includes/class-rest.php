@@ -30,11 +30,14 @@ class AI_Act_Labels_Rest {
 			'/media/(?P<id>\d+)' => array( 'GET', 'one', $media ),
 			'/label'             => array( 'POST', 'label', $media ),
 			'/settings'          => array( 'POST', 'settings', $settings ),
-			'/scan'              => array( 'POST', 'scan', $media ),
+			'/scan'              => array( 'POST', 'scan', $settings ),
 			'/review'            => array( 'POST', 'review', $media ),
 			'/verify'            => array( 'POST', 'verify', $media ),
 			'/preview'           => array( 'POST', 'preview', $media ),
 			'/accept'            => array( 'POST', 'accept', $media ),
+			'/run'               => array( 'GET', 'run', $media ),
+			'/run/start'         => array( 'POST', 'run_start', $media ),
+			'/run/stop'          => array( 'POST', 'run_stop', $media ),
 		);
 		foreach ( $routes as $path => list( $method, $callback, $permission ) ) {
 			register_rest_route(
@@ -114,14 +117,15 @@ class AI_Act_Labels_Rest {
 	public static function media( WP_REST_Request $request ) {
 		$filter = sanitize_key( (string) ( $request['filter'] ?? 'suggested' ) );
 		$search = sanitize_text_field( (string) ( $request['search'] ?? '' ) );
-		$page   = max( 1, (int) ( $request['page'] ?? 1 ) );
+		// An offset, not a page: files decided in the tool leave the list, the tool counts them out.
+		$offset = max( 0, (int) ( $request['offset'] ?? 0 ) );
 		$per    = min( 60, max( 1, (int) ( $request['per'] ?? 24 ) ) );
 		$args   = array(
 			'post_type'      => 'attachment',
 			'post_status'    => 'inherit',
 			'post_mime_type' => array( 'image', 'video', 'audio' ),
 			'posts_per_page' => $per,
-			'paged'          => $page,
+			'offset'         => $offset,
 			'fields'         => 'ids',
 			'orderby'        => 'date',
 			'order'          => 'DESC',
@@ -135,10 +139,9 @@ class AI_Act_Labels_Rest {
 		}
 		$query = new WP_Query( $args );
 		return array(
-			'items' => array_map( static fn( $id ) => AI_Act_Labels::describe( (int) $id ), $query->posts ),
-			'total' => (int) $query->found_posts,
-			'page'  => $page,
-			'pages' => (int) $query->max_num_pages,
+			'items'  => array_map( static fn( $id ) => AI_Act_Labels::describe( (int) $id ), $query->posts ),
+			'total'  => (int) $query->found_posts,
+			'offset' => $offset,
 		);
 	}
 
@@ -163,7 +166,10 @@ class AI_Act_Labels_Rest {
 	 * @return array|WP_Error
 	 */
 	public static function label( WP_REST_Request $request ) {
-		$ids   = array_map( 'intval', (array) ( $request['ids'] ?? array() ) );
+		$ids = array_map( 'intval', (array) ( $request['ids'] ?? array() ) );
+		if ( count( $ids ) > 200 ) {
+			return new WP_Error( 'ai_act_labels_limit', __( 'Decide on at most 200 files per request.', 'ai-act-labels' ), array( 'status' => 400 ) );
+		}
 		$state = (string) ( $request['state'] ?? '' );
 		if ( ! in_array( $state, array_merge( AI_Act_Labels::STATES, array( '' ) ), true ) ) {
 			return new WP_Error( 'ai_act_labels_state', __( 'This label does not exist.', 'ai-act-labels' ), array( 'status' => 400 ) );
@@ -176,12 +182,13 @@ class AI_Act_Labels_Rest {
 		}
 		$via   = sanitize_key( (string) ( $request['via'] ?? 'manual' ) );
 		$items = array();
-		foreach ( array_slice( $ids, 0, 200 ) as $id ) {
+		foreach ( $ids as $id ) {
 			if ( ! current_user_can( 'edit_post', $id ) ) {
 				continue;
 			}
-			AI_Act_Labels::set( $id, $state, in_array( $via, array( 'manual', 'bulk', 'assistant', 'metadata' ), true ) ? $via : 'manual', $extra );
-			$items[] = AI_Act_Labels::describe( $id );
+			if ( AI_Act_Labels::set( $id, $state, in_array( $via, array( 'manual', 'bulk', 'assistant', 'metadata' ), true ) ? $via : 'manual', $extra ) ) {
+				$items[] = AI_Act_Labels::describe( $id );
+			}
 		}
 		return array(
 			'items'  => $items,
@@ -206,9 +213,12 @@ class AI_Act_Labels_Rest {
 	 * One step of the check.
 	 *
 	 * @param WP_REST_Request $request `restart`, `files`.
-	 * @return array
+	 * @return array|WP_Error
 	 */
 	public static function scan( WP_REST_Request $request ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return new WP_Error( 'ai_act_labels_forbidden', __( 'Only site administrators can run a site-wide check.', 'ai-act-labels' ), array( 'status' => 403 ) );
+		}
 		$progress = AI_Act_Labels_Usage::step( (bool) $request['restart'], (bool) $request['files'] );
 		if ( 'done' === $progress['phase'] ) {
 			AI_Act_Labels_Front::forget();
@@ -225,7 +235,11 @@ class AI_Act_Labels_Rest {
 	 * @return array|WP_Error
 	 */
 	public static function review( WP_REST_Request $request ) {
-		$id = (int) $request['id'];
+		$id         = (int) $request['id'];
+		$permission = self::editable_attachment( $id );
+		if ( is_wp_error( $permission ) ) {
+			return $permission;
+		}
 		if ( ! AI_Act_Labels_Assistant::status()['ready'] ) {
 			return new WP_Error( 'ai_act_labels_no_provider', __( 'For the image analysis, WordPress needs an AI provider (Settings › Connectors).', 'ai-act-labels' ), array( 'status' => 409 ) );
 		}
@@ -244,13 +258,100 @@ class AI_Act_Labels_Rest {
 	 * Opens the pages of a file and looks for its label.
 	 *
 	 * @param WP_REST_Request $request `id`.
-	 * @return array
+	 * @return array|WP_Error
 	 */
 	public static function verify( WP_REST_Request $request ) {
-		$id = (int) $request['id'];
+		$id         = (int) $request['id'];
+		$permission = self::editable_attachment( $id );
+		if ( is_wp_error( $permission ) ) {
+			return $permission;
+		}
 		return array(
 			'result' => AI_Act_Labels_Usage::verify( $id ),
 			'item'   => AI_Act_Labels::describe( $id ),
+		);
+	}
+
+	/**
+	 * Object permission before external requests or persisted assessments.
+	 *
+	 * @param int $id Attachment ID.
+	 * @return WP_Error|null
+	 */
+	private static function editable_attachment( $id ) {
+		if ( 'attachment' !== get_post_type( $id ) ) {
+			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-labels' ), array( 'status' => 404 ) );
+		}
+		if ( ! current_user_can( 'edit_post', $id ) ) {
+			return new WP_Error( 'ai_act_labels_forbidden', __( 'You cannot edit this file.', 'ai-act-labels' ), array( 'status' => 403 ) );
+		}
+		return null;
+	}
+
+	/**
+	 * The image analysis of the pictures used on the site: those without a decision and without an
+	 * assessment by the day they were uploaded, the analyses of this month so far, and the job – a
+	 * running one is kept moving while a window shows it.
+	 *
+	 * @return array `days` (YYYY-MM-DD => [ open, analysed ]), `calls`, `job` (see AI_Act_Labels_Analysis::state()), `counts`.
+	 */
+	public static function run() {
+		AI_Act_Labels_Analysis::nudge();
+		return array(
+			'days'   => (object) AI_Act_Labels_Analysis::days(),
+			'calls'  => AI_Act_Labels_Analysis::calls(),
+			'job'    => self::job(),
+			'counts' => AI_Act_Labels::counts(),
+		);
+	}
+
+	/**
+	 * Starts the image analysis on the server.
+	 *
+	 * @param WP_REST_Request $request `since` and `until` (YYYY-MM-DD), `limit`, `test`.
+	 * @return array|WP_Error `job`.
+	 */
+	public static function run_start( WP_REST_Request $request ) {
+		if ( ! AI_Act_Labels_Assistant::status()['ready'] ) {
+			return new WP_Error( 'ai_act_labels_no_provider', __( 'For the image analysis, WordPress needs an AI provider (Settings › Connectors).', 'ai-act-labels' ), array( 'status' => 409 ) );
+		}
+		$day = static fn( $d ) => AI_Act_Labels_Analysis::is_day( $d ) ? (string) $d : '';
+		$job = AI_Act_Labels_Analysis::start( $day( $request['since'] ), $day( $request['until'] ), (int) ( $request['limit'] ?? 10 ), (bool) $request['test'] );
+		return is_wp_error( $job ) ? $job : array( 'job' => self::job() );
+	}
+
+	/**
+	 * Stops the image analysis after the picture it is at.
+	 *
+	 * @return array `job`.
+	 */
+	public static function run_stop() {
+		AI_Act_Labels_Analysis::stop();
+		return array( 'job' => self::job() );
+	}
+
+	/**
+	 * The job as the tool shows it.
+	 *
+	 * @return array|null `status`, `since`, `until`, `total`, `done`, `error`, `test`, `moved`, `measured`, `by` (a name).
+	 */
+	private static function job() {
+		$job = AI_Act_Labels_Analysis::state();
+		if ( ! $job ) {
+			return null;
+		}
+		$user = get_userdata( (int) $job['by'] );
+		return array(
+			'status'   => AI_Act_Labels_Analysis::running( $job ) ? 'running' : ( 'running' === $job['status'] ? 'stalled' : $job['status'] ),
+			'since'    => $job['since'],
+			'until'    => (string) ( $job['until'] ?? '' ),
+			'total'    => (int) $job['total'],
+			'done'     => (int) $job['done'],
+			'error'    => (string) $job['error'],
+			'test'     => (bool) $job['test'],
+			'moved'    => (int) $job['moved'],
+			'measured' => $job['measured'],
+			'by'       => $user ? $user->display_name : '',
 		);
 	}
 

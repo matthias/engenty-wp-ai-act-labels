@@ -180,6 +180,33 @@ button.aal-row__main { cursor: pointer; }
 
 /* Toolbars. */
 .aal-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.aal-btn.is-on { background: var(--aal-paper-2); }
+/* The image analysis of a whole list. */
+.aal-run { display: flex; flex-direction: column; gap: 14px; padding-top: 14px; border-top: 1px solid var(--aal-line); }
+.aal-run__head { display: flex; flex-direction: column; gap: 4px; max-width: 72ch; }
+/* Loading bars in the places of what comes. */
+.aal-run__wait { display: flex; flex-direction: column; gap: 14px; }
+.aal-run__wait i { display: block; max-width: 100%; height: 18px; border-radius: 6px; background: linear-gradient(90deg, var(--aal-paper-2) 0%, var(--aal-paper) 50%, var(--aal-paper-2) 100%) 0 0 / 200% 100%; animation: aal-wait 1.2s ease-in-out infinite; }
+.aal-run__wait i.is-track { width: 100%; height: 6px; margin: 8px 0 0; border-radius: 999px; }
+.aal-run__wait i.is-button { width: 140px; height: 32px; border-radius: 999px; }
+@keyframes aal-wait { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (prefers-reduced-motion: reduce) { .aal-run__wait i { animation: none; } }
+/* The month above the track: its changing length moves nothing. */
+.aal-run__since { display: flex; flex-direction: column; gap: 6px; }
+/* The newest month on the right; the chosen months between the two handles in colour, analysed pictures
+   in green. The rail is its own element: two range inputs lie on it, only their handles take the pointer. */
+.aal-run__track { position: relative; flex: none; height: 22px; margin-bottom: 22px; }
+.aal-run__rail { position: absolute; left: 0; right: 0; top: 8px; height: 6px; border-radius: 999px; }
+.aal-run__track input[type="range"], .aal-run__track input[type="range"]:disabled { position: absolute; left: 0; top: 0; width: 100%; height: 22px; margin: 0; background: transparent; appearance: none; -webkit-appearance: none; pointer-events: none; }
+.aal-run__track input[type="range"]:disabled { cursor: default; }
+.aal-run__track input::-webkit-slider-thumb { width: 18px; height: 18px; border: 2px solid var(--aal-ember); border-radius: 50%; background: #fff; -webkit-appearance: none; pointer-events: auto; cursor: pointer; }
+.aal-run__track input::-moz-range-thumb { width: 14px; height: 14px; border: 2px solid var(--aal-ember); border-radius: 50%; background: #fff; pointer-events: auto; cursor: pointer; }
+.aal-run__track input:disabled::-webkit-slider-thumb { opacity: .6; cursor: default; }
+.aal-run__done::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--aal-moss); }
+.aal-run__years { position: absolute; left: 0; right: 0; top: 26px; height: 16px; }
+.aal-run__years button { position: absolute; transform: translateX(-50%); padding: 0 2px; border: 0; background: none; color: var(--aal-ink-3); font: 400 11.5px/16px Geist, sans-serif; cursor: pointer; }
+.aal-run__years button:hover { color: var(--aal-ink); }
+.aal-run__sum { display: flex; flex-direction: column; gap: 2px; margin: 0; }
 .aal-searchbox { display: inline-flex; align-items: center; gap: 8px; height: 36px; width: 260px; padding: 0 12px; border: 1px solid var(--aal-input); border-radius: 8px; background: #fff; color: var(--aal-ink-4); }
 .aal-app .aal-searchbox input { border: 0; padding: 0; min-height: 0; height: 32px; flex: 1; background: transparent; }
 
@@ -239,11 +266,13 @@ button.aal-row__main { cursor: pointer; }
 
 /* Overview. */
 .aal-overview { display: flex; flex-direction: column; gap: 14px; padding: 18px 22px; background: #fff; border-radius: 14px; box-shadow: var(--aal-raised); }
-.aal-overview__nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.aal-num { display: flex; align-items: baseline; gap: 10px; }
-.aal-num > span { font: 600 30px/1 "Space Grotesk", sans-serif; color: var(--aal-ink); }
-.aal-num.is-open > span { color: var(--aal-ember-strong); }
-.aal-num p { display: flex; flex-direction: column; margin: 0; font-weight: 500; }
+/* The numbers open their lists: the boxes reach out to the card's edge, the text stays in line with the rest. */
+.aal-overview__nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: -8px -12px 0; }
+.aal-num { display: flex; align-items: baseline; gap: 10px; padding: 10px 12px; border: 0; border-radius: 12px; background: transparent; color: var(--aal-ink); font: inherit; text-align: left; cursor: pointer; }
+.aal-num:hover, .aal-num.is-on { background: var(--aal-paper-2); }
+.aal-num > span:first-child { font: 600 30px/1 "Space Grotesk", sans-serif; color: var(--aal-ink); }
+.aal-num.is-open > span:first-child { color: var(--aal-ember-strong); }
+.aal-num__text { display: flex; flex-direction: column; font-weight: 500; }
 .aal-num em { font-style: normal; font-weight: 400; font-size: 12.5px; color: var(--aal-ink-3); }
 .aal-overview__check { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--aal-line); }
 .aal-bar { flex: 1; min-width: 200px; height: 8px; border-radius: 999px; background: var(--aal-paper-2); overflow: hidden; }

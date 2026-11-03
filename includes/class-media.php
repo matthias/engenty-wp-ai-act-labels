@@ -146,6 +146,9 @@ class AI_Act_Labels_Media {
 		if ( is_array( $hint ) && ! empty( $hint['reason'] ) ) {
 			$html .= '<p class="ai-act-box__note is-analysis"><b>' . esc_html__( 'Image analysis (AI):', 'ai-act-image-labels' ) . '</b> ' . esc_html( $hint['reason'] ) . '</p>';
 		}
+		if ( AI_Act_Labels::suggestion_conflict( $id ) ) {
+			$html .= '<p class="ai-act-box__note">' . esc_html__( 'Strong file metadata conflicts with the AI assessment. Review before applying.', 'ai-act-labels' ) . '</p>';
+		}
 		$html       .= sprintf(
 			'<p class="ai-act-box__analyze"><button type="button" class="button" data-ai-act-analyze="%1$d">%2$s</button><span class="ai-act-box__status" role="status"></span></p>',
 			$id,
