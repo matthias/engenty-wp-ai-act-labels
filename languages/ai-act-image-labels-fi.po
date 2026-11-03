@@ -257,7 +257,7 @@ msgid "Strong file metadata conflicts with the AI assessment. Review before appl
 msgstr "Tiedoston vahvat metatiedot ovat ristiriidassa tekoälyn arvion kanssa. Tarkista ennen käyttöönottoa."
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:315
+#: src/admin/Review.js:320
 msgid "Analyze image (AI)"
 msgstr "Analysoi kuva (tekoäly)"
 
@@ -1010,28 +1010,28 @@ msgstr "merkintää ei tarvita"
 msgid "unclear"
 msgstr "epäselvä"
 
-#: src/admin/parts.js:234
+#: src/admin/parts.js:255
 msgid "label visible"
 msgstr "merkintä näkyvissä"
 
-#: src/admin/parts.js:235
+#: src/admin/parts.js:256
 msgid "without label"
 msgstr "ilman merkintää"
 
-#: src/admin/parts.js:236
+#: src/admin/parts.js:257
 msgid "not on the page"
 msgstr "ei sivulla"
 
-#: src/admin/parts.js:237
+#: src/admin/parts.js:258
 msgid "page not reachable"
 msgstr "sivua ei tavoiteta"
 
-#: src/admin/parts.js:244
+#: src/admin/parts.js:265
 msgid "Not found on any page"
 msgstr "Ei löydy miltään sivulta"
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:275
+#: src/admin/parts.js:296
 #, js-format
 msgid "and %d more"
 msgstr "ja %d muuta"
@@ -1116,28 +1116,28 @@ msgstr "Avaa mediakirjastossa"
 msgid "Check on the site"
 msgstr "Tarkista sivustolla"
 
-#: src/admin/Review.js:412
+#: src/admin/Review.js:417
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr "Joitakin merkintöjä ei voitu kumota. Yritä uudelleen jäljellä oleville tiedostoille."
 
-#: src/admin/Review.js:571
+#: src/admin/Review.js:576
 msgid "Media"
 msgstr "Media"
 
-#: src/admin/Review.js:572
+#: src/admin/Review.js:577
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr "Päätä tiedostoittain: tekoälyllä luotu, tekoälyllä muokattu tai merkintää ei tarvita. Merkintä vaaditaan, kun jokin näyttää aidolta, vaikka se ei tapahtunut niin."
 
-#: src/admin/Review.js:582
+#: src/admin/Review.js:587
 msgid "Search"
 msgstr "Hae"
 
-#: src/admin/Review.js:586
+#: src/admin/Review.js:591
 msgid "Search media"
 msgstr "Hae mediaa"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:634
+#: src/admin/Review.js:639
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Käytä kaikki %d ehdotusta"
@@ -1149,30 +1149,30 @@ msgid "Analyzing … %1$d of %2$d"
 msgstr "Analysoidaan … %1$d / %2$d"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:648
+#: src/admin/Review.js:653
 #, js-format
 msgid "%d suggestions applied."
 msgstr "%d ehdotusta käytetty."
 
-#: src/admin/Review.js:660
+#: src/admin/Review.js:665
 msgid "Undo"
 msgstr "Kumoa"
 
-#: src/admin/Review.js:666
+#: src/admin/Review.js:671
 msgid "Loading …"
 msgstr "Ladataan …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:705
+#: src/admin/Review.js:710
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Sivu %1$d / %2$d"
 
-#: src/admin/Review.js:723
+#: src/admin/Review.js:728
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr "Myös mediakirjastossa: ”Tekoäly”-suodatin, sarake ja massatoiminnot luettelonäkymässä."
 
-#: src/admin/Review.js:728
+#: src/admin/Review.js:733
 msgid "Open Media Library"
 msgstr "Avaa mediakirjasto"
 
@@ -1256,7 +1256,7 @@ msgstr "Kaikki %1$d: noin %2$s"
 msgid "Measured in the test with %1$d pictures: %2$s"
 msgstr "Mitattu testissä %1$d kuvalla: %2$s"
 
-#: src/admin/Review.js:552
+#: src/admin/Review.js:557
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr "Analysoi kuvien sisältö (tekoäly)"
@@ -1370,3 +1370,17 @@ msgstr "https://engenty.ai/"
 #: ai-act-labels.php
 msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
 msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+
+#. translators: %s: date and time
+#: src/admin/parts.js:228
+#, js-format
+msgid "Analyzed %s"
+msgstr "Analysoitu %s"
+
+#: src/admin/parts.js:234
+msgid "without the picture"
+msgstr "ilman kuvaa"
+
+#: src/admin/Review.js:316
+msgid "Analyze again (AI)"
+msgstr "Analysoi uudelleen (tekoäly)"

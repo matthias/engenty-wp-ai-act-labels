@@ -257,7 +257,7 @@ msgid "Strong file metadata conflicts with the AI assessment. Review before appl
 msgstr "Výrazná metadata souboru jsou v rozporu s posouzením AI. Před použitím to zkontrolujte."
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:315
+#: src/admin/Review.js:320
 msgid "Analyze image (AI)"
 msgstr "Analyzovat obrázek (AI)"
 
@@ -1013,28 +1013,28 @@ msgstr "označení není potřeba"
 msgid "unclear"
 msgstr "nejasné"
 
-#: src/admin/parts.js:234
+#: src/admin/parts.js:255
 msgid "label visible"
 msgstr "označení viditelné"
 
-#: src/admin/parts.js:235
+#: src/admin/parts.js:256
 msgid "without label"
 msgstr "bez označení"
 
-#: src/admin/parts.js:236
+#: src/admin/parts.js:257
 msgid "not on the page"
 msgstr "není na stránce"
 
-#: src/admin/parts.js:237
+#: src/admin/parts.js:258
 msgid "page not reachable"
 msgstr "stránka nedostupná"
 
-#: src/admin/parts.js:244
+#: src/admin/parts.js:265
 msgid "Not found on any page"
 msgstr "Nenalezeno na žádné stránce"
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:275
+#: src/admin/parts.js:296
 #, js-format
 msgid "and %d more"
 msgstr "a dalších %d"
@@ -1119,28 +1119,28 @@ msgstr "Otevřít v knihovně médií"
 msgid "Check on the site"
 msgstr "Zkontrolovat na webu"
 
-#: src/admin/Review.js:412
+#: src/admin/Review.js:417
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr "Některá označení se nepodařilo vrátit. Zkuste to znovu u zbývajících souborů."
 
-#: src/admin/Review.js:571
+#: src/admin/Review.js:576
 msgid "Media"
 msgstr "Média"
 
-#: src/admin/Review.js:572
+#: src/admin/Review.js:577
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr "Rozhodněte u každého souboru: vygenerováno AI, upraveno pomocí AI nebo označení není potřeba. Označení je povinné, když něco vypadá skutečně, ale tak se to nestalo."
 
-#: src/admin/Review.js:582
+#: src/admin/Review.js:587
 msgid "Search"
 msgstr "Hledat"
 
-#: src/admin/Review.js:586
+#: src/admin/Review.js:591
 msgid "Search media"
 msgstr "Hledat média"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:634
+#: src/admin/Review.js:639
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Použít všechny návrhy (%d)"
@@ -1152,30 +1152,30 @@ msgid "Analyzing … %1$d of %2$d"
 msgstr "Analýza … %1$d z %2$d"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:648
+#: src/admin/Review.js:653
 #, js-format
 msgid "%d suggestions applied."
 msgstr "Použité návrhy: %d."
 
-#: src/admin/Review.js:660
+#: src/admin/Review.js:665
 msgid "Undo"
 msgstr "Zpět"
 
-#: src/admin/Review.js:666
+#: src/admin/Review.js:671
 msgid "Loading …"
 msgstr "Načítání …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:705
+#: src/admin/Review.js:710
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Stránka %1$d z %2$d"
 
-#: src/admin/Review.js:723
+#: src/admin/Review.js:728
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr "Také v knihovně médií: filtr „AI“, sloupec a hromadné akce v zobrazení seznamu."
 
-#: src/admin/Review.js:728
+#: src/admin/Review.js:733
 msgid "Open Media Library"
 msgstr "Otevřít knihovnu médií"
 
@@ -1263,7 +1263,7 @@ msgstr "Všechny (%1$d): přibližně %2$s"
 msgid "Measured in the test with %1$d pictures: %2$s"
 msgstr "Změřeno v testu s %1$d obrázky: %2$s"
 
-#: src/admin/Review.js:552
+#: src/admin/Review.js:557
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr "Analyzovat obsah obrázků (AI)"
@@ -1379,3 +1379,17 @@ msgstr "https://engenty.ai/"
 #: ai-act-labels.php
 msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
 msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+
+#. translators: %s: date and time
+#: src/admin/parts.js:228
+#, js-format
+msgid "Analyzed %s"
+msgstr "Analyzováno %s"
+
+#: src/admin/parts.js:234
+msgid "without the picture"
+msgstr "bez obrázku"
+
+#: src/admin/Review.js:316
+msgid "Analyze again (AI)"
+msgstr "Analyzovat znovu (AI)"
