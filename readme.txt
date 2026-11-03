@@ -1,5 +1,5 @@
 === AI Act Image Labels ===
-Contributors: engenty
+Contributors: matthias
 Tags: ai act, ai label, ai generated, media library, eu
 Requires at least: 6.6
 Tested up to: 7.1
