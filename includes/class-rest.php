@@ -61,10 +61,10 @@ class AI_Act_Labels_Rest {
 		return array(
 			'settings'    => AI_Act_Labels::settings(),
 			'defaults'    => array(
-				'generated'       => __( 'AI-generated', 'ai-act-labels' ),
-				'modified'        => __( 'Modified with AI', 'ai-act-labels' ),
-				'noticeGenerated' => __( 'This image was created with AI.', 'ai-act-labels' ),
-				'noticeModified'  => __( 'This image was modified with AI.', 'ai-act-labels' ),
+				'generated'       => __( 'AI-generated', 'ai-act-image-labels' ),
+				'modified'        => __( 'Modified with AI', 'ai-act-image-labels' ),
+				'noticeGenerated' => __( 'This image was created with AI.', 'ai-act-image-labels' ),
+				'noticeModified'  => __( 'This image was modified with AI.', 'ai-act-image-labels' ),
 			),
 			'counts'      => AI_Act_Labels::counts(),
 			'last'        => get_option( AI_Act_Labels_Usage::LAST, null ),
@@ -154,7 +154,7 @@ class AI_Act_Labels_Rest {
 	public static function one( WP_REST_Request $request ) {
 		$id = (int) $request['id'];
 		if ( 'attachment' !== get_post_type( $id ) ) {
-			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-labels' ), array( 'status' => 404 ) );
+			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-image-labels' ), array( 'status' => 404 ) );
 		}
 		return AI_Act_Labels::describe( $id );
 	}
@@ -168,11 +168,11 @@ class AI_Act_Labels_Rest {
 	public static function label( WP_REST_Request $request ) {
 		$ids = array_map( 'intval', (array) ( $request['ids'] ?? array() ) );
 		if ( count( $ids ) > 200 ) {
-			return new WP_Error( 'ai_act_labels_limit', __( 'Decide on at most 200 files per request.', 'ai-act-labels' ), array( 'status' => 400 ) );
+			return new WP_Error( 'ai_act_labels_limit', __( 'Decide on at most 200 files per request.', 'ai-act-image-labels' ), array( 'status' => 400 ) );
 		}
 		$state = (string) ( $request['state'] ?? '' );
 		if ( ! in_array( $state, array_merge( AI_Act_Labels::STATES, array( '' ) ), true ) ) {
-			return new WP_Error( 'ai_act_labels_state', __( 'This label does not exist.', 'ai-act-labels' ), array( 'status' => 400 ) );
+			return new WP_Error( 'ai_act_labels_state', __( 'This label does not exist.', 'ai-act-image-labels' ), array( 'status' => 400 ) );
 		}
 		$extra = array();
 		foreach ( array( 'tool', 'notice' ) as $key ) {
@@ -217,7 +217,7 @@ class AI_Act_Labels_Rest {
 	 */
 	public static function scan( WP_REST_Request $request ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			return new WP_Error( 'ai_act_labels_forbidden', __( 'Only site administrators can run a site-wide check.', 'ai-act-labels' ), array( 'status' => 403 ) );
+			return new WP_Error( 'ai_act_labels_forbidden', __( 'Only site administrators can run a site-wide check.', 'ai-act-image-labels' ), array( 'status' => 403 ) );
 		}
 		$progress = AI_Act_Labels_Usage::step( (bool) $request['restart'], (bool) $request['files'] );
 		if ( 'done' === $progress['phase'] ) {
@@ -241,7 +241,7 @@ class AI_Act_Labels_Rest {
 			return $permission;
 		}
 		if ( ! AI_Act_Labels_Assistant::status()['ready'] ) {
-			return new WP_Error( 'ai_act_labels_no_provider', __( 'For the image analysis, WordPress needs an AI provider (Settings › Connectors).', 'ai-act-labels' ), array( 'status' => 409 ) );
+			return new WP_Error( 'ai_act_labels_no_provider', __( 'For the image analysis, WordPress needs an AI provider (Settings › Connectors).', 'ai-act-image-labels' ), array( 'status' => 409 ) );
 		}
 		$hint = AI_Act_Labels_Assistant::review( $id );
 		if ( is_wp_error( $hint ) ) {
@@ -280,10 +280,10 @@ class AI_Act_Labels_Rest {
 	 */
 	private static function editable_attachment( $id ) {
 		if ( 'attachment' !== get_post_type( $id ) ) {
-			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-labels' ), array( 'status' => 404 ) );
+			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-image-labels' ), array( 'status' => 404 ) );
 		}
 		if ( ! current_user_can( 'edit_post', $id ) ) {
-			return new WP_Error( 'ai_act_labels_forbidden', __( 'You cannot edit this file.', 'ai-act-labels' ), array( 'status' => 403 ) );
+			return new WP_Error( 'ai_act_labels_forbidden', __( 'You cannot edit this file.', 'ai-act-image-labels' ), array( 'status' => 403 ) );
 		}
 		return null;
 	}
@@ -313,7 +313,7 @@ class AI_Act_Labels_Rest {
 	 */
 	public static function run_start( WP_REST_Request $request ) {
 		if ( ! AI_Act_Labels_Assistant::status()['ready'] ) {
-			return new WP_Error( 'ai_act_labels_no_provider', __( 'For the image analysis, WordPress needs an AI provider (Settings › Connectors).', 'ai-act-labels' ), array( 'status' => 409 ) );
+			return new WP_Error( 'ai_act_labels_no_provider', __( 'For the image analysis, WordPress needs an AI provider (Settings › Connectors).', 'ai-act-image-labels' ), array( 'status' => 409 ) );
 		}
 		$day = static fn( $d ) => AI_Act_Labels_Analysis::is_day( $d ) ? (string) $d : '';
 		$job = AI_Act_Labels_Analysis::start( $day( $request['since'] ), $day( $request['until'] ), (int) ( $request['limit'] ?? 10 ), (bool) $request['test'] );

@@ -325,7 +325,7 @@ class AI_Act_Labels_Detect {
 						'strength' => 'weak',
 						'tool'     => $tool,
 						/* translators: %s: tool name */
-						'label'    => sprintf( __( 'XMP names %s', 'ai-act-labels' ), $tool ),
+						'label'    => sprintf( __( 'XMP names %s', 'ai-act-image-labels' ), $tool ),
 					);
 				}
 			}
@@ -343,14 +343,14 @@ class AI_Act_Labels_Detect {
 	private static function source_label( $code, $meaning ) {
 		switch ( $meaning ) {
 			case 'generated':
-				return __( 'IPTC: created with AI', 'ai-act-labels' );
+				return __( 'IPTC: created with AI', 'ai-act-image-labels' );
 			case 'modified':
-				return __( 'IPTC: photo with AI parts', 'ai-act-labels' );
+				return __( 'IPTC: photo with AI parts', 'ai-act-image-labels' );
 			case 'enhanced':
-				return __( 'IPTC: enhanced with AI (minor)', 'ai-act-labels' );
+				return __( 'IPTC: enhanced with AI (minor)', 'ai-act-image-labels' );
 			default:
 				/* translators: %s: IPTC code like digitalCapture */
-				return sprintf( __( 'IPTC: no AI (%s)', 'ai-act-labels' ), $code );
+				return sprintf( __( 'IPTC: no AI (%s)', 'ai-act-image-labels' ), $code );
 		}
 	}
 
@@ -374,7 +374,7 @@ class AI_Act_Labels_Detect {
 					'code'     => $code,
 					'kind'     => $meaning,
 					'strength' => 'strong',
-					'label'    => 'modified' === $meaning ? __( 'Content Credentials (C2PA): modified with AI', 'ai-act-labels' ) : __( 'Content Credentials (C2PA): created with AI', 'ai-act-labels' ),
+					'label'    => 'modified' === $meaning ? __( 'Content Credentials (C2PA): modified with AI', 'ai-act-image-labels' ) : __( 'Content Credentials (C2PA): created with AI', 'ai-act-image-labels' ),
 				);
 				$found   = true;
 				break;
@@ -397,10 +397,10 @@ class AI_Act_Labels_Detect {
 				'kind'     => $capture ? 'human' : ( $tool ? 'generated' : '' ),
 				'strength' => $tool && ! $capture ? 'weak' : '',
 				'tool'     => $tool,
-				'label'    => $capture ? __( 'Content Credentials (C2PA): camera capture', 'ai-act-labels' ) : ( $tool
+				'label'    => $capture ? __( 'Content Credentials (C2PA): camera capture', 'ai-act-image-labels' ) : ( $tool
 					/* translators: %s: tool name */
-					? sprintf( __( 'Content Credentials (C2PA) from %s', 'ai-act-labels' ), $tool )
-					: __( 'Content Credentials (C2PA) present', 'ai-act-labels' ) ),
+					? sprintf( __( 'Content Credentials (C2PA) from %s', 'ai-act-image-labels' ), $tool )
+					: __( 'Content Credentials (C2PA) present', 'ai-act-image-labels' ) ),
 			);
 		}
 		return $items;
@@ -469,16 +469,16 @@ class AI_Act_Labels_Detect {
 			);
 		};
 		if ( isset( $texts['parameters'] ) && preg_match( '/Steps:\s*\d+.*Sampler:/s', $texts['parameters'] ) ) {
-			$items[] = $generated( 'Stable Diffusion', __( 'Stable Diffusion generation data', 'ai-act-labels' ) );
+			$items[] = $generated( 'Stable Diffusion', __( 'Stable Diffusion generation data', 'ai-act-image-labels' ) );
 		}
 		if ( isset( $texts['prompt'] ) && ( isset( $texts['workflow'] ) || str_contains( $texts['prompt'], 'class_type' ) ) ) {
-			$items[] = $generated( 'ComfyUI', __( 'ComfyUI generation data', 'ai-act-labels' ) );
+			$items[] = $generated( 'ComfyUI', __( 'ComfyUI generation data', 'ai-act-image-labels' ) );
 		}
 		if ( isset( $texts['invokeai_metadata'] ) || isset( $texts['sd-metadata'] ) || isset( $texts['Dream'] ) ) {
-			$items[] = $generated( 'InvokeAI', __( 'InvokeAI generation data', 'ai-act-labels' ) );
+			$items[] = $generated( 'InvokeAI', __( 'InvokeAI generation data', 'ai-act-image-labels' ) );
 		}
 		if ( isset( $texts['Software'] ) && str_contains( $texts['Software'], 'NovelAI' ) ) {
-			$items[] = $generated( 'NovelAI', __( 'NovelAI generation data', 'ai-act-labels' ) );
+			$items[] = $generated( 'NovelAI', __( 'NovelAI generation data', 'ai-act-image-labels' ) );
 		}
 		foreach ( array( 'Software', 'Description', 'Comment', 'Author', 'Source' ) as $key ) {
 			if ( isset( $texts[ $key ] ) && ! $items ) {
@@ -490,7 +490,7 @@ class AI_Act_Labels_Detect {
 						'strength' => 'weak',
 						'tool'     => $tool,
 						/* translators: %s: tool name */
-						'label'    => sprintf( __( 'PNG text names %s', 'ai-act-labels' ), $tool ),
+						'label'    => sprintf( __( 'PNG text names %s', 'ai-act-image-labels' ), $tool ),
 					);
 				}
 			}
@@ -520,7 +520,7 @@ class AI_Act_Labels_Detect {
 				'kind'     => 'generated',
 				'strength' => 'strong',
 				'tool'     => 'Stable Diffusion',
-				'label'    => __( 'Stable Diffusion generation data', 'ai-act-labels' ),
+				'label'    => __( 'Stable Diffusion generation data', 'ai-act-image-labels' ),
 			);
 		}
 		foreach ( array( 'Software', 'ImageDescription', 'Artist', 'Make', 'Model' ) as $key ) {
@@ -533,7 +533,7 @@ class AI_Act_Labels_Detect {
 					'strength' => 'weak',
 					'tool'     => $tool,
 					/* translators: %s: tool name */
-					'label'    => sprintf( __( 'EXIF names %s', 'ai-act-labels' ), $tool ),
+					'label'    => sprintf( __( 'EXIF names %s', 'ai-act-image-labels' ), $tool ),
 				);
 			}
 		}
@@ -556,7 +556,7 @@ class AI_Act_Labels_Detect {
 						'strength' => 'weak',
 						'tool'     => $tool,
 						/* translators: %s: tool name */
-						'label'    => sprintf( __( 'Tags name %s', 'ai-act-labels' ), $tool ),
+						'label'    => sprintf( __( 'Tags name %s', 'ai-act-image-labels' ), $tool ),
 					),
 				);
 			}
@@ -580,8 +580,8 @@ class AI_Act_Labels_Detect {
 					'tool'     => $tool,
 					'label'    => $tool
 						/* translators: %s: tool name */
-						? sprintf( __( 'File name as %s gives it', 'ai-act-labels' ), $tool )
-						: __( 'File name points to AI', 'ai-act-labels' ),
+						? sprintf( __( 'File name as %s gives it', 'ai-act-image-labels' ), $tool )
+						: __( 'File name points to AI', 'ai-act-image-labels' ),
 				);
 			}
 		}

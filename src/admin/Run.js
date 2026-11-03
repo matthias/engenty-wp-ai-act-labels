@@ -65,7 +65,7 @@ const duration = ( seconds ) => {
 		const s = Math.max( 1, Math.round( seconds ) );
 		return sprintf(
 			/* translators: %d: seconds */
-			_n( '%d second', '%d seconds', s, 'ai-act-labels' ),
+			_n( '%d second', '%d seconds', s, 'ai-act-image-labels' ),
 			s
 		);
 	}
@@ -73,12 +73,12 @@ const duration = ( seconds ) => {
 	return minutes < 90
 		? sprintf(
 				/* translators: %d: minutes */
-				_n( '%d minute', '%d minutes', minutes, 'ai-act-labels' ),
+				_n( '%d minute', '%d minutes', minutes, 'ai-act-image-labels' ),
 				minutes
 		  )
 		: sprintf(
 				/* translators: %s: hours, e.g. 2.5 */
-				__( '%s hours', 'ai-act-labels' ),
+				__( '%s hours', 'ai-act-image-labels' ),
 				( minutes / 60 ).toLocaleString( lang(), {
 					maximumFractionDigits: 1,
 				} )
@@ -95,7 +95,7 @@ const takes = ( n, per ) =>
 		null === per.cost ? null : money( n * per.cost ),
 		sprintf(
 			/* translators: %s: number of tokens */
-			__( '%s tokens', 'ai-act-labels' ),
+			__( '%s tokens', 'ai-act-image-labels' ),
 			Math.round( n * per.tokens ).toLocaleString( lang() )
 		),
 		duration( n * per.seconds ),
@@ -159,14 +159,14 @@ export function Run( { providers, onCounts, onDone } ) {
 	const head = (
 		<div className="aal-run__head">
 			<strong>
-				{ __( 'Analyze image content (AI)', 'ai-act-labels' ) }
+				{ __( 'Analyze image content (AI)', 'ai-act-image-labels' ) }
 			</strong>
 			<span className="aal-fine">
 				{ sprintf(
 					/* translators: %s: names of the AI providers */
 					__(
 						'The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing.',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					),
 					( providers || [] ).join( ', ' )
 				) }
@@ -204,7 +204,7 @@ export function Run( { providers, onCounts, onDone } ) {
 				<p className="aal-fine">
 					{ __(
 						'Every picture used on your site has a decision or an assessment.',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				</p>
 			</div>
@@ -334,7 +334,7 @@ export function Run( { providers, onCounts, onDone } ) {
 
 	const uploaded = sprintf(
 		/* translators: 1: first day, 2: last day */
-		__( 'Uploaded from %1$s to %2$s', 'ai-act-labels' ),
+		__( 'Uploaded from %1$s to %2$s', 'ai-act-image-labels' ),
 		day( days[ lo ] ),
 		day( days[ hi ] )
 	);
@@ -359,7 +359,7 @@ export function Run( { providers, onCounts, onDone } ) {
 						min={ 0 }
 						max={ total }
 						value={ cum[ lo ] }
-						aria-label={ __( 'From', 'ai-act-labels' ) }
+						aria-label={ __( 'From', 'ai-act-image-labels' ) }
 						aria-valuetext={ day( days[ lo ] ) }
 						disabled={ !! running }
 						onChange={ ( e ) =>
@@ -371,7 +371,7 @@ export function Run( { providers, onCounts, onDone } ) {
 						min={ 0 }
 						max={ total }
 						value={ cum[ hi ] + open[ hi ] + analysed[ hi ] }
-						aria-label={ __( 'To', 'ai-act-labels' ) }
+						aria-label={ __( 'To', 'ai-act-image-labels' ) }
 						aria-valuetext={ day( days[ hi ] ) }
 						disabled={ !! running }
 						onChange={ ( e ) =>
@@ -402,7 +402,7 @@ export function Run( { providers, onCounts, onDone } ) {
 								'%d picture already analyzed',
 								'%d pictures already analyzed',
 								done,
-								'ai-act-labels'
+								'ai-act-image-labels'
 							),
 							done
 						) }
@@ -417,7 +417,7 @@ export function Run( { providers, onCounts, onDone } ) {
 							'%d picture without a decision or an assessment',
 							'%d pictures without a decision or an assessment',
 							count,
-							'ai-act-labels'
+							'ai-act-image-labels'
 						),
 						count
 					) }
@@ -426,7 +426,7 @@ export function Run( { providers, onCounts, onDone } ) {
 					<span>
 						{ sprintf(
 							/* translators: 1: number of pictures, 2: what they would take */
-							__( 'All %1$d: about %2$s', 'ai-act-labels' ),
+							__( 'All %1$d: about %2$s', 'ai-act-image-labels' ),
 							count,
 							takes( count, estimate )
 						) }
@@ -438,7 +438,7 @@ export function Run( { providers, onCounts, onDone } ) {
 								/* translators: 1: number of pictures, 2: what they took */
 								__(
 									'Measured in the test with %1$d pictures: %2$s',
-									'ai-act-labels'
+									'ai-act-image-labels'
 								),
 								test.n,
 								takes( test.n, test )
@@ -450,32 +450,32 @@ export function Run( { providers, onCounts, onDone } ) {
 									'Estimated from %d analysis on this site this month.',
 									'Estimated from %d analyses on this site this month.',
 									earlier.n,
-									'ai-act-labels'
+									'ai-act-image-labels'
 								),
 								earlier.n
 						  )
 						: skipped
 						? __(
 								'No estimate: there was no analysis on this site this month yet.',
-								'ai-act-labels'
+								'ai-act-image-labels'
 						  )
 						: __(
 								'First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them.',
-								'ai-act-labels'
+								'ai-act-image-labels'
 						  ) }
 				</span>
 				{ estimate && null === estimate.cost ? (
 					<span className="aal-fine">
 						{ __(
 							'Your provider does not report costs: its price per token tells what this costs.',
-							'ai-act-labels'
+							'ai-act-image-labels'
 						) }
 					</span>
 				) : null }
 				<span className="aal-fine">
 					{ __(
 						'Image generators for everyone came in 2022 – older uploads rarely need a check.',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				</span>
 			</p>
@@ -487,26 +487,26 @@ export function Run( { providers, onCounts, onDone } ) {
 								/* translators: 1: done, 2: total */
 								__(
 									'Analyzing … %1$d of %2$d',
-									'ai-act-labels'
+									'ai-act-image-labels'
 								),
 								running.done,
 								running.total
 							) }
 						</span>
 						<Button size="sm" busy={ busy } onClick={ halt }>
-							{ __( 'Stop', 'ai-act-labels' ) }
+							{ __( 'Stop', 'ai-act-image-labels' ) }
 						</Button>
 						<span className="aal-fine">
 							{ running.status === 'stalled'
 								? __(
 										'Waiting for WP-Cron: the next step comes with the next visit to the site.',
-										'ai-act-labels'
+										'ai-act-image-labels'
 								  )
 								: sprintf(
 										/* translators: %s: name of the person who started it */
 										__(
 											'Runs on the server, started by %s – you can close this page.',
-											'ai-act-labels'
+											'ai-act-image-labels'
 										),
 										running.by
 								  ) }
@@ -516,7 +516,7 @@ export function Run( { providers, onCounts, onDone } ) {
 					<span className="aal-fine">
 						{ __(
 							'Every picture in this time has a decision or an assessment.',
-							'ai-act-labels'
+							'ai-act-image-labels'
 						) }
 					</span>
 				) : (
@@ -528,14 +528,14 @@ export function Run( { providers, onCounts, onDone } ) {
 							busy={ busy }
 							onClick={ () => start( STEP, true ) }
 						>
-							{ __( 'Test with 10', 'ai-act-labels' ) }
+							{ __( 'Test with 10', 'ai-act-image-labels' ) }
 						</Button>
 						{ ! test && ! skipped ? (
 							<Button
 								size="sm"
 								onClick={ () => setSkipped( true ) }
 							>
-								{ __( 'Skip test', 'ai-act-labels' ) }
+								{ __( 'Skip test', 'ai-act-image-labels' ) }
 							</Button>
 						) : null }
 						{ ( test || skipped ) && count > 0 ? (
@@ -552,7 +552,7 @@ export function Run( { providers, onCounts, onDone } ) {
 										'Analyze %d picture',
 										'Analyze %d pictures',
 										count,
-										'ai-act-labels'
+										'ai-act-image-labels'
 									),
 									count
 								) }
@@ -567,7 +567,7 @@ export function Run( { providers, onCounts, onDone } ) {
 						/* translators: %s: the provider's error */
 						__(
 							'The analysis stopped after three failures in a row: %s',
-							'ai-act-labels'
+							'ai-act-image-labels'
 						),
 						job.error
 					) }

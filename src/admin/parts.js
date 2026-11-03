@@ -215,7 +215,7 @@ export function HintLine( { hint, conflict } ) {
 					<em>
 						{ __(
 							'Strong file metadata conflicts with the AI assessment. Review before applying.',
-							'ai-act-labels'
+							'ai-act-image-labels'
 						) }
 					</em>
 				) : null }

@@ -67,7 +67,7 @@ class AI_Act_Labels_Analysis {
 	public static function start( $since, $until, $limit, $test ) {
 		$job = self::state();
 		if ( self::running( $job ) ) {
-			return new WP_Error( 'ai_act_labels_running', __( 'An analysis is already running.', 'ai-act-labels' ), array( 'status' => 409 ) );
+			return new WP_Error( 'ai_act_labels_running', __( 'An analysis is already running.', 'ai-act-image-labels' ), array( 'status' => 409 ) );
 		}
 		$job = array(
 			'status'   => 'running',

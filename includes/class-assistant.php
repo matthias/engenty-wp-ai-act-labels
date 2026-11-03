@@ -138,7 +138,7 @@ class AI_Act_Labels_Assistant {
 	 */
 	public static function generate( $system, $prompt, array $schema, $file = '', $mime = '' ) {
 		if ( ! function_exists( 'wp_ai_client_prompt' ) ) {
-			return new WP_Error( 'ai_act_labels_no_ai', __( 'Image analysis (AI) needs WordPress 7.0 or newer.', 'ai-act-labels' ) );
+			return new WP_Error( 'ai_act_labels_no_ai', __( 'Image analysis (AI) needs WordPress 7.0 or newer.', 'ai-act-image-labels' ) );
 		}
 		$start = microtime( true );
 		try {
@@ -184,7 +184,7 @@ class AI_Act_Labels_Assistant {
 			return new WP_Error( 'ai_act_labels_ai', $e->getMessage() );
 		}
 		$data = self::decode( $text );
-		return null === $data ? new WP_Error( 'ai_act_labels_ai_json', __( 'The answer was not JSON. Try again.', 'ai-act-labels' ) ) : $data;
+		return null === $data ? new WP_Error( 'ai_act_labels_ai_json', __( 'The answer was not JSON. Try again.', 'ai-act-image-labels' ) ) : $data;
 	}
 
 	/**
@@ -312,7 +312,7 @@ class AI_Act_Labels_Assistant {
 	public static function review( $id ) {
 		$id = (int) $id;
 		if ( 'attachment' !== get_post_type( $id ) ) {
-			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-labels' ) );
+			return new WP_Error( 'ai_act_labels_missing', __( 'This file does not exist.', 'ai-act-image-labels' ) );
 		}
 		$langs  = self::languages();
 		$system = implode(

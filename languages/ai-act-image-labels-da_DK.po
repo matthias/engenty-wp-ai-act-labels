@@ -19,11 +19,6 @@ msgstr ""
 msgid "AI Act Image Labels"
 msgstr "AI Act Image Labels"
 
-#. Plugin URI of the plugin
-#: ai-act-labels.php
-msgid "https://engenty.ai/ai-act-labels"
-msgstr "https://engenty.ai/ai-act-labels"
-
 #. Description of the plugin
 #: ai-act-labels.php
 msgid "Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label."
@@ -50,7 +45,7 @@ msgstr "AI-mærkning (AI-forordningen)"
 #: includes/class-media.php:125
 #: includes/class-media.php:523
 #: src/admin/index.js:54
-#: src/admin/parts.js:126
+#: src/admin/parts.js:130
 msgid "AI labels"
 msgstr "AI-mærkninger"
 
@@ -172,8 +167,8 @@ msgstr "Filnavnet peger på AI"
 #: includes/class-media.php:67
 #: includes/class-media.php:343
 #: includes/class-rest.php:65
-#: src/admin/Knowledge.js:288
-#: src/admin/Look.js:462
+#: src/admin/Knowledge.js:297
+#: src/admin/Look.js:479
 #: src/admin/parts.js:8
 msgid "Modified with AI"
 msgstr "Ændret med AI"
@@ -182,16 +177,16 @@ msgstr "Ændret med AI"
 #: includes/class-media.php:66
 #: includes/class-media.php:342
 #: includes/class-rest.php:64
-#: src/admin/Knowledge.js:292
-#: src/admin/Look.js:112
-#: src/admin/Look.js:453
+#: src/admin/Knowledge.js:301
+#: src/admin/Look.js:114
+#: src/admin/Look.js:467
 #: src/admin/parts.js:7
 msgid "AI-generated"
 msgstr "AI-genereret"
 
 #: includes/class-labels.php:284
 #: includes/class-rest.php:66
-#: src/admin/Look.js:151
+#: src/admin/Look.js:156
 msgid "This image was created with AI."
 msgstr "Dette billede er skabt med AI."
 
@@ -209,7 +204,7 @@ msgstr "Dette indhold er skabt med AI."
 
 #: includes/class-labels.php:290
 #: includes/class-rest.php:67
-#: src/admin/Look.js:146
+#: src/admin/Look.js:151
 msgid "This image was modified with AI."
 msgstr "Dette billede er ændret med AI."
 
@@ -243,7 +238,7 @@ msgid "No label needed"
 msgstr "Ingen mærkning nødvendig"
 
 #: includes/class-media.php:136
-#: src/admin/parts.js:142
+#: src/admin/parts.js:146
 msgid "Suggestion"
 msgstr "Forslag"
 
@@ -252,17 +247,17 @@ msgid "In the file:"
 msgstr "I filen:"
 
 #: includes/class-media.php:147
-#: src/media/index.js:142
+#: src/media/index.js:143
 msgid "Image analysis (AI):"
 msgstr "Billedanalyse (AI):"
 
 #: includes/class-media.php:150
-#: src/admin/parts.js:212
+#: src/admin/parts.js:216
 msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
 msgstr "Tydelige filmetadata modsiger AI-vurderingen. Gennemgå, før du anvender den."
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:300
+#: src/admin/Review.js:315
 msgid "Analyze image (AI)"
 msgstr "Analysér billede (AI)"
 
@@ -313,7 +308,7 @@ msgstr "Mærket"
 
 #: includes/class-media.php:344
 #: src/admin/Review.js:20
-#: src/admin/Review.js:134
+#: src/admin/Review.js:140
 msgid "Suggestions"
 msgstr "Forslag"
 
@@ -414,16 +409,16 @@ msgid "Site logo"
 msgstr "Webstedslogo"
 
 #: includes/class-usage.php:493
-#: src/admin/parts.js:38
+#: src/admin/parts.js:42
 msgid "Site icon"
 msgstr "Webstedsikon"
 
 #: includes/class-usage.php:495
-#: src/admin/parts.js:39
+#: src/admin/parts.js:43
 msgid "Header image"
 msgstr "Headerbillede"
 
-#: src/admin/api.js:27
+#: src/admin/api.js:28
 msgid "That did not work."
 msgstr "Det virkede ikke."
 
@@ -456,7 +451,7 @@ msgid "Update WordPress"
 msgstr "Opdater WordPress"
 
 #: src/admin/Assistant.js:49
-#: src/admin/Assistant.js:127
+#: src/admin/Assistant.js:130
 msgid "Set up an AI provider first"
 msgstr "Opsæt først en AI-udbyder"
 
@@ -465,7 +460,7 @@ msgid "The image analysis uses the provider you set up in WordPress under Settin
 msgstr "Billedanalysen bruger den udbyder, du sætter op i WordPress under Indstillinger › Connectors – din API-nøgle bliver der. Mærkning, tjekket og sporene i filer virker uden."
 
 #: src/admin/Assistant.js:85
-#: src/media/index.js:153
+#: src/media/index.js:154
 msgid "Open Connectors"
 msgstr "Åbn Connectors"
 
@@ -473,11 +468,11 @@ msgstr "Åbn Connectors"
 msgid "Install Vercel AI Gateway"
 msgstr "Installer Vercel AI Gateway"
 
-#: src/admin/Assistant.js:95
+#: src/admin/Assistant.js:98
 msgid "No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card."
 msgstr "Ingen aftale med en udbyder? Vercel AI Gateway giver 5 $ om måneden gratis, uden kreditkort."
 
-#: src/admin/Assistant.js:136
+#: src/admin/Assistant.js:139
 msgid "Close"
 msgstr "Luk"
 
@@ -525,197 +520,197 @@ msgstr "AI-produktbillede, der ser ud som et ægte foto af produktet"
 msgid "AI image of a real building, place or event"
 msgstr "AI-billede af en virkelig bygning, et sted eller en begivenhed"
 
-#: src/admin/Knowledge.js:38
+#: src/admin/Knowledge.js:41
 msgid "Recognizable illustration, comic, 3D graphic, abstract background"
 msgstr "Genkendelig illustration, tegneserie, 3D-grafik, abstrakt baggrund"
 
-#: src/admin/Knowledge.js:46
+#: src/admin/Knowledge.js:49
 msgid "Real photo, only color, light, noise or crop with an AI tool"
 msgstr "Ægte foto, kun farve, lys, støj eller beskæring med et AI-værktøj"
 
-#: src/admin/Knowledge.js:54
+#: src/admin/Knowledge.js:57
 msgid "Camera or stock photo without AI"
 msgstr "Kamera- eller stockfoto uden AI"
 
-#: src/admin/Knowledge.js:61
+#: src/admin/Knowledge.js:64
 msgid "required"
 msgstr "påkrævet"
 
-#: src/admin/Knowledge.js:62
+#: src/admin/Knowledge.js:65
 msgid "voluntary"
 msgstr "frivillig"
 
-#: src/admin/Knowledge.js:63
+#: src/admin/Knowledge.js:66
 msgid "no label"
 msgstr "ingen mærkning"
 
-#: src/admin/Knowledge.js:68
+#: src/admin/Knowledge.js:71
 msgid "Questions and answers on Article 50 (European Commission)"
 msgstr "Spørgsmål og svar om artikel 50 (Europa-Kommissionen)"
 
-#: src/admin/Knowledge.js:75
+#: src/admin/Knowledge.js:78
 msgid "Code of Practice on labeling AI-generated content"
 msgstr "Praksiskodeks for mærkning af AI-genereret indhold"
 
-#: src/admin/Knowledge.js:82
+#: src/admin/Knowledge.js:85
 msgid "The EU icons to download"
 msgstr "EU-ikonerne til download"
 
-#: src/admin/Knowledge.js:86
+#: src/admin/Knowledge.js:89
 msgid "AI Act in the Official Journal (Regulation (EU) 2024/1689)"
 msgstr "AI-forordningen i EU-Tidende (forordning (EU) 2024/1689)"
 
-#: src/admin/Knowledge.js:93
+#: src/admin/Knowledge.js:96
 msgid "AI Act Service Desk"
 msgstr "AI Act Service Desk"
 
-#: src/admin/Knowledge.js:109
+#: src/admin/Knowledge.js:112
 msgid "AI Act, Article 50"
 msgstr "AI-forordningen, artikel 50"
 
-#: src/admin/Knowledge.js:112
+#: src/admin/Knowledge.js:115
 msgid "Since 2 August 2026, what AI made has to be visible."
 msgstr "Siden 2. august 2026 skal det være synligt, hvad AI har lavet."
 
-#: src/admin/Knowledge.js:118
+#: src/admin/Knowledge.js:121
 msgid "A business that publishes images, videos or recordings that look real but were created or modified with AI has to label them – visibly, at the latest at first sight. The duty is yours as the site owner, not the AI tool maker's."
 msgstr "En virksomhed, der udgiver billeder, videoer eller optagelser, som ser ægte ud, men er skabt eller ændret med AI, skal mærke dem – synligt, senest ved første øjekast. Pligten er din som ejer af webstedet, ikke AI-værktøjets producents."
 
-#: src/admin/Knowledge.js:136
+#: src/admin/Knowledge.js:140
 msgid "You have to label"
 msgstr "Du skal mærke"
 
-#: src/admin/Knowledge.js:139
+#: src/admin/Knowledge.js:144
 msgid "Deepfakes: AI images, videos, audio that show real or plausible people, things, places or events and look real – also an invented but photorealistic person."
 msgstr "Deepfakes: AI-billeder, -videoer og -lyd, der viser virkelige eller plausible personer, ting, steder eller begivenheder og ser ægte ud – også en opdigtet, men fotorealistisk person."
 
-#: src/admin/Knowledge.js:145
+#: src/admin/Knowledge.js:150
 msgid "AI texts that inform the public on matters of public interest – unless a person reviewed them and takes responsibility."
 msgstr "AI-tekster, der informerer offentligheden om emner af offentlig interesse – medmindre en person har gennemgået dem og tager ansvaret."
 
-#: src/admin/Knowledge.js:151
+#: src/admin/Knowledge.js:156
 msgid "Whether you meant to deceive does not matter. What your audience believes counts."
 msgstr "Om du ville bedrage, er uden betydning. Det, dit publikum tror, tæller."
 
-#: src/admin/Knowledge.js:162
+#: src/admin/Knowledge.js:168
 msgid "No label needed for"
 msgstr "Ingen mærkning nødvendig for"
 
-#: src/admin/Knowledge.js:165
+#: src/admin/Knowledge.js:172
 msgid "Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI tools."
 msgstr "Almindelig redigering: beskæring, lys, farve, støj, støv, opskalering – også med AI-værktøjer."
 
-#: src/admin/Knowledge.js:171
+#: src/admin/Knowledge.js:178
 msgid "Obviously artificial images (illustration, comic, abstract): voluntary, but good for trust."
 msgstr "Tydeligt kunstige billeder (illustration, tegneserie, abstrakt): frivilligt, men godt for tilliden."
 
-#: src/admin/Knowledge.js:177
+#: src/admin/Knowledge.js:184
 msgid "Content created before 2 August 2026 – nothing applies retroactively."
 msgstr "Indhold skabt før 2. august 2026 – intet gælder med tilbagevirkende kraft."
 
-#: src/admin/Knowledge.js:183
+#: src/admin/Knowledge.js:190
 msgid "Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the caption)."
 msgstr "Kunst, satire, fiktion: ja, men så værket ikke lider under det (f.eks. i billedteksten)."
 
-#: src/admin/Knowledge.js:194
+#: src/admin/Knowledge.js:202
 msgid "Where the label goes"
 msgstr "Hvor mærkningen skal sidde"
 
-#: src/admin/Knowledge.js:197
+#: src/admin/Knowledge.js:206
 msgid "On or right at the content, visible without a click – not only in the imprint."
 msgstr "På eller lige ved indholdet, synligt uden klik – ikke kun i kolofonen."
 
-#: src/admin/Knowledge.js:203
+#: src/admin/Knowledge.js:212
 msgid "Plain words: “AI-generated”, “Modified with AI”. For screen readers as the icon's name, never instead of the alt text."
 msgstr "Klare ord: „AI-genereret“, „Ændret med AI“. For skærmlæsere som ikonets navn, aldrig i stedet for alt-teksten."
 
-#: src/admin/Knowledge.js:209
+#: src/admin/Knowledge.js:218
 msgid "Videos: in a corner the whole time. Audio: at the player and in the artwork."
 msgstr "Videoer: i et hjørne hele tiden. Lyd: ved afspilleren og i coveret."
 
-#: src/admin/Knowledge.js:215
+#: src/admin/Knowledge.js:224
 msgid "The AI tool's watermark or metadata does not count for you."
 msgstr "AI-værktøjets vandmærke eller metadata tæller ikke for dig."
 
-#: src/admin/Knowledge.js:225
+#: src/admin/Knowledge.js:234
 msgid "The EU's icons"
 msgstr "EU's ikoner"
 
-#: src/admin/Knowledge.js:226
+#: src/admin/Knowledge.js:235
 msgid "From the Commission since June 2026, free to use, no attribution. Optional – an equivalent label is allowed too."
 msgstr "Fra Kommissionen siden juni 2026, frie at bruge, ingen kildeangivelse. Valgfrit – en tilsvarende mærkning er også tilladt."
 
-#: src/admin/Knowledge.js:234
+#: src/admin/Knowledge.js:243
 msgid "AI GENERATED"
 msgstr "AI-GENERERET"
 
-#: src/admin/Knowledge.js:236
+#: src/admin/Knowledge.js:245
 msgid "Fully created with AI, no human-made parts."
 msgstr "Helt skabt med AI, ingen menneskeskabte dele."
 
-#: src/admin/Knowledge.js:244
+#: src/admin/Knowledge.js:253
 msgid "AI MODIFIED"
 msgstr "AI-ÆNDRET"
 
-#: src/admin/Knowledge.js:246
+#: src/admin/Knowledge.js:255
 msgid "Real photo, video or recording, partly modified with AI."
 msgstr "Ægte foto, video eller optagelse, delvist ændret med AI."
 
-#: src/admin/Knowledge.js:255
+#: src/admin/Knowledge.js:264
 msgctxt "name of the EU basic icon"
 msgid "AI"
 msgstr "AI"
 
-#: src/admin/Knowledge.js:262
+#: src/admin/Knowledge.js:271
 msgid "The basic icon: with your own text, with a second layer or where space is short."
 msgstr "Basisikonet: med din egen tekst, med et andet lag eller hvor pladsen er trang."
 
-#: src/admin/Knowledge.js:271
+#: src/admin/Knowledge.js:280
 msgid "Typical cases"
 msgstr "Typiske tilfælde"
 
-#: src/admin/Knowledge.js:275
+#: src/admin/Knowledge.js:284
 msgid "File"
 msgstr "Fil"
 
-#: src/admin/Knowledge.js:276
-#: src/admin/Look.js:107
+#: src/admin/Knowledge.js:285
+#: src/admin/Look.js:109
 msgid "Kind"
 msgstr "Type"
 
-#: src/admin/Knowledge.js:277
+#: src/admin/Knowledge.js:286
 msgid "Label"
 msgstr "Mærkning"
 
-#: src/admin/Knowledge.js:312
+#: src/admin/Knowledge.js:321
 msgid "How the plugin recognizes AI"
 msgstr "Sådan genkender pluginnet AI"
 
-#: src/admin/Knowledge.js:319
+#: src/admin/Knowledge.js:328
 msgid "Many AI tools write into the file that it was made with AI: Content Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and ComfyUI. The plugin reads them on upload and with every check – on your server, nothing leaves it."
 msgstr "Mange AI-værktøjer skriver ind i filen, at den er lavet med AI: Content Credentials (C2PA) fra ChatGPT, Gemini, Firefly eller Photoshop, IPTC-værdien „trainedAlgorithmicMedia“, genereringsdata fra Stable Diffusion og ComfyUI. Pluginnet læser dem ved upload og ved hvert tjek – på din server, intet forlader den."
 
-#: src/admin/Knowledge.js:325
+#: src/admin/Knowledge.js:334
 msgid "A missing trace means nothing: screenshots, exports and image optimizers remove them. That is why “Used, not decided” shows everything visible on your site that has no decision yet. Only you know for sure how an image was made."
 msgstr "Et manglende spor betyder intet: skærmbilleder, eksporter og billedoptimering fjerner dem. Derfor viser „Brugt, ikke afgjort“ alt, der er synligt på dit websted og endnu ikke er afgjort. Kun du ved med sikkerhed, hvordan et billede er lavet."
 
-#: src/admin/Knowledge.js:333
+#: src/admin/Knowledge.js:342
 msgid "This knowledge as a skill"
 msgstr "Denne viden som skill"
 
-#: src/admin/Knowledge.js:337
+#: src/admin/Knowledge.js:349
 msgid "The image analysis thinks with a skill: a guide to the AI Act with sources, in the plugin under skills/eu-ai-act-labels. You can give the same files to any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
 msgstr "Billedanalysen tænker med en skill: en guide til AI-forordningen med kilder, i pluginnet under skills/eu-ai-act-labels. De samme filer kan du give til enhver AI-agent, der læser Agent Skills – Claude, Cursor, Codex og andre."
 
-#: src/admin/Knowledge.js:349
+#: src/admin/Knowledge.js:361
 msgid "View SKILL.md"
 msgstr "Vis SKILL.md"
 
-#: src/admin/Knowledge.js:357
+#: src/admin/Knowledge.js:369
 msgid "Sources"
 msgstr "Kilder"
 
-#: src/admin/Knowledge.js:358
+#: src/admin/Knowledge.js:370
 msgid "As of 9 October 2026. This is help, not legal advice."
 msgstr "Pr. 9. oktober 2026. Dette er hjælp, ikke juridisk rådgivning."
 
@@ -748,13 +743,13 @@ msgid "Light"
 msgstr "Lys"
 
 #: src/admin/Look.js:32
-#: src/admin/parts.js:27
+#: src/admin/parts.js:31
 msgid "Image"
 msgstr "Billede"
 
 #: src/admin/Look.js:33
-#: src/admin/Look.js:336
-#: src/admin/Look.js:339
+#: src/admin/Look.js:344
+#: src/admin/Look.js:347
 msgid "Color"
 msgstr "Farve"
 
@@ -774,173 +769,173 @@ msgstr "Nederst til venstre"
 msgid "Bottom right"
 msgstr "Nederst til højre"
 
-#: src/admin/Look.js:104
+#: src/admin/Look.js:105
 msgid "How it looks on the site"
 msgstr "Sådan ser det ud på webstedet"
 
-#: src/admin/Look.js:116
+#: src/admin/Look.js:118
 msgid "Modified"
 msgstr "Ændret"
 
-#: src/admin/Look.js:141
+#: src/admin/Look.js:143
 msgid "Our workshop in autumn"
 msgstr "Vores værksted om efteråret"
 
-#: src/admin/Look.js:175
+#: src/admin/Look.js:180
 msgid "On small images (under 400 px) the plugin uses the round icon instead of the wide one."
 msgstr "På små billeder (under 400 px) bruger pluginnet det runde ikon i stedet for det brede."
 
-#: src/admin/Look.js:183
+#: src/admin/Look.js:188
 msgid "Hover over the icon: the second layer shows the notice. Screen readers read it as the icon's name – the image's alt text stays as it is."
 msgstr "Hold musen over ikonet: det andet lag viser teksten. Skærmlæsere læser den som ikonets navn – billedets alt-tekst forbliver, som den er."
 
-#: src/admin/Look.js:223
+#: src/admin/Look.js:228
 msgid "Choose your own icon"
 msgstr "Vælg dit eget ikon"
 
-#: src/admin/Look.js:261
+#: src/admin/Look.js:266
 msgid "Administrators change the appearance. You can still label."
 msgstr "Administratorer ændrer udseendet. Du kan stadig mærke."
 
-#: src/admin/Look.js:269
+#: src/admin/Look.js:274
 msgid "Icon"
 msgstr "Ikon"
 
-#: src/admin/Look.js:270
+#: src/admin/Look.js:275
 msgid "The default is the European Commission's icons – free to use, no attribution."
 msgstr "Standarden er Europa-Kommissionens ikoner – frie at bruge, ingen kildeangivelse."
 
-#: src/admin/Look.js:322
+#: src/admin/Look.js:327
 msgid "Choose another icon"
 msgstr "Vælg et andet ikon"
 
-#: src/admin/Look.js:327
+#: src/admin/Look.js:335
 msgid "Your own mark is allowed if it is as clear as the EU icon. The EU icon is the safer choice."
 msgstr "Dit eget mærke er tilladt, hvis det er lige så tydeligt som EU-ikonet. EU-ikonet er det sikrere valg."
 
-#: src/admin/Look.js:367
+#: src/admin/Look.js:375
 msgid "Pick a color"
 msgstr "Vælg en farve"
 
-#: src/admin/Look.js:373
-#: src/admin/Look.js:381
+#: src/admin/Look.js:384
+#: src/admin/Look.js:392
 msgid "Transparency"
 msgstr "Gennemsigtighed"
 
-#: src/admin/Look.js:374
+#: src/admin/Look.js:385
 msgid "Of the shape; the letters stay solid."
 msgstr "For formen; bogstaverne forbliver fuldt dækkende."
 
 #. translators: %d: a percentage.
-#: src/admin/Look.js:387
+#: src/admin/Look.js:401
 #, js-format
 msgid "%d%%"
 msgstr "%d %%"
 
-#: src/admin/Look.js:393
-#: src/admin/Look.js:396
+#: src/admin/Look.js:407
+#: src/admin/Look.js:410
 msgid "Size"
 msgstr "Størrelse"
 
-#: src/admin/Look.js:406
-#: src/admin/Look.js:415
+#: src/admin/Look.js:420
+#: src/admin/Look.js:429
 msgid "Corner"
 msgstr "Hjørne"
 
-#: src/admin/Look.js:407
+#: src/admin/Look.js:421
 msgid "Videos: always at the top, away from the controls."
 msgstr "Videoer: altid øverst, væk fra kontrollerne."
 
-#: src/admin/Look.js:445
+#: src/admin/Look.js:459
 msgid "Words"
 msgstr "Ord"
 
-#: src/admin/Look.js:446
+#: src/admin/Look.js:460
 msgid "Leave empty: the default in the site's language."
 msgstr "Lad stå tomt: standarden på webstedets sprog."
 
-#: src/admin/Look.js:471
+#: src/admin/Look.js:491
 msgid "Notice for AI-generated"
 msgstr "Tekst for AI-genereret"
 
-#: src/admin/Look.js:483
+#: src/admin/Look.js:503
 msgid "Notice for modified"
 msgstr "Tekst for ændret"
 
-#: src/admin/Look.js:498
+#: src/admin/Look.js:518
 msgid "Where the label appears"
 msgstr "Hvor mærkningen vises"
 
-#: src/admin/Look.js:504
+#: src/admin/Look.js:527
 msgid "Images in pages and posts"
 msgstr "Billeder i sider og indlæg"
 
-#: src/admin/Look.js:508
+#: src/admin/Look.js:531
 msgid "Blocks, galleries, covers, classic editor, HTML"
 msgstr "Blokke, gallerier, covers, klassisk editor, HTML"
 
-#: src/admin/Look.js:515
+#: src/admin/Look.js:538
 msgid "Featured images and the theme's images"
 msgstr "Udvalgte billeder og temaets billeder"
 
-#: src/admin/Look.js:519
+#: src/admin/Look.js:542
 msgid "everything that comes through wp_get_attachment_image()"
 msgstr "alt, der kommer gennem wp_get_attachment_image()"
 
-#: src/admin/Look.js:526
+#: src/admin/Look.js:549
 msgid "Videos"
 msgstr "Videoer"
 
-#: src/admin/Look.js:527
+#: src/admin/Look.js:550
 msgid "Video block, cover with video, [video]"
 msgstr "Videoblok, cover med video, [video]"
 
-#: src/admin/Look.js:534
-#: src/admin/parts.js:32
+#: src/admin/Look.js:557
+#: src/admin/parts.js:36
 msgid "Audio"
 msgstr "Lyd"
 
-#: src/admin/Look.js:535
+#: src/admin/Look.js:558
 msgid "a line above the player"
 msgstr "en linje over afspilleren"
 
-#: src/admin/Look.js:553
-#: src/admin/Look.js:564
+#: src/admin/Look.js:576
+#: src/admin/Look.js:587
 msgid "Notice in captions"
 msgstr "Tekst i billedtekster"
 
-#: src/admin/Look.js:557
+#: src/admin/Look.js:580
 msgid "Only where there is one already – never in the alt text."
 msgstr "Kun hvor der allerede er en – aldrig i alt-teksten."
 
-#: src/admin/Look.js:573
-#: src/admin/Look.js:584
+#: src/admin/Look.js:596
+#: src/admin/Look.js:607
 msgid "Second layer on hover"
 msgstr "Andet lag ved mouseover"
 
-#: src/admin/Look.js:577
+#: src/admin/Look.js:600
 msgid "The whole notice, with the tool."
 msgstr "Hele teksten, med værktøjet."
 
-#: src/admin/Look.js:595
+#: src/admin/Look.js:618
 msgid "On upload"
 msgstr "Ved upload"
 
-#: src/admin/Look.js:598
-#: src/admin/Look.js:609
+#: src/admin/Look.js:621
+#: src/admin/Look.js:632
 msgid "Check files for traces of AI"
 msgstr "Tjek filer for spor af AI"
 
-#: src/admin/Look.js:602
+#: src/admin/Look.js:625
 msgid "C2PA, IPTC, generation data, file names – on your server."
 msgstr "C2PA, IPTC, genereringsdata, filnavne – på din server."
 
-#: src/admin/Look.js:618
-#: src/admin/Look.js:629
+#: src/admin/Look.js:641
+#: src/admin/Look.js:652
 msgid "Apply unambiguous traces right away"
 msgstr "Anvend entydige spor med det samme"
 
-#: src/admin/Look.js:622
+#: src/admin/Look.js:645
 msgid "If the file itself says it was made with AI, it is labeled right away."
 msgstr "Hvis filen selv siger, at den er lavet med AI, mærkes den med det samme."
 
@@ -954,89 +949,89 @@ msgctxt "decision beside the AI icon"
 msgid "modified"
 msgstr "ændret"
 
-#: src/admin/parts.js:21
+#: src/admin/parts.js:25
 msgctxt "decision"
 msgid "No label"
 msgstr "Ingen mærkning"
 
-#: src/admin/parts.js:26
+#: src/admin/parts.js:30
 msgid "Featured image"
 msgstr "Udvalgt billede"
 
-#: src/admin/parts.js:28
+#: src/admin/parts.js:32
 msgid "Gallery"
 msgstr "Galleri"
 
-#: src/admin/parts.js:29
+#: src/admin/parts.js:33
 msgid "Cover"
 msgstr "Cover"
 
-#: src/admin/parts.js:30
+#: src/admin/parts.js:34
 msgid "Media & Text"
 msgstr "Medie og tekst"
 
-#: src/admin/parts.js:31
+#: src/admin/parts.js:35
 msgid "Video"
 msgstr "Video"
 
-#: src/admin/parts.js:33
+#: src/admin/parts.js:37
 msgid "only as a URL"
 msgstr "kun som URL"
 
-#: src/admin/parts.js:34
+#: src/admin/parts.js:38
 msgid "Page builder"
 msgstr "Page builder"
 
-#: src/admin/parts.js:35
+#: src/admin/parts.js:39
 msgid "ACF field"
 msgstr "ACF-felt"
 
-#: src/admin/parts.js:36
+#: src/admin/parts.js:40
 msgid "Product gallery"
 msgstr "Produktgalleri"
 
-#: src/admin/parts.js:37
+#: src/admin/parts.js:41
 msgid "Logo"
 msgstr "Logo"
 
-#: src/admin/parts.js:191
+#: src/admin/parts.js:195
 msgid "Label required"
 msgstr "Mærkning påkrævet"
 
-#: src/admin/parts.js:192
+#: src/admin/parts.js:196
 msgid "Label voluntary"
 msgstr "Mærkning frivillig"
 
-#: src/admin/parts.js:193
+#: src/admin/parts.js:197
 msgid "no label needed"
 msgstr "ingen mærkning nødvendig"
 
-#: src/admin/parts.js:194
+#: src/admin/parts.js:198
 msgid "unclear"
 msgstr "uklart"
 
-#: src/admin/parts.js:230
+#: src/admin/parts.js:234
 msgid "label visible"
 msgstr "mærkning synlig"
 
-#: src/admin/parts.js:231
+#: src/admin/parts.js:235
 msgid "without label"
 msgstr "uden mærkning"
 
-#: src/admin/parts.js:232
+#: src/admin/parts.js:236
 msgid "not on the page"
 msgstr "ikke på siden"
 
-#: src/admin/parts.js:233
+#: src/admin/parts.js:237
 msgid "page not reachable"
 msgstr "siden kan ikke nås"
 
-#: src/admin/parts.js:240
+#: src/admin/parts.js:244
 msgid "Not found on any page"
 msgstr "Ikke fundet på nogen side"
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:271
+#: src/admin/parts.js:275
 #, js-format
 msgid "and %d more"
 msgstr "og %d mere"
@@ -1061,88 +1056,88 @@ msgstr "Ingen fil mærket endnu."
 msgid "No file decided as needing no label yet."
 msgstr "Ingen fil afgjort som uden behov for mærkning endnu."
 
-#: src/admin/Review.js:39
+#: src/admin/Review.js:42
 msgid "No images, videos or recordings."
 msgstr "Ingen billeder, videoer eller optagelser."
 
-#: src/admin/Review.js:114
+#: src/admin/Review.js:117
 msgid "Reading your pages and posts …"
 msgstr "Læser dine sider og indlæg …"
 
-#: src/admin/Review.js:115
+#: src/admin/Review.js:121
 msgid "Reading the traces in your files …"
 msgstr "Læser sporene i dine filer …"
 
-#: src/admin/Review.js:119
+#: src/admin/Review.js:125
 msgid "Done."
 msgstr "Færdig."
 
-#: src/admin/Review.js:148
+#: src/admin/Review.js:157
 msgid "labeled"
 msgstr "mærket"
 
 #. translators: 1: generated count, 2: modified count
-#: src/admin/Review.js:151
+#: src/admin/Review.js:160
 #, js-format
 msgid "%1$d AI-generated · %2$d modified"
 msgstr "%1$d AI-genererede · %2$d ændrede"
 
-#: src/admin/Review.js:135
+#: src/admin/Review.js:141
 msgid "traces of AI, no decision"
 msgstr "spor af AI, ikke afgjort"
 
-#: src/admin/Review.js:141
+#: src/admin/Review.js:150
 msgid "used, not decided"
 msgstr "brugt, ikke afgjort"
 
-#: src/admin/Review.js:142
+#: src/admin/Review.js:151
 msgid "visible on your site"
 msgstr "synlige på dit websted"
 
 #. translators: 1: date, 2: pages, 3: files in use
-#: src/admin/Review.js:197
+#: src/admin/Review.js:206
 #, js-format
 msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
 msgstr "Sidst tjekket %1$s: %2$d sider og indlæg, %3$d filer i brug."
 
-#: src/admin/Review.js:205
+#: src/admin/Review.js:214
 msgid "Not checked yet: where your media is used and which traces of AI it carries."
 msgstr "Ikke tjekket endnu: hvor dine medier bruges, og hvilke spor af AI de har."
 
-#: src/admin/Review.js:220
+#: src/admin/Review.js:229
 msgid "Check site"
 msgstr "Tjek webstedet"
 
-#: src/admin/Review.js:260
+#: src/admin/Review.js:272
 msgid "Open in the Media Library"
 msgstr "Åbn i mediebiblioteket"
 
-#: src/admin/Review.js:290
+#: src/admin/Review.js:302
 msgid "Check on the site"
 msgstr "Tjek på webstedet"
 
-#: src/admin/Review.js:394
+#: src/admin/Review.js:412
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr "Nogle mærkninger kunne ikke fortrydes. Prøv igen med de resterende filer."
 
-#: src/admin/Review.js:550
+#: src/admin/Review.js:571
 msgid "Media"
 msgstr "Medier"
 
-#: src/admin/Review.js:551
+#: src/admin/Review.js:572
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr "Afgør pr. fil: AI-genereret, ændret med AI eller ingen mærkning nødvendig. Mærkningen er påkrævet, når noget ser ægte ud, som ikke skete sådan."
 
-#: src/admin/Review.js:561
+#: src/admin/Review.js:582
 msgid "Search"
 msgstr "Søg"
 
-#: src/admin/Review.js:562
+#: src/admin/Review.js:586
 msgid "Search media"
 msgstr "Søg i medier"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:607
+#: src/admin/Review.js:634
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Anvend alle %d forslag"
@@ -1154,38 +1149,38 @@ msgid "Analyzing … %1$d of %2$d"
 msgstr "Analyserer … %1$d af %2$d"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:621
+#: src/admin/Review.js:648
 #, js-format
 msgid "%d suggestions applied."
 msgstr "%d forslag anvendt."
 
-#: src/admin/Review.js:630
+#: src/admin/Review.js:660
 msgid "Undo"
 msgstr "Fortryd"
 
-#: src/admin/Review.js:635
+#: src/admin/Review.js:666
 msgid "Loading …"
 msgstr "Indlæser …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:673
+#: src/admin/Review.js:705
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Side %1$d af %2$d"
 
-#: src/admin/Review.js:688
+#: src/admin/Review.js:723
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr "Også i mediebiblioteket: filteret „AI“, en kolonne og massehandlinger i listevisningen."
 
-#: src/admin/Review.js:693
+#: src/admin/Review.js:728
 msgid "Open Media Library"
 msgstr "Åbn mediebiblioteket"
 
-#: src/admin/ui.js:330
+#: src/admin/ui.js:331
 msgid "as recommended"
 msgstr "som anbefalet"
 
-#: src/admin/ui.js:333
+#: src/admin/ui.js:335
 msgid "changed"
 msgstr "ændret"
 
@@ -1261,7 +1256,7 @@ msgstr "Alle %1$d: ca. %2$s"
 msgid "Measured in the test with %1$d pictures: %2$s"
 msgstr "Målt i testen med %1$d billeder: %2$s"
 
-#: src/admin/Review.js:534
+#: src/admin/Review.js:552
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr "Analysér billedindhold (AI)"
@@ -1300,7 +1295,7 @@ msgstr "Din udbyder oplyser ingen omkostninger: dens pris pr. token afgør, hvad
 msgid "Skip test"
 msgstr "Spring testen over"
 
-#: src/admin/Review.js:219
+#: src/admin/Review.js:228
 msgid "Quick check"
 msgstr "Hurtigt tjek"
 
@@ -1350,23 +1345,28 @@ msgid_plural "%d pictures already analyzed"
 msgstr[0] "%d billede allerede analyseret"
 msgstr[1] "%d billeder allerede analyseret"
 
-#: includes/class-promo.php
+#: includes/class-promo.php:23
 msgid "From engenty, the makers of this plugin"
 msgstr "Fra engenty, som har lavet dette plugin"
 
-#: includes/class-promo.php
+#: includes/class-promo.php:24
 msgid "engenty wizards: guided flows for your visitors"
 msgstr "engenty wizards: guidede forløb for dine besøgende"
 
-#: includes/class-promo.php
+#: includes/class-promo.php:25
 msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
 msgstr "Forespørgsler, tilbud, aftaler – trin for trin på dit website, bygget med AI i stedet for kode."
 
-#: includes/class-promo.php
+#: includes/class-promo.php:28
 msgid "Visit engenty.ai"
 msgstr "Besøg engenty.ai"
 
 #. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
-#: includes/class-promo.php
+#: includes/class-promo.php:30
 msgid "https://engenty.ai/"
 msgstr "https://engenty.ai/"
+
+#. Plugin URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
