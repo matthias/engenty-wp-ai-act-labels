@@ -90,6 +90,8 @@ This check opens the pages of your own site where a file is used (at most six pe
 * "Quick check" reads every file again and no longer runs into PHP's time limit on large sites.
 * The numbers on top open their lists; lists page correctly while you decide.
 * Translations for all thirteen languages updated.
+* The text domain and the plugin's folder are now `ai-act-image-labels`, the slug wordpress.org gives the plugin; the translation files carry the new name.
+* The card from engenty ships its words with the plugin: the tool no longer requests anything from engenty.ai.
 
 = 0.1.0 =
 * First release.
