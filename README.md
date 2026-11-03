@@ -31,6 +31,21 @@ The tool lives under **Media › AI labels** (German: *Medien › KI-Kennzeichnu
 *Appearance*, *Knowledge*. The source strings are English; German (de_DE, also read by de_AT and de_CH)
 and British English ship in `languages/`.
 
+## Checks and suggestions
+
+AI analysis and the on-site verification require permission to edit the individual attachment.
+The site-wide check requires `manage_options`; automatic labels also respect each attachment's edit
+permission. WP-CLI scans are explicit site-wide operations.
+
+Strong file metadata keeps its suggested kind when the AI assessment disagrees, and the tool flags
+that conflict for review. Assessments override weak filename/tool hints; an uncertain assessment
+leaves a weak hint without a suggestion. PNG text is limited to 256 KiB per chunk and 1 MiB in total.
+
+HTML media lookup matches the origin, upload directory, extension and resized/original files recorded
+in attachment metadata. CDN URLs work when supplied by WordPress' attachment URL filter. Arbitrary
+external hosts and guessed resize names do not inherit a local file's label. Bulk Undo sends at most
+200 files per request and retains unfinished files for retry after a failure.
+
 ## The skill
 
 `skills/eu-ai-act-labels/` is an [Agent Skill](https://agentskills.io): the AI Act rules for labelling
@@ -64,7 +79,7 @@ WP_PATH=/tmp/aal-wp WP_URL=http://127.0.0.1:8930 sh bin/test-site.sh   # WordPre
 PHP_CLI_SERVER_WORKERS=4 wp --path=/tmp/aal-wp server --host=127.0.0.1 --port=8930
 WP_PATH=/tmp/aal-wp vendor/bin/phpunit
 WP_PATH=/tmp/aal-wp sh bin/smoke.sh   # with the site served
-vendor/bin/phpcs && npm run lint:js
+vendor/bin/phpcs && npm run lint:js && npm run test:js
 npm run i18n                          # POT, PO, MO, the scripts' JSON
 sh bin/zip.sh
 ```

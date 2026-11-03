@@ -19,6 +19,10 @@ defined( 'ABSPATH' ) || exit;
  */
 class AI_Act_Labels_Detect {
 
+	/** Bound both individual expansions and all retained PNG text, independent of compressed size. */
+	const PNG_TEXT_CHUNK_LIMIT = 262144;
+	const PNG_TEXT_TOTAL_LIMIT = 1048576;
+
 	/** IPTC Digital Source Type (cv.iptc.org/newscodes/digitalsourcetype) → what it means here. */
 	const SOURCE_TYPES = array(
 		'trainedAlgorithmicMedia'              => 'generated',
@@ -89,16 +93,24 @@ class AI_Act_Labels_Detect {
 	 * @return array The traces: `kind`, `strength`, `tool`, `human`, `items`, `at`.
 	 */
 	public static function attachment( $id ) {
-		$id   = (int) $id;
-		$path = function_exists( 'wp_get_original_image_path' ) ? wp_get_original_image_path( $id ) : false;
-		if ( ! $path || ! file_exists( $path ) ) {
-			$path = get_attached_file( $id );
+		$id     = (int) $id;
+		$path   = self::untouched( $id );
+		$here   = $path && file_exists( $path );
+		$result = $here ? self::file( $path, (string) get_post_mime_type( $id ) ) : self::empty_result();
+		// Traces read before stay: an image optimiser may have stripped them from the file since.
+		$before = get_post_meta( $id, AI_Act_Labels::META_SIGNALS, true );
+		$kept   = array_filter(
+			is_array( $before ) ? (array) ( $before['items'] ?? array() ) : array(),
+			static fn( $item ) => 'strong' === ( $item['strength'] ?? '' )
+		);
+		if ( $kept ) {
+			$result = self::summarize( array_merge( $result['items'], $kept ) );
 		}
-		$result = $path && file_exists( $path ) ? self::file( $path, (string) get_post_mime_type( $id ) ) : self::empty_result();
-		// The name it was uploaded with, too: WordPress may have renamed the file.
-		$title = (string) get_the_title( $id );
-		if ( '' === $result['kind'] && $title ) {
-			$by_name = self::by_name( $title );
+		// The file's name when the file is not on this server (uploads on a CDN), and the name it was
+		// uploaded with: WordPress may have renamed the file.
+		$names = array( $path && ! $here ? wp_basename( $path ) : '', (string) get_the_title( $id ) );
+		foreach ( array_filter( $names ) as $name ) {
+			$by_name = '' === $result['kind'] ? self::by_name( $name ) : null;
 			if ( $by_name ) {
 				$result['items'][] = $by_name;
 				$result            = self::summarize( $result['items'] );
@@ -107,6 +119,41 @@ class AI_Act_Labels_Detect {
 		update_post_meta( $id, AI_Act_Labels::META_SIGNALS, $result );
 		AI_Act_Labels::refresh_open( $id );
 		return $result;
+	}
+
+	/**
+	 * The file as it was uploaded: the original before WordPress scaled it, and of each the copy an
+	 * image optimiser kept before it stripped the metadata.
+	 *
+	 * @param int $id Attachment ID.
+	 * @return string The first of them that exists, else the attached file's path.
+	 */
+	private static function untouched( $id ) {
+		$attached = (string) get_attached_file( $id );
+		$files    = array_unique( array_filter( array( (string) wp_get_original_image_path( $id ), $attached ) ) );
+		foreach ( $files as $file ) {
+			foreach ( array( self::backup( $file ), $file ) as $path ) {
+				if ( $path && file_exists( $path ) ) {
+					return $path;
+				}
+			}
+		}
+		return $attached;
+	}
+
+	/**
+	 * Where ShortPixel keeps a file's original: in its backup folder, at the path below the WordPress root.
+	 *
+	 * @param string $file File path.
+	 * @return string Empty without ShortPixel.
+	 */
+	private static function backup( $file ) {
+		$file = wp_normalize_path( $file );
+		$root = wp_normalize_path( ABSPATH );
+		if ( ! defined( 'SHORTPIXEL_BACKUP_FOLDER' ) || ! str_starts_with( $file, $root ) ) {
+			return '';
+		}
+		return wp_normalize_path( SHORTPIXEL_BACKUP_FOLDER ) . '/' . substr( $file, strlen( $root ) );
 	}
 
 	/**
@@ -204,6 +251,9 @@ class AI_Act_Labels_Detect {
 	 */
 	private static function read( $path ) {
 		$size = (int) filesize( $path );
+		if ( $size < 1 ) {
+			return '';
+		}
 		// phpcs:disable WordPress.WP.AlternativeFunctions -- reading a local upload in parts.
 		$fh = fopen( $path, 'rb' );
 		if ( ! $fh ) {
@@ -367,6 +417,7 @@ class AI_Act_Labels_Detect {
 		$pos   = 8;
 		$len   = strlen( $bytes );
 		$texts = array();
+		$used  = 0;
 		while ( $pos + 12 <= $len ) {
 			$size = unpack( 'N', substr( $bytes, $pos, 4 ) )[1];
 			$type = substr( $bytes, $pos + 4, 4 );
@@ -375,20 +426,33 @@ class AI_Act_Labels_Detect {
 			}
 			if ( in_array( $type, array( 'tEXt', 'iTXt', 'zTXt' ), true ) ) {
 				$data = substr( $bytes, $pos + 8, $size );
-				$key  = strtok( $data, "\0" );
-				$rest = substr( $data, strlen( $key ) + 1 );
+				$end  = strpos( $data, "\0" );
+				if ( false === $end || $end < 1 || $end > 79 ) {
+					break;
+				}
+				$key   = substr( $data, 0, $end );
+				$rest  = substr( $data, $end + 1 );
+				$limit = min( self::PNG_TEXT_CHUNK_LIMIT, self::PNG_TEXT_TOTAL_LIMIT - $used - $end );
+				if ( $limit < 1 ) {
+					break;
+				}
 				if ( 'zTXt' === $type ) {
-					$rest = (string) @gzuncompress( substr( $rest, 1 ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+					$rest = (string) @gzuncompress( substr( $rest, 1 ), $limit + 1 ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
 				} elseif ( 'iTXt' === $type ) {
 					// Compression flag, method, language and translated keyword come before the text.
 					$flag  = ord( $rest[0] ?? "\0" );
 					$parts = explode( "\0", substr( $rest, 2 ), 3 );
 					$rest  = $parts[2] ?? '';
 					if ( 1 === $flag ) {
-						$rest = (string) @gzuncompress( $rest ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+						$rest = (string) @gzuncompress( $rest, $limit + 1 ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
 					}
 				}
-				$texts[ (string) $key ] = (string) $rest;
+				if ( strlen( $rest ) > $limit || '' === $rest ) {
+					// Stop rather than repeatedly expanding hostile chunks after an exhausted budget.
+					break;
+				}
+				$used         += $end + strlen( $rest );
+				$texts[ $key ] = $rest;
 			}
 			if ( 'IEND' === $type ) {
 				break;

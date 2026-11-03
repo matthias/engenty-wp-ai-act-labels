@@ -4,7 +4,7 @@ Tags: ai act, ai label, ai generated, media library, eu
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Three features make requests to other servers:
 
 = "Analyze image (AI)" (optional) =
 
-When you click "Analyze image (AI)", the plugin sends the image, its file name, title, the traces found, where it is used (page titles) and its current decision to the AI provider you set up under Settings › Connectors. WordPress' AI Client makes the request; which service receives it, and its terms and privacy policy, depend on the provider you chose there. Nothing is sent until you click it.
+When you click "Analyze image (AI)", or start "Analyze image content (AI)" for many pictures, the plugin sends each image (768 pixels wide), its file name, title, the traces found, where it is used (page titles) and its current decision to the AI provider you set up under Settings › Connectors. WordPress' AI Client makes the request; which service receives it, and its terms and privacy policy, depend on the provider you chose there. Nothing is sent until you click one of them; an analysis of many pictures then goes on with WP-Cron until it is through or someone stops it. An image that is not stored on your server is fetched from its own address first.
 
 = "Check on the site" =
 
@@ -85,6 +85,15 @@ This check opens the pages of your own site where a file is used (at most six pe
 At the end of the tool, a card from engenty – the maker of this plugin – shows what engenty offers. Its words come from https://engenty.ai/wordpress-plugins/ai-act-image-labels/promo.json: the plugin fetches this file at most once a day, when someone opens the tool. The request is the same for every site and sends nothing about yours – no address, no user, no statistics; engenty.ai's server sees the request like any visit. The file holds only text and a link, which the plugin prints as text. If the file cannot be fetched, no card appears. Privacy policy: https://engenty.ai/privacy
 
 == Changelog ==
+
+= 0.2.0 =
+* Image content analysis (AI) for every picture used on the site: choose the upload days with a two-handle slider, test with 10 pictures first and see the cost the provider reports, then analyse the rest. The analysis runs on the server with WP-Cron, goes on when the page closes, shows in every window and can be stopped from any of them.
+* Pictures not stored on the server (uploads on a CDN) are fetched from their address for the analysis; their stored file name counts as a trace too.
+* Traces are read from ShortPixel's backup of the original upload, and strong traces found earlier are kept when a file is read again.
+* A sharper image analysis: logos, diagrams and text graphics need no label, ordinary photos without traces are no longer "unsure", and each analysis takes about 40 % fewer tokens. Fast, low-cost models (Gemini Flash-Lite) come first.
+* "Quick check" reads every file again and no longer runs into PHP's time limit on large sites.
+* The numbers on top open their lists; lists page correctly while you decide.
+* Translations for all thirteen languages updated.
 
 = 0.1.0 =
 * First release.

@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: AI Act Image Labels 0.1.0\n"
+"Project-Id-Version: AI Act Image Labels 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-labels\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-10T12:49:42+00:00\n"
+"POT-Creation-Date: 2026-11-03T13:40:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ai-act-labels\n"
@@ -48,7 +48,7 @@ msgstr ""
 #: includes/class-admin.php:49
 #: includes/class-admin.php:50
 #: includes/class-media.php:125
-#: includes/class-media.php:520
+#: includes/class-media.php:523
 #: src/admin/index.js:54
 #: src/admin/parts.js:126
 msgid "AI labels"
@@ -63,114 +63,119 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-#: includes/class-assistant.php:133
+#: includes/class-analysis.php:70
+msgid "An analysis is already running."
+msgstr ""
+
+#: includes/class-assistant.php:141
 msgid "Image analysis (AI) needs WordPress 7.0 or newer."
 msgstr ""
 
-#: includes/class-assistant.php:167
+#: includes/class-assistant.php:187
 msgid "The answer was not JSON. Try again."
 msgstr ""
 
-#: includes/class-assistant.php:277
-#: includes/class-rest.php:154
+#: includes/class-assistant.php:315
+#: includes/class-rest.php:157
+#: includes/class-rest.php:283
 msgid "This file does not exist."
 msgstr ""
 
 #. translators: %s: tool name
-#: includes/class-detect.php:278
+#: includes/class-detect.php:328
 #, php-format
 msgid "XMP names %s"
 msgstr ""
 
-#: includes/class-detect.php:296
+#: includes/class-detect.php:346
 msgid "IPTC: created with AI"
 msgstr ""
 
-#: includes/class-detect.php:298
+#: includes/class-detect.php:348
 msgid "IPTC: photo with AI parts"
 msgstr ""
 
-#: includes/class-detect.php:300
+#: includes/class-detect.php:350
 msgid "IPTC: enhanced with AI (minor)"
 msgstr ""
 
 #. translators: %s: IPTC code like digitalCapture
-#: includes/class-detect.php:303
+#: includes/class-detect.php:353
 #, php-format
 msgid "IPTC: no AI (%s)"
 msgstr ""
 
-#: includes/class-detect.php:327
+#: includes/class-detect.php:377
 msgid "Content Credentials (C2PA): modified with AI"
 msgstr ""
 
-#: includes/class-detect.php:327
+#: includes/class-detect.php:377
 msgid "Content Credentials (C2PA): created with AI"
 msgstr ""
 
-#: includes/class-detect.php:350
+#: includes/class-detect.php:400
 msgid "Content Credentials (C2PA): camera capture"
 msgstr ""
 
 #. translators: %s: tool name
-#: includes/class-detect.php:352
+#: includes/class-detect.php:402
 #, php-format
 msgid "Content Credentials (C2PA) from %s"
 msgstr ""
 
-#: includes/class-detect.php:353
+#: includes/class-detect.php:403
 msgid "Content Credentials (C2PA) present"
 msgstr ""
 
-#: includes/class-detect.php:408
-#: includes/class-detect.php:459
+#: includes/class-detect.php:472
+#: includes/class-detect.php:523
 msgid "Stable Diffusion generation data"
 msgstr ""
 
-#: includes/class-detect.php:411
+#: includes/class-detect.php:475
 msgid "ComfyUI generation data"
 msgstr ""
 
-#: includes/class-detect.php:414
+#: includes/class-detect.php:478
 msgid "InvokeAI generation data"
 msgstr ""
 
-#: includes/class-detect.php:417
+#: includes/class-detect.php:481
 msgid "NovelAI generation data"
 msgstr ""
 
 #. translators: %s: tool name
-#: includes/class-detect.php:429
+#: includes/class-detect.php:493
 #, php-format
 msgid "PNG text names %s"
 msgstr ""
 
 #. translators: %s: tool name
-#: includes/class-detect.php:472
+#: includes/class-detect.php:536
 #, php-format
 msgid "EXIF names %s"
 msgstr ""
 
 #. translators: %s: tool name
-#: includes/class-detect.php:495
+#: includes/class-detect.php:559
 #, php-format
 msgid "Tags name %s"
 msgstr ""
 
 #. translators: %s: tool name
-#: includes/class-detect.php:519
+#: includes/class-detect.php:583
 #, php-format
 msgid "File name as %s gives it"
 msgstr ""
 
-#: includes/class-detect.php:520
+#: includes/class-detect.php:584
 msgid "File name points to AI"
 msgstr ""
 
 #: includes/class-labels.php:264
 #: includes/class-media.php:67
-#: includes/class-media.php:340
-#: includes/class-rest.php:62
+#: includes/class-media.php:343
+#: includes/class-rest.php:65
 #: src/admin/Knowledge.js:288
 #: src/admin/Look.js:462
 #: src/admin/parts.js:8
@@ -179,8 +184,8 @@ msgstr ""
 
 #: includes/class-labels.php:266
 #: includes/class-media.php:66
-#: includes/class-media.php:339
-#: includes/class-rest.php:61
+#: includes/class-media.php:342
+#: includes/class-rest.php:64
 #: src/admin/Knowledge.js:292
 #: src/admin/Look.js:112
 #: src/admin/Look.js:453
@@ -189,7 +194,7 @@ msgid "AI-generated"
 msgstr ""
 
 #: includes/class-labels.php:284
-#: includes/class-rest.php:63
+#: includes/class-rest.php:66
 #: src/admin/Look.js:151
 msgid "This image was created with AI."
 msgstr ""
@@ -207,7 +212,7 @@ msgid "This content was created with AI."
 msgstr ""
 
 #: includes/class-labels.php:290
-#: includes/class-rest.php:64
+#: includes/class-rest.php:67
 #: src/admin/Look.js:146
 msgid "This image was modified with AI."
 msgstr ""
@@ -235,9 +240,9 @@ msgid "Not decided yet"
 msgstr ""
 
 #: includes/class-media.php:68
-#: includes/class-media.php:344
+#: includes/class-media.php:347
 #: src/admin/parts.js:9
-#: src/admin/Review.js:21
+#: src/admin/Review.js:23
 msgid "No label needed"
 msgstr ""
 
@@ -255,94 +260,99 @@ msgstr ""
 msgid "Image analysis (AI):"
 msgstr ""
 
-#: includes/class-media.php:152
-#: src/admin/Review.js:254
+#: includes/class-media.php:150
+#: src/admin/parts.js:212
+msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
+msgstr ""
+
+#: includes/class-media.php:155
+#: src/admin/Review.js:300
 msgid "Analyze image (AI)"
 msgstr ""
 
-#: includes/class-media.php:158
+#: includes/class-media.php:161
 msgid "AI tool"
 msgstr ""
 
-#: includes/class-media.php:161
+#: includes/class-media.php:164
 msgid "optional, e.g. Midjourney"
 msgstr ""
 
-#: includes/class-media.php:162
+#: includes/class-media.php:165
 msgid "Own notice"
 msgstr ""
 
-#: includes/class-media.php:166
+#: includes/class-media.php:169
 msgid "Empty: the default. The tool then appears in the notice."
 msgstr ""
 
-#: includes/class-media.php:170
+#: includes/class-media.php:173
 msgid "AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none."
 msgstr ""
 
-#: includes/class-media.php:172
+#: includes/class-media.php:175
 msgid "Review all media →"
 msgstr ""
 
-#: includes/class-media.php:286
 #: includes/class-media.php:289
+#: includes/class-media.php:292
 msgid "AI"
 msgstr ""
 
 #. translators: %s: KI-generiert or Mit KI verändert
-#: includes/class-media.php:325
+#: includes/class-media.php:328
 #: src/media/index.js:36
 #, php-format,js-format
 msgid "Suggestion: %s"
 msgstr ""
 
-#: includes/class-media.php:337
+#: includes/class-media.php:340
 msgid "AI: all"
 msgstr ""
 
-#: includes/class-media.php:338
-#: src/admin/Review.js:20
+#: includes/class-media.php:341
+#: src/admin/Review.js:22
 msgid "Labeled"
 msgstr ""
 
-#: includes/class-media.php:341
-#: src/admin/Review.js:18
-#: src/admin/Review.js:117
+#: includes/class-media.php:344
+#: src/admin/Review.js:20
+#: src/admin/Review.js:134
 msgid "Suggestions"
 msgstr ""
 
-#: includes/class-media.php:342
-#: src/admin/Review.js:19
+#: includes/class-media.php:345
+#: src/admin/Review.js:21
 msgid "Used, not decided"
 msgstr ""
 
-#: includes/class-media.php:343
+#: includes/class-media.php:346
 #: src/admin/parts.js:10
 msgid "Not decided"
 msgstr ""
 
-#: includes/class-media.php:359
+#: includes/class-media.php:362
 msgid "Filter by AI label"
 msgstr ""
 
-#: includes/class-media.php:398
+#: includes/class-media.php:401
 msgid "Label as AI-generated"
 msgstr ""
 
-#: includes/class-media.php:399
+#: includes/class-media.php:402
 msgid "Label as modified with AI"
 msgstr ""
 
-#: includes/class-media.php:400
+#: includes/class-media.php:403
 msgid "AI: no label needed"
 msgstr ""
 
-#: includes/class-media.php:401
+#: includes/class-media.php:404
 msgid "Remove AI label"
 msgstr ""
 
 #. translators: %d: number of files
-#: includes/class-media.php:444
+#: includes/class-media.php:447
 #, php-format
 msgid "Removed the AI label from %d file."
 msgid_plural "Removed the AI label from %d files."
@@ -350,56 +360,69 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig
-#: includes/class-media.php:446
+#: includes/class-media.php:449
 #, php-format
 msgid "%1$d file: %2$s."
 msgid_plural "%1$d files: %2$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-media.php:459
+#: includes/class-media.php:462
 msgid "AI labels:"
 msgstr ""
 
 #. translators: %d: number of files
-#: includes/class-media.php:461
+#: includes/class-media.php:464
 #, php-format
 msgid "%d file carries traces of AI and has no decision yet."
 msgid_plural "%d files carry traces of AI and have no decision yet."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-media.php:463
+#: includes/class-media.php:466
 msgid "View"
 msgstr ""
 
-#: includes/class-media.php:465
+#: includes/class-media.php:468
 msgid "Later"
 msgstr ""
 
-#: includes/class-rest.php:169
+#: includes/class-rest.php:171
+msgid "Decide on at most 200 files per request."
+msgstr ""
+
+#: includes/class-rest.php:175
 msgid "This label does not exist."
 msgstr ""
 
-#: includes/class-rest.php:230
+#: includes/class-rest.php:220
+msgid "Only site administrators can run a site-wide check."
+msgstr ""
+
+#: includes/class-rest.php:244
+#: includes/class-rest.php:316
 msgid "For the image analysis, WordPress needs an AI provider (Settings › Connectors)."
 msgstr ""
 
-#: includes/class-usage.php:457
-#: includes/class-usage.php:483
+#: includes/class-rest.php:286
+msgid "You cannot edit this file."
+msgstr ""
+
+#: includes/class-usage.php:471
+#: includes/class-usage.php:497
 msgid "Website"
 msgstr ""
 
-#: includes/class-usage.php:477
+#: includes/class-usage.php:491
 msgid "Site logo"
 msgstr ""
 
-#: includes/class-usage.php:479
+#: includes/class-usage.php:493
 #: src/admin/parts.js:38
 msgid "Site icon"
 msgstr ""
 
-#: includes/class-usage.php:481
+#: includes/class-usage.php:495
 #: src/admin/parts.js:39
 msgid "Header image"
 msgstr ""
@@ -996,178 +1019,323 @@ msgstr ""
 msgid "unclear"
 msgstr ""
 
-#: src/admin/parts.js:222
+#: src/admin/parts.js:230
 msgid "label visible"
 msgstr ""
 
-#: src/admin/parts.js:223
+#: src/admin/parts.js:231
 msgid "without label"
 msgstr ""
 
-#: src/admin/parts.js:224
+#: src/admin/parts.js:232
 msgid "not on the page"
 msgstr ""
 
-#: src/admin/parts.js:225
+#: src/admin/parts.js:233
 msgid "page not reachable"
 msgstr ""
 
-#: src/admin/parts.js:232
+#: src/admin/parts.js:240
 msgid "Not found on any page"
 msgstr ""
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:263
+#: src/admin/parts.js:271
 #, js-format
 msgid "and %d more"
 msgstr ""
 
-#: src/admin/Review.js:22
+#: src/admin/Review.js:24
 msgid "All"
 msgstr ""
 
-#: src/admin/Review.js:27
+#: src/admin/Review.js:29
 msgid "No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too."
 msgstr ""
 
-#: src/admin/Review.js:31
+#: src/admin/Review.js:33
 msgid "Everything used on your site has a decision. Or the site has not been checked yet."
 msgstr ""
 
-#: src/admin/Review.js:35
+#: src/admin/Review.js:37
 msgid "No file labeled yet."
 msgstr ""
 
-#: src/admin/Review.js:36
+#: src/admin/Review.js:38
 msgid "No file decided as needing no label yet."
 msgstr ""
 
-#: src/admin/Review.js:37
+#: src/admin/Review.js:39
 msgid "No images, videos or recordings."
 msgstr ""
 
-#: src/admin/Review.js:83
+#: src/admin/Review.js:114
 msgid "Reading your pages and posts …"
 msgstr ""
 
-#: src/admin/Review.js:84
+#: src/admin/Review.js:115
 msgid "Reading the traces in your files …"
 msgstr ""
 
-#: src/admin/Review.js:88
+#: src/admin/Review.js:119
 msgid "Done."
 msgstr ""
 
-#: src/admin/Review.js:100
+#: src/admin/Review.js:135
+msgid "traces of AI, no decision"
+msgstr ""
+
+#: src/admin/Review.js:141
+msgid "used, not decided"
+msgstr ""
+
+#: src/admin/Review.js:142
+msgid "visible on your site"
+msgstr ""
+
+#: src/admin/Review.js:148
 msgid "labeled"
 msgstr ""
 
 #. translators: 1: generated count, 2: modified count
-#: src/admin/Review.js:104
+#: src/admin/Review.js:151
 #, js-format
 msgid "%1$d AI-generated · %2$d modified"
 msgstr ""
 
-#: src/admin/Review.js:119
-msgid "traces of AI, no decision"
-msgstr ""
-
-#: src/admin/Review.js:129
-msgid "used, not decided"
-msgstr ""
-
-#: src/admin/Review.js:131
-msgid "visible on your site"
-msgstr ""
-
 #. translators: 1: date, 2: pages, 3: files in use
-#: src/admin/Review.js:156
+#: src/admin/Review.js:197
 #, js-format
 msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
 msgstr ""
 
-#: src/admin/Review.js:164
+#: src/admin/Review.js:205
 msgid "Not checked yet: where your media is used and which traces of AI it carries."
 msgstr ""
 
-#: src/admin/Review.js:175
-msgid "Check again"
+#: src/admin/Review.js:219
+msgid "Quick check"
 msgstr ""
 
-#: src/admin/Review.js:176
+#: src/admin/Review.js:220
 msgid "Check site"
 msgstr ""
 
-#: src/admin/Review.js:214
+#: src/admin/Review.js:260
 msgid "Open in the Media Library"
 msgstr ""
 
-#: src/admin/Review.js:244
+#: src/admin/Review.js:290
 msgid "Check on the site"
 msgstr ""
 
-#: src/admin/Review.js:439
+#: src/admin/Review.js:394
+msgid "Some labels could not be undone. Retry the remaining files."
+msgstr ""
+
+#: src/admin/Review.js:534
+#: src/admin/Run.js:162
+msgid "Analyze image content (AI)"
+msgstr ""
+
+#: src/admin/Review.js:550
 msgid "Media"
 msgstr ""
 
-#: src/admin/Review.js:440
+#: src/admin/Review.js:551
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr ""
 
-#: src/admin/Review.js:450
+#: src/admin/Review.js:561
 msgid "Search"
 msgstr ""
 
-#: src/admin/Review.js:451
+#: src/admin/Review.js:562
 msgid "Search media"
 msgstr ""
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:495
+#: src/admin/Review.js:607
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr ""
 
-#. translators: 1: done, 2: total
-#: src/admin/Review.js:515
-#, js-format
-msgid "Analyzing … %1$d of %2$d"
-msgstr ""
-
 #. translators: %d: number of files
-#: src/admin/Review.js:524
-#, js-format
-msgid "Analyze %d image (AI)"
-msgid_plural "Analyze %d images (AI)"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %d: number of files
-#: src/admin/Review.js:540
+#: src/admin/Review.js:621
 #, js-format
 msgid "%d suggestions applied."
 msgstr ""
 
-#: src/admin/Review.js:548
+#: src/admin/Review.js:630
 msgid "Undo"
 msgstr ""
 
-#: src/admin/Review.js:553
+#: src/admin/Review.js:635
 msgid "Loading …"
 msgstr ""
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:589
+#: src/admin/Review.js:673
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr ""
 
-#: src/admin/Review.js:604
+#: src/admin/Review.js:688
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr ""
 
-#: src/admin/Review.js:609
+#: src/admin/Review.js:693
 msgid "Open Media Library"
+msgstr ""
+
+#. translators: %d: seconds
+#: src/admin/Run.js:68
+#, js-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: minutes
+#: src/admin/Run.js:76
+#, js-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: hours, e.g. 2.5
+#: src/admin/Run.js:81
+#, js-format
+msgid "%s hours"
+msgstr ""
+
+#. translators: %s: number of tokens
+#: src/admin/Run.js:98
+#, js-format
+msgid "%s tokens"
+msgstr ""
+
+#. translators: %s: names of the AI providers
+#: src/admin/Run.js:167
+#, js-format
+msgid "The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing."
+msgstr ""
+
+#: src/admin/Run.js:205
+msgid "Every picture used on your site has a decision or an assessment."
+msgstr ""
+
+#. translators: 1: first day, 2: last day
+#: src/admin/Run.js:337
+#, js-format
+msgid "Uploaded from %1$s to %2$s"
+msgstr ""
+
+#: src/admin/Run.js:362
+msgid "From"
+msgstr ""
+
+#: src/admin/Run.js:374
+msgid "To"
+msgstr ""
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:401
+#, js-format
+msgid "%d picture already analyzed"
+msgid_plural "%d pictures already analyzed"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:416
+#, js-format
+msgid "%d picture without a decision or an assessment"
+msgid_plural "%d pictures without a decision or an assessment"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of pictures, 2: what they would take
+#: src/admin/Run.js:429
+#, js-format
+msgid "All %1$d: about %2$s"
+msgstr ""
+
+#. translators: 1: number of pictures, 2: what they took
+#: src/admin/Run.js:439
+#, js-format
+msgid "Measured in the test with %1$d pictures: %2$s"
+msgstr ""
+
+#. translators: %d: number of analyses
+#: src/admin/Run.js:449
+#, js-format
+msgid "Estimated from %d analysis on this site this month."
+msgid_plural "Estimated from %d analyses on this site this month."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/admin/Run.js:458
+msgid "No estimate: there was no analysis on this site this month yet."
+msgstr ""
+
+#: src/admin/Run.js:462
+msgid "First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them."
+msgstr ""
+
+#: src/admin/Run.js:469
+msgid "Your provider does not report costs: its price per token tells what this costs."
+msgstr ""
+
+#: src/admin/Run.js:476
+msgid "Image generators for everyone came in 2022 – older uploads rarely need a check."
+msgstr ""
+
+#. translators: 1: done, 2: total
+#: src/admin/Run.js:488
+#, js-format
+msgid "Analyzing … %1$d of %2$d"
+msgstr ""
+
+#: src/admin/Run.js:497
+msgid "Stop"
+msgstr ""
+
+#: src/admin/Run.js:501
+msgid "Waiting for WP-Cron: the next step comes with the next visit to the site."
+msgstr ""
+
+#. translators: %s: name of the person who started it
+#: src/admin/Run.js:507
+#, js-format
+msgid "Runs on the server, started by %s – you can close this page."
+msgstr ""
+
+#: src/admin/Run.js:517
+msgid "Every picture in this time has a decision or an assessment."
+msgstr ""
+
+#: src/admin/Run.js:531
+msgid "Test with 10"
+msgstr ""
+
+#: src/admin/Run.js:538
+msgid "Skip test"
+msgstr ""
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:551
+#, js-format
+msgid "Analyze %d picture"
+msgid_plural "Analyze %d pictures"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: the provider's error
+#: src/admin/Run.js:568
+#, js-format
+msgid "The analysis stopped after three failures in a row: %s"
 msgstr ""
 
 #: src/admin/ui.js:330
