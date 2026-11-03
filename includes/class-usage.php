@@ -147,7 +147,7 @@ class AI_Act_Labels_Usage {
 		// rebuild_open() empties the meta cache afterwards.
 		// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared -- the plugin's own meta, IDs are integers, rows are prepared.
 		foreach ( array_chunk( array_map( 'intval', array_keys( $run['map'] ) ), 500 ) as $chunk ) {
-			$ids  = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'attachment' AND ID IN (" . implode( ',', $chunk ) . ')' );
+			$ids  = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'attachment' AND ID IN (" . implode( ',', array_fill( 0, count( $chunk ), '%d' ) ) . ')', $chunk ) );
 			$rows = array();
 			foreach ( array_map( 'intval', $ids ) as $id ) {
 				$rows[] = $wpdb->prepare( '(%d, %s, %s)', $id, AI_Act_Labels::META_USAGE, maybe_serialize( array_values( array_unique( $run['map'][ $id ], SORT_REGULAR ) ) ) );
