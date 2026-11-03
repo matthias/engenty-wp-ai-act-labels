@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       AI Act Image Labels
- * Plugin URI:        https://engenty.ai/ai-act-labels
+ * Plugin URI:        https://engenty.ai/wordpress-plugins/ai-act-image-labels
  * Description:       Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label.
  * Version:           0.1.0
  * Requires at least: 6.6
