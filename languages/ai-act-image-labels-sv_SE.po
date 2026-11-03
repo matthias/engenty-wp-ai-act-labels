@@ -257,7 +257,7 @@ msgid "Strong file metadata conflicts with the AI assessment. Review before appl
 msgstr "Tydliga filmetadata motsäger AI-bedömningen. Granska innan du tillämpar."
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:315
+#: src/admin/Review.js:320
 msgid "Analyze image (AI)"
 msgstr "Analysera bild (AI)"
 
@@ -1010,28 +1010,28 @@ msgstr "ingen märkning behövs"
 msgid "unclear"
 msgstr "oklart"
 
-#: src/admin/parts.js:234
+#: src/admin/parts.js:255
 msgid "label visible"
 msgstr "märkning synlig"
 
-#: src/admin/parts.js:235
+#: src/admin/parts.js:256
 msgid "without label"
 msgstr "utan märkning"
 
-#: src/admin/parts.js:236
+#: src/admin/parts.js:257
 msgid "not on the page"
 msgstr "inte på sidan"
 
-#: src/admin/parts.js:237
+#: src/admin/parts.js:258
 msgid "page not reachable"
 msgstr "sidan kan inte nås"
 
-#: src/admin/parts.js:244
+#: src/admin/parts.js:265
 msgid "Not found on any page"
 msgstr "Hittades inte på någon sida"
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:275
+#: src/admin/parts.js:296
 #, js-format
 msgid "and %d more"
 msgstr "och %d till"
@@ -1116,28 +1116,28 @@ msgstr "Öppna i mediabiblioteket"
 msgid "Check on the site"
 msgstr "Kontrollera på webbplatsen"
 
-#: src/admin/Review.js:412
+#: src/admin/Review.js:417
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr "Vissa märkningar kunde inte ångras. Försök igen med de återstående filerna."
 
-#: src/admin/Review.js:571
+#: src/admin/Review.js:576
 msgid "Media"
 msgstr "Media"
 
-#: src/admin/Review.js:572
+#: src/admin/Review.js:577
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr "Besluta per fil: AI-genererad, ändrad med AI eller ingen märkning behövs. Märkning krävs när något ser äkta ut som inte hände så."
 
-#: src/admin/Review.js:582
+#: src/admin/Review.js:587
 msgid "Search"
 msgstr "Sök"
 
-#: src/admin/Review.js:586
+#: src/admin/Review.js:591
 msgid "Search media"
 msgstr "Sök media"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:634
+#: src/admin/Review.js:639
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Tillämpa alla %d förslag"
@@ -1149,30 +1149,30 @@ msgid "Analyzing … %1$d of %2$d"
 msgstr "Analyserar … %1$d av %2$d"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:648
+#: src/admin/Review.js:653
 #, js-format
 msgid "%d suggestions applied."
 msgstr "%d förslag tillämpade."
 
-#: src/admin/Review.js:660
+#: src/admin/Review.js:665
 msgid "Undo"
 msgstr "Ångra"
 
-#: src/admin/Review.js:666
+#: src/admin/Review.js:671
 msgid "Loading …"
 msgstr "Laddar …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:705
+#: src/admin/Review.js:710
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Sida %1$d av %2$d"
 
-#: src/admin/Review.js:723
+#: src/admin/Review.js:728
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr "Även i mediabiblioteket: filtret ”AI”, en kolumn och massåtgärder i listvyn."
 
-#: src/admin/Review.js:728
+#: src/admin/Review.js:733
 msgid "Open Media Library"
 msgstr "Öppna mediabiblioteket"
 
@@ -1256,7 +1256,7 @@ msgstr "Alla %1$d: ungefär %2$s"
 msgid "Measured in the test with %1$d pictures: %2$s"
 msgstr "Uppmätt i testet med %1$d bilder: %2$s"
 
-#: src/admin/Review.js:552
+#: src/admin/Review.js:557
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr "Analysera bildinnehåll (AI)"
@@ -1370,3 +1370,17 @@ msgstr "https://engenty.ai/"
 #: ai-act-labels.php
 msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
 msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+
+#. translators: %s: date and time
+#: src/admin/parts.js:228
+#, js-format
+msgid "Analyzed %s"
+msgstr "Analyserad %s"
+
+#: src/admin/parts.js:234
+msgid "without the picture"
+msgstr "utan bilden"
+
+#: src/admin/Review.js:316
+msgid "Analyze again (AI)"
+msgstr "Analysera igen (AI)"

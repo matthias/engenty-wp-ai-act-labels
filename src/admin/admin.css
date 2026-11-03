@@ -310,6 +310,7 @@ button.aal-row__main { cursor: pointer; }
 .aal-hint b.is-voluntary { color: var(--aal-amber); }
 .aal-hint b.is-none { color: var(--aal-moss); }
 .aal-hint em { color: var(--aal-ink); }
+.aal-hint__when { display: block; margin-top: 2px; font-size: 11.5px; color: var(--aal-ink-3); }
 .aal-decide { display: inline-flex; background: var(--aal-paper-2); border-radius: 999px; padding: 3px; gap: 2px; }
 .aal-decide button { display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 11px; border: 0; border-radius: 999px; background: transparent; font: 12.5px Geist, sans-serif; color: var(--aal-ink-2); cursor: pointer; white-space: nowrap; }
 .aal-decide button:hover { color: var(--aal-ink); }

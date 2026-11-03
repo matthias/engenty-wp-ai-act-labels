@@ -1,7 +1,7 @@
 import { __, _x, sprintf } from '@wordpress/i18n';
 import { boot } from './api';
 import { ENGENTY_KINDS } from './engenties';
-import { Button, Chip, Engenty, Icon } from './ui';
+import { Button, Chip, Engenty, Icon, when } from './ui';
 
 export const STATE_LABELS = {
 	generated: __( 'AI-generated', 'ai-act-image-labels' ),
@@ -218,6 +218,27 @@ export function HintLine( { hint, conflict } ) {
 							'ai-act-image-labels'
 						) }
 					</em>
+				) : null }
+				{ hint?.at ? (
+					// When, with what, and whether the model saw the picture: an analysed file at a glance.
+					<span className="aal-hint__when">
+						{ [
+							sprintf(
+								/* translators: %s: date and time */
+								__( 'Analyzed %s', 'ai-act-image-labels' ),
+								when( hint.at )
+							),
+							hint.model,
+							hint.seen
+								? null
+								: __(
+										'without the picture',
+										'ai-act-image-labels'
+								  ),
+						]
+							.filter( Boolean )
+							.join( ' · ' ) }
+					</span>
 				) : null }
 			</span>
 		</span>

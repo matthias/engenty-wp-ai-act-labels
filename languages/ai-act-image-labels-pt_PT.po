@@ -257,7 +257,7 @@ msgid "Strong file metadata conflicts with the AI assessment. Review before appl
 msgstr "Os metadados do ficheiro contradizem claramente a avaliação da IA. Reveja antes de aplicar."
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:315
+#: src/admin/Review.js:320
 msgid "Analyze image (AI)"
 msgstr "Analisar imagem (IA)"
 
@@ -1010,28 +1010,28 @@ msgstr "não precisa de etiqueta"
 msgid "unclear"
 msgstr "pouco claro"
 
-#: src/admin/parts.js:234
+#: src/admin/parts.js:255
 msgid "label visible"
 msgstr "etiqueta visível"
 
-#: src/admin/parts.js:235
+#: src/admin/parts.js:256
 msgid "without label"
 msgstr "sem etiqueta"
 
-#: src/admin/parts.js:236
+#: src/admin/parts.js:257
 msgid "not on the page"
 msgstr "não está na página"
 
-#: src/admin/parts.js:237
+#: src/admin/parts.js:258
 msgid "page not reachable"
 msgstr "página inacessível"
 
-#: src/admin/parts.js:244
+#: src/admin/parts.js:265
 msgid "Not found on any page"
 msgstr "Não encontrado em nenhuma página"
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:275
+#: src/admin/parts.js:296
 #, js-format
 msgid "and %d more"
 msgstr "e mais %d"
@@ -1116,28 +1116,28 @@ msgstr "Abrir na Biblioteca multimédia"
 msgid "Check on the site"
 msgstr "Verificar no site"
 
-#: src/admin/Review.js:412
+#: src/admin/Review.js:417
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr "Algumas etiquetas não puderam ser anuladas. Tente novamente com os ficheiros restantes."
 
-#: src/admin/Review.js:571
+#: src/admin/Review.js:576
 msgid "Media"
 msgstr "Multimédia"
 
-#: src/admin/Review.js:572
+#: src/admin/Review.js:577
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr "Decida por ficheiro: gerado por IA, modificado com IA ou sem etiqueta necessária. A etiqueta é obrigatória quando algo parece real mas não aconteceu assim."
 
-#: src/admin/Review.js:582
+#: src/admin/Review.js:587
 msgid "Search"
 msgstr "Pesquisar"
 
-#: src/admin/Review.js:586
+#: src/admin/Review.js:591
 msgid "Search media"
 msgstr "Pesquisar multimédia"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:634
+#: src/admin/Review.js:639
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Aplicar todas as %d sugestões"
@@ -1149,30 +1149,30 @@ msgid "Analyzing … %1$d of %2$d"
 msgstr "A analisar … %1$d de %2$d"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:648
+#: src/admin/Review.js:653
 #, js-format
 msgid "%d suggestions applied."
 msgstr "%d sugestões aplicadas."
 
-#: src/admin/Review.js:660
+#: src/admin/Review.js:665
 msgid "Undo"
 msgstr "Anular"
 
-#: src/admin/Review.js:666
+#: src/admin/Review.js:671
 msgid "Loading …"
 msgstr "A carregar …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:705
+#: src/admin/Review.js:710
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Página %1$d de %2$d"
 
-#: src/admin/Review.js:723
+#: src/admin/Review.js:728
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr "Também na Biblioteca multimédia: o filtro “IA”, uma coluna e ações em massa na vista de lista."
 
-#: src/admin/Review.js:728
+#: src/admin/Review.js:733
 msgid "Open Media Library"
 msgstr "Abrir a Biblioteca multimédia"
 
@@ -1256,7 +1256,7 @@ msgstr "Todas as %1$d: cerca de %2$s"
 msgid "Measured in the test with %1$d pictures: %2$s"
 msgstr "Medido no teste com %1$d imagens: %2$s"
 
-#: src/admin/Review.js:552
+#: src/admin/Review.js:557
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr "Analisar o conteúdo das imagens (IA)"
@@ -1370,3 +1370,17 @@ msgstr "https://engenty.ai/"
 #: ai-act-labels.php
 msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
 msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+
+#. translators: %s: date and time
+#: src/admin/parts.js:228
+#, js-format
+msgid "Analyzed %s"
+msgstr "Analisada em %s"
+
+#: src/admin/parts.js:234
+msgid "without the picture"
+msgstr "sem a imagem"
+
+#: src/admin/Review.js:316
+msgid "Analyze again (AI)"
+msgstr "Analisar de novo (IA)"

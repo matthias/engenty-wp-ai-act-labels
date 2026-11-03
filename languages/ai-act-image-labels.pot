@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-03T13:49:29+00:00\n"
+"POT-Creation-Date: 2026-11-03T14:15:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ai-act-image-labels\n"
@@ -266,7 +266,7 @@ msgid "Strong file metadata conflicts with the AI assessment. Review before appl
 msgstr ""
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:315
+#: src/admin/Review.js:320
 msgid "Analyze image (AI)"
 msgstr ""
 
@@ -1040,28 +1040,38 @@ msgstr ""
 msgid "unclear"
 msgstr ""
 
+#. translators: %s: date and time
+#: src/admin/parts.js:228
+#, js-format
+msgid "Analyzed %s"
+msgstr ""
+
 #: src/admin/parts.js:234
+msgid "without the picture"
+msgstr ""
+
+#: src/admin/parts.js:255
 msgid "label visible"
 msgstr ""
 
-#: src/admin/parts.js:235
+#: src/admin/parts.js:256
 msgid "without label"
 msgstr ""
 
-#: src/admin/parts.js:236
+#: src/admin/parts.js:257
 msgid "not on the page"
 msgstr ""
 
-#: src/admin/parts.js:237
+#: src/admin/parts.js:258
 msgid "page not reachable"
 msgstr ""
 
-#: src/admin/parts.js:244
+#: src/admin/parts.js:265
 msgid "Not found on any page"
 msgstr ""
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:275
+#: src/admin/parts.js:296
 #, js-format
 msgid "and %d more"
 msgstr ""
@@ -1150,62 +1160,66 @@ msgstr ""
 msgid "Check on the site"
 msgstr ""
 
-#: src/admin/Review.js:412
+#: src/admin/Review.js:316
+msgid "Analyze again (AI)"
+msgstr ""
+
+#: src/admin/Review.js:417
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr ""
 
-#: src/admin/Review.js:552
+#: src/admin/Review.js:557
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr ""
 
-#: src/admin/Review.js:571
+#: src/admin/Review.js:576
 msgid "Media"
 msgstr ""
 
-#: src/admin/Review.js:572
+#: src/admin/Review.js:577
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr ""
 
-#: src/admin/Review.js:582
+#: src/admin/Review.js:587
 msgid "Search"
 msgstr ""
 
-#: src/admin/Review.js:586
+#: src/admin/Review.js:591
 msgid "Search media"
 msgstr ""
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:634
+#: src/admin/Review.js:639
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr ""
 
 #. translators: %d: number of files
-#: src/admin/Review.js:648
+#: src/admin/Review.js:653
 #, js-format
 msgid "%d suggestions applied."
 msgstr ""
 
-#: src/admin/Review.js:660
+#: src/admin/Review.js:665
 msgid "Undo"
 msgstr ""
 
-#: src/admin/Review.js:666
+#: src/admin/Review.js:671
 msgid "Loading …"
 msgstr ""
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:705
+#: src/admin/Review.js:710
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr ""
 
-#: src/admin/Review.js:723
+#: src/admin/Review.js:728
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr ""
 
-#: src/admin/Review.js:728
+#: src/admin/Review.js:733
 msgid "Open Media Library"
 msgstr ""
 

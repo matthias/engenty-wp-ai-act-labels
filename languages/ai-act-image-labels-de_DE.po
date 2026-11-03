@@ -907,12 +907,12 @@ msgstr "kein Hinweis nötig"
 msgid "unclear"
 msgstr "unklar"
 
-#: src/admin/parts.js:244
+#: src/admin/parts.js:265
 msgid "Not found on any page"
 msgstr "Auf keiner Seite gefunden"
 
 #. translators: %d: number of further places
-#: src/admin/parts.js:275
+#: src/admin/parts.js:296
 #, js-format
 msgid "and %d more"
 msgstr "und %d weitere"
@@ -989,61 +989,61 @@ msgstr "Noch nicht geprüft: wo deine Medien verwendet werden und welche Spuren 
 msgid "Check site"
 msgstr "Website prüfen"
 
-#: src/admin/parts.js:236
+#: src/admin/parts.js:257
 msgid "not on the page"
 msgstr "nicht auf der Seite"
 
-#: src/admin/parts.js:237
+#: src/admin/parts.js:258
 msgid "page not reachable"
 msgstr "Seite nicht erreichbar"
 
-#: src/admin/Review.js:571
+#: src/admin/Review.js:576
 msgid "Media"
 msgstr "Medien"
 
-#: src/admin/Review.js:572
+#: src/admin/Review.js:577
 msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
 msgstr "Entscheide pro Datei: KI-generiert, mit KI verändert oder kein Hinweis nötig. Pflicht ist der Hinweis, wenn etwas echt wirkt, das es so nicht gab."
 
-#: src/admin/Review.js:582
+#: src/admin/Review.js:587
 msgid "Search"
 msgstr "Suchen"
 
-#: src/admin/Review.js:586
+#: src/admin/Review.js:591
 msgid "Search media"
 msgstr "Medien suchen"
 
 #. translators: %d: number of suggestions
-#: src/admin/Review.js:634
+#: src/admin/Review.js:639
 #, js-format
 msgid "Apply all %d suggestions"
 msgstr "Alle %d Vorschläge übernehmen"
 
 #. translators: %d: number of files
-#: src/admin/Review.js:648
+#: src/admin/Review.js:653
 #, js-format
 msgid "%d suggestions applied."
 msgstr "%d Vorschläge übernommen."
 
-#: src/admin/Review.js:660
+#: src/admin/Review.js:665
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/admin/Review.js:666
+#: src/admin/Review.js:671
 msgid "Loading …"
 msgstr "Lädt …"
 
 #. translators: 1: page, 2: pages
-#: src/admin/Review.js:705
+#: src/admin/Review.js:710
 #, js-format
 msgid "Page %1$d of %2$d"
 msgstr "Seite %1$d von %2$d"
 
-#: src/admin/Review.js:723
+#: src/admin/Review.js:728
 msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
 msgstr "Auch in der Mediathek: Filter „KI“, Spalte und Sammelaktionen in der Listenansicht."
 
-#: src/admin/Review.js:728
+#: src/admin/Review.js:733
 msgid "Open Media Library"
 msgstr "Mediathek öffnen"
 
@@ -1121,7 +1121,7 @@ msgid "Image analysis (AI):"
 msgstr "Bildanalyse (KI):"
 
 #: includes/class-media.php:155
-#: src/admin/Review.js:315
+#: src/admin/Review.js:320
 msgid "Analyze image (AI)"
 msgstr "Bild analysieren (KI)"
 
@@ -1146,11 +1146,11 @@ msgctxt "decision"
 msgid "No label"
 msgstr "Kein Hinweis"
 
-#: src/admin/parts.js:234
+#: src/admin/parts.js:255
 msgid "label visible"
 msgstr "Hinweis sichtbar"
 
-#: src/admin/parts.js:235
+#: src/admin/parts.js:256
 msgid "without label"
 msgstr "ohne Hinweis"
 
@@ -1184,7 +1184,7 @@ msgstr "Nur Website-Administratoren können die ganze Website prüfen."
 msgid "You cannot edit this file."
 msgstr "Du kannst diese Datei nicht bearbeiten."
 
-#: src/admin/Review.js:412
+#: src/admin/Review.js:417
 msgid "Some labels could not be undone. Retry the remaining files."
 msgstr "Einige Kennzeichnungen konnten nicht zurückgenommen werden. Versuche es für die verbleibenden Dateien erneut."
 
@@ -1256,7 +1256,7 @@ msgstr "Alle %1$d: etwa %2$s"
 msgid "Measured in the test with %1$d pictures: %2$s"
 msgstr "Gemessen im Test mit %1$d Bildern: %2$s"
 
-#: src/admin/Review.js:552
+#: src/admin/Review.js:557
 #: src/admin/Run.js:162
 msgid "Analyze image content (AI)"
 msgstr "Bild-Inhalte analysieren (KI)"
@@ -1370,3 +1370,17 @@ msgstr "https://engenty.ai/de/"
 #: ai-act-labels.php
 msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
 msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+
+#. translators: %s: date and time
+#: src/admin/parts.js:228
+#, js-format
+msgid "Analyzed %s"
+msgstr "Analysiert am %s"
+
+#: src/admin/parts.js:234
+msgid "without the picture"
+msgstr "ohne Bild"
+
+#: src/admin/Review.js:316
+msgid "Analyze again (AI)"
+msgstr "Erneut analysieren (KI)"

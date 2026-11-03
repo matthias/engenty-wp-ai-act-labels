@@ -312,10 +312,15 @@ function MediaRow( {
 							busy={ reviewing }
 							onClick={ () => onReview( item ) }
 						>
-							{ __(
-								'Analyze image (AI)',
-								'ai-act-image-labels'
-							) }
+							{ item.hint
+								? __(
+										'Analyze again (AI)',
+										'ai-act-image-labels'
+								  )
+								: __(
+										'Analyze image (AI)',
+										'ai-act-image-labels'
+								  ) }
 						</Button>
 					</span>
 					<Decide
