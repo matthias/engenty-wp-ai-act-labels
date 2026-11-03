@@ -20,8 +20,8 @@ sed "s#{SQLITE_IMPLEMENTATION_FOLDER_PATH}#$WP_PATH/wp-content/plugins/sqlite-da
 $WP core is-installed 2>/dev/null || $WP core install --url="$WP_URL" --title="Tischlerei Huber" --admin_user=admin --admin_password=admin --admin_email=a@example.com --skip-email --quiet
 $WP language core install de_DE --activate --quiet || true
 $WP rewrite structure '/%postname%/' --quiet
-ln -sfn "$PLUGIN" "$WP_PATH/wp-content/plugins/ai-act-labels"
-$WP plugin activate ai-act-labels --quiet
+ln -sfn "$PLUGIN" "$WP_PATH/wp-content/plugins/ai-act-image-labels"
+$WP plugin activate ai-act-image-labels --quiet
 if ! $WP post list --post_type=page --name=start --field=ID | grep -q .; then
 	$WP eval-file "$PLUGIN/tests/fixtures/demo-content.php"
 	# One label from the start, so the site shows one.

@@ -1,0 +1,1372 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Act Image Labels 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
+"Last-Translator: engenty\n"
+"Language-Team: engenty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
+"PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
+"Language: nb_NO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: ai-act-image-labels\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: ai-act-labels.php
+msgid "AI Act Image Labels"
+msgstr "AI Act Image Labels"
+
+#. Description of the plugin
+#: ai-act-labels.php
+msgid "Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label."
+msgstr "Merker KI-genererte og KI-endrede medier slik EUs KI-forordning krever – rett i mediebiblioteket, med EUs offisielle ikoner på nettstedet, og en assistent som finner det som trenger merking."
+
+#. Author of the plugin
+#: ai-act-labels.php
+msgid "engenty"
+msgstr "engenty"
+
+#. Author URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai"
+msgstr "https://engenty.ai"
+
+#: includes/admin-columns/class-ac-column.php:18
+#: includes/class-media.php:84
+#: includes/class-media.php:100
+msgid "AI label (AI Act)"
+msgstr "KI-merking (KI-forordningen)"
+
+#: includes/class-admin.php:49
+#: includes/class-admin.php:50
+#: includes/class-media.php:125
+#: includes/class-media.php:523
+#: src/admin/index.js:54
+#: src/admin/parts.js:130
+msgid "AI labels"
+msgstr "KI-merking"
+
+#: includes/class-admin.php:67
+#: src/admin/index.js:101
+msgid "AI labels are loading …"
+msgstr "KI-merking laster …"
+
+#: includes/class-admin.php:130
+msgid "Open"
+msgstr "Åpne"
+
+#: includes/class-assistant.php:141
+msgid "Image analysis (AI) needs WordPress 7.0 or newer."
+msgstr "Bildeanalyse (KI) trenger WordPress 7.0 eller nyere."
+
+#: includes/class-assistant.php:187
+msgid "The answer was not JSON. Try again."
+msgstr "Svaret var ikke JSON. Prøv igjen."
+
+#: includes/class-assistant.php:315
+#: includes/class-rest.php:157
+#: includes/class-rest.php:283
+msgid "This file does not exist."
+msgstr "Denne filen finnes ikke."
+
+#. translators: %s: tool name
+#: includes/class-detect.php:328
+#, php-format
+msgid "XMP names %s"
+msgstr "XMP oppgir %s"
+
+#: includes/class-detect.php:346
+msgid "IPTC: created with AI"
+msgstr "IPTC: laget med KI"
+
+#: includes/class-detect.php:348
+msgid "IPTC: photo with AI parts"
+msgstr "IPTC: foto med KI-deler"
+
+#: includes/class-detect.php:350
+msgid "IPTC: enhanced with AI (minor)"
+msgstr "IPTC: forbedret med KI (mindre)"
+
+#. translators: %s: IPTC code like digitalCapture
+#: includes/class-detect.php:353
+#, php-format
+msgid "IPTC: no AI (%s)"
+msgstr "IPTC: ingen KI (%s)"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): modified with AI"
+msgstr "Content Credentials (C2PA): endret med KI"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): created with AI"
+msgstr "Content Credentials (C2PA): laget med KI"
+
+#: includes/class-detect.php:400
+msgid "Content Credentials (C2PA): camera capture"
+msgstr "Content Credentials (C2PA): kameraopptak"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:402
+#, php-format
+msgid "Content Credentials (C2PA) from %s"
+msgstr "Content Credentials (C2PA) fra %s"
+
+#: includes/class-detect.php:403
+msgid "Content Credentials (C2PA) present"
+msgstr "Content Credentials (C2PA) finnes"
+
+#: includes/class-detect.php:472
+#: includes/class-detect.php:523
+msgid "Stable Diffusion generation data"
+msgstr "Genereringsdata fra Stable Diffusion"
+
+#: includes/class-detect.php:475
+msgid "ComfyUI generation data"
+msgstr "Genereringsdata fra ComfyUI"
+
+#: includes/class-detect.php:478
+msgid "InvokeAI generation data"
+msgstr "Genereringsdata fra InvokeAI"
+
+#: includes/class-detect.php:481
+msgid "NovelAI generation data"
+msgstr "Genereringsdata fra NovelAI"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:493
+#, php-format
+msgid "PNG text names %s"
+msgstr "PNG-tekst oppgir %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:536
+#, php-format
+msgid "EXIF names %s"
+msgstr "EXIF oppgir %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:559
+#, php-format
+msgid "Tags name %s"
+msgstr "Tagger oppgir %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:583
+#, php-format
+msgid "File name as %s gives it"
+msgstr "Filnavn slik %s gir det"
+
+#: includes/class-detect.php:584
+msgid "File name points to AI"
+msgstr "Filnavnet peker på KI"
+
+#: includes/class-labels.php:264
+#: includes/class-media.php:67
+#: includes/class-media.php:343
+#: includes/class-rest.php:65
+#: src/admin/Knowledge.js:297
+#: src/admin/Look.js:479
+#: src/admin/parts.js:8
+msgid "Modified with AI"
+msgstr "Endret med KI"
+
+#: includes/class-labels.php:266
+#: includes/class-media.php:66
+#: includes/class-media.php:342
+#: includes/class-rest.php:64
+#: src/admin/Knowledge.js:301
+#: src/admin/Look.js:114
+#: src/admin/Look.js:467
+#: src/admin/parts.js:7
+msgid "AI-generated"
+msgstr "KI-generert"
+
+#: includes/class-labels.php:284
+#: includes/class-rest.php:66
+#: src/admin/Look.js:156
+msgid "This image was created with AI."
+msgstr "Dette bildet er laget med KI."
+
+#: includes/class-labels.php:285
+msgid "This video was created with AI."
+msgstr "Denne videoen er laget med KI."
+
+#: includes/class-labels.php:286
+msgid "This recording was created with AI."
+msgstr "Dette opptaket er laget med KI."
+
+#: includes/class-labels.php:287
+msgid "This content was created with AI."
+msgstr "Dette innholdet er laget med KI."
+
+#: includes/class-labels.php:290
+#: includes/class-rest.php:67
+#: src/admin/Look.js:151
+msgid "This image was modified with AI."
+msgstr "Dette bildet er endret med KI."
+
+#: includes/class-labels.php:291
+msgid "This video was modified with AI."
+msgstr "Denne videoen er endret med KI."
+
+#: includes/class-labels.php:292
+msgid "This recording was modified with AI."
+msgstr "Dette opptaket er endret med KI."
+
+#: includes/class-labels.php:293
+msgid "This content was modified with AI."
+msgstr "Dette innholdet er endret med KI."
+
+#. translators: %s: the AI tool, e.g. Midjourney
+#: includes/class-labels.php:315
+#, php-format
+msgid "Tool: %s."
+msgstr "Verktøy: %s."
+
+#: includes/class-media.php:65
+msgid "Not decided yet"
+msgstr "Ikke avgjort ennå"
+
+#: includes/class-media.php:68
+#: includes/class-media.php:347
+#: src/admin/parts.js:9
+#: src/admin/Review.js:23
+msgid "No label needed"
+msgstr "Trenger ingen merking"
+
+#: includes/class-media.php:136
+#: src/admin/parts.js:146
+msgid "Suggestion"
+msgstr "Forslag"
+
+#: includes/class-media.php:143
+msgid "In the file:"
+msgstr "I filen:"
+
+#: includes/class-media.php:147
+#: src/media/index.js:143
+msgid "Image analysis (AI):"
+msgstr "Bildeanalyse (KI):"
+
+#: includes/class-media.php:150
+#: src/admin/parts.js:216
+msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
+msgstr "Tydelige filmetadata motsier AI-vurderingen. Se over før du bruker den."
+
+#: includes/class-media.php:155
+#: src/admin/Review.js:315
+msgid "Analyze image (AI)"
+msgstr "Analyser bilde (KI)"
+
+#: includes/class-media.php:161
+msgid "AI tool"
+msgstr "KI-verktøy"
+
+#: includes/class-media.php:164
+msgid "optional, e.g. Midjourney"
+msgstr "valgfritt, f.eks. Midjourney"
+
+#: includes/class-media.php:165
+msgid "Own notice"
+msgstr "Egen merknad"
+
+#: includes/class-media.php:169
+msgid "Empty: the default. The tool then appears in the notice."
+msgstr "Tom: standarden. Verktøyet vises da i merknaden."
+
+#: includes/class-media.php:173
+msgid "AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none."
+msgstr "KI-forordningen, artikkel 50: merking er påkrevd når virkelige eller troverdige personer, steder eller hendelser ser ekte ut. Vanlig bilderedigering trenger ingen."
+
+#: includes/class-media.php:175
+msgid "Review all media →"
+msgstr "Gå gjennom alle medier →"
+
+#: includes/class-media.php:289
+#: includes/class-media.php:292
+msgid "AI"
+msgstr "KI"
+
+#. translators: %s: KI-generiert or Mit KI verändert
+#: includes/class-media.php:328
+#: src/media/index.js:36
+#, php-format,js-format
+msgid "Suggestion: %s"
+msgstr "Forslag: %s"
+
+#: includes/class-media.php:340
+msgid "AI: all"
+msgstr "KI: alle"
+
+#: includes/class-media.php:341
+#: src/admin/Review.js:22
+msgid "Labeled"
+msgstr "Merket"
+
+#: includes/class-media.php:344
+#: src/admin/Review.js:20
+#: src/admin/Review.js:140
+msgid "Suggestions"
+msgstr "Forslag"
+
+#: includes/class-media.php:345
+#: src/admin/Review.js:21
+msgid "Used, not decided"
+msgstr "I bruk, ikke avgjort"
+
+#: includes/class-media.php:346
+#: src/admin/parts.js:10
+msgid "Not decided"
+msgstr "Ikke avgjort"
+
+#: includes/class-media.php:362
+msgid "Filter by AI label"
+msgstr "Filtrer etter KI-merking"
+
+#: includes/class-media.php:401
+msgid "Label as AI-generated"
+msgstr "Merk som KI-generert"
+
+#: includes/class-media.php:402
+msgid "Label as modified with AI"
+msgstr "Merk som endret med KI"
+
+#: includes/class-media.php:403
+msgid "AI: no label needed"
+msgstr "KI: trenger ingen merking"
+
+#: includes/class-media.php:404
+msgid "Remove AI label"
+msgstr "Fjern KI-merking"
+
+#. translators: %d: number of files
+#: includes/class-media.php:447
+#, php-format
+msgid "Removed the AI label from %d file."
+msgid_plural "Removed the AI label from %d files."
+msgstr[0] "Fjernet KI-merkingen fra %d fil."
+msgstr[1] "Fjernet KI-merkingen fra %d filer."
+
+#. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig
+#: includes/class-media.php:449
+#, php-format
+msgid "%1$d file: %2$s."
+msgid_plural "%1$d files: %2$s."
+msgstr[0] "%1$d fil: %2$s."
+msgstr[1] "%1$d filer: %2$s."
+
+#: includes/class-media.php:462
+msgid "AI labels:"
+msgstr "KI-merking:"
+
+#. translators: %d: number of files
+#: includes/class-media.php:464
+#, php-format
+msgid "%d file carries traces of AI and has no decision yet."
+msgid_plural "%d files carry traces of AI and have no decision yet."
+msgstr[0] "%d fil har spor av KI og ingen avgjørelse ennå."
+msgstr[1] "%d filer har spor av KI og ingen avgjørelse ennå."
+
+#: includes/class-media.php:466
+msgid "View"
+msgstr "Vis"
+
+#: includes/class-media.php:468
+msgid "Later"
+msgstr "Senere"
+
+#: includes/class-rest.php:171
+msgid "Decide on at most 200 files per request."
+msgstr "Avgjør høyst 200 filer per forespørsel."
+
+#: includes/class-rest.php:175
+msgid "This label does not exist."
+msgstr "Denne merkingen finnes ikke."
+
+#: includes/class-rest.php:220
+msgid "Only site administrators can run a site-wide check."
+msgstr "Bare nettstedets administratorer kan kjøre en sjekk av hele nettstedet."
+
+#: includes/class-rest.php:244
+#: includes/class-rest.php:316
+msgid "For the image analysis, WordPress needs an AI provider (Settings › Connectors)."
+msgstr "Til bildeanalysen trenger WordPress en KI-leverandør (Innstillinger › Connectors)."
+
+#: includes/class-rest.php:286
+msgid "You cannot edit this file."
+msgstr "Du kan ikke redigere denne filen."
+
+#: includes/class-usage.php:471
+#: includes/class-usage.php:497
+msgid "Website"
+msgstr "Nettsted"
+
+#: includes/class-usage.php:491
+msgid "Site logo"
+msgstr "Nettstedslogo"
+
+#: includes/class-usage.php:493
+#: src/admin/parts.js:42
+msgid "Site icon"
+msgstr "Nettstedsikon"
+
+#: includes/class-usage.php:495
+#: src/admin/parts.js:43
+msgid "Header image"
+msgstr "Toppbilde"
+
+#: src/admin/api.js:28
+msgid "That did not work."
+msgstr "Det gikk ikke."
+
+#: src/admin/Assistant.js:7
+msgid "set up"
+msgstr "satt opp"
+
+#: src/admin/Assistant.js:8
+msgid "API key missing"
+msgstr "API-nøkkel mangler"
+
+#: src/admin/Assistant.js:9
+msgid "not responding"
+msgstr "svarer ikke"
+
+#: src/admin/Assistant.js:10
+msgid "plugin missing"
+msgstr "utvidelse mangler"
+
+#: src/admin/Assistant.js:24
+msgid "Image analysis (AI) needs WordPress 7.0"
+msgstr "Bildeanalyse (KI) trenger WordPress 7.0"
+
+#: src/admin/Assistant.js:30
+msgid "From 7.0, the image analysis uses the AI provider you set up under Settings › Connectors. Labeling, the check and the traces in files already work."
+msgstr "Fra 7.0 bruker bildeanalysen KI-leverandøren du setter opp under Innstillinger › Connectors. Merking, sjekken og sporene i filer fungerer allerede."
+
+#: src/admin/Assistant.js:37
+msgid "Update WordPress"
+msgstr "Oppdater WordPress"
+
+#: src/admin/Assistant.js:49
+#: src/admin/Assistant.js:130
+msgid "Set up an AI provider first"
+msgstr "Sett opp en KI-leverandør først"
+
+#: src/admin/Assistant.js:52
+msgid "The image analysis uses the provider you set up in WordPress under Settings › Connectors – your API key stays there. Labeling, the check and the traces in files work without it."
+msgstr "Bildeanalysen bruker leverandøren du setter opp i WordPress under Innstillinger › Connectors – API-nøkkelen din blir der. Merking, sjekken og sporene i filer fungerer uten."
+
+#: src/admin/Assistant.js:85
+#: src/media/index.js:154
+msgid "Open Connectors"
+msgstr "Åpne Connectors"
+
+#: src/admin/Assistant.js:89
+msgid "Install Vercel AI Gateway"
+msgstr "Installer Vercel AI Gateway"
+
+#: src/admin/Assistant.js:98
+msgid "No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card."
+msgstr "Ingen avtale med en leverandør? Vercel AI Gateway gir 5 dollar i måneden gratis, uten kredittkort."
+
+#: src/admin/Assistant.js:139
+msgid "Close"
+msgstr "Lukk"
+
+#: src/admin/index.js:12
+msgid "Review"
+msgstr "Gjennomgang"
+
+#: src/admin/index.js:13
+msgid "Appearance"
+msgstr "Utseende"
+
+#: src/admin/index.js:14
+msgid "Knowledge"
+msgstr "Kunnskap"
+
+#: src/admin/index.js:77
+msgid "Article 50 of the AI Regulation (EU) 2024/1689"
+msgstr "Artikkel 50 i KI-forordningen (EU) 2024/1689"
+
+#: src/admin/index.js:84
+msgid "AI Act Art. 50 applies since 2 Aug 2026"
+msgstr "KI-forordningen art. 50 gjelder fra 2. aug. 2026"
+
+#: src/admin/index.js:90
+msgid "AI Act Art. 50"
+msgstr "KI-forordningen art. 50"
+
+#: src/admin/index.js:94
+msgid "Media Library"
+msgstr "Mediebibliotek"
+
+#: src/admin/Knowledge.js:9
+msgid "Photorealistic AI “team photo”, customer portrait, testimonial"
+msgstr "Fotorealistisk KI-«teambilde», kundeportrett, kundeomtale"
+
+#: src/admin/Knowledge.js:17
+msgid "Real photo, background or person replaced or added with AI"
+msgstr "Ekte foto, bakgrunn eller person byttet ut eller lagt til med KI"
+
+#: src/admin/Knowledge.js:25
+msgid "AI product shot that looks like a real photo of the product"
+msgstr "KI-produktbilde som ser ut som et ekte foto av produktet"
+
+#: src/admin/Knowledge.js:33
+msgid "AI image of a real building, place or event"
+msgstr "KI-bilde av en ekte bygning, et ekte sted eller en ekte hendelse"
+
+#: src/admin/Knowledge.js:41
+msgid "Recognizable illustration, comic, 3D graphic, abstract background"
+msgstr "Tydelig illustrasjon, tegneserie, 3D-grafikk, abstrakt bakgrunn"
+
+#: src/admin/Knowledge.js:49
+msgid "Real photo, only color, light, noise or crop with an AI tool"
+msgstr "Ekte foto, bare farge, lys, støy eller beskjæring med et KI-verktøy"
+
+#: src/admin/Knowledge.js:57
+msgid "Camera or stock photo without AI"
+msgstr "Kamera- eller arkivfoto uten KI"
+
+#: src/admin/Knowledge.js:64
+msgid "required"
+msgstr "påkrevd"
+
+#: src/admin/Knowledge.js:65
+msgid "voluntary"
+msgstr "frivillig"
+
+#: src/admin/Knowledge.js:66
+msgid "no label"
+msgstr "ingen merking"
+
+#: src/admin/Knowledge.js:71
+msgid "Questions and answers on Article 50 (European Commission)"
+msgstr "Spørsmål og svar om artikkel 50 (Europakommisjonen)"
+
+#: src/admin/Knowledge.js:78
+msgid "Code of Practice on labeling AI-generated content"
+msgstr "Atferdskodeks for merking av KI-generert innhold"
+
+#: src/admin/Knowledge.js:85
+msgid "The EU icons to download"
+msgstr "EU-ikonene til nedlasting"
+
+#: src/admin/Knowledge.js:89
+msgid "AI Act in the Official Journal (Regulation (EU) 2024/1689)"
+msgstr "KI-forordningen i EUs offisielle tidende (forordning (EU) 2024/1689)"
+
+#: src/admin/Knowledge.js:96
+msgid "AI Act Service Desk"
+msgstr "AI Act Service Desk"
+
+#: src/admin/Knowledge.js:112
+msgid "AI Act, Article 50"
+msgstr "KI-forordningen, artikkel 50"
+
+#: src/admin/Knowledge.js:115
+msgid "Since 2 August 2026, what AI made has to be visible."
+msgstr "Fra 2. august 2026 må det være synlig hva KI har laget."
+
+#: src/admin/Knowledge.js:121
+msgid "A business that publishes images, videos or recordings that look real but were created or modified with AI has to label them – visibly, at the latest at first sight. The duty is yours as the site owner, not the AI tool maker's."
+msgstr "En bedrift som publiserer bilder, videoer eller opptak som ser ekte ut, men ble laget eller endret med KI, må merke dem – synlig, senest ved første blikk. Plikten er din som eier av nettstedet, ikke KI-verktøyets produsent."
+
+#: src/admin/Knowledge.js:140
+msgid "You have to label"
+msgstr "Du må merke"
+
+#: src/admin/Knowledge.js:144
+msgid "Deepfakes: AI images, videos, audio that show real or plausible people, things, places or events and look real – also an invented but photorealistic person."
+msgstr "Deepfakes: KI-bilder, -videoer og -lyd som viser virkelige eller troverdige personer, ting, steder eller hendelser og ser ekte ut – også en oppdiktet, men fotorealistisk person."
+
+#: src/admin/Knowledge.js:150
+msgid "AI texts that inform the public on matters of public interest – unless a person reviewed them and takes responsibility."
+msgstr "KI-tekster som informerer allmennheten om saker av offentlig interesse – med mindre en person har gått gjennom dem og tar ansvaret."
+
+#: src/admin/Knowledge.js:156
+msgid "Whether you meant to deceive does not matter. What your audience believes counts."
+msgstr "Om du mente å villede, spiller ingen rolle. Det som teller, er hva publikum tror."
+
+#: src/admin/Knowledge.js:168
+msgid "No label needed for"
+msgstr "Ingen merking trengs for"
+
+#: src/admin/Knowledge.js:172
+msgid "Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI tools."
+msgstr "Vanlig redigering: beskjæring, lys, farge, støy, støv, oppskalering – også med KI-verktøy."
+
+#: src/admin/Knowledge.js:178
+msgid "Obviously artificial images (illustration, comic, abstract): voluntary, but good for trust."
+msgstr "Tydelig kunstige bilder (illustrasjon, tegneserie, abstrakt): frivillig, men bra for tilliten."
+
+#: src/admin/Knowledge.js:184
+msgid "Content created before 2 August 2026 – nothing applies retroactively."
+msgstr "Innhold laget før 2. august 2026 – ingenting gjelder med tilbakevirkende kraft."
+
+#: src/admin/Knowledge.js:190
+msgid "Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the caption)."
+msgstr "Kunst, satire, fiksjon: ja, men slik at verket ikke lider (f.eks. i bildeteksten)."
+
+#: src/admin/Knowledge.js:202
+msgid "Where the label goes"
+msgstr "Hvor merkingen skal stå"
+
+#: src/admin/Knowledge.js:206
+msgid "On or right at the content, visible without a click – not only in the imprint."
+msgstr "På eller rett ved innholdet, synlig uten klikk – ikke bare i kolofonen."
+
+#: src/admin/Knowledge.js:212
+msgid "Plain words: “AI-generated”, “Modified with AI”. For screen readers as the icon's name, never instead of the alt text."
+msgstr "Klare ord: «KI-generert», «Endret med KI». For skjermlesere som ikonets navn, aldri i stedet for alt-teksten."
+
+#: src/admin/Knowledge.js:218
+msgid "Videos: in a corner the whole time. Audio: at the player and in the artwork."
+msgstr "Videoer: i et hjørne hele tiden. Lyd: ved spilleren og i omslagsbildet."
+
+#: src/admin/Knowledge.js:224
+msgid "The AI tool's watermark or metadata does not count for you."
+msgstr "KI-verktøyets vannmerke eller metadata teller ikke for deg."
+
+#: src/admin/Knowledge.js:234
+msgid "The EU's icons"
+msgstr "EUs ikoner"
+
+#: src/admin/Knowledge.js:235
+msgid "From the Commission since June 2026, free to use, no attribution. Optional – an equivalent label is allowed too."
+msgstr "Fra Kommisjonen siden juni 2026, gratis å bruke, ingen kreditering. Valgfritt – en likeverdig merking er også tillatt."
+
+#: src/admin/Knowledge.js:243
+msgid "AI GENERATED"
+msgstr "KI-GENERERT"
+
+#: src/admin/Knowledge.js:245
+msgid "Fully created with AI, no human-made parts."
+msgstr "Helt laget med KI, ingen menneskeskapte deler."
+
+#: src/admin/Knowledge.js:253
+msgid "AI MODIFIED"
+msgstr "KI-ENDRET"
+
+#: src/admin/Knowledge.js:255
+msgid "Real photo, video or recording, partly modified with AI."
+msgstr "Ekte foto, video eller opptak, delvis endret med KI."
+
+#: src/admin/Knowledge.js:264
+msgctxt "name of the EU basic icon"
+msgid "AI"
+msgstr "KI"
+
+#: src/admin/Knowledge.js:271
+msgid "The basic icon: with your own text, with a second layer or where space is short."
+msgstr "Grunnikonet: med din egen tekst, med et andre lag eller der det er lite plass."
+
+#: src/admin/Knowledge.js:280
+msgid "Typical cases"
+msgstr "Typiske tilfeller"
+
+#: src/admin/Knowledge.js:284
+msgid "File"
+msgstr "Fil"
+
+#: src/admin/Knowledge.js:285
+#: src/admin/Look.js:109
+msgid "Kind"
+msgstr "Type"
+
+#: src/admin/Knowledge.js:286
+msgid "Label"
+msgstr "Merking"
+
+#: src/admin/Knowledge.js:321
+msgid "How the plugin recognizes AI"
+msgstr "Slik gjenkjenner utvidelsen KI"
+
+#: src/admin/Knowledge.js:328
+msgid "Many AI tools write into the file that it was made with AI: Content Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and ComfyUI. The plugin reads them on upload and with every check – on your server, nothing leaves it."
+msgstr "Mange KI-verktøy skriver inn i filen at den ble laget med KI: Content Credentials (C2PA) fra ChatGPT, Gemini, Firefly eller Photoshop, IPTC-verdien «trainedAlgorithmicMedia», genereringsdataene fra Stable Diffusion og ComfyUI. Utvidelsen leser dem ved opplasting og ved hver sjekk – på din server, ingenting forlater den."
+
+#: src/admin/Knowledge.js:334
+msgid "A missing trace means nothing: screenshots, exports and image optimizers remove them. That is why “Used, not decided” shows everything visible on your site that has no decision yet. Only you know for sure how an image was made."
+msgstr "Et manglende spor betyr ingenting: skjermbilder, eksporter og bildeoptimering fjerner dem. Derfor viser «I bruk, ikke avgjort» alt som er synlig på nettstedet ditt og ennå ikke har noen avgjørelse. Bare du vet sikkert hvordan et bilde ble laget."
+
+#: src/admin/Knowledge.js:342
+msgid "This knowledge as a skill"
+msgstr "Denne kunnskapen som en skill"
+
+#: src/admin/Knowledge.js:349
+msgid "The image analysis thinks with a skill: a guide to the AI Act with sources, in the plugin under skills/eu-ai-act-labels. You can give the same files to any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
+msgstr "Bildeanalysen tenker med en skill: en veiledning til KI-forordningen med kilder, i utvidelsen under skills/eu-ai-act-labels. De samme filene kan du gi til enhver KI-agent som leser Agent Skills – Claude, Cursor, Codex og andre."
+
+#: src/admin/Knowledge.js:361
+msgid "View SKILL.md"
+msgstr "Vis SKILL.md"
+
+#: src/admin/Knowledge.js:369
+msgid "Sources"
+msgstr "Kilder"
+
+#: src/admin/Knowledge.js:370
+msgid "As of 9 October 2026. This is help, not legal advice."
+msgstr "Per 9. oktober 2026. Dette er hjelp, ikke juridisk rådgivning."
+
+#: src/admin/Look.js:18
+msgid "EU icon by kind"
+msgstr "EU-ikon etter type"
+
+#: src/admin/Look.js:19
+msgid "Round EU icon"
+msgstr "Rundt EU-ikon"
+
+#: src/admin/Look.js:22
+msgid "Round icon, opens on hover"
+msgstr "Rundt ikon, åpnes når pekeren holdes over"
+
+#: src/admin/Look.js:25
+msgid "Own icon"
+msgstr "Eget ikon"
+
+#: src/admin/Look.js:26
+msgid "Sparkle"
+msgstr "Glimt"
+
+#: src/admin/Look.js:30
+msgid "Dark"
+msgstr "Mørk"
+
+#: src/admin/Look.js:31
+msgid "Light"
+msgstr "Lys"
+
+#: src/admin/Look.js:32
+#: src/admin/parts.js:31
+msgid "Image"
+msgstr "Bilde"
+
+#: src/admin/Look.js:33
+#: src/admin/Look.js:344
+#: src/admin/Look.js:347
+msgid "Color"
+msgstr "Farge"
+
+#: src/admin/Look.js:52
+msgid "Top left"
+msgstr "Øverst til venstre"
+
+#: src/admin/Look.js:53
+msgid "Top right"
+msgstr "Øverst til høyre"
+
+#: src/admin/Look.js:54
+msgid "Bottom left"
+msgstr "Nederst til venstre"
+
+#: src/admin/Look.js:55
+msgid "Bottom right"
+msgstr "Nederst til høyre"
+
+#: src/admin/Look.js:105
+msgid "How it looks on the site"
+msgstr "Slik ser det ut på nettstedet"
+
+#: src/admin/Look.js:118
+msgid "Modified"
+msgstr "Endret"
+
+#: src/admin/Look.js:143
+msgid "Our workshop in autumn"
+msgstr "Verkstedet vårt om høsten"
+
+#: src/admin/Look.js:180
+msgid "On small images (under 400 px) the plugin uses the round icon instead of the wide one."
+msgstr "På små bilder (under 400 px) bruker utvidelsen det runde ikonet i stedet for det brede."
+
+#: src/admin/Look.js:188
+msgid "Hover over the icon: the second layer shows the notice. Screen readers read it as the icon's name – the image's alt text stays as it is."
+msgstr "Hold pekeren over ikonet: det andre laget viser merknaden. Skjermlesere leser den som ikonets navn – bildets alt-tekst forblir som den er."
+
+#: src/admin/Look.js:228
+msgid "Choose your own icon"
+msgstr "Velg ditt eget ikon"
+
+#: src/admin/Look.js:266
+msgid "Administrators change the appearance. You can still label."
+msgstr "Administratorer endrer utseendet. Du kan fortsatt merke."
+
+#: src/admin/Look.js:274
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/admin/Look.js:275
+msgid "The default is the European Commission's icons – free to use, no attribution."
+msgstr "Standarden er Europakommisjonens ikoner – gratis å bruke, ingen kreditering."
+
+#: src/admin/Look.js:327
+msgid "Choose another icon"
+msgstr "Velg et annet ikon"
+
+#: src/admin/Look.js:335
+msgid "Your own mark is allowed if it is as clear as the EU icon. The EU icon is the safer choice."
+msgstr "Ditt eget merke er tillatt hvis det er like tydelig som EU-ikonet. EU-ikonet er det tryggeste valget."
+
+#: src/admin/Look.js:375
+msgid "Pick a color"
+msgstr "Velg en farge"
+
+#: src/admin/Look.js:384
+#: src/admin/Look.js:392
+msgid "Transparency"
+msgstr "Gjennomsiktighet"
+
+#: src/admin/Look.js:385
+msgid "Of the shape; the letters stay solid."
+msgstr "For formen; bokstavene forblir heldekkende."
+
+#. translators: %d: a percentage.
+#: src/admin/Look.js:401
+#, js-format
+msgid "%d%%"
+msgstr "%d %%"
+
+#: src/admin/Look.js:407
+#: src/admin/Look.js:410
+msgid "Size"
+msgstr "Størrelse"
+
+#: src/admin/Look.js:420
+#: src/admin/Look.js:429
+msgid "Corner"
+msgstr "Hjørne"
+
+#: src/admin/Look.js:421
+msgid "Videos: always at the top, away from the controls."
+msgstr "Videoer: alltid øverst, unna kontrollene."
+
+#: src/admin/Look.js:459
+msgid "Words"
+msgstr "Ord"
+
+#: src/admin/Look.js:460
+msgid "Leave empty: the default in the site's language."
+msgstr "La stå tomt: standarden på nettstedets språk."
+
+#: src/admin/Look.js:491
+msgid "Notice for AI-generated"
+msgstr "Merknad for KI-generert"
+
+#: src/admin/Look.js:503
+msgid "Notice for modified"
+msgstr "Merknad for endret"
+
+#: src/admin/Look.js:518
+msgid "Where the label appears"
+msgstr "Hvor merkingen vises"
+
+#: src/admin/Look.js:527
+msgid "Images in pages and posts"
+msgstr "Bilder i sider og innlegg"
+
+#: src/admin/Look.js:531
+msgid "Blocks, galleries, covers, classic editor, HTML"
+msgstr "Blokker, gallerier, omslag, klassisk redigering, HTML"
+
+#: src/admin/Look.js:538
+msgid "Featured images and the theme's images"
+msgstr "Fremhevede bilder og temaets bilder"
+
+#: src/admin/Look.js:542
+msgid "everything that comes through wp_get_attachment_image()"
+msgstr "alt som går gjennom wp_get_attachment_image()"
+
+#: src/admin/Look.js:549
+msgid "Videos"
+msgstr "Videoer"
+
+#: src/admin/Look.js:550
+msgid "Video block, cover with video, [video]"
+msgstr "Videoblokk, omslag med video, [video]"
+
+#: src/admin/Look.js:557
+#: src/admin/parts.js:36
+msgid "Audio"
+msgstr "Lyd"
+
+#: src/admin/Look.js:558
+msgid "a line above the player"
+msgstr "en linje over spilleren"
+
+#: src/admin/Look.js:576
+#: src/admin/Look.js:587
+msgid "Notice in captions"
+msgstr "Merknad i bildetekster"
+
+#: src/admin/Look.js:580
+msgid "Only where there is one already – never in the alt text."
+msgstr "Bare der det allerede finnes en – aldri i alt-teksten."
+
+#: src/admin/Look.js:596
+#: src/admin/Look.js:607
+msgid "Second layer on hover"
+msgstr "Andre lag når pekeren holdes over"
+
+#: src/admin/Look.js:600
+msgid "The whole notice, with the tool."
+msgstr "Hele merknaden, med verktøyet."
+
+#: src/admin/Look.js:618
+msgid "On upload"
+msgstr "Ved opplasting"
+
+#: src/admin/Look.js:621
+#: src/admin/Look.js:632
+msgid "Check files for traces of AI"
+msgstr "Sjekk filer for spor av KI"
+
+#: src/admin/Look.js:625
+msgid "C2PA, IPTC, generation data, file names – on your server."
+msgstr "C2PA, IPTC, genereringsdata, filnavn – på din server."
+
+#: src/admin/Look.js:641
+#: src/admin/Look.js:652
+msgid "Apply unambiguous traces right away"
+msgstr "Bruk entydige spor med én gang"
+
+#: src/admin/Look.js:645
+msgid "If the file itself says it was made with AI, it is labeled right away."
+msgstr "Hvis filen selv sier at den ble laget med KI, merkes den med én gang."
+
+#: src/admin/parts.js:15
+msgctxt "decision beside the AI icon"
+msgid "generated"
+msgstr "generert"
+
+#: src/admin/parts.js:20
+msgctxt "decision beside the AI icon"
+msgid "modified"
+msgstr "endret"
+
+#: src/admin/parts.js:25
+msgctxt "decision"
+msgid "No label"
+msgstr "Ingen merking"
+
+#: src/admin/parts.js:30
+msgid "Featured image"
+msgstr "Fremhevet bilde"
+
+#: src/admin/parts.js:32
+msgid "Gallery"
+msgstr "Galleri"
+
+#: src/admin/parts.js:33
+msgid "Cover"
+msgstr "Omslag"
+
+#: src/admin/parts.js:34
+msgid "Media & Text"
+msgstr "Media og tekst"
+
+#: src/admin/parts.js:35
+msgid "Video"
+msgstr "Video"
+
+#: src/admin/parts.js:37
+msgid "only as a URL"
+msgstr "bare som URL"
+
+#: src/admin/parts.js:38
+msgid "Page builder"
+msgstr "Sidebygger"
+
+#: src/admin/parts.js:39
+msgid "ACF field"
+msgstr "ACF-felt"
+
+#: src/admin/parts.js:40
+msgid "Product gallery"
+msgstr "Produktgalleri"
+
+#: src/admin/parts.js:41
+msgid "Logo"
+msgstr "Logo"
+
+#: src/admin/parts.js:195
+msgid "Label required"
+msgstr "Merking påkrevd"
+
+#: src/admin/parts.js:196
+msgid "Label voluntary"
+msgstr "Merking frivillig"
+
+#: src/admin/parts.js:197
+msgid "no label needed"
+msgstr "trenger ingen merking"
+
+#: src/admin/parts.js:198
+msgid "unclear"
+msgstr "uklart"
+
+#: src/admin/parts.js:234
+msgid "label visible"
+msgstr "merking synlig"
+
+#: src/admin/parts.js:235
+msgid "without label"
+msgstr "uten merking"
+
+#: src/admin/parts.js:236
+msgid "not on the page"
+msgstr "ikke på siden"
+
+#: src/admin/parts.js:237
+msgid "page not reachable"
+msgstr "siden kan ikke nås"
+
+#: src/admin/parts.js:244
+msgid "Not found on any page"
+msgstr "Ikke funnet på noen side"
+
+#. translators: %d: number of further places
+#: src/admin/parts.js:275
+#, js-format
+msgid "and %d more"
+msgstr "og %d til"
+
+#: src/admin/Review.js:24
+msgid "All"
+msgstr "Alle"
+
+#: src/admin/Review.js:29
+msgid "No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too."
+msgstr "Ingen fil har spor av KI uten en avgjørelse. Spor mangler ofte – gå gjennom «I bruk, ikke avgjort» også."
+
+#: src/admin/Review.js:33
+msgid "Everything used on your site has a decision. Or the site has not been checked yet."
+msgstr "Alt som er i bruk på nettstedet ditt, har en avgjørelse. Eller nettstedet er ikke sjekket ennå."
+
+#: src/admin/Review.js:37
+msgid "No file labeled yet."
+msgstr "Ingen fil merket ennå."
+
+#: src/admin/Review.js:38
+msgid "No file decided as needing no label yet."
+msgstr "Ingen fil avgjort som uten behov for merking ennå."
+
+#: src/admin/Review.js:42
+msgid "No images, videos or recordings."
+msgstr "Ingen bilder, videoer eller opptak."
+
+#: src/admin/Review.js:117
+msgid "Reading your pages and posts …"
+msgstr "Leser sidene og innleggene dine …"
+
+#: src/admin/Review.js:121
+msgid "Reading the traces in your files …"
+msgstr "Leser sporene i filene dine …"
+
+#: src/admin/Review.js:125
+msgid "Done."
+msgstr "Ferdig."
+
+#: src/admin/Review.js:157
+msgid "labeled"
+msgstr "merket"
+
+#. translators: 1: generated count, 2: modified count
+#: src/admin/Review.js:160
+#, js-format
+msgid "%1$d AI-generated · %2$d modified"
+msgstr "%1$d KI-generert · %2$d endret"
+
+#: src/admin/Review.js:141
+msgid "traces of AI, no decision"
+msgstr "spor av KI, ingen avgjørelse"
+
+#: src/admin/Review.js:150
+msgid "used, not decided"
+msgstr "i bruk, ikke avgjort"
+
+#: src/admin/Review.js:151
+msgid "visible on your site"
+msgstr "synlig på nettstedet ditt"
+
+#. translators: 1: date, 2: pages, 3: files in use
+#: src/admin/Review.js:206
+#, js-format
+msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
+msgstr "Sist sjekket %1$s: %2$d sider og innlegg, %3$d filer i bruk."
+
+#: src/admin/Review.js:214
+msgid "Not checked yet: where your media is used and which traces of AI it carries."
+msgstr "Ikke sjekket ennå: hvor mediene dine er i bruk, og hvilke spor av KI de har."
+
+#: src/admin/Review.js:229
+msgid "Check site"
+msgstr "Sjekk nettstedet"
+
+#: src/admin/Review.js:272
+msgid "Open in the Media Library"
+msgstr "Åpne i mediebiblioteket"
+
+#: src/admin/Review.js:302
+msgid "Check on the site"
+msgstr "Sjekk på nettstedet"
+
+#: src/admin/Review.js:412
+msgid "Some labels could not be undone. Retry the remaining files."
+msgstr "Noen merkinger kunne ikke angres. Prøv igjen med de gjenværende filene."
+
+#: src/admin/Review.js:571
+msgid "Media"
+msgstr "Medier"
+
+#: src/admin/Review.js:572
+msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
+msgstr "Avgjør per fil: KI-generert, endret med KI eller ingen merking nødvendig. Merking er påkrevd når noe ser ekte ut som ikke skjedde slik."
+
+#: src/admin/Review.js:582
+msgid "Search"
+msgstr "Søk"
+
+#: src/admin/Review.js:586
+msgid "Search media"
+msgstr "Søk i medier"
+
+#. translators: %d: number of suggestions
+#: src/admin/Review.js:634
+#, js-format
+msgid "Apply all %d suggestions"
+msgstr "Bruk alle %d forslag"
+
+#. translators: 1: done, 2: total
+#: src/admin/Run.js:488
+#, js-format
+msgid "Analyzing … %1$d of %2$d"
+msgstr "Analyserer … %1$d av %2$d"
+
+#. translators: %d: number of files
+#: src/admin/Review.js:648
+#, js-format
+msgid "%d suggestions applied."
+msgstr "%d forslag brukt."
+
+#: src/admin/Review.js:660
+msgid "Undo"
+msgstr "Angre"
+
+#: src/admin/Review.js:666
+msgid "Loading …"
+msgstr "Laster …"
+
+#. translators: 1: page, 2: pages
+#: src/admin/Review.js:705
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr "Side %1$d av %2$d"
+
+#: src/admin/Review.js:723
+msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
+msgstr "Også i mediebiblioteket: filteret «KI», en kolonne og massehandlinger i listevisningen."
+
+#: src/admin/Review.js:728
+msgid "Open Media Library"
+msgstr "Åpne mediebiblioteket"
+
+#: src/admin/ui.js:331
+msgid "as recommended"
+msgstr "som anbefalt"
+
+#: src/admin/ui.js:335
+msgid "changed"
+msgstr "endret"
+
+#: src/media/index.js:129
+msgid "Analyzing …"
+msgstr "Analyserer …"
+
+#. translators: %d: minutes
+#: src/admin/Run.js:76
+#, js-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minutt"
+msgstr[1] "%d minutter"
+
+#. translators: %s: hours, e.g. 2.5
+#: src/admin/Run.js:81
+#, js-format
+msgid "%s hours"
+msgstr "%s timer"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:416
+#, js-format
+msgid "%d picture without a decision or an assessment"
+msgid_plural "%d pictures without a decision or an assessment"
+msgstr[0] "%d bilde uten avgjørelse eller vurdering"
+msgstr[1] "%d bilder uten avgjørelse eller vurdering"
+
+#: src/admin/Run.js:476
+msgid "Image generators for everyone came in 2022 – older uploads rarely need a check."
+msgstr "Bildegeneratorer for alle har fantes siden 2022 – eldre opplastinger trenger sjelden kontroll."
+
+#: src/admin/Run.js:497
+msgid "Stop"
+msgstr "Stopp"
+
+#: src/admin/Run.js:531
+msgid "Test with 10"
+msgstr "Test med 10"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:551
+#, js-format
+msgid "Analyze %d picture"
+msgid_plural "Analyze %d pictures"
+msgstr[0] "Analyser %d bilde"
+msgstr[1] "Analyser %d bilder"
+
+#. translators: %d: seconds
+#: src/admin/Run.js:68
+#, js-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekund"
+msgstr[1] "%d sekunder"
+
+#. translators: %s: number of tokens
+#: src/admin/Run.js:98
+#, js-format
+msgid "%s tokens"
+msgstr "%s tokens"
+
+#. translators: 1: number of pictures, 2: what they would take
+#: src/admin/Run.js:429
+#, js-format
+msgid "All %1$d: about %2$s"
+msgstr "Alle %1$d: omtrent %2$s"
+
+#. translators: 1: number of pictures, 2: what they took
+#: src/admin/Run.js:439
+#, js-format
+msgid "Measured in the test with %1$d pictures: %2$s"
+msgstr "Målt i testen med %1$d bilder: %2$s"
+
+#: src/admin/Review.js:552
+#: src/admin/Run.js:162
+msgid "Analyze image content (AI)"
+msgstr "Analyser bildeinnhold (KI)"
+
+#: src/admin/Run.js:205
+msgid "Every picture used on your site has a decision or an assessment."
+msgstr "Hvert bilde som brukes på nettstedet ditt, har en avgjørelse eller en vurdering."
+
+#. translators: %s: names of the AI providers
+#: src/admin/Run.js:167
+#, js-format
+msgid "The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing."
+msgstr "KI-en ser på hvert bilde som brukes på nettstedet ditt og ennå ikke har en avgjørelse, og foreslår: KI-generert, endret med KI eller ingen merking nødvendig – du bestemmer. WordPress sender da hvert bilde, 768 piksler bredt, med navn og hvor det brukes, til KI-leverandøren din (%s). Leverandøren fakturerer hver analyse på kontoen din hos seg; denne utvidelsen og engenty tar ingenting."
+
+#. translators: %d: number of analyses
+#: src/admin/Run.js:449
+#, js-format
+msgid "Estimated from %d analysis on this site this month."
+msgid_plural "Estimated from %d analyses on this site this month."
+msgstr[0] "Anslått ut fra %d analyse på dette nettstedet denne måneden."
+msgstr[1] "Anslått ut fra %d analyser på dette nettstedet denne måneden."
+
+#: src/admin/Run.js:458
+msgid "No estimate: there was no analysis on this site this month yet."
+msgstr "Ikke noe anslag: det har ennå ikke vært noen analyse på dette nettstedet denne måneden."
+
+#: src/admin/Run.js:462
+msgid "First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them."
+msgstr "Først en test med 10 bilder: den viser hva analysen koster på dette nettstedet før du starter alle."
+
+#: src/admin/Run.js:469
+msgid "Your provider does not report costs: its price per token tells what this costs."
+msgstr "Leverandøren din oppgir ingen kostnader: prisen per token avgjør hva det koster."
+
+#: src/admin/Run.js:538
+msgid "Skip test"
+msgstr "Hopp over testen"
+
+#: src/admin/Review.js:228
+msgid "Quick check"
+msgstr "Hurtigsjekk"
+
+#: includes/class-analysis.php:70
+msgid "An analysis is already running."
+msgstr "En analyse kjører allerede."
+
+#. translators: 1: first day, 2: last day
+#: src/admin/Run.js:337
+#, js-format
+msgid "Uploaded from %1$s to %2$s"
+msgstr "Lastet opp fra %1$s til %2$s"
+
+#: src/admin/Run.js:362
+msgid "From"
+msgstr "Fra"
+
+#: src/admin/Run.js:374
+msgid "To"
+msgstr "Til"
+
+#: src/admin/Run.js:501
+msgid "Waiting for WP-Cron: the next step comes with the next visit to the site."
+msgstr "Venter på WP-Cron: neste steg kommer med neste besøk på nettstedet."
+
+#. translators: %s: name of the person who started it
+#: src/admin/Run.js:507
+#, js-format
+msgid "Runs on the server, started by %s – you can close this page."
+msgstr "Kjører på serveren, startet av %s – du kan lukke denne siden."
+
+#: src/admin/Run.js:517
+msgid "Every picture in this time has a decision or an assessment."
+msgstr "Hvert bilde fra denne perioden har en avgjørelse eller en vurdering."
+
+#. translators: %s: the provider's error
+#: src/admin/Run.js:568
+#, js-format
+msgid "The analysis stopped after three failures in a row: %s"
+msgstr "Analysen stoppet etter tre feil på rad: %s"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:401
+#, js-format
+msgid "%d picture already analyzed"
+msgid_plural "%d pictures already analyzed"
+msgstr[0] "%d bilde allerede analysert"
+msgstr[1] "%d bilder allerede analysert"
+
+#: includes/class-promo.php:23
+msgid "From engenty, the makers of this plugin"
+msgstr "Fra engenty, som har laget denne utvidelsen"
+
+#: includes/class-promo.php:24
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards: veiledede forløp for de besøkende"
+
+#: includes/class-promo.php:25
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Henvendelser, tilbud, avtaler – steg for steg på nettstedet ditt, bygget med KI i stedet for kode."
+
+#: includes/class-promo.php:28
+msgid "Visit engenty.ai"
+msgstr "Besøk engenty.ai"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php:30
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/"
+
+#. Plugin URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"

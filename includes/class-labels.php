@@ -261,9 +261,9 @@ class AI_Act_Labels {
 	public static function label_text( $kind ) {
 		$texts = self::settings()['texts'];
 		if ( 'modified' === $kind ) {
-			return '' !== $texts['modified'] ? $texts['modified'] : __( 'Modified with AI', 'ai-act-labels' );
+			return '' !== $texts['modified'] ? $texts['modified'] : __( 'Modified with AI', 'ai-act-image-labels' );
 		}
-		return '' !== $texts['generated'] ? $texts['generated'] : __( 'AI-generated', 'ai-act-labels' );
+		return '' !== $texts['generated'] ? $texts['generated'] : __( 'AI-generated', 'ai-act-image-labels' );
 	}
 
 	/**
@@ -281,16 +281,16 @@ class AI_Act_Labels {
 		}
 		$notices = array(
 			'generated' => array(
-				'image' => __( 'This image was created with AI.', 'ai-act-labels' ),
-				'video' => __( 'This video was created with AI.', 'ai-act-labels' ),
-				'audio' => __( 'This recording was created with AI.', 'ai-act-labels' ),
-				'file'  => __( 'This content was created with AI.', 'ai-act-labels' ),
+				'image' => __( 'This image was created with AI.', 'ai-act-image-labels' ),
+				'video' => __( 'This video was created with AI.', 'ai-act-image-labels' ),
+				'audio' => __( 'This recording was created with AI.', 'ai-act-image-labels' ),
+				'file'  => __( 'This content was created with AI.', 'ai-act-image-labels' ),
 			),
 			'modified'  => array(
-				'image' => __( 'This image was modified with AI.', 'ai-act-labels' ),
-				'video' => __( 'This video was modified with AI.', 'ai-act-labels' ),
-				'audio' => __( 'This recording was modified with AI.', 'ai-act-labels' ),
-				'file'  => __( 'This content was modified with AI.', 'ai-act-labels' ),
+				'image' => __( 'This image was modified with AI.', 'ai-act-image-labels' ),
+				'video' => __( 'This video was modified with AI.', 'ai-act-image-labels' ),
+				'audio' => __( 'This recording was modified with AI.', 'ai-act-image-labels' ),
+				'file'  => __( 'This content was modified with AI.', 'ai-act-image-labels' ),
 			),
 		);
 		$kind    = 'modified' === $kind ? 'modified' : 'generated';
@@ -312,7 +312,7 @@ class AI_Act_Labels {
 		$tool = trim( (string) get_post_meta( $id, self::META_TOOL, true ) );
 		if ( '' !== $tool ) {
 			/* translators: %s: the AI tool, e.g. Midjourney */
-			$notice = rtrim( $notice ) . ' ' . sprintf( __( 'Tool: %s.', 'ai-act-labels' ), $tool );
+			$notice = rtrim( $notice ) . ' ' . sprintf( __( 'Tool: %s.', 'ai-act-image-labels' ), $tool );
 		}
 		return $notice;
 	}
@@ -354,6 +354,7 @@ class AI_Act_Labels {
 			'signals'  => is_array( $signals ) ? $signals : null,
 			'hint'     => is_array( $hint ) ? $hint : null,
 			'suggests' => self::suggestion( $id ),
+			'conflict' => self::suggestion_conflict( $id ),
 		);
 		if ( $full ) {
 			$out['usage'] = AI_Act_Labels_Usage::for_attachment( $id );
@@ -372,14 +373,28 @@ class AI_Act_Labels {
 	 */
 	public static function suggestion( $id ) {
 		$signals = get_post_meta( $id, self::META_SIGNALS, true );
-		if ( is_array( $signals ) && ! empty( $signals['kind'] ) ) {
-			return (string) $signals['kind'];
+		$hint    = get_post_meta( $id, self::META_HINT, true );
+		$kind    = is_array( $signals ) ? (string) ( $signals['kind'] ?? '' ) : '';
+		// Provenance survives an uncertain visual assessment; weak names do not overrule a review.
+		if ( is_array( $signals ) && 'strong' === ( $signals['strength'] ?? '' ) && in_array( $kind, self::KINDS, true ) ) {
+			return $kind;
 		}
-		$hint = get_post_meta( $id, self::META_HINT, true );
-		if ( is_array( $hint ) && in_array( $hint['kind'] ?? '', self::STATES, true ) ) {
-			return (string) $hint['kind'];
+		if ( is_array( $hint ) && in_array( $hint['kind'] ?? '', array_merge( self::STATES, array( 'unsure' ) ), true ) ) {
+			return 'unsure' === $hint['kind'] ? '' : (string) $hint['kind'];
 		}
-		return '';
+		return in_array( $kind, self::KINDS, true ) ? $kind : '';
+	}
+
+	/**
+	 * Whether a review disagrees with the retained strong metadata suggestion.
+	 *
+	 * @param int $id Attachment ID.
+	 * @return bool
+	 */
+	public static function suggestion_conflict( $id ) {
+		$signals = get_post_meta( $id, self::META_SIGNALS, true );
+		$hint    = get_post_meta( $id, self::META_HINT, true );
+		return is_array( $signals ) && 'strong' === ( $signals['strength'] ?? '' ) && in_array( $signals['kind'] ?? '', self::KINDS, true ) && is_array( $hint ) && in_array( $hint['kind'] ?? '', array_merge( self::STATES, array( 'unsure' ) ), true ) && $hint['kind'] !== $signals['kind'];
 	}
 
 	/**

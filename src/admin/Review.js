@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
-import { __, _n, sprintf } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { api, boot, post, problem, query } from './api';
+import { undoAccepted } from './undo.mjs';
 import { SetupDialog } from './Assistant';
+import { Run, prefetch } from './Run';
 import {
 	Decide,
 	EuIcon,
@@ -15,35 +17,66 @@ import { Button, Card, Icon, Notice, Section, Spinner, when } from './ui';
 
 /** The lists, in the order of their tabs. */
 const LISTS = [
-	[ 'suggested', __( 'Suggestions', 'ai-act-labels' ) ],
-	[ 'unchecked', __( 'Used, not decided', 'ai-act-labels' ) ],
-	[ 'labelled', __( 'Labeled', 'ai-act-labels' ) ],
-	[ 'none', __( 'No label needed', 'ai-act-labels' ) ],
-	[ 'all', __( 'All', 'ai-act-labels' ) ],
+	[ 'suggested', __( 'Suggestions', 'ai-act-image-labels' ) ],
+	[ 'unchecked', __( 'Used, not decided', 'ai-act-image-labels' ) ],
+	[ 'labelled', __( 'Labeled', 'ai-act-image-labels' ) ],
+	[ 'none', __( 'No label needed', 'ai-act-image-labels' ) ],
+	[ 'all', __( 'All', 'ai-act-image-labels' ) ],
 ];
 
 /** What each list says when it is empty. */
 const EMPTY = {
 	suggested: __(
 		'No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too.',
-		'ai-act-labels'
+		'ai-act-image-labels'
 	),
 	unchecked: __(
 		'Everything used on your site has a decision. Or the site has not been checked yet.',
-		'ai-act-labels'
+		'ai-act-image-labels'
 	),
-	labelled: __( 'No file labeled yet.', 'ai-act-labels' ),
-	none: __( 'No file decided as needing no label yet.', 'ai-act-labels' ),
-	all: __( 'No images, videos or recordings.', 'ai-act-labels' ),
+	labelled: __( 'No file labeled yet.', 'ai-act-image-labels' ),
+	none: __(
+		'No file decided as needing no label yet.',
+		'ai-act-image-labels'
+	),
+	all: __( 'No images, videos or recordings.', 'ai-act-image-labels' ),
+};
+
+/** Files per page. */
+const PER = 24;
+
+/**
+ * Whether a file still belongs to a list after what was decided here: one that left it stays on the
+ * page, but the next page starts that much earlier.
+ * @param list
+ * @param item
+ */
+const inList = ( list, item ) => {
+	const kinds = [ 'generated', 'modified' ];
+	switch ( list ) {
+		case 'suggested':
+			return ! item.state && kinds.includes( item.suggests );
+		case 'unchecked':
+			return ! item.state && Object.keys( item.usage || {} ).length > 0;
+		case 'labelled':
+			return kinds.includes( item.state );
+		case 'none':
+			return item.state === 'none';
+	}
+	return true;
 };
 
 /**
  * The numbers and the check of the whole site.
  * @param root0
  * @param root0.state
- * @param root0.onDone Called with the new counts when the check is through.
+ * @param root0.onDone  Called with the new counts when the check is through.
+ * @param root0.list    The list open below.
+ * @param root0.onOpen  Opens a list: each number opens its own.
+ * @param root0.analyze The button that opens the image analysis, beside the check.
+ * @param root0.panel   The image analysis, when open.
  */
-function Overview( { state, onDone } ) {
+function Overview( { state, onDone, list, onOpen, analyze, panel } ) {
 	const c = state.counts;
 	const [ run, setRun ] = useState( null );
 	const [ error, setError ] = useState( null );
@@ -51,7 +84,8 @@ function Overview( { state, onDone } ) {
 
 	const step = useCallback(
 		( first ) => {
-			post( '/scan', { restart: first } )
+			// Files read before, too: what the detection knows grows with updates.
+			post( '/scan', { restart: first, files: true } )
 				.then( ( p ) => {
 					setRun( p );
 					if ( p.phase === 'done' ) {
@@ -72,20 +106,23 @@ function Overview( { state, onDone } ) {
 	// A check that was cut off goes on.
 	const resumed = useRef( false );
 	useEffect( () => {
-		if ( state.running && ! resumed.current ) {
+		if ( state.canSettings && state.running && ! resumed.current ) {
 			resumed.current = true;
 			step( false );
 		}
-	}, [ state.running, step ] );
+	}, [ state.canSettings, state.running, step ] );
 
 	const phase = run
 		? {
-				posts: __( 'Reading your pages and posts …', 'ai-act-labels' ),
+				posts: __(
+					'Reading your pages and posts …',
+					'ai-act-image-labels'
+				),
 				files: __(
 					'Reading the traces in your files …',
-					'ai-act-labels'
+					'ai-act-image-labels'
 				),
-				done: __( 'Done.', 'ai-act-labels' ),
+				done: __( 'Done.', 'ai-act-image-labels' ),
 		  }[ run.phase ]
 		: '';
 	const pct =
@@ -94,44 +131,57 @@ function Overview( { state, onDone } ) {
 	return (
 		<div className="aal-overview">
 			<div className="aal-overview__nums">
-				<div className="aal-num">
-					<span>{ labelled }</span>
-					<p>
-						{ __( 'labeled', 'ai-act-labels' ) }
-						<em>
-							{ sprintf(
-								/* translators: 1: generated count, 2: modified count */
-								__(
-									'%1$d AI-generated · %2$d modified',
-									'ai-act-labels'
-								),
-								c.generated,
-								c.modified
-							) }
-						</em>
-					</p>
-				</div>
-				<div className={ `aal-num${ c.suggested ? ' is-open' : '' }` }>
-					<span>{ c.suggested }</span>
-					<p>
-						{ __( 'Suggestions', 'ai-act-labels' ) }
-						<em>
-							{ __(
-								'traces of AI, no decision',
-								'ai-act-labels'
-							) }
-						</em>
-					</p>
-				</div>
-				<div className={ `aal-num${ c.unchecked ? ' is-open' : '' }` }>
-					<span>{ c.unchecked }</span>
-					<p>
-						{ __( 'used, not decided', 'ai-act-labels' ) }
-						<em>
-							{ __( 'visible on your site', 'ai-act-labels' ) }
-						</em>
-					</p>
-				</div>
+				{ /* In the order of the tabs below. */ }
+				{ [
+					[
+						'suggested',
+						c.suggested,
+						c.suggested > 0,
+						__( 'Suggestions', 'ai-act-image-labels' ),
+						__(
+							'traces of AI, no decision',
+							'ai-act-image-labels'
+						),
+					],
+					[
+						'unchecked',
+						c.unchecked,
+						c.unchecked > 0,
+						__( 'used, not decided', 'ai-act-image-labels' ),
+						__( 'visible on your site', 'ai-act-image-labels' ),
+					],
+					[
+						'labelled',
+						labelled,
+						false,
+						__( 'labeled', 'ai-act-image-labels' ),
+						sprintf(
+							/* translators: 1: generated count, 2: modified count */
+							__(
+								'%1$d AI-generated · %2$d modified',
+								'ai-act-image-labels'
+							),
+							c.generated,
+							c.modified
+						),
+					],
+				].map( ( [ key, n, open, name, more ] ) => (
+					<button
+						key={ key }
+						type="button"
+						className={ `aal-num${ open ? ' is-open' : '' }${
+							list === key ? ' is-on' : ''
+						}` }
+						aria-pressed={ list === key ? 'true' : 'false' }
+						onClick={ () => onOpen( key ) }
+					>
+						<span>{ n }</span>
+						<span className="aal-num__text">
+							{ name }
+							<em>{ more }</em>
+						</span>
+					</button>
+				) ) }
 			</div>
 			<div className="aal-overview__check">
 				{ run ? (
@@ -155,7 +205,7 @@ function Overview( { state, onDone } ) {
 										/* translators: 1: date, 2: pages, 3: files in use */
 										__(
 											'Last checked %1$s: %2$d pages and posts, %3$d files in use.',
-											'ai-act-labels'
+											'ai-act-image-labels'
 										),
 										when( state.last.at ),
 										state.last.posts,
@@ -163,22 +213,30 @@ function Overview( { state, onDone } ) {
 								  )
 								: __(
 										'Not checked yet: where your media is used and which traces of AI it carries.',
-										'ai-act-labels'
+										'ai-act-image-labels'
 								  ) }
 						</span>
-						<Button
-							kind={ state.last ? 'secondary' : 'primary' }
-							icon="refresh"
-							onClick={ () => step( true ) }
-						>
-							{ state.last
-								? __( 'Check again', 'ai-act-labels' )
-								: __( 'Check site', 'ai-act-labels' ) }
-						</Button>
+						<span className="aal-row-inline">
+							{ state.last ? analyze : null }
+							<Button
+								disabled={ ! state.canSettings }
+								kind="primary"
+								icon="refresh"
+								onClick={ () => step( true ) }
+							>
+								{ state.last
+									? __( 'Quick check', 'ai-act-image-labels' )
+									: __(
+											'Check site',
+											'ai-act-image-labels'
+									  ) }
+							</Button>
+						</span>
 					</>
 				) }
 				{ error ? <Notice tone="error">{ error }</Notice> : null }
 			</div>
+			{ panel }
 		</div>
 	);
 }
@@ -213,7 +271,7 @@ function MediaRow( {
 					className="aal-mrow__thumb"
 					aria-label={ __(
 						'Open in the Media Library',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				>
 					<Thumb item={ item } />
@@ -227,7 +285,7 @@ function MediaRow( {
 					</b>
 					<UsageLine usage={ item.usage } />
 					<Traces signals={ item.signals } />
-					<HintLine hint={ item.hint } />
+					<HintLine hint={ item.hint } conflict={ item.conflict } />
 				</span>
 			</span>
 			<span className="aal-mrow__right">
@@ -241,7 +299,10 @@ function MediaRow( {
 								busy={ verifying }
 								onClick={ () => onVerify( item ) }
 							>
-								{ __( 'Check on the site', 'ai-act-labels' ) }
+								{ __(
+									'Check on the site',
+									'ai-act-image-labels'
+								) }
 							</Button>
 						) : null }
 						<Button
@@ -251,7 +312,10 @@ function MediaRow( {
 							busy={ reviewing }
 							onClick={ () => onReview( item ) }
 						>
-							{ __( 'Analyze image (AI)', 'ai-act-labels' ) }
+							{ __(
+								'Analyze image (AI)',
+								'ai-act-image-labels'
+							) }
 						</Button>
 					</span>
 					<Decide
@@ -284,17 +348,30 @@ export default function Review( { state, setState, initial } ) {
 			: 'all';
 	const [ list, setList ] = useState( firstList );
 	const [ search, setSearch ] = useState( '' );
-	const [ page, setPage ] = useState( 1 );
+	const [ offset, setOffset ] = useState( 0 );
 	const [ data, setData ] = useState( null );
 	const [ error, setError ] = useState( null );
 	const [ busy, setBusy ] = useState( {} );
 	const [ verifying, setVerifying ] = useState( {} );
 	const [ reviewing, setReviewing ] = useState( {} );
-	const [ batch, setBatch ] = useState( null );
+	const [ runOpen, setRunOpen ] = useState( false );
 	const [ accepted, setAccepted ] = useState( null );
 	const [ accepting, setAccepting ] = useState( false );
+	const [ undoing, setUndoing ] = useState( false );
 	const [ setup, setSetup ] = useState( false );
 	const ready = state.assistant.ready;
+
+	// A running image analysis opens its panel, also in a window that did not start it.
+	useEffect( () => {
+		if ( ready && state.last ) {
+			prefetch().then( ( p ) => {
+				if ( [ 'running', 'stalled' ].includes( p.job?.status ) ) {
+					setRunOpen( true );
+				}
+			} );
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps -- once, when the tool opens.
+	}, [] );
 
 	/** Every suggestion at once; the notice offers to take it back. */
 	const acceptAll = () => {
@@ -308,17 +385,47 @@ export default function Review( { state, setState, initial } ) {
 			.catch( ( e ) => setError( problem( e ).message ) )
 			.finally( () => setAccepting( false ) );
 	};
-	const undoAccept = () => {
-		const ids = ( accepted || [] ).map( ( d ) => d.id );
-		setAccepted( null );
-		label( ids, '', 'bulk' ).then( load );
+	const undoAccept = async () => {
+		if ( undoing ) {
+			return;
+		}
+		setUndoing( true );
+		try {
+			await undoAccepted(
+				accepted || [],
+				async ( ids ) => {
+					const r = await post( '/label', {
+						ids,
+						state: '',
+						via: 'bulk',
+					} );
+					replace( r.items );
+					setState( ( s ) => ( { ...s, counts: r.counts } ) );
+					return r.items.map( ( item ) => item.id );
+				},
+				( remaining ) =>
+					setAccepted( remaining.length ? remaining : null )
+			);
+		} catch ( e ) {
+			setError(
+				e.message === 'ai_act_labels_undo_incomplete'
+					? __(
+							'Some labels could not be undone. Retry the remaining files.',
+							'ai-act-image-labels'
+					  )
+					: problem( e ).message
+			);
+		} finally {
+			setUndoing( false );
+			load();
+		}
 	};
 
 	const load = useCallback( () => {
-		api( `/media${ query( { filter: list, search, page, per: 24 } ) }` )
+		api( `/media${ query( { filter: list, search, offset, per: PER } ) }` )
 			.then( setData )
 			.catch( ( e ) => setError( problem( e ).message ) );
-	}, [ list, search, page ] );
+	}, [ list, search, offset ] );
 
 	useEffect( () => {
 		const t = window.setTimeout( load, search ? 300 : 0 );
@@ -394,20 +501,6 @@ export default function Review( { state, setState, initial } ) {
 			);
 	};
 
-	/** The image analysis looks at every file of the page without one, one after another. */
-	const reviewAll = async () => {
-		const todo = ( data?.items || [] ).filter(
-			( i ) => ! i.hint && ! i.state
-		);
-		setBatch( { done: 0, total: todo.length } );
-		for ( const [ n, item ] of todo.entries() ) {
-			// eslint-disable-next-line no-await-in-loop -- one request after another, the provider limits.
-			await review( item );
-			setBatch( { done: n + 1, total: todo.length } );
-		}
-		setBatch( null );
-	};
-
 	const onScanned = useCallback(
 		( p ) => {
 			setState( ( s ) => ( {
@@ -428,18 +521,57 @@ export default function Review( { state, setState, initial } ) {
 		labelled: counts.generated + counts.modified,
 		none: counts.none,
 	};
-	const unassessed = ( data?.items || [] ).filter(
-		( i ) => ! i.hint && ! i.state
-	).length;
+	const shown = data?.items || [];
+	const gone = shown.filter( ( i ) => ! inList( list, i ) ).length;
+	const total = data ? data.total - gone : 0;
+	const next = offset + shown.length - gone;
+	const pages = Math.ceil( total / PER );
 
 	return (
 		<>
-			<Overview state={ state } onDone={ onScanned } />
+			<Overview
+				state={ state }
+				onDone={ onScanned }
+				list={ list }
+				onOpen={ ( key ) => {
+					setList( key );
+					setOffset( 0 );
+				} }
+				analyze={
+					<Button
+						icon="sparkle"
+						className={ runOpen ? 'is-on' : '' }
+						aria-expanded={ runOpen ? 'true' : 'false' }
+						// The panel's numbers are on their way before the click.
+						onMouseEnter={ () => ready && ! runOpen && prefetch() }
+						onFocus={ () => ready && ! runOpen && prefetch() }
+						onClick={ () =>
+							ready ? setRunOpen( ! runOpen ) : setSetup( true )
+						}
+					>
+						{ __(
+							'Analyze image content (AI)',
+							'ai-act-image-labels'
+						) }
+					</Button>
+				}
+				panel={
+					runOpen && ready ? (
+						<Run
+							providers={ state.assistant.providers }
+							onCounts={ ( c ) =>
+								setState( ( s ) => ( { ...s, counts: c } ) )
+							}
+							onDone={ load }
+						/>
+					) : null
+				}
+			/>
 			<Section
-				title={ __( 'Media', 'ai-act-labels' ) }
+				title={ __( 'Media', 'ai-act-image-labels' ) }
 				hint={ __(
 					'Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way.',
-					'ai-act-labels'
+					'ai-act-image-labels'
 				) }
 				aside={
 					<span className="aal-searchbox">
@@ -447,11 +579,17 @@ export default function Review( { state, setState, initial } ) {
 						<input
 							type="search"
 							value={ search }
-							placeholder={ __( 'Search', 'ai-act-labels' ) }
-							aria-label={ __( 'Search media', 'ai-act-labels' ) }
+							placeholder={ __(
+								'Search',
+								'ai-act-image-labels'
+							) }
+							aria-label={ __(
+								'Search media',
+								'ai-act-image-labels'
+							) }
 							onChange={ ( e ) => {
 								setSearch( e.target.value );
-								setPage( 1 );
+								setOffset( 0 );
 							} }
 						/>
 					</span>
@@ -470,7 +608,7 @@ export default function Review( { state, setState, initial } ) {
 								className={ list === key ? 'is-on' : '' }
 								onClick={ () => {
 									setList( key );
-									setPage( 1 );
+									setOffset( 0 );
 								} }
 							>
 								{ name }
@@ -488,47 +626,17 @@ export default function Review( { state, setState, initial } ) {
 							size="sm"
 							icon="check"
 							busy={ accepting }
+							disabled={ undoing }
 							onClick={ acceptAll }
 						>
 							{ sprintf(
 								/* translators: %d: number of suggestions */
 								__(
 									'Apply all %d suggestions',
-									'ai-act-labels'
+									'ai-act-image-labels'
 								),
 								counts.suggested
 							) }
-						</Button>
-					) : null }
-					{ unassessed > 1 ? (
-						<Button
-							size="sm"
-							icon="sparkle"
-							busy={ !! batch }
-							onClick={ () =>
-								ready ? reviewAll() : setSetup( true )
-							}
-						>
-							{ batch
-								? sprintf(
-										/* translators: 1: done, 2: total */
-										__(
-											'Analyzing … %1$d of %2$d',
-											'ai-act-labels'
-										),
-										batch.done,
-										batch.total
-								  )
-								: sprintf(
-										/* translators: %d: number of files */
-										_n(
-											'Analyze %d image (AI)',
-											'Analyze %d images (AI)',
-											unassessed,
-											'ai-act-labels'
-										),
-										unassessed
-								  ) }
 						</Button>
 					) : null }
 				</div>
@@ -537,20 +645,26 @@ export default function Review( { state, setState, initial } ) {
 					<Notice tone="success">
 						{ sprintf(
 							/* translators: %d: number of files */
-							__( '%d suggestions applied.', 'ai-act-labels' ),
+							__(
+								'%d suggestions applied.',
+								'ai-act-image-labels'
+							),
 							accepted.length
 						) }{ ' ' }
 						<button
 							type="button"
 							className="aal-link-btn"
 							onClick={ undoAccept }
+							disabled={ undoing }
 						>
-							{ __( 'Undo', 'ai-act-labels' ) }
+							{ __( 'Undo', 'ai-act-image-labels' ) }
 						</button>
 					</Notice>
 				) : null }
 				{ ! data ? (
-					<Spinner label={ __( 'Loading …', 'ai-act-labels' ) } />
+					<Spinner
+						label={ __( 'Loading …', 'ai-act-image-labels' ) }
+					/>
 				) : data.items.length ? (
 					<Card pad0>
 						{ data.items.map( ( item ) => (
@@ -574,27 +688,32 @@ export default function Review( { state, setState, initial } ) {
 						<p>{ EMPTY[ list ] }</p>
 					</div>
 				) }
-				{ data && data.pages > 1 ? (
+				{ pages > 1 ? (
 					<div className="aal-row-inline aal-pager">
 						<Button
 							size="sm"
-							disabled={ page <= 1 }
-							onClick={ () => setPage( page - 1 ) }
+							disabled={ offset <= 0 }
+							onClick={ () =>
+								setOffset( Math.max( 0, offset - PER ) )
+							}
 						>
 							←
 						</Button>
 						<span className="aal-fine">
 							{ sprintf(
 								/* translators: 1: page, 2: pages */
-								__( 'Page %1$d of %2$d', 'ai-act-labels' ),
-								page,
-								data.pages
+								__(
+									'Page %1$d of %2$d',
+									'ai-act-image-labels'
+								),
+								Math.floor( offset / PER ) + 1,
+								pages
 							) }
 						</span>
 						<Button
 							size="sm"
-							disabled={ page >= data.pages }
-							onClick={ () => setPage( page + 1 ) }
+							disabled={ next >= total }
+							onClick={ () => setOffset( next ) }
 						>
 							→
 						</Button>
@@ -603,10 +722,10 @@ export default function Review( { state, setState, initial } ) {
 				<span className="aal-fine">
 					{ __(
 						'Also in the Media Library: the “AI” filter, a column and bulk actions in the list view.',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }{ ' ' }
 					<a href={ boot.upload }>
-						{ __( 'Open Media Library', 'ai-act-labels' ) }
+						{ __( 'Open Media Library', 'ai-act-image-labels' ) }
 					</a>
 				</span>
 			</Section>

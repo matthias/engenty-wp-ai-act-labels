@@ -51,22 +51,22 @@ class AI_Act_Labels_Front {
 	 */
 	public static function meta_changed( $meta_id, $object_id, $key ) {
 		unset( $meta_id, $object_id );
-		if ( in_array( $key, array( AI_Act_Labels::META, '_wp_attached_file' ), true ) ) {
+		if ( in_array( $key, array( AI_Act_Labels::META, '_wp_attached_file', '_wp_attachment_metadata' ), true ) ) {
 			self::forget();
 		}
 	}
 
 	/**
-	 * Labelled media: ID => kind and file stem. Kept as one option, so pages need no query per image.
+	 * Labelled media: ID => kind and exact normalized URLs. Kept as one option, so pages need no query per image.
 	 *
 	 * @return array
 	 */
 	public static function index() {
 		$index = get_option( self::INDEX );
-		if ( ! is_array( $index ) ) {
-			$index = self::reindex();
+		if ( ! is_array( $index ) || 2 !== ( $index['version'] ?? null ) ) {
+			return self::reindex();
 		}
-		return $index;
+		return $index['items'];
 	}
 
 	/**
@@ -82,11 +82,18 @@ class AI_Act_Labels_Front {
 			if ( $kind ) {
 				$index[ $id ] = array(
 					'k' => $kind,
-					's' => preg_replace( '/(-scaled)?\.[a-z0-9]+$/i', '', wp_basename( $file ) ),
+					'u' => self::media_urls( $id, $file ),
 				);
 			}
 		}
-		update_option( self::INDEX, $index, true );
+		update_option(
+			self::INDEX,
+			array(
+				'version' => 2,
+				'items'   => $index,
+			),
+			true
+		);
 		return $index;
 	}
 
@@ -120,22 +127,89 @@ class AI_Act_Labels_Front {
 	}
 
 	/**
-	 * The labelled attachment a URL points to, by its file name.
+	 * Exact media URLs, including only resized/original files recorded by WordPress.
+	 *
+	 * @param int    $id   Attachment ID.
+	 * @param string $file Upload-relative path.
+	 * @return string[]
+	 */
+	private static function media_urls( $id, $file ) {
+		$uploads = wp_get_upload_dir();
+		$roots   = array_filter( array( $file ? rtrim( $uploads['baseurl'], '/' ) . '/' . ltrim( $file, '/' ) : '', (string) wp_get_attachment_url( $id ) ) );
+		$meta    = wp_get_attachment_metadata( $id );
+		$names   = array();
+		if ( is_array( $meta ) ) {
+			$names[] = $meta['original_image'] ?? '';
+			foreach ( $meta['sizes'] ?? array() as $size ) {
+				$names[] = $size['file'] ?? '';
+			}
+		}
+		$urls = array();
+		foreach ( array_unique( $roots ) as $root ) {
+			$key = self::url_identity( $root );
+			if ( ! $key ) {
+				continue;
+			}
+			$urls[] = $key;
+			$root   = preg_replace( '/[?#].*$/', '', $root );
+			$dir    = substr( $root, 0, strrpos( $root, '/' ) + 1 );
+			foreach ( array_filter( $names ) as $name ) {
+				if ( wp_basename( $name ) === $name ) {
+					$urls[] = self::url_identity( $dir . $name );
+				}
+			}
+		}
+		return array_values( array_unique( array_filter( $urls ) ) );
+	}
+
+	/**
+	 * Normalize encoding and query strings without discarding the origin, directory or extension.
+	 * CDN URLs are supported when the site's attachment URL filter supplies their exact origin/path.
+	 *
+	 * @param string $url URL.
+	 * @return string
+	 */
+	private static function url_identity( $url ) {
+		$url = html_entity_decode( $url, ENT_QUOTES, 'UTF-8' );
+		if ( str_starts_with( $url, '//' ) ) {
+			$url = wp_parse_url( home_url(), PHP_URL_SCHEME ) . ':' . $url;
+		} elseif ( str_starts_with( $url, '/' ) ) {
+			$url = home_url( $url );
+		}
+		$parts = wp_parse_url( $url );
+		if ( ! is_array( $parts ) || empty( $parts['host'] ) || ! in_array( $parts['scheme'] ?? '', array( 'http', 'https' ), true ) || isset( $parts['user'] ) || isset( $parts['pass'] ) ) {
+			return '';
+		}
+		$path = rawurldecode( $parts['path'] ?? '' );
+		if ( '' === $path || str_contains( $path, '\\' ) || str_contains( $path, "\0" ) || preg_match( '#(?:^|/)\.\.?(?:/|$)#', $path ) ) {
+			return '';
+		}
+		$port = $parts['port'] ?? ( 'https' === $parts['scheme'] ? 443 : 80 );
+		return strtolower( $parts['scheme'] . '://' . $parts['host'] ) . ':' . $port . $path;
+	}
+
+	/**
+	 * The labelled attachment an exact supported URL points to.
 	 *
 	 * @param string $url URL.
 	 * @return int
 	 */
 	private static function id_by_src( $url ) {
-		$name = wp_basename( (string) wp_parse_url( $url, PHP_URL_PATH ) );
-		if ( '' === $name ) {
+		$key = self::url_identity( $url );
+		if ( ! $key ) {
 			return 0;
 		}
+		$found = 0;
 		foreach ( self::index() as $id => $entry ) {
-			if ( '' !== $entry['s'] && str_starts_with( $name, $entry['s'] ) && preg_match( '/^' . preg_quote( $entry['s'], '/' ) . '(-scaled)?(-\d+x\d+)?(-scaled)?\.[a-z0-9]+$/i', $name ) ) {
-				return (int) $id;
+			if ( in_array( $key, $entry['u'], true ) ) {
+				// Duplicate identities are ambiguous: no attachment should be labelled by guesswork.
+				if ( $found ) {
+					return 0;
+				}
+				$found = (int) $id;
 			}
 		}
-		return 0;
+		return $found;
 	}
 
 	/**

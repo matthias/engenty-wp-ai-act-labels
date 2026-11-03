@@ -9,9 +9,9 @@ import Knowledge from './Knowledge';
 import './admin.css';
 
 const TABS = [
-	[ 'review', __( 'Review', 'ai-act-labels' ) ],
-	[ 'look', __( 'Appearance', 'ai-act-labels' ) ],
-	[ 'knowledge', __( 'Knowledge', 'ai-act-labels' ) ],
+	[ 'review', __( 'Review', 'ai-act-image-labels' ) ],
+	[ 'look', __( 'Appearance', 'ai-act-image-labels' ) ],
+	[ 'knowledge', __( 'Knowledge', 'ai-act-image-labels' ) ],
 ];
 
 /**
@@ -51,7 +51,7 @@ function App( { tab: initialTab, filter } ) {
 				<div className="aal-crumb">
 					<Mark size={ 30 } />
 					<span className="aal-crumb__brand">
-						{ __( 'AI labels', 'ai-act-labels' ) }
+						{ __( 'AI labels', 'ai-act-image-labels' ) }
 					</span>
 				</div>
 				<div className="aal-tabs aal-tabs--top" role="tablist">
@@ -76,22 +76,22 @@ function App( { tab: initialTab, filter } ) {
 					className="aal-pill-status is-law"
 					title={ __(
 						'Article 50 of the AI Regulation (EU) 2024/1689',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				>
 					<span className="aal-dot" />
 					<span className="aal-law-long">
 						{ __(
 							'AI Act Art. 50 applies since 2 Aug 2026',
-							'ai-act-labels'
+							'ai-act-image-labels'
 						) }
 					</span>
 					<span className="aal-law-short">
-						{ __( 'AI Act Art. 50', 'ai-act-labels' ) }
+						{ __( 'AI Act Art. 50', 'ai-act-image-labels' ) }
 					</span>
 				</span>
 				<Button size="sm" href={ boot.upload }>
-					{ __( 'Media Library', 'ai-act-labels' ) }
+					{ __( 'Media Library', 'ai-act-image-labels' ) }
 				</Button>
 			</header>
 			<main className="aal-main">
@@ -100,7 +100,7 @@ function App( { tab: initialTab, filter } ) {
 					<Spinner
 						label={ __(
 							'AI labels are loading …',
-							'ai-act-labels'
+							'ai-act-image-labels'
 						) }
 					/>
 				) : null }

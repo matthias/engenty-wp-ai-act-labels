@@ -1,0 +1,1372 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Act Image Labels 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
+"Last-Translator: engenty\n"
+"Language-Team: engenty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
+"PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: ai-act-image-labels\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: ai-act-labels.php
+msgid "AI Act Image Labels"
+msgstr "AI Act Image Labels"
+
+#. Description of the plugin
+#: ai-act-labels.php
+msgid "Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label."
+msgstr "Marca a multimédia gerada e modificada por IA como o Regulamento IA da UE pede – diretamente na biblioteca multimédia, com os ícones oficiais da UE no site, e um assistente que encontra o que precisa de etiqueta."
+
+#. Author of the plugin
+#: ai-act-labels.php
+msgid "engenty"
+msgstr "engenty"
+
+#. Author URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai"
+msgstr "https://engenty.ai"
+
+#: includes/admin-columns/class-ac-column.php:18
+#: includes/class-media.php:84
+#: includes/class-media.php:100
+msgid "AI label (AI Act)"
+msgstr "Etiqueta de IA (Regulamento IA)"
+
+#: includes/class-admin.php:49
+#: includes/class-admin.php:50
+#: includes/class-media.php:125
+#: includes/class-media.php:523
+#: src/admin/index.js:54
+#: src/admin/parts.js:130
+msgid "AI labels"
+msgstr "Etiquetas de IA"
+
+#: includes/class-admin.php:67
+#: src/admin/index.js:101
+msgid "AI labels are loading …"
+msgstr "As etiquetas de IA estão a carregar …"
+
+#: includes/class-admin.php:130
+msgid "Open"
+msgstr "Abrir"
+
+#: includes/class-assistant.php:141
+msgid "Image analysis (AI) needs WordPress 7.0 or newer."
+msgstr "A análise de imagem (IA) precisa do WordPress 7.0 ou mais recente."
+
+#: includes/class-assistant.php:187
+msgid "The answer was not JSON. Try again."
+msgstr "A resposta não era JSON. Tente de novo."
+
+#: includes/class-assistant.php:315
+#: includes/class-rest.php:157
+#: includes/class-rest.php:283
+msgid "This file does not exist."
+msgstr "Este ficheiro não existe."
+
+#. translators: %s: tool name
+#: includes/class-detect.php:328
+#, php-format
+msgid "XMP names %s"
+msgstr "O XMP indica %s"
+
+#: includes/class-detect.php:346
+msgid "IPTC: created with AI"
+msgstr "IPTC: criado com IA"
+
+#: includes/class-detect.php:348
+msgid "IPTC: photo with AI parts"
+msgstr "IPTC: foto com partes de IA"
+
+#: includes/class-detect.php:350
+msgid "IPTC: enhanced with AI (minor)"
+msgstr "IPTC: melhorado com IA (ligeiro)"
+
+#. translators: %s: IPTC code like digitalCapture
+#: includes/class-detect.php:353
+#, php-format
+msgid "IPTC: no AI (%s)"
+msgstr "IPTC: sem IA (%s)"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): modified with AI"
+msgstr "Content Credentials (C2PA): modificado com IA"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): created with AI"
+msgstr "Content Credentials (C2PA): criado com IA"
+
+#: includes/class-detect.php:400
+msgid "Content Credentials (C2PA): camera capture"
+msgstr "Content Credentials (C2PA): captura de câmara"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:402
+#, php-format
+msgid "Content Credentials (C2PA) from %s"
+msgstr "Content Credentials (C2PA) de %s"
+
+#: includes/class-detect.php:403
+msgid "Content Credentials (C2PA) present"
+msgstr "Content Credentials (C2PA) presentes"
+
+#: includes/class-detect.php:472
+#: includes/class-detect.php:523
+msgid "Stable Diffusion generation data"
+msgstr "Dados de geração do Stable Diffusion"
+
+#: includes/class-detect.php:475
+msgid "ComfyUI generation data"
+msgstr "Dados de geração do ComfyUI"
+
+#: includes/class-detect.php:478
+msgid "InvokeAI generation data"
+msgstr "Dados de geração do InvokeAI"
+
+#: includes/class-detect.php:481
+msgid "NovelAI generation data"
+msgstr "Dados de geração do NovelAI"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:493
+#, php-format
+msgid "PNG text names %s"
+msgstr "O texto PNG indica %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:536
+#, php-format
+msgid "EXIF names %s"
+msgstr "O EXIF indica %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:559
+#, php-format
+msgid "Tags name %s"
+msgstr "As palavras-chave indicam %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:583
+#, php-format
+msgid "File name as %s gives it"
+msgstr "Nome de ficheiro no formato de %s"
+
+#: includes/class-detect.php:584
+msgid "File name points to AI"
+msgstr "O nome do ficheiro aponta para IA"
+
+#: includes/class-labels.php:264
+#: includes/class-media.php:67
+#: includes/class-media.php:343
+#: includes/class-rest.php:65
+#: src/admin/Knowledge.js:297
+#: src/admin/Look.js:479
+#: src/admin/parts.js:8
+msgid "Modified with AI"
+msgstr "Modificado com IA"
+
+#: includes/class-labels.php:266
+#: includes/class-media.php:66
+#: includes/class-media.php:342
+#: includes/class-rest.php:64
+#: src/admin/Knowledge.js:301
+#: src/admin/Look.js:114
+#: src/admin/Look.js:467
+#: src/admin/parts.js:7
+msgid "AI-generated"
+msgstr "Gerado por IA"
+
+#: includes/class-labels.php:284
+#: includes/class-rest.php:66
+#: src/admin/Look.js:156
+msgid "This image was created with AI."
+msgstr "Esta imagem foi criada com IA."
+
+#: includes/class-labels.php:285
+msgid "This video was created with AI."
+msgstr "Este vídeo foi criado com IA."
+
+#: includes/class-labels.php:286
+msgid "This recording was created with AI."
+msgstr "Esta gravação foi criada com IA."
+
+#: includes/class-labels.php:287
+msgid "This content was created with AI."
+msgstr "Este conteúdo foi criado com IA."
+
+#: includes/class-labels.php:290
+#: includes/class-rest.php:67
+#: src/admin/Look.js:151
+msgid "This image was modified with AI."
+msgstr "Esta imagem foi modificada com IA."
+
+#: includes/class-labels.php:291
+msgid "This video was modified with AI."
+msgstr "Este vídeo foi modificado com IA."
+
+#: includes/class-labels.php:292
+msgid "This recording was modified with AI."
+msgstr "Esta gravação foi modificada com IA."
+
+#: includes/class-labels.php:293
+msgid "This content was modified with AI."
+msgstr "Este conteúdo foi modificado com IA."
+
+#. translators: %s: the AI tool, e.g. Midjourney
+#: includes/class-labels.php:315
+#, php-format
+msgid "Tool: %s."
+msgstr "Ferramenta: %s."
+
+#: includes/class-media.php:65
+msgid "Not decided yet"
+msgstr "Ainda sem decisão"
+
+#: includes/class-media.php:68
+#: includes/class-media.php:347
+#: src/admin/parts.js:9
+#: src/admin/Review.js:23
+msgid "No label needed"
+msgstr "Não precisa de etiqueta"
+
+#: includes/class-media.php:136
+#: src/admin/parts.js:146
+msgid "Suggestion"
+msgstr "Sugestão"
+
+#: includes/class-media.php:143
+msgid "In the file:"
+msgstr "No ficheiro:"
+
+#: includes/class-media.php:147
+#: src/media/index.js:143
+msgid "Image analysis (AI):"
+msgstr "Análise de imagem (IA):"
+
+#: includes/class-media.php:150
+#: src/admin/parts.js:216
+msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
+msgstr "Os metadados do ficheiro contradizem claramente a avaliação da IA. Reveja antes de aplicar."
+
+#: includes/class-media.php:155
+#: src/admin/Review.js:315
+msgid "Analyze image (AI)"
+msgstr "Analisar imagem (IA)"
+
+#: includes/class-media.php:161
+msgid "AI tool"
+msgstr "Ferramenta de IA"
+
+#: includes/class-media.php:164
+msgid "optional, e.g. Midjourney"
+msgstr "opcional, p. ex. Midjourney"
+
+#: includes/class-media.php:165
+msgid "Own notice"
+msgstr "Aviso próprio"
+
+#: includes/class-media.php:169
+msgid "Empty: the default. The tool then appears in the notice."
+msgstr "Vazio: a predefinição. A ferramenta aparece então no aviso."
+
+#: includes/class-media.php:173
+msgid "AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none."
+msgstr "Regulamento IA, artigo 50: a etiqueta é obrigatória quando pessoas, lugares ou acontecimentos reais ou plausíveis parecem reais. A edição fotográfica comum não precisa de nenhuma."
+
+#: includes/class-media.php:175
+msgid "Review all media →"
+msgstr "Rever todos os ficheiros multimédia →"
+
+#: includes/class-media.php:289
+#: includes/class-media.php:292
+msgid "AI"
+msgstr "IA"
+
+#. translators: %s: KI-generiert or Mit KI verändert
+#: includes/class-media.php:328
+#: src/media/index.js:36
+#, php-format,js-format
+msgid "Suggestion: %s"
+msgstr "Sugestão: %s"
+
+#: includes/class-media.php:340
+msgid "AI: all"
+msgstr "IA: todos"
+
+#: includes/class-media.php:341
+#: src/admin/Review.js:22
+msgid "Labeled"
+msgstr "Etiquetados"
+
+#: includes/class-media.php:344
+#: src/admin/Review.js:20
+#: src/admin/Review.js:140
+msgid "Suggestions"
+msgstr "Sugestões"
+
+#: includes/class-media.php:345
+#: src/admin/Review.js:21
+msgid "Used, not decided"
+msgstr "Em uso, sem decisão"
+
+#: includes/class-media.php:346
+#: src/admin/parts.js:10
+msgid "Not decided"
+msgstr "Sem decisão"
+
+#: includes/class-media.php:362
+msgid "Filter by AI label"
+msgstr "Filtrar por etiqueta de IA"
+
+#: includes/class-media.php:401
+msgid "Label as AI-generated"
+msgstr "Etiquetar como gerado por IA"
+
+#: includes/class-media.php:402
+msgid "Label as modified with AI"
+msgstr "Etiquetar como modificado com IA"
+
+#: includes/class-media.php:403
+msgid "AI: no label needed"
+msgstr "IA: não precisa de etiqueta"
+
+#: includes/class-media.php:404
+msgid "Remove AI label"
+msgstr "Remover etiqueta de IA"
+
+#. translators: %d: number of files
+#: includes/class-media.php:447
+#, php-format
+msgid "Removed the AI label from %d file."
+msgid_plural "Removed the AI label from %d files."
+msgstr[0] "Etiqueta de IA removida de %d ficheiro."
+msgstr[1] "Etiqueta de IA removida de %d ficheiros."
+
+#. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig
+#: includes/class-media.php:449
+#, php-format
+msgid "%1$d file: %2$s."
+msgid_plural "%1$d files: %2$s."
+msgstr[0] "%1$d ficheiro: %2$s."
+msgstr[1] "%1$d ficheiros: %2$s."
+
+#: includes/class-media.php:462
+msgid "AI labels:"
+msgstr "Etiquetas de IA:"
+
+#. translators: %d: number of files
+#: includes/class-media.php:464
+#, php-format
+msgid "%d file carries traces of AI and has no decision yet."
+msgid_plural "%d files carry traces of AI and have no decision yet."
+msgstr[0] "%d ficheiro tem vestígios de IA e ainda não tem decisão."
+msgstr[1] "%d ficheiros têm vestígios de IA e ainda não têm decisão."
+
+#: includes/class-media.php:466
+msgid "View"
+msgstr "Ver"
+
+#: includes/class-media.php:468
+msgid "Later"
+msgstr "Mais tarde"
+
+#: includes/class-rest.php:171
+msgid "Decide on at most 200 files per request."
+msgstr "Decida sobre no máximo 200 ficheiros por pedido."
+
+#: includes/class-rest.php:175
+msgid "This label does not exist."
+msgstr "Esta etiqueta não existe."
+
+#: includes/class-rest.php:220
+msgid "Only site administrators can run a site-wide check."
+msgstr "Só os administradores do site podem executar uma verificação de todo o site."
+
+#: includes/class-rest.php:244
+#: includes/class-rest.php:316
+msgid "For the image analysis, WordPress needs an AI provider (Settings › Connectors)."
+msgstr "Para a análise de imagem, o WordPress precisa de um fornecedor de IA (Definições › Connectors)."
+
+#: includes/class-rest.php:286
+msgid "You cannot edit this file."
+msgstr "Não pode editar este ficheiro."
+
+#: includes/class-usage.php:471
+#: includes/class-usage.php:497
+msgid "Website"
+msgstr "Site"
+
+#: includes/class-usage.php:491
+msgid "Site logo"
+msgstr "Logótipo do site"
+
+#: includes/class-usage.php:493
+#: src/admin/parts.js:42
+msgid "Site icon"
+msgstr "Ícone do site"
+
+#: includes/class-usage.php:495
+#: src/admin/parts.js:43
+msgid "Header image"
+msgstr "Imagem de cabeçalho"
+
+#: src/admin/api.js:28
+msgid "That did not work."
+msgstr "Isso não funcionou."
+
+#: src/admin/Assistant.js:7
+msgid "set up"
+msgstr "configurado"
+
+#: src/admin/Assistant.js:8
+msgid "API key missing"
+msgstr "falta a chave de API"
+
+#: src/admin/Assistant.js:9
+msgid "not responding"
+msgstr "não responde"
+
+#: src/admin/Assistant.js:10
+msgid "plugin missing"
+msgstr "falta o plugin"
+
+#: src/admin/Assistant.js:24
+msgid "Image analysis (AI) needs WordPress 7.0"
+msgstr "A análise de imagem (IA) precisa do WordPress 7.0"
+
+#: src/admin/Assistant.js:30
+msgid "From 7.0, the image analysis uses the AI provider you set up under Settings › Connectors. Labeling, the check and the traces in files already work."
+msgstr "A partir da versão 7.0, a análise de imagem usa o fornecedor de IA que configurar em Definições › Connectors. Etiquetar, a verificação e os vestígios nos ficheiros já funcionam."
+
+#: src/admin/Assistant.js:37
+msgid "Update WordPress"
+msgstr "Atualizar o WordPress"
+
+#: src/admin/Assistant.js:49
+#: src/admin/Assistant.js:130
+msgid "Set up an AI provider first"
+msgstr "Configure primeiro um fornecedor de IA"
+
+#: src/admin/Assistant.js:52
+msgid "The image analysis uses the provider you set up in WordPress under Settings › Connectors – your API key stays there. Labeling, the check and the traces in files work without it."
+msgstr "A análise de imagem usa o fornecedor que configurou no WordPress em Definições › Connectors – a sua chave de API fica lá. Etiquetar, a verificação e os vestígios nos ficheiros funcionam sem ela."
+
+#: src/admin/Assistant.js:85
+#: src/media/index.js:154
+msgid "Open Connectors"
+msgstr "Abrir Connectors"
+
+#: src/admin/Assistant.js:89
+msgid "Install Vercel AI Gateway"
+msgstr "Instalar o Vercel AI Gateway"
+
+#: src/admin/Assistant.js:98
+msgid "No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card."
+msgstr "Sem contrato com um fornecedor? O Vercel AI Gateway dá 5 $ por mês grátis, sem cartão de crédito."
+
+#: src/admin/Assistant.js:139
+msgid "Close"
+msgstr "Fechar"
+
+#: src/admin/index.js:12
+msgid "Review"
+msgstr "Rever"
+
+#: src/admin/index.js:13
+msgid "Appearance"
+msgstr "Aspeto"
+
+#: src/admin/index.js:14
+msgid "Knowledge"
+msgstr "Conhecimento"
+
+#: src/admin/index.js:77
+msgid "Article 50 of the AI Regulation (EU) 2024/1689"
+msgstr "Artigo 50 do Regulamento Inteligência Artificial (UE) 2024/1689"
+
+#: src/admin/index.js:84
+msgid "AI Act Art. 50 applies since 2 Aug 2026"
+msgstr "Regulamento IA, art. 50 – aplica-se desde 2 de agosto de 2026"
+
+#: src/admin/index.js:90
+msgid "AI Act Art. 50"
+msgstr "Regulamento IA, art. 50"
+
+#: src/admin/index.js:94
+msgid "Media Library"
+msgstr "Biblioteca multimédia"
+
+#: src/admin/Knowledge.js:9
+msgid "Photorealistic AI “team photo”, customer portrait, testimonial"
+msgstr "“Foto de equipa” fotorrealista feita por IA, retrato de cliente, testemunho"
+
+#: src/admin/Knowledge.js:17
+msgid "Real photo, background or person replaced or added with AI"
+msgstr "Foto real, com fundo ou pessoa substituídos ou acrescentados com IA"
+
+#: src/admin/Knowledge.js:25
+msgid "AI product shot that looks like a real photo of the product"
+msgstr "Foto de produto por IA que parece uma foto real do produto"
+
+#: src/admin/Knowledge.js:33
+msgid "AI image of a real building, place or event"
+msgstr "Imagem de IA de um edifício, lugar ou acontecimento real"
+
+#: src/admin/Knowledge.js:41
+msgid "Recognizable illustration, comic, 3D graphic, abstract background"
+msgstr "Ilustração, banda desenhada, gráfico 3D ou fundo abstrato reconhecíveis como tal"
+
+#: src/admin/Knowledge.js:49
+msgid "Real photo, only color, light, noise or crop with an AI tool"
+msgstr "Foto real, só cor, luz, ruído ou recorte com uma ferramenta de IA"
+
+#: src/admin/Knowledge.js:57
+msgid "Camera or stock photo without AI"
+msgstr "Foto de câmara ou de banco de imagens sem IA"
+
+#: src/admin/Knowledge.js:64
+msgid "required"
+msgstr "obrigatória"
+
+#: src/admin/Knowledge.js:65
+msgid "voluntary"
+msgstr "voluntária"
+
+#: src/admin/Knowledge.js:66
+msgid "no label"
+msgstr "sem etiqueta"
+
+#: src/admin/Knowledge.js:71
+msgid "Questions and answers on Article 50 (European Commission)"
+msgstr "Perguntas e respostas sobre o artigo 50 (Comissão Europeia)"
+
+#: src/admin/Knowledge.js:78
+msgid "Code of Practice on labeling AI-generated content"
+msgstr "Código de boas práticas sobre a etiquetagem de conteúdos gerados por IA"
+
+#: src/admin/Knowledge.js:85
+msgid "The EU icons to download"
+msgstr "Os ícones da UE para descarregar"
+
+#: src/admin/Knowledge.js:89
+msgid "AI Act in the Official Journal (Regulation (EU) 2024/1689)"
+msgstr "Regulamento IA no Jornal Oficial (Regulamento (UE) 2024/1689)"
+
+#: src/admin/Knowledge.js:96
+msgid "AI Act Service Desk"
+msgstr "AI Act Service Desk"
+
+#: src/admin/Knowledge.js:112
+msgid "AI Act, Article 50"
+msgstr "Regulamento IA, artigo 50"
+
+#: src/admin/Knowledge.js:115
+msgid "Since 2 August 2026, what AI made has to be visible."
+msgstr "Desde 2 de agosto de 2026, o que a IA fez tem de ser visível."
+
+#: src/admin/Knowledge.js:121
+msgid "A business that publishes images, videos or recordings that look real but were created or modified with AI has to label them – visibly, at the latest at first sight. The duty is yours as the site owner, not the AI tool maker's."
+msgstr "Uma empresa que publica imagens, vídeos ou gravações que parecem reais mas foram criados ou modificados com IA tem de os etiquetar – de forma visível, o mais tardar ao primeiro olhar. O dever é seu, como dono do site, não de quem faz a ferramenta de IA."
+
+#: src/admin/Knowledge.js:140
+msgid "You have to label"
+msgstr "Tem de etiquetar"
+
+#: src/admin/Knowledge.js:144
+msgid "Deepfakes: AI images, videos, audio that show real or plausible people, things, places or events and look real – also an invented but photorealistic person."
+msgstr "Deepfakes: imagens, vídeos e áudio de IA que mostram pessoas, coisas, lugares ou acontecimentos reais ou plausíveis e parecem reais – também uma pessoa inventada mas fotorrealista."
+
+#: src/admin/Knowledge.js:150
+msgid "AI texts that inform the public on matters of public interest – unless a person reviewed them and takes responsibility."
+msgstr "Textos de IA que informam o público sobre assuntos de interesse público – a menos que uma pessoa os tenha revisto e assuma a responsabilidade."
+
+#: src/admin/Knowledge.js:156
+msgid "Whether you meant to deceive does not matter. What your audience believes counts."
+msgstr "Não importa se quis enganar. O que conta é aquilo em que o seu público acredita."
+
+#: src/admin/Knowledge.js:168
+msgid "No label needed for"
+msgstr "Não precisa de etiqueta"
+
+#: src/admin/Knowledge.js:172
+msgid "Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI tools."
+msgstr "Edição comum: recorte, luz, cor, ruído, pó, aumento de resolução – também com ferramentas de IA."
+
+#: src/admin/Knowledge.js:178
+msgid "Obviously artificial images (illustration, comic, abstract): voluntary, but good for trust."
+msgstr "Imagens obviamente artificiais (ilustração, banda desenhada, abstrato): voluntário, mas bom para a confiança."
+
+#: src/admin/Knowledge.js:184
+msgid "Content created before 2 August 2026 – nothing applies retroactively."
+msgstr "Conteúdos criados antes de 2 de agosto de 2026 – nada se aplica retroativamente."
+
+#: src/admin/Knowledge.js:190
+msgid "Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the caption)."
+msgstr "Arte, sátira, ficção: sim, mas de modo a que a obra não sofra (p. ex. na legenda)."
+
+#: src/admin/Knowledge.js:202
+msgid "Where the label goes"
+msgstr "Onde fica a etiqueta"
+
+#: src/admin/Knowledge.js:206
+msgid "On or right at the content, visible without a click – not only in the imprint."
+msgstr "No conteúdo ou mesmo ao lado, visível sem clique – não só no aviso legal."
+
+#: src/admin/Knowledge.js:212
+msgid "Plain words: “AI-generated”, “Modified with AI”. For screen readers as the icon's name, never instead of the alt text."
+msgstr "Palavras simples: “Gerado por IA”, “Modificado com IA”. Para leitores de ecrã como nome do ícone, nunca em vez do texto alternativo."
+
+#: src/admin/Knowledge.js:218
+msgid "Videos: in a corner the whole time. Audio: at the player and in the artwork."
+msgstr "Vídeos: num canto, durante todo o tempo. Áudio: junto ao leitor e na imagem de capa."
+
+#: src/admin/Knowledge.js:224
+msgid "The AI tool's watermark or metadata does not count for you."
+msgstr "A marca de água ou os metadados da ferramenta de IA não contam para si."
+
+#: src/admin/Knowledge.js:234
+msgid "The EU's icons"
+msgstr "Os ícones da UE"
+
+#: src/admin/Knowledge.js:235
+msgid "From the Commission since June 2026, free to use, no attribution. Optional – an equivalent label is allowed too."
+msgstr "Da Comissão, desde junho de 2026, de uso livre, sem atribuição. Opcional – uma etiqueta equivalente também é permitida."
+
+#: src/admin/Knowledge.js:243
+msgid "AI GENERATED"
+msgstr "GERADO POR IA"
+
+#: src/admin/Knowledge.js:245
+msgid "Fully created with AI, no human-made parts."
+msgstr "Totalmente criado com IA, sem partes feitas por pessoas."
+
+#: src/admin/Knowledge.js:253
+msgid "AI MODIFIED"
+msgstr "MODIFICADO POR IA"
+
+#: src/admin/Knowledge.js:255
+msgid "Real photo, video or recording, partly modified with AI."
+msgstr "Foto, vídeo ou gravação real, em parte modificados com IA."
+
+#: src/admin/Knowledge.js:264
+msgctxt "name of the EU basic icon"
+msgid "AI"
+msgstr "IA"
+
+#: src/admin/Knowledge.js:271
+msgid "The basic icon: with your own text, with a second layer or where space is short."
+msgstr "O ícone básico: com texto próprio, com uma segunda camada ou onde há pouco espaço."
+
+#: src/admin/Knowledge.js:280
+msgid "Typical cases"
+msgstr "Casos típicos"
+
+#: src/admin/Knowledge.js:284
+msgid "File"
+msgstr "Ficheiro"
+
+#: src/admin/Knowledge.js:285
+#: src/admin/Look.js:109
+msgid "Kind"
+msgstr "Tipo"
+
+#: src/admin/Knowledge.js:286
+msgid "Label"
+msgstr "Etiqueta"
+
+#: src/admin/Knowledge.js:321
+msgid "How the plugin recognizes AI"
+msgstr "Como o plugin reconhece IA"
+
+#: src/admin/Knowledge.js:328
+msgid "Many AI tools write into the file that it was made with AI: Content Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and ComfyUI. The plugin reads them on upload and with every check – on your server, nothing leaves it."
+msgstr "Muitas ferramentas de IA escrevem no ficheiro que foi feito com IA: Content Credentials (C2PA) do ChatGPT, Gemini, Firefly ou Photoshop, o valor IPTC “trainedAlgorithmicMedia”, os dados de geração do Stable Diffusion e do ComfyUI. O plugin lê-os no carregamento e em cada verificação – no seu servidor, nada sai dele."
+
+#: src/admin/Knowledge.js:334
+msgid "A missing trace means nothing: screenshots, exports and image optimizers remove them. That is why “Used, not decided” shows everything visible on your site that has no decision yet. Only you know for sure how an image was made."
+msgstr "A falta de um vestígio não significa nada: capturas de ecrã, exportações e otimizadores de imagem removem-nos. Por isso, “Em uso, sem decisão” mostra tudo o que está visível no seu site e ainda não tem decisão. Só quem publicou a imagem sabe ao certo como foi feita."
+
+#: src/admin/Knowledge.js:342
+msgid "This knowledge as a skill"
+msgstr "Este conhecimento como skill"
+
+#: src/admin/Knowledge.js:349
+msgid "The image analysis thinks with a skill: a guide to the AI Act with sources, in the plugin under skills/eu-ai-act-labels. You can give the same files to any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
+msgstr "A análise de imagem pensa com uma skill: um guia do Regulamento IA com fontes, no plugin em skills/eu-ai-act-labels. Pode dar os mesmos ficheiros a qualquer agente de IA que leia Agent Skills – Claude, Cursor, Codex e outros."
+
+#: src/admin/Knowledge.js:361
+msgid "View SKILL.md"
+msgstr "Ver SKILL.md"
+
+#: src/admin/Knowledge.js:369
+msgid "Sources"
+msgstr "Fontes"
+
+#: src/admin/Knowledge.js:370
+msgid "As of 9 October 2026. This is help, not legal advice."
+msgstr "À data de 9 de outubro de 2026. Isto é ajuda, não aconselhamento jurídico."
+
+#: src/admin/Look.js:18
+msgid "EU icon by kind"
+msgstr "Ícone da UE por tipo"
+
+#: src/admin/Look.js:19
+msgid "Round EU icon"
+msgstr "Ícone redondo da UE"
+
+#: src/admin/Look.js:22
+msgid "Round icon, opens on hover"
+msgstr "Ícone redondo, abre ao passar o rato"
+
+#: src/admin/Look.js:25
+msgid "Own icon"
+msgstr "Ícone próprio"
+
+#: src/admin/Look.js:26
+msgid "Sparkle"
+msgstr "Brilho"
+
+#: src/admin/Look.js:30
+msgid "Dark"
+msgstr "Escuro"
+
+#: src/admin/Look.js:31
+msgid "Light"
+msgstr "Claro"
+
+#: src/admin/Look.js:32
+#: src/admin/parts.js:31
+msgid "Image"
+msgstr "Imagem"
+
+#: src/admin/Look.js:33
+#: src/admin/Look.js:344
+#: src/admin/Look.js:347
+msgid "Color"
+msgstr "Cor"
+
+#: src/admin/Look.js:52
+msgid "Top left"
+msgstr "Em cima à esquerda"
+
+#: src/admin/Look.js:53
+msgid "Top right"
+msgstr "Em cima à direita"
+
+#: src/admin/Look.js:54
+msgid "Bottom left"
+msgstr "Em baixo à esquerda"
+
+#: src/admin/Look.js:55
+msgid "Bottom right"
+msgstr "Em baixo à direita"
+
+#: src/admin/Look.js:105
+msgid "How it looks on the site"
+msgstr "Como fica no site"
+
+#: src/admin/Look.js:118
+msgid "Modified"
+msgstr "Modificado"
+
+#: src/admin/Look.js:143
+msgid "Our workshop in autumn"
+msgstr "A nossa oficina no outono"
+
+#: src/admin/Look.js:180
+msgid "On small images (under 400 px) the plugin uses the round icon instead of the wide one."
+msgstr "Em imagens pequenas (menos de 400 px), o plugin usa o ícone redondo em vez do largo."
+
+#: src/admin/Look.js:188
+msgid "Hover over the icon: the second layer shows the notice. Screen readers read it as the icon's name – the image's alt text stays as it is."
+msgstr "Passe o rato sobre o ícone: a segunda camada mostra o aviso. Os leitores de ecrã leem-no como nome do ícone – o texto alternativo da imagem fica como está."
+
+#: src/admin/Look.js:228
+msgid "Choose your own icon"
+msgstr "Escolha o seu próprio ícone"
+
+#: src/admin/Look.js:266
+msgid "Administrators change the appearance. You can still label."
+msgstr "Os administradores alteram o aspeto. Mesmo assim, pode etiquetar."
+
+#: src/admin/Look.js:274
+msgid "Icon"
+msgstr "Ícone"
+
+#: src/admin/Look.js:275
+msgid "The default is the European Commission's icons – free to use, no attribution."
+msgstr "A predefinição são os ícones da Comissão Europeia – de uso livre, sem atribuição."
+
+#: src/admin/Look.js:327
+msgid "Choose another icon"
+msgstr "Escolher outro ícone"
+
+#: src/admin/Look.js:335
+msgid "Your own mark is allowed if it is as clear as the EU icon. The EU icon is the safer choice."
+msgstr "A sua própria marca é permitida se for tão clara como o ícone da UE. O ícone da UE é a escolha mais segura."
+
+#: src/admin/Look.js:375
+msgid "Pick a color"
+msgstr "Escolher uma cor"
+
+#: src/admin/Look.js:384
+#: src/admin/Look.js:392
+msgid "Transparency"
+msgstr "Transparência"
+
+#: src/admin/Look.js:385
+msgid "Of the shape; the letters stay solid."
+msgstr "Da forma; as letras ficam opacas."
+
+#. translators: %d: a percentage.
+#: src/admin/Look.js:401
+#, js-format
+msgid "%d%%"
+msgstr "%d%%"
+
+#: src/admin/Look.js:407
+#: src/admin/Look.js:410
+msgid "Size"
+msgstr "Tamanho"
+
+#: src/admin/Look.js:420
+#: src/admin/Look.js:429
+msgid "Corner"
+msgstr "Canto"
+
+#: src/admin/Look.js:421
+msgid "Videos: always at the top, away from the controls."
+msgstr "Vídeos: sempre em cima, longe dos controlos."
+
+#: src/admin/Look.js:459
+msgid "Words"
+msgstr "Palavras"
+
+#: src/admin/Look.js:460
+msgid "Leave empty: the default in the site's language."
+msgstr "Deixe vazio: a predefinição no idioma do site."
+
+#: src/admin/Look.js:491
+msgid "Notice for AI-generated"
+msgstr "Aviso para gerado por IA"
+
+#: src/admin/Look.js:503
+msgid "Notice for modified"
+msgstr "Aviso para modificado"
+
+#: src/admin/Look.js:518
+msgid "Where the label appears"
+msgstr "Onde a etiqueta aparece"
+
+#: src/admin/Look.js:527
+msgid "Images in pages and posts"
+msgstr "Imagens em páginas e artigos"
+
+#: src/admin/Look.js:531
+msgid "Blocks, galleries, covers, classic editor, HTML"
+msgstr "Blocos, galerias, capas, editor clássico, HTML"
+
+#: src/admin/Look.js:538
+msgid "Featured images and the theme's images"
+msgstr "Imagens de destaque e imagens do tema"
+
+#: src/admin/Look.js:542
+msgid "everything that comes through wp_get_attachment_image()"
+msgstr "tudo o que passa por wp_get_attachment_image()"
+
+#: src/admin/Look.js:549
+msgid "Videos"
+msgstr "Vídeos"
+
+#: src/admin/Look.js:550
+msgid "Video block, cover with video, [video]"
+msgstr "Bloco de vídeo, capa com vídeo, [video]"
+
+#: src/admin/Look.js:557
+#: src/admin/parts.js:36
+msgid "Audio"
+msgstr "Áudio"
+
+#: src/admin/Look.js:558
+msgid "a line above the player"
+msgstr "uma linha acima do leitor"
+
+#: src/admin/Look.js:576
+#: src/admin/Look.js:587
+msgid "Notice in captions"
+msgstr "Aviso nas legendas"
+
+#: src/admin/Look.js:580
+msgid "Only where there is one already – never in the alt text."
+msgstr "Só onde já existe uma – nunca no texto alternativo."
+
+#: src/admin/Look.js:596
+#: src/admin/Look.js:607
+msgid "Second layer on hover"
+msgstr "Segunda camada ao passar o rato"
+
+#: src/admin/Look.js:600
+msgid "The whole notice, with the tool."
+msgstr "O aviso completo, com a ferramenta."
+
+#: src/admin/Look.js:618
+msgid "On upload"
+msgstr "No carregamento"
+
+#: src/admin/Look.js:621
+#: src/admin/Look.js:632
+msgid "Check files for traces of AI"
+msgstr "Verificar ficheiros quanto a vestígios de IA"
+
+#: src/admin/Look.js:625
+msgid "C2PA, IPTC, generation data, file names – on your server."
+msgstr "C2PA, IPTC, dados de geração, nomes de ficheiro – no seu servidor."
+
+#: src/admin/Look.js:641
+#: src/admin/Look.js:652
+msgid "Apply unambiguous traces right away"
+msgstr "Aplicar logo os vestígios inequívocos"
+
+#: src/admin/Look.js:645
+msgid "If the file itself says it was made with AI, it is labeled right away."
+msgstr "Se o próprio ficheiro diz que foi feito com IA, é etiquetado de imediato."
+
+#: src/admin/parts.js:15
+msgctxt "decision beside the AI icon"
+msgid "generated"
+msgstr "gerado"
+
+#: src/admin/parts.js:20
+msgctxt "decision beside the AI icon"
+msgid "modified"
+msgstr "modificado"
+
+#: src/admin/parts.js:25
+msgctxt "decision"
+msgid "No label"
+msgstr "Sem etiqueta"
+
+#: src/admin/parts.js:30
+msgid "Featured image"
+msgstr "Imagem de destaque"
+
+#: src/admin/parts.js:32
+msgid "Gallery"
+msgstr "Galeria"
+
+#: src/admin/parts.js:33
+msgid "Cover"
+msgstr "Capa"
+
+#: src/admin/parts.js:34
+msgid "Media & Text"
+msgstr "Multimédia e texto"
+
+#: src/admin/parts.js:35
+msgid "Video"
+msgstr "Vídeo"
+
+#: src/admin/parts.js:37
+msgid "only as a URL"
+msgstr "só como URL"
+
+#: src/admin/parts.js:38
+msgid "Page builder"
+msgstr "Construtor de páginas"
+
+#: src/admin/parts.js:39
+msgid "ACF field"
+msgstr "Campo ACF"
+
+#: src/admin/parts.js:40
+msgid "Product gallery"
+msgstr "Galeria de produto"
+
+#: src/admin/parts.js:41
+msgid "Logo"
+msgstr "Logótipo"
+
+#: src/admin/parts.js:195
+msgid "Label required"
+msgstr "Etiqueta obrigatória"
+
+#: src/admin/parts.js:196
+msgid "Label voluntary"
+msgstr "Etiqueta voluntária"
+
+#: src/admin/parts.js:197
+msgid "no label needed"
+msgstr "não precisa de etiqueta"
+
+#: src/admin/parts.js:198
+msgid "unclear"
+msgstr "pouco claro"
+
+#: src/admin/parts.js:234
+msgid "label visible"
+msgstr "etiqueta visível"
+
+#: src/admin/parts.js:235
+msgid "without label"
+msgstr "sem etiqueta"
+
+#: src/admin/parts.js:236
+msgid "not on the page"
+msgstr "não está na página"
+
+#: src/admin/parts.js:237
+msgid "page not reachable"
+msgstr "página inacessível"
+
+#: src/admin/parts.js:244
+msgid "Not found on any page"
+msgstr "Não encontrado em nenhuma página"
+
+#. translators: %d: number of further places
+#: src/admin/parts.js:275
+#, js-format
+msgid "and %d more"
+msgstr "e mais %d"
+
+#: src/admin/Review.js:24
+msgid "All"
+msgstr "Todos"
+
+#: src/admin/Review.js:29
+msgid "No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too."
+msgstr "Nenhum ficheiro tem vestígios de IA sem decisão. Os vestígios faltam muitas vezes – percorra também “Em uso, sem decisão”."
+
+#: src/admin/Review.js:33
+msgid "Everything used on your site has a decision. Or the site has not been checked yet."
+msgstr "Tudo o que está em uso no seu site tem decisão. Ou o site ainda não foi verificado."
+
+#: src/admin/Review.js:37
+msgid "No file labeled yet."
+msgstr "Ainda nenhum ficheiro etiquetado."
+
+#: src/admin/Review.js:38
+msgid "No file decided as needing no label yet."
+msgstr "Ainda nenhum ficheiro marcado como sem etiqueta necessária."
+
+#: src/admin/Review.js:42
+msgid "No images, videos or recordings."
+msgstr "Sem imagens, vídeos ou gravações."
+
+#: src/admin/Review.js:117
+msgid "Reading your pages and posts …"
+msgstr "A ler as suas páginas e artigos …"
+
+#: src/admin/Review.js:121
+msgid "Reading the traces in your files …"
+msgstr "A ler os vestígios nos seus ficheiros …"
+
+#: src/admin/Review.js:125
+msgid "Done."
+msgstr "Concluído."
+
+#: src/admin/Review.js:157
+msgid "labeled"
+msgstr "etiquetados"
+
+#. translators: 1: generated count, 2: modified count
+#: src/admin/Review.js:160
+#, js-format
+msgid "%1$d AI-generated · %2$d modified"
+msgstr "%1$d gerados por IA · %2$d modificados"
+
+#: src/admin/Review.js:141
+msgid "traces of AI, no decision"
+msgstr "vestígios de IA, sem decisão"
+
+#: src/admin/Review.js:150
+msgid "used, not decided"
+msgstr "em uso, sem decisão"
+
+#: src/admin/Review.js:151
+msgid "visible on your site"
+msgstr "visíveis no seu site"
+
+#. translators: 1: date, 2: pages, 3: files in use
+#: src/admin/Review.js:206
+#, js-format
+msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
+msgstr "Última verificação %1$s: %2$d páginas e artigos, %3$d ficheiros em uso."
+
+#: src/admin/Review.js:214
+msgid "Not checked yet: where your media is used and which traces of AI it carries."
+msgstr "Ainda não verificado: onde a sua multimédia é usada e que vestígios de IA tem."
+
+#: src/admin/Review.js:229
+msgid "Check site"
+msgstr "Verificar o site"
+
+#: src/admin/Review.js:272
+msgid "Open in the Media Library"
+msgstr "Abrir na Biblioteca multimédia"
+
+#: src/admin/Review.js:302
+msgid "Check on the site"
+msgstr "Verificar no site"
+
+#: src/admin/Review.js:412
+msgid "Some labels could not be undone. Retry the remaining files."
+msgstr "Algumas etiquetas não puderam ser anuladas. Tente novamente com os ficheiros restantes."
+
+#: src/admin/Review.js:571
+msgid "Media"
+msgstr "Multimédia"
+
+#: src/admin/Review.js:572
+msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
+msgstr "Decida por ficheiro: gerado por IA, modificado com IA ou sem etiqueta necessária. A etiqueta é obrigatória quando algo parece real mas não aconteceu assim."
+
+#: src/admin/Review.js:582
+msgid "Search"
+msgstr "Pesquisar"
+
+#: src/admin/Review.js:586
+msgid "Search media"
+msgstr "Pesquisar multimédia"
+
+#. translators: %d: number of suggestions
+#: src/admin/Review.js:634
+#, js-format
+msgid "Apply all %d suggestions"
+msgstr "Aplicar todas as %d sugestões"
+
+#. translators: 1: done, 2: total
+#: src/admin/Run.js:488
+#, js-format
+msgid "Analyzing … %1$d of %2$d"
+msgstr "A analisar … %1$d de %2$d"
+
+#. translators: %d: number of files
+#: src/admin/Review.js:648
+#, js-format
+msgid "%d suggestions applied."
+msgstr "%d sugestões aplicadas."
+
+#: src/admin/Review.js:660
+msgid "Undo"
+msgstr "Anular"
+
+#: src/admin/Review.js:666
+msgid "Loading …"
+msgstr "A carregar …"
+
+#. translators: 1: page, 2: pages
+#: src/admin/Review.js:705
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr "Página %1$d de %2$d"
+
+#: src/admin/Review.js:723
+msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
+msgstr "Também na Biblioteca multimédia: o filtro “IA”, uma coluna e ações em massa na vista de lista."
+
+#: src/admin/Review.js:728
+msgid "Open Media Library"
+msgstr "Abrir a Biblioteca multimédia"
+
+#: src/admin/ui.js:331
+msgid "as recommended"
+msgstr "como recomendado"
+
+#: src/admin/ui.js:335
+msgid "changed"
+msgstr "alterado"
+
+#: src/media/index.js:129
+msgid "Analyzing …"
+msgstr "A analisar …"
+
+#. translators: %d: minutes
+#: src/admin/Run.js:76
+#, js-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuto"
+msgstr[1] "%d minutos"
+
+#. translators: %s: hours, e.g. 2.5
+#: src/admin/Run.js:81
+#, js-format
+msgid "%s hours"
+msgstr "%s horas"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:416
+#, js-format
+msgid "%d picture without a decision or an assessment"
+msgid_plural "%d pictures without a decision or an assessment"
+msgstr[0] "%d imagem sem decisão nem avaliação"
+msgstr[1] "%d imagens sem decisão nem avaliação"
+
+#: src/admin/Run.js:476
+msgid "Image generators for everyone came in 2022 – older uploads rarely need a check."
+msgstr "Os geradores de imagens para todos existem desde 2022 – carregamentos mais antigos raramente precisam de verificação."
+
+#: src/admin/Run.js:497
+msgid "Stop"
+msgstr "Parar"
+
+#: src/admin/Run.js:531
+msgid "Test with 10"
+msgstr "Testar com 10"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:551
+#, js-format
+msgid "Analyze %d picture"
+msgid_plural "Analyze %d pictures"
+msgstr[0] "Analisar %d imagem"
+msgstr[1] "Analisar %d imagens"
+
+#. translators: %d: seconds
+#: src/admin/Run.js:68
+#, js-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d segundo"
+msgstr[1] "%d segundos"
+
+#. translators: %s: number of tokens
+#: src/admin/Run.js:98
+#, js-format
+msgid "%s tokens"
+msgstr "%s tokens"
+
+#. translators: 1: number of pictures, 2: what they would take
+#: src/admin/Run.js:429
+#, js-format
+msgid "All %1$d: about %2$s"
+msgstr "Todas as %1$d: cerca de %2$s"
+
+#. translators: 1: number of pictures, 2: what they took
+#: src/admin/Run.js:439
+#, js-format
+msgid "Measured in the test with %1$d pictures: %2$s"
+msgstr "Medido no teste com %1$d imagens: %2$s"
+
+#: src/admin/Review.js:552
+#: src/admin/Run.js:162
+msgid "Analyze image content (AI)"
+msgstr "Analisar o conteúdo das imagens (IA)"
+
+#: src/admin/Run.js:205
+msgid "Every picture used on your site has a decision or an assessment."
+msgstr "Cada imagem usada no seu site tem uma decisão ou uma avaliação."
+
+#. translators: %s: names of the AI providers
+#: src/admin/Run.js:167
+#, js-format
+msgid "The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing."
+msgstr "A IA analisa cada imagem usada no seu site que ainda não tem decisão e sugere: gerada por IA, modificada com IA ou sem etiqueta necessária – a decisão é sua. Para isso, o WordPress envia cada imagem, com 768 píxeis de largura, com o nome e o local onde é usada, ao seu fornecedor de IA (%s). O fornecedor cobra cada análise na sua conta junto dele; este plugin e a engenty não cobram nada."
+
+#. translators: %d: number of analyses
+#: src/admin/Run.js:449
+#, js-format
+msgid "Estimated from %d analysis on this site this month."
+msgid_plural "Estimated from %d analyses on this site this month."
+msgstr[0] "Estimado a partir de %d análise neste site este mês."
+msgstr[1] "Estimado a partir de %d análises neste site este mês."
+
+#: src/admin/Run.js:458
+msgid "No estimate: there was no analysis on this site this month yet."
+msgstr "Sem estimativa: este mês ainda não houve nenhuma análise neste site."
+
+#: src/admin/Run.js:462
+msgid "First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them."
+msgstr "Primeiro um teste com 10 imagens: mostra quanto custa a análise neste site antes de iniciar todas."
+
+#: src/admin/Run.js:469
+msgid "Your provider does not report costs: its price per token tells what this costs."
+msgstr "O seu fornecedor não indica custos: o preço por token dele diz quanto custa."
+
+#: src/admin/Run.js:538
+msgid "Skip test"
+msgstr "Saltar o teste"
+
+#: src/admin/Review.js:228
+msgid "Quick check"
+msgstr "Verificação rápida"
+
+#: includes/class-analysis.php:70
+msgid "An analysis is already running."
+msgstr "Já está a decorrer uma análise."
+
+#. translators: 1: first day, 2: last day
+#: src/admin/Run.js:337
+#, js-format
+msgid "Uploaded from %1$s to %2$s"
+msgstr "Carregadas de %1$s a %2$s"
+
+#: src/admin/Run.js:362
+msgid "From"
+msgstr "De"
+
+#: src/admin/Run.js:374
+msgid "To"
+msgstr "Até"
+
+#: src/admin/Run.js:501
+msgid "Waiting for WP-Cron: the next step comes with the next visit to the site."
+msgstr "À espera do WP-Cron: o passo seguinte vem com a próxima visita ao site."
+
+#. translators: %s: name of the person who started it
+#: src/admin/Run.js:507
+#, js-format
+msgid "Runs on the server, started by %s – you can close this page."
+msgstr "Corre no servidor, iniciada por %s – pode fechar esta página."
+
+#: src/admin/Run.js:517
+msgid "Every picture in this time has a decision or an assessment."
+msgstr "Cada imagem deste período tem uma decisão ou uma avaliação."
+
+#. translators: %s: the provider's error
+#: src/admin/Run.js:568
+#, js-format
+msgid "The analysis stopped after three failures in a row: %s"
+msgstr "A análise parou após três falhas seguidas: %s"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:401
+#, js-format
+msgid "%d picture already analyzed"
+msgid_plural "%d pictures already analyzed"
+msgstr[0] "%d imagem já analisada"
+msgstr[1] "%d imagens já analisadas"
+
+#: includes/class-promo.php:23
+msgid "From engenty, the makers of this plugin"
+msgstr "Da engenty, os criadores deste plugin"
+
+#: includes/class-promo.php:24
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards: fluxos guiados para os seus visitantes"
+
+#: includes/class-promo.php:25
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Pedidos, orçamentos, marcações – passo a passo no seu site, criados com IA em vez de código."
+
+#: includes/class-promo.php:28
+msgid "Visit engenty.ai"
+msgstr "Visitar engenty.ai"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php:30
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/"
+
+#. Plugin URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"

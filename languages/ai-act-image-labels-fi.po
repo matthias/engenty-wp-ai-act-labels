@@ -1,0 +1,1372 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Act Image Labels 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
+"Last-Translator: engenty\n"
+"Language-Team: engenty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
+"PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: ai-act-image-labels\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: ai-act-labels.php
+msgid "AI Act Image Labels"
+msgstr "AI Act Image Labels"
+
+#. Description of the plugin
+#: ai-act-labels.php
+msgid "Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label."
+msgstr "Merkitsee tekoälyllä luodut ja muokatut mediatiedostot EU:n tekoälysäädöksen mukaisesti – suoraan mediakirjastossa, EU:n virallisilla kuvakkeilla sivustolla, ja avustaja löytää, mikä tarvitsee merkinnän."
+
+#. Author of the plugin
+#: ai-act-labels.php
+msgid "engenty"
+msgstr "engenty"
+
+#. Author URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai"
+msgstr "https://engenty.ai"
+
+#: includes/admin-columns/class-ac-column.php:18
+#: includes/class-media.php:84
+#: includes/class-media.php:100
+msgid "AI label (AI Act)"
+msgstr "Tekoälymerkintä (tekoälysäädös)"
+
+#: includes/class-admin.php:49
+#: includes/class-admin.php:50
+#: includes/class-media.php:125
+#: includes/class-media.php:523
+#: src/admin/index.js:54
+#: src/admin/parts.js:130
+msgid "AI labels"
+msgstr "Tekoälymerkinnät"
+
+#: includes/class-admin.php:67
+#: src/admin/index.js:101
+msgid "AI labels are loading …"
+msgstr "Tekoälymerkinnät latautuvat …"
+
+#: includes/class-admin.php:130
+msgid "Open"
+msgstr "Avaa"
+
+#: includes/class-assistant.php:141
+msgid "Image analysis (AI) needs WordPress 7.0 or newer."
+msgstr "Kuva-analyysi (tekoäly) tarvitsee WordPress 7.0:n tai uudemman."
+
+#: includes/class-assistant.php:187
+msgid "The answer was not JSON. Try again."
+msgstr "Vastaus ei ollut JSONia. Yritä uudelleen."
+
+#: includes/class-assistant.php:315
+#: includes/class-rest.php:157
+#: includes/class-rest.php:283
+msgid "This file does not exist."
+msgstr "Tätä tiedostoa ei ole olemassa."
+
+#. translators: %s: tool name
+#: includes/class-detect.php:328
+#, php-format
+msgid "XMP names %s"
+msgstr "XMP nimeää työkalun %s"
+
+#: includes/class-detect.php:346
+msgid "IPTC: created with AI"
+msgstr "IPTC: luotu tekoälyllä"
+
+#: includes/class-detect.php:348
+msgid "IPTC: photo with AI parts"
+msgstr "IPTC: valokuva, jossa tekoälyosia"
+
+#: includes/class-detect.php:350
+msgid "IPTC: enhanced with AI (minor)"
+msgstr "IPTC: tekoälyllä parannettu (vähäinen)"
+
+#. translators: %s: IPTC code like digitalCapture
+#: includes/class-detect.php:353
+#, php-format
+msgid "IPTC: no AI (%s)"
+msgstr "IPTC: ei tekoälyä (%s)"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): modified with AI"
+msgstr "Content Credentials (C2PA): muokattu tekoälyllä"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): created with AI"
+msgstr "Content Credentials (C2PA): luotu tekoälyllä"
+
+#: includes/class-detect.php:400
+msgid "Content Credentials (C2PA): camera capture"
+msgstr "Content Credentials (C2PA): kameralla kuvattu"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:402
+#, php-format
+msgid "Content Credentials (C2PA) from %s"
+msgstr "Content Credentials (C2PA) lähteestä %s"
+
+#: includes/class-detect.php:403
+msgid "Content Credentials (C2PA) present"
+msgstr "Content Credentials (C2PA) löytyy"
+
+#: includes/class-detect.php:472
+#: includes/class-detect.php:523
+msgid "Stable Diffusion generation data"
+msgstr "Stable Diffusion -generointitiedot"
+
+#: includes/class-detect.php:475
+msgid "ComfyUI generation data"
+msgstr "ComfyUI-generointitiedot"
+
+#: includes/class-detect.php:478
+msgid "InvokeAI generation data"
+msgstr "InvokeAI-generointitiedot"
+
+#: includes/class-detect.php:481
+msgid "NovelAI generation data"
+msgstr "NovelAI-generointitiedot"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:493
+#, php-format
+msgid "PNG text names %s"
+msgstr "PNG-teksti nimeää työkalun %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:536
+#, php-format
+msgid "EXIF names %s"
+msgstr "EXIF nimeää työkalun %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:559
+#, php-format
+msgid "Tags name %s"
+msgstr "Avainsanat nimeävät työkalun %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:583
+#, php-format
+msgid "File name as %s gives it"
+msgstr "Tiedostonimi sellaisena kuin %s sen antaa"
+
+#: includes/class-detect.php:584
+msgid "File name points to AI"
+msgstr "Tiedostonimi viittaa tekoälyyn"
+
+#: includes/class-labels.php:264
+#: includes/class-media.php:67
+#: includes/class-media.php:343
+#: includes/class-rest.php:65
+#: src/admin/Knowledge.js:297
+#: src/admin/Look.js:479
+#: src/admin/parts.js:8
+msgid "Modified with AI"
+msgstr "Muokattu tekoälyllä"
+
+#: includes/class-labels.php:266
+#: includes/class-media.php:66
+#: includes/class-media.php:342
+#: includes/class-rest.php:64
+#: src/admin/Knowledge.js:301
+#: src/admin/Look.js:114
+#: src/admin/Look.js:467
+#: src/admin/parts.js:7
+msgid "AI-generated"
+msgstr "Tekoälyllä luotu"
+
+#: includes/class-labels.php:284
+#: includes/class-rest.php:66
+#: src/admin/Look.js:156
+msgid "This image was created with AI."
+msgstr "Tämä kuva on luotu tekoälyllä."
+
+#: includes/class-labels.php:285
+msgid "This video was created with AI."
+msgstr "Tämä video on luotu tekoälyllä."
+
+#: includes/class-labels.php:286
+msgid "This recording was created with AI."
+msgstr "Tämä tallenne on luotu tekoälyllä."
+
+#: includes/class-labels.php:287
+msgid "This content was created with AI."
+msgstr "Tämä sisältö on luotu tekoälyllä."
+
+#: includes/class-labels.php:290
+#: includes/class-rest.php:67
+#: src/admin/Look.js:151
+msgid "This image was modified with AI."
+msgstr "Tätä kuvaa on muokattu tekoälyllä."
+
+#: includes/class-labels.php:291
+msgid "This video was modified with AI."
+msgstr "Tätä videota on muokattu tekoälyllä."
+
+#: includes/class-labels.php:292
+msgid "This recording was modified with AI."
+msgstr "Tätä tallennetta on muokattu tekoälyllä."
+
+#: includes/class-labels.php:293
+msgid "This content was modified with AI."
+msgstr "Tätä sisältöä on muokattu tekoälyllä."
+
+#. translators: %s: the AI tool, e.g. Midjourney
+#: includes/class-labels.php:315
+#, php-format
+msgid "Tool: %s."
+msgstr "Työkalu: %s."
+
+#: includes/class-media.php:65
+msgid "Not decided yet"
+msgstr "Ei vielä päätetty"
+
+#: includes/class-media.php:68
+#: includes/class-media.php:347
+#: src/admin/parts.js:9
+#: src/admin/Review.js:23
+msgid "No label needed"
+msgstr "Merkintää ei tarvita"
+
+#: includes/class-media.php:136
+#: src/admin/parts.js:146
+msgid "Suggestion"
+msgstr "Ehdotus"
+
+#: includes/class-media.php:143
+msgid "In the file:"
+msgstr "Tiedostossa:"
+
+#: includes/class-media.php:147
+#: src/media/index.js:143
+msgid "Image analysis (AI):"
+msgstr "Kuva-analyysi (tekoäly):"
+
+#: includes/class-media.php:150
+#: src/admin/parts.js:216
+msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
+msgstr "Tiedoston vahvat metatiedot ovat ristiriidassa tekoälyn arvion kanssa. Tarkista ennen käyttöönottoa."
+
+#: includes/class-media.php:155
+#: src/admin/Review.js:315
+msgid "Analyze image (AI)"
+msgstr "Analysoi kuva (tekoäly)"
+
+#: includes/class-media.php:161
+msgid "AI tool"
+msgstr "Tekoälytyökalu"
+
+#: includes/class-media.php:164
+msgid "optional, e.g. Midjourney"
+msgstr "valinnainen, esim. Midjourney"
+
+#: includes/class-media.php:165
+msgid "Own notice"
+msgstr "Oma huomautus"
+
+#: includes/class-media.php:169
+msgid "Empty: the default. The tool then appears in the notice."
+msgstr "Tyhjä: oletus. Työkalu näkyy silloin huomautuksessa."
+
+#: includes/class-media.php:173
+msgid "AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none."
+msgstr "Tekoälysäädös, 50 artikla: merkintä vaaditaan, kun todelliset tai uskottavat henkilöt, paikat tai tapahtumat näyttävät aidoilta. Tavallinen kuvankäsittely ei tarvitse merkintää."
+
+#: includes/class-media.php:175
+msgid "Review all media →"
+msgstr "Käy läpi kaikki media →"
+
+#: includes/class-media.php:289
+#: includes/class-media.php:292
+msgid "AI"
+msgstr "Tekoäly"
+
+#. translators: %s: KI-generiert or Mit KI verändert
+#: includes/class-media.php:328
+#: src/media/index.js:36
+#, php-format,js-format
+msgid "Suggestion: %s"
+msgstr "Ehdotus: %s"
+
+#: includes/class-media.php:340
+msgid "AI: all"
+msgstr "Tekoäly: kaikki"
+
+#: includes/class-media.php:341
+#: src/admin/Review.js:22
+msgid "Labeled"
+msgstr "Merkityt"
+
+#: includes/class-media.php:344
+#: src/admin/Review.js:20
+#: src/admin/Review.js:140
+msgid "Suggestions"
+msgstr "Ehdotukset"
+
+#: includes/class-media.php:345
+#: src/admin/Review.js:21
+msgid "Used, not decided"
+msgstr "Käytössä, ei päätetty"
+
+#: includes/class-media.php:346
+#: src/admin/parts.js:10
+msgid "Not decided"
+msgstr "Ei päätetty"
+
+#: includes/class-media.php:362
+msgid "Filter by AI label"
+msgstr "Suodata tekoälymerkinnän mukaan"
+
+#: includes/class-media.php:401
+msgid "Label as AI-generated"
+msgstr "Merkitse tekoälyllä luoduksi"
+
+#: includes/class-media.php:402
+msgid "Label as modified with AI"
+msgstr "Merkitse tekoälyllä muokatuksi"
+
+#: includes/class-media.php:403
+msgid "AI: no label needed"
+msgstr "Tekoäly: merkintää ei tarvita"
+
+#: includes/class-media.php:404
+msgid "Remove AI label"
+msgstr "Poista tekoälymerkintä"
+
+#. translators: %d: number of files
+#: includes/class-media.php:447
+#, php-format
+msgid "Removed the AI label from %d file."
+msgid_plural "Removed the AI label from %d files."
+msgstr[0] "Tekoälymerkintä poistettiin %d tiedostosta."
+msgstr[1] "Tekoälymerkintä poistettiin %d tiedostosta."
+
+#. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig
+#: includes/class-media.php:449
+#, php-format
+msgid "%1$d file: %2$s."
+msgid_plural "%1$d files: %2$s."
+msgstr[0] "%1$d tiedosto: %2$s."
+msgstr[1] "%1$d tiedostoa: %2$s."
+
+#: includes/class-media.php:462
+msgid "AI labels:"
+msgstr "Tekoälymerkinnät:"
+
+#. translators: %d: number of files
+#: includes/class-media.php:464
+#, php-format
+msgid "%d file carries traces of AI and has no decision yet."
+msgid_plural "%d files carry traces of AI and have no decision yet."
+msgstr[0] "%d tiedostossa on tekoälyn jälkiä, eikä siitä ole vielä päätöstä."
+msgstr[1] "%d tiedostossa on tekoälyn jälkiä, eikä niistä ole vielä päätöstä."
+
+#: includes/class-media.php:466
+msgid "View"
+msgstr "Näytä"
+
+#: includes/class-media.php:468
+msgid "Later"
+msgstr "Myöhemmin"
+
+#: includes/class-rest.php:171
+msgid "Decide on at most 200 files per request."
+msgstr "Päätä enintään 200 tiedostosta yhdellä pyynnöllä."
+
+#: includes/class-rest.php:175
+msgid "This label does not exist."
+msgstr "Tätä merkintää ei ole olemassa."
+
+#: includes/class-rest.php:220
+msgid "Only site administrators can run a site-wide check."
+msgstr "Vain sivuston ylläpitäjät voivat suorittaa koko sivuston tarkistuksen."
+
+#: includes/class-rest.php:244
+#: includes/class-rest.php:316
+msgid "For the image analysis, WordPress needs an AI provider (Settings › Connectors)."
+msgstr "Kuva-analyysiin WordPress tarvitsee tekoälypalvelun (Asetukset › Connectors)."
+
+#: includes/class-rest.php:286
+msgid "You cannot edit this file."
+msgstr "Et voi muokata tätä tiedostoa."
+
+#: includes/class-usage.php:471
+#: includes/class-usage.php:497
+msgid "Website"
+msgstr "Sivusto"
+
+#: includes/class-usage.php:491
+msgid "Site logo"
+msgstr "Sivuston logo"
+
+#: includes/class-usage.php:493
+#: src/admin/parts.js:42
+msgid "Site icon"
+msgstr "Sivuston kuvake"
+
+#: includes/class-usage.php:495
+#: src/admin/parts.js:43
+msgid "Header image"
+msgstr "Otsakekuva"
+
+#: src/admin/api.js:28
+msgid "That did not work."
+msgstr "Se ei onnistunut."
+
+#: src/admin/Assistant.js:7
+msgid "set up"
+msgstr "käytössä"
+
+#: src/admin/Assistant.js:8
+msgid "API key missing"
+msgstr "API-avain puuttuu"
+
+#: src/admin/Assistant.js:9
+msgid "not responding"
+msgstr "ei vastaa"
+
+#: src/admin/Assistant.js:10
+msgid "plugin missing"
+msgstr "lisäosa puuttuu"
+
+#: src/admin/Assistant.js:24
+msgid "Image analysis (AI) needs WordPress 7.0"
+msgstr "Kuva-analyysi (tekoäly) tarvitsee WordPress 7.0:n"
+
+#: src/admin/Assistant.js:30
+msgid "From 7.0, the image analysis uses the AI provider you set up under Settings › Connectors. Labeling, the check and the traces in files already work."
+msgstr "Versiosta 7.0 alkaen kuva-analyysi käyttää tekoälypalvelua, jonka otat käyttöön kohdassa Asetukset › Connectors. Merkitseminen, tarkistus ja tiedostojen jäljet toimivat jo nyt."
+
+#: src/admin/Assistant.js:37
+msgid "Update WordPress"
+msgstr "Päivitä WordPress"
+
+#: src/admin/Assistant.js:49
+#: src/admin/Assistant.js:130
+msgid "Set up an AI provider first"
+msgstr "Ota ensin käyttöön tekoälypalvelu"
+
+#: src/admin/Assistant.js:52
+msgid "The image analysis uses the provider you set up in WordPress under Settings › Connectors – your API key stays there. Labeling, the check and the traces in files work without it."
+msgstr "Kuva-analyysi käyttää palvelua, jonka otat käyttöön WordPressissä kohdassa Asetukset › Connectors – API-avaimesi pysyy siellä. Merkitseminen, tarkistus ja tiedostojen jäljet toimivat ilman sitä."
+
+#: src/admin/Assistant.js:85
+#: src/media/index.js:154
+msgid "Open Connectors"
+msgstr "Avaa Connectors"
+
+#: src/admin/Assistant.js:89
+msgid "Install Vercel AI Gateway"
+msgstr "Asenna Vercel AI Gateway"
+
+#: src/admin/Assistant.js:98
+msgid "No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card."
+msgstr "Ei sopimusta palveluntarjoajan kanssa? Vercel AI Gateway antaa 5 $ kuukaudessa ilmaiseksi, ilman luottokorttia."
+
+#: src/admin/Assistant.js:139
+msgid "Close"
+msgstr "Sulje"
+
+#: src/admin/index.js:12
+msgid "Review"
+msgstr "Käy läpi"
+
+#: src/admin/index.js:13
+msgid "Appearance"
+msgstr "Ulkoasu"
+
+#: src/admin/index.js:14
+msgid "Knowledge"
+msgstr "Tietoa"
+
+#: src/admin/index.js:77
+msgid "Article 50 of the AI Regulation (EU) 2024/1689"
+msgstr "Tekoälysäädöksen (EU) 2024/1689 50 artikla"
+
+#: src/admin/index.js:84
+msgid "AI Act Art. 50 applies since 2 Aug 2026"
+msgstr "Tekoälysäädöksen 50 artiklaa sovelletaan 2.8.2026 alkaen"
+
+#: src/admin/index.js:90
+msgid "AI Act Art. 50"
+msgstr "Tekoälysäädös, 50 art."
+
+#: src/admin/index.js:94
+msgid "Media Library"
+msgstr "Mediakirjasto"
+
+#: src/admin/Knowledge.js:9
+msgid "Photorealistic AI “team photo”, customer portrait, testimonial"
+msgstr "Fotorealistinen tekoäly-”tiimikuva”, asiakasmuotokuva, suosittelu"
+
+#: src/admin/Knowledge.js:17
+msgid "Real photo, background or person replaced or added with AI"
+msgstr "Aito valokuva, tausta tai henkilö vaihdettu tai lisätty tekoälyllä"
+
+#: src/admin/Knowledge.js:25
+msgid "AI product shot that looks like a real photo of the product"
+msgstr "Tekoälyllä tehty tuotekuva, joka näyttää aidolta valokuvalta tuotteesta"
+
+#: src/admin/Knowledge.js:33
+msgid "AI image of a real building, place or event"
+msgstr "Tekoälykuva todellisesta rakennuksesta, paikasta tai tapahtumasta"
+
+#: src/admin/Knowledge.js:41
+msgid "Recognizable illustration, comic, 3D graphic, abstract background"
+msgstr "Tunnistettava kuvitus, sarjakuva, 3D-grafiikka, abstrakti tausta"
+
+#: src/admin/Knowledge.js:49
+msgid "Real photo, only color, light, noise or crop with an AI tool"
+msgstr "Aito valokuva, vain väri, valo, kohina tai rajaus tekoälytyökalulla"
+
+#: src/admin/Knowledge.js:57
+msgid "Camera or stock photo without AI"
+msgstr "Kamera- tai kuvapankkikuva ilman tekoälyä"
+
+#: src/admin/Knowledge.js:64
+msgid "required"
+msgstr "vaaditaan"
+
+#: src/admin/Knowledge.js:65
+msgid "voluntary"
+msgstr "vapaaehtoinen"
+
+#: src/admin/Knowledge.js:66
+msgid "no label"
+msgstr "ei merkintää"
+
+#: src/admin/Knowledge.js:71
+msgid "Questions and answers on Article 50 (European Commission)"
+msgstr "Kysymyksiä ja vastauksia 50 artiklasta (Euroopan komissio)"
+
+#: src/admin/Knowledge.js:78
+msgid "Code of Practice on labeling AI-generated content"
+msgstr "Käytännesäännöt tekoälyllä tuotetun sisällön merkitsemisestä"
+
+#: src/admin/Knowledge.js:85
+msgid "The EU icons to download"
+msgstr "EU:n kuvakkeet ladattavaksi"
+
+#: src/admin/Knowledge.js:89
+msgid "AI Act in the Official Journal (Regulation (EU) 2024/1689)"
+msgstr "Tekoälysäädös virallisessa lehdessä (asetus (EU) 2024/1689)"
+
+#: src/admin/Knowledge.js:96
+msgid "AI Act Service Desk"
+msgstr "AI Act Service Desk"
+
+#: src/admin/Knowledge.js:112
+msgid "AI Act, Article 50"
+msgstr "Tekoälysäädös, 50 artikla"
+
+#: src/admin/Knowledge.js:115
+msgid "Since 2 August 2026, what AI made has to be visible."
+msgstr "2. elokuuta 2026 alkaen tekoälyn tekemän on oltava näkyvissä."
+
+#: src/admin/Knowledge.js:121
+msgid "A business that publishes images, videos or recordings that look real but were created or modified with AI has to label them – visibly, at the latest at first sight. The duty is yours as the site owner, not the AI tool maker's."
+msgstr "Yrityksen, joka julkaisee aidolta näyttäviä mutta tekoälyllä luotuja tai muokattuja kuvia, videoita tai tallenteita, on merkittävä ne – näkyvästi, viimeistään ensi silmäyksellä. Velvollisuus on sinulla sivuston omistajana, ei tekoälytyökalun valmistajalla."
+
+#: src/admin/Knowledge.js:140
+msgid "You have to label"
+msgstr "Sinun on merkittävä"
+
+#: src/admin/Knowledge.js:144
+msgid "Deepfakes: AI images, videos, audio that show real or plausible people, things, places or events and look real – also an invented but photorealistic person."
+msgstr "Syväväärennökset (deepfake): tekoälykuvat, -videot ja -äänet, jotka esittävät todellisia tai uskottavia henkilöitä, asioita, paikkoja tai tapahtumia ja näyttävät aidoilta – myös keksitty mutta fotorealistinen henkilö."
+
+#: src/admin/Knowledge.js:150
+msgid "AI texts that inform the public on matters of public interest – unless a person reviewed them and takes responsibility."
+msgstr "Tekoälytekstit, jotka tiedottavat yleisölle yleistä etua koskevista asioista – ellei ihminen ole tarkistanut niitä ja ota niistä vastuuta."
+
+#: src/admin/Knowledge.js:156
+msgid "Whether you meant to deceive does not matter. What your audience believes counts."
+msgstr "Sillä ei ole väliä, aioitko harhauttaa. Ratkaisevaa on, mitä yleisösi uskoo."
+
+#: src/admin/Knowledge.js:168
+msgid "No label needed for"
+msgstr "Merkintää ei tarvita"
+
+#: src/admin/Knowledge.js:172
+msgid "Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI tools."
+msgstr "Tavallinen käsittely: rajaus, valo, väri, kohina, pöly, skaalaus – myös tekoälytyökaluilla."
+
+#: src/admin/Knowledge.js:178
+msgid "Obviously artificial images (illustration, comic, abstract): voluntary, but good for trust."
+msgstr "Ilmiselvästi keinotekoiset kuvat (kuvitus, sarjakuva, abstrakti): vapaaehtoinen, mutta hyväksi luottamukselle."
+
+#: src/admin/Knowledge.js:184
+msgid "Content created before 2 August 2026 – nothing applies retroactively."
+msgstr "Ennen 2. elokuuta 2026 luotu sisältö – mikään ei päde takautuvasti."
+
+#: src/admin/Knowledge.js:190
+msgid "Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the caption)."
+msgstr "Taide, satiiri, fiktio: kyllä, mutta niin, ettei teos kärsi (esim. kuvatekstissä)."
+
+#: src/admin/Knowledge.js:202
+msgid "Where the label goes"
+msgstr "Mihin merkintä tulee"
+
+#: src/admin/Knowledge.js:206
+msgid "On or right at the content, visible without a click – not only in the imprint."
+msgstr "Sisällön päällä tai aivan sen vieressä, näkyvissä ilman napsautusta – ei vain julkaisutiedoissa."
+
+#: src/admin/Knowledge.js:212
+msgid "Plain words: “AI-generated”, “Modified with AI”. For screen readers as the icon's name, never instead of the alt text."
+msgstr "Selkein sanoin: ”Tekoälyllä luotu”, ”Muokattu tekoälyllä”. Ruudunlukijoille kuvakkeen nimenä, ei koskaan alt-tekstin sijasta."
+
+#: src/admin/Knowledge.js:218
+msgid "Videos: in a corner the whole time. Audio: at the player and in the artwork."
+msgstr "Videot: kulmassa koko ajan. Ääni: soittimen yhteydessä ja kansikuvassa."
+
+#: src/admin/Knowledge.js:224
+msgid "The AI tool's watermark or metadata does not count for you."
+msgstr "Tekoälytyökalun vesileima tai metatiedot eivät riitä sinun osaltasi."
+
+#: src/admin/Knowledge.js:234
+msgid "The EU's icons"
+msgstr "EU:n kuvakkeet"
+
+#: src/admin/Knowledge.js:235
+msgid "From the Commission since June 2026, free to use, no attribution. Optional – an equivalent label is allowed too."
+msgstr "Komissiolta kesäkuusta 2026 alkaen, vapaasti käytettävissä, ilman nimeämisvaatimusta. Valinnainen – vastaava merkintä on myös sallittu."
+
+#: src/admin/Knowledge.js:243
+msgid "AI GENERATED"
+msgstr "TEKOÄLYLLÄ LUOTU"
+
+#: src/admin/Knowledge.js:245
+msgid "Fully created with AI, no human-made parts."
+msgstr "Kokonaan tekoälyllä luotu, ei ihmisen tekemiä osia."
+
+#: src/admin/Knowledge.js:253
+msgid "AI MODIFIED"
+msgstr "TEKOÄLYLLÄ MUOKATTU"
+
+#: src/admin/Knowledge.js:255
+msgid "Real photo, video or recording, partly modified with AI."
+msgstr "Aito valokuva, video tai tallenne, osittain muokattu tekoälyllä."
+
+#: src/admin/Knowledge.js:264
+msgctxt "name of the EU basic icon"
+msgid "AI"
+msgstr "AI"
+
+#: src/admin/Knowledge.js:271
+msgid "The basic icon: with your own text, with a second layer or where space is short."
+msgstr "Peruskuvake: omalla tekstillä, toisella tasolla tai kun tila on vähissä."
+
+#: src/admin/Knowledge.js:280
+msgid "Typical cases"
+msgstr "Tyypilliset tapaukset"
+
+#: src/admin/Knowledge.js:284
+msgid "File"
+msgstr "Tiedosto"
+
+#: src/admin/Knowledge.js:285
+#: src/admin/Look.js:109
+msgid "Kind"
+msgstr "Laji"
+
+#: src/admin/Knowledge.js:286
+msgid "Label"
+msgstr "Merkintä"
+
+#: src/admin/Knowledge.js:321
+msgid "How the plugin recognizes AI"
+msgstr "Näin lisäosa tunnistaa tekoälyn"
+
+#: src/admin/Knowledge.js:328
+msgid "Many AI tools write into the file that it was made with AI: Content Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and ComfyUI. The plugin reads them on upload and with every check – on your server, nothing leaves it."
+msgstr "Monet tekoälytyökalut kirjoittavat tiedostoon, että se on tehty tekoälyllä: Content Credentials (C2PA) ChatGPT:stä, Geministä, Fireflystä tai Photoshopista, IPTC-arvo ”trainedAlgorithmicMedia”, Stable Diffusionin ja ComfyUI:n generointitiedot. Lisäosa lukee ne latauksen yhteydessä ja jokaisessa tarkistuksessa – palvelimellasi, mikään ei poistu sieltä."
+
+#: src/admin/Knowledge.js:334
+msgid "A missing trace means nothing: screenshots, exports and image optimizers remove them. That is why “Used, not decided” shows everything visible on your site that has no decision yet. Only you know for sure how an image was made."
+msgstr "Puuttuva jälki ei merkitse mitään: kuvakaappaukset, viennit ja kuvanpakkaajat poistavat ne. Siksi ”Käytössä, ei päätetty” näyttää kaiken sivustollasi näkyvän, josta ei vielä ole päätöstä. Vain sinä tiedät varmasti, miten kuva on tehty."
+
+#: src/admin/Knowledge.js:342
+msgid "This knowledge as a skill"
+msgstr "Tämä tieto taitona (skill)"
+
+#: src/admin/Knowledge.js:349
+msgid "The image analysis thinks with a skill: a guide to the AI Act with sources, in the plugin under skills/eu-ai-act-labels. You can give the same files to any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
+msgstr "Kuva-analyysi ajattelee taidon (skill) avulla: opas tekoälysäädökseen lähteineen, lisäosassa kohdassa skills/eu-ai-act-labels. Voit antaa samat tiedostot mille tahansa tekoälyagentille, joka lukee Agent Skills -tiedostoja – Claude, Cursor, Codex ja muut."
+
+#: src/admin/Knowledge.js:361
+msgid "View SKILL.md"
+msgstr "Näytä SKILL.md"
+
+#: src/admin/Knowledge.js:369
+msgid "Sources"
+msgstr "Lähteet"
+
+#: src/admin/Knowledge.js:370
+msgid "As of 9 October 2026. This is help, not legal advice."
+msgstr "Tilanne 9. lokakuuta 2026. Tämä on apua, ei oikeudellista neuvontaa."
+
+#: src/admin/Look.js:18
+msgid "EU icon by kind"
+msgstr "EU-kuvake lajin mukaan"
+
+#: src/admin/Look.js:19
+msgid "Round EU icon"
+msgstr "Pyöreä EU-kuvake"
+
+#: src/admin/Look.js:22
+msgid "Round icon, opens on hover"
+msgstr "Pyöreä kuvake, avautuu osoitettaessa"
+
+#: src/admin/Look.js:25
+msgid "Own icon"
+msgstr "Oma kuvake"
+
+#: src/admin/Look.js:26
+msgid "Sparkle"
+msgstr "Kimallus"
+
+#: src/admin/Look.js:30
+msgid "Dark"
+msgstr "Tumma"
+
+#: src/admin/Look.js:31
+msgid "Light"
+msgstr "Vaalea"
+
+#: src/admin/Look.js:32
+#: src/admin/parts.js:31
+msgid "Image"
+msgstr "Kuva"
+
+#: src/admin/Look.js:33
+#: src/admin/Look.js:344
+#: src/admin/Look.js:347
+msgid "Color"
+msgstr "Väri"
+
+#: src/admin/Look.js:52
+msgid "Top left"
+msgstr "Ylhäällä vasemmalla"
+
+#: src/admin/Look.js:53
+msgid "Top right"
+msgstr "Ylhäällä oikealla"
+
+#: src/admin/Look.js:54
+msgid "Bottom left"
+msgstr "Alhaalla vasemmalla"
+
+#: src/admin/Look.js:55
+msgid "Bottom right"
+msgstr "Alhaalla oikealla"
+
+#: src/admin/Look.js:105
+msgid "How it looks on the site"
+msgstr "Miltä se näyttää sivustolla"
+
+#: src/admin/Look.js:118
+msgid "Modified"
+msgstr "Muokattu"
+
+#: src/admin/Look.js:143
+msgid "Our workshop in autumn"
+msgstr "Työpajamme syksyllä"
+
+#: src/admin/Look.js:180
+msgid "On small images (under 400 px) the plugin uses the round icon instead of the wide one."
+msgstr "Pienissä kuvissa (alle 400 px) lisäosa käyttää leveän kuvakkeen sijasta pyöreää."
+
+#: src/admin/Look.js:188
+msgid "Hover over the icon: the second layer shows the notice. Screen readers read it as the icon's name – the image's alt text stays as it is."
+msgstr "Vie osoitin kuvakkeen päälle: toinen taso näyttää huomautuksen. Ruudunlukijat lukevat sen kuvakkeen nimenä – kuvan alt-teksti pysyy ennallaan."
+
+#: src/admin/Look.js:228
+msgid "Choose your own icon"
+msgstr "Valitse oma kuvake"
+
+#: src/admin/Look.js:266
+msgid "Administrators change the appearance. You can still label."
+msgstr "Ylläpitäjät muuttavat ulkoasua. Voit silti merkitä."
+
+#: src/admin/Look.js:274
+msgid "Icon"
+msgstr "Kuvake"
+
+#: src/admin/Look.js:275
+msgid "The default is the European Commission's icons – free to use, no attribution."
+msgstr "Oletuksena ovat Euroopan komission kuvakkeet – vapaasti käytettävissä, ilman nimeämisvaatimusta."
+
+#: src/admin/Look.js:327
+msgid "Choose another icon"
+msgstr "Valitse toinen kuvake"
+
+#: src/admin/Look.js:335
+msgid "Your own mark is allowed if it is as clear as the EU icon. The EU icon is the safer choice."
+msgstr "Oma merkki on sallittu, jos se on yhtä selkeä kuin EU-kuvake. EU-kuvake on turvallisempi valinta."
+
+#: src/admin/Look.js:375
+msgid "Pick a color"
+msgstr "Valitse väri"
+
+#: src/admin/Look.js:384
+#: src/admin/Look.js:392
+msgid "Transparency"
+msgstr "Läpinäkyvyys"
+
+#: src/admin/Look.js:385
+msgid "Of the shape; the letters stay solid."
+msgstr "Muodon; kirjaimet pysyvät peittävinä."
+
+#. translators: %d: a percentage.
+#: src/admin/Look.js:401
+#, js-format
+msgid "%d%%"
+msgstr "%d %%"
+
+#: src/admin/Look.js:407
+#: src/admin/Look.js:410
+msgid "Size"
+msgstr "Koko"
+
+#: src/admin/Look.js:420
+#: src/admin/Look.js:429
+msgid "Corner"
+msgstr "Kulma"
+
+#: src/admin/Look.js:421
+msgid "Videos: always at the top, away from the controls."
+msgstr "Videot: aina ylhäällä, erillään säätimistä."
+
+#: src/admin/Look.js:459
+msgid "Words"
+msgstr "Sanat"
+
+#: src/admin/Look.js:460
+msgid "Leave empty: the default in the site's language."
+msgstr "Jätä tyhjäksi: oletus sivuston kielellä."
+
+#: src/admin/Look.js:491
+msgid "Notice for AI-generated"
+msgstr "Huomautus tekoälyllä luodulle"
+
+#: src/admin/Look.js:503
+msgid "Notice for modified"
+msgstr "Huomautus muokatulle"
+
+#: src/admin/Look.js:518
+msgid "Where the label appears"
+msgstr "Missä merkintä näkyy"
+
+#: src/admin/Look.js:527
+msgid "Images in pages and posts"
+msgstr "Kuvat sivuilla ja artikkeleissa"
+
+#: src/admin/Look.js:531
+msgid "Blocks, galleries, covers, classic editor, HTML"
+msgstr "Lohkot, galleriat, kannet, klassinen editori, HTML"
+
+#: src/admin/Look.js:538
+msgid "Featured images and the theme's images"
+msgstr "Artikkelikuvat ja teeman kuvat"
+
+#: src/admin/Look.js:542
+msgid "everything that comes through wp_get_attachment_image()"
+msgstr "kaikki, mikä tulee wp_get_attachment_image()-funktion kautta"
+
+#: src/admin/Look.js:549
+msgid "Videos"
+msgstr "Videot"
+
+#: src/admin/Look.js:550
+msgid "Video block, cover with video, [video]"
+msgstr "Videolohko, kansi videolla, [video]"
+
+#: src/admin/Look.js:557
+#: src/admin/parts.js:36
+msgid "Audio"
+msgstr "Ääni"
+
+#: src/admin/Look.js:558
+msgid "a line above the player"
+msgstr "rivi soittimen yläpuolella"
+
+#: src/admin/Look.js:576
+#: src/admin/Look.js:587
+msgid "Notice in captions"
+msgstr "Huomautus kuvateksteissä"
+
+#: src/admin/Look.js:580
+msgid "Only where there is one already – never in the alt text."
+msgstr "Vain siellä, missä sellainen jo on – ei koskaan alt-tekstissä."
+
+#: src/admin/Look.js:596
+#: src/admin/Look.js:607
+msgid "Second layer on hover"
+msgstr "Toinen taso osoitettaessa"
+
+#: src/admin/Look.js:600
+msgid "The whole notice, with the tool."
+msgstr "Koko huomautus työkaluineen."
+
+#: src/admin/Look.js:618
+msgid "On upload"
+msgstr "Latauksen yhteydessä"
+
+#: src/admin/Look.js:621
+#: src/admin/Look.js:632
+msgid "Check files for traces of AI"
+msgstr "Tarkista tiedostoista tekoälyn jäljet"
+
+#: src/admin/Look.js:625
+msgid "C2PA, IPTC, generation data, file names – on your server."
+msgstr "C2PA, IPTC, generointitiedot, tiedostonimet – palvelimellasi."
+
+#: src/admin/Look.js:641
+#: src/admin/Look.js:652
+msgid "Apply unambiguous traces right away"
+msgstr "Käytä yksiselitteiset jäljet heti"
+
+#: src/admin/Look.js:645
+msgid "If the file itself says it was made with AI, it is labeled right away."
+msgstr "Jos tiedosto itse kertoo olevansa tekoälyllä tehty, se merkitään heti."
+
+#: src/admin/parts.js:15
+msgctxt "decision beside the AI icon"
+msgid "generated"
+msgstr "luotu"
+
+#: src/admin/parts.js:20
+msgctxt "decision beside the AI icon"
+msgid "modified"
+msgstr "muokattu"
+
+#: src/admin/parts.js:25
+msgctxt "decision"
+msgid "No label"
+msgstr "Ei merkintää"
+
+#: src/admin/parts.js:30
+msgid "Featured image"
+msgstr "Artikkelikuva"
+
+#: src/admin/parts.js:32
+msgid "Gallery"
+msgstr "Galleria"
+
+#: src/admin/parts.js:33
+msgid "Cover"
+msgstr "Kansi"
+
+#: src/admin/parts.js:34
+msgid "Media & Text"
+msgstr "Media ja teksti"
+
+#: src/admin/parts.js:35
+msgid "Video"
+msgstr "Video"
+
+#: src/admin/parts.js:37
+msgid "only as a URL"
+msgstr "vain URL-osoitteena"
+
+#: src/admin/parts.js:38
+msgid "Page builder"
+msgstr "Sivunrakentaja"
+
+#: src/admin/parts.js:39
+msgid "ACF field"
+msgstr "ACF-kenttä"
+
+#: src/admin/parts.js:40
+msgid "Product gallery"
+msgstr "Tuotegalleria"
+
+#: src/admin/parts.js:41
+msgid "Logo"
+msgstr "Logo"
+
+#: src/admin/parts.js:195
+msgid "Label required"
+msgstr "Merkintä vaaditaan"
+
+#: src/admin/parts.js:196
+msgid "Label voluntary"
+msgstr "Merkintä vapaaehtoinen"
+
+#: src/admin/parts.js:197
+msgid "no label needed"
+msgstr "merkintää ei tarvita"
+
+#: src/admin/parts.js:198
+msgid "unclear"
+msgstr "epäselvä"
+
+#: src/admin/parts.js:234
+msgid "label visible"
+msgstr "merkintä näkyvissä"
+
+#: src/admin/parts.js:235
+msgid "without label"
+msgstr "ilman merkintää"
+
+#: src/admin/parts.js:236
+msgid "not on the page"
+msgstr "ei sivulla"
+
+#: src/admin/parts.js:237
+msgid "page not reachable"
+msgstr "sivua ei tavoiteta"
+
+#: src/admin/parts.js:244
+msgid "Not found on any page"
+msgstr "Ei löydy miltään sivulta"
+
+#. translators: %d: number of further places
+#: src/admin/parts.js:275
+#, js-format
+msgid "and %d more"
+msgstr "ja %d muuta"
+
+#: src/admin/Review.js:24
+msgid "All"
+msgstr "Kaikki"
+
+#: src/admin/Review.js:29
+msgid "No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too."
+msgstr "Yhdessäkään tiedostossa ei ole tekoälyn jälkiä ilman päätöstä. Jäljet puuttuvat usein – käy läpi myös ”Käytössä, ei päätetty”."
+
+#: src/admin/Review.js:33
+msgid "Everything used on your site has a decision. Or the site has not been checked yet."
+msgstr "Kaikesta sivustollasi käytetystä on päätös. Tai sivustoa ei ole vielä tarkistettu."
+
+#: src/admin/Review.js:37
+msgid "No file labeled yet."
+msgstr "Yhtään tiedostoa ei ole vielä merkitty."
+
+#: src/admin/Review.js:38
+msgid "No file decided as needing no label yet."
+msgstr "Yhdestäkään tiedostosta ei ole vielä päätetty, ettei se tarvitse merkintää."
+
+#: src/admin/Review.js:42
+msgid "No images, videos or recordings."
+msgstr "Ei kuvia, videoita tai tallenteita."
+
+#: src/admin/Review.js:117
+msgid "Reading your pages and posts …"
+msgstr "Luetaan sivujasi ja artikkeleitasi …"
+
+#: src/admin/Review.js:121
+msgid "Reading the traces in your files …"
+msgstr "Luetaan tiedostojesi jälkiä …"
+
+#: src/admin/Review.js:125
+msgid "Done."
+msgstr "Valmis."
+
+#: src/admin/Review.js:157
+msgid "labeled"
+msgstr "merkitty"
+
+#. translators: 1: generated count, 2: modified count
+#: src/admin/Review.js:160
+#, js-format
+msgid "%1$d AI-generated · %2$d modified"
+msgstr "%1$d tekoälyllä luotua · %2$d muokattua"
+
+#: src/admin/Review.js:141
+msgid "traces of AI, no decision"
+msgstr "tekoälyn jälkiä, ei päätöstä"
+
+#: src/admin/Review.js:150
+msgid "used, not decided"
+msgstr "käytössä, ei päätetty"
+
+#: src/admin/Review.js:151
+msgid "visible on your site"
+msgstr "näkyvissä sivustollasi"
+
+#. translators: 1: date, 2: pages, 3: files in use
+#: src/admin/Review.js:206
+#, js-format
+msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
+msgstr "Viimeksi tarkistettu %1$s: %2$d sivua ja artikkelia, %3$d tiedostoa käytössä."
+
+#: src/admin/Review.js:214
+msgid "Not checked yet: where your media is used and which traces of AI it carries."
+msgstr "Ei vielä tarkistettu: missä mediaasi käytetään ja mitä tekoälyn jälkiä siinä on."
+
+#: src/admin/Review.js:229
+msgid "Check site"
+msgstr "Tarkista sivusto"
+
+#: src/admin/Review.js:272
+msgid "Open in the Media Library"
+msgstr "Avaa mediakirjastossa"
+
+#: src/admin/Review.js:302
+msgid "Check on the site"
+msgstr "Tarkista sivustolla"
+
+#: src/admin/Review.js:412
+msgid "Some labels could not be undone. Retry the remaining files."
+msgstr "Joitakin merkintöjä ei voitu kumota. Yritä uudelleen jäljellä oleville tiedostoille."
+
+#: src/admin/Review.js:571
+msgid "Media"
+msgstr "Media"
+
+#: src/admin/Review.js:572
+msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
+msgstr "Päätä tiedostoittain: tekoälyllä luotu, tekoälyllä muokattu tai merkintää ei tarvita. Merkintä vaaditaan, kun jokin näyttää aidolta, vaikka se ei tapahtunut niin."
+
+#: src/admin/Review.js:582
+msgid "Search"
+msgstr "Hae"
+
+#: src/admin/Review.js:586
+msgid "Search media"
+msgstr "Hae mediaa"
+
+#. translators: %d: number of suggestions
+#: src/admin/Review.js:634
+#, js-format
+msgid "Apply all %d suggestions"
+msgstr "Käytä kaikki %d ehdotusta"
+
+#. translators: 1: done, 2: total
+#: src/admin/Run.js:488
+#, js-format
+msgid "Analyzing … %1$d of %2$d"
+msgstr "Analysoidaan … %1$d / %2$d"
+
+#. translators: %d: number of files
+#: src/admin/Review.js:648
+#, js-format
+msgid "%d suggestions applied."
+msgstr "%d ehdotusta käytetty."
+
+#: src/admin/Review.js:660
+msgid "Undo"
+msgstr "Kumoa"
+
+#: src/admin/Review.js:666
+msgid "Loading …"
+msgstr "Ladataan …"
+
+#. translators: 1: page, 2: pages
+#: src/admin/Review.js:705
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr "Sivu %1$d / %2$d"
+
+#: src/admin/Review.js:723
+msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
+msgstr "Myös mediakirjastossa: ”Tekoäly”-suodatin, sarake ja massatoiminnot luettelonäkymässä."
+
+#: src/admin/Review.js:728
+msgid "Open Media Library"
+msgstr "Avaa mediakirjasto"
+
+#: src/admin/ui.js:331
+msgid "as recommended"
+msgstr "kuten suositeltu"
+
+#: src/admin/ui.js:335
+msgid "changed"
+msgstr "muutettu"
+
+#: src/media/index.js:129
+msgid "Analyzing …"
+msgstr "Analysoidaan …"
+
+#. translators: %d: minutes
+#: src/admin/Run.js:76
+#, js-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuutti"
+msgstr[1] "%d minuuttia"
+
+#. translators: %s: hours, e.g. 2.5
+#: src/admin/Run.js:81
+#, js-format
+msgid "%s hours"
+msgstr "%s tuntia"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:416
+#, js-format
+msgid "%d picture without a decision or an assessment"
+msgid_plural "%d pictures without a decision or an assessment"
+msgstr[0] "%d kuva ilman päätöstä tai arviota"
+msgstr[1] "%d kuvaa ilman päätöstä tai arviota"
+
+#: src/admin/Run.js:476
+msgid "Image generators for everyone came in 2022 – older uploads rarely need a check."
+msgstr "Kaikkien käytössä olevia kuvageneraattoreita on ollut vuodesta 2022 – vanhempia latauksia tarvitsee harvoin tarkistaa."
+
+#: src/admin/Run.js:497
+msgid "Stop"
+msgstr "Pysäytä"
+
+#: src/admin/Run.js:531
+msgid "Test with 10"
+msgstr "Testaa 10 kuvalla"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:551
+#, js-format
+msgid "Analyze %d picture"
+msgid_plural "Analyze %d pictures"
+msgstr[0] "Analysoi %d kuva"
+msgstr[1] "Analysoi %d kuvaa"
+
+#. translators: %d: seconds
+#: src/admin/Run.js:68
+#, js-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekunti"
+msgstr[1] "%d sekuntia"
+
+#. translators: %s: number of tokens
+#: src/admin/Run.js:98
+#, js-format
+msgid "%s tokens"
+msgstr "%s tokenia"
+
+#. translators: 1: number of pictures, 2: what they would take
+#: src/admin/Run.js:429
+#, js-format
+msgid "All %1$d: about %2$s"
+msgstr "Kaikki %1$d: noin %2$s"
+
+#. translators: 1: number of pictures, 2: what they took
+#: src/admin/Run.js:439
+#, js-format
+msgid "Measured in the test with %1$d pictures: %2$s"
+msgstr "Mitattu testissä %1$d kuvalla: %2$s"
+
+#: src/admin/Review.js:552
+#: src/admin/Run.js:162
+msgid "Analyze image content (AI)"
+msgstr "Analysoi kuvien sisältö (tekoäly)"
+
+#: src/admin/Run.js:205
+msgid "Every picture used on your site has a decision or an assessment."
+msgstr "Jokaisella sivustollasi käytetyllä kuvalla on päätös tai arvio."
+
+#. translators: %s: names of the AI providers
+#: src/admin/Run.js:167
+#, js-format
+msgid "The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing."
+msgstr "Tekoäly katsoo jokaisen sivustollasi käytetyn kuvan, jolla ei vielä ole päätöstä, ja ehdottaa: tekoälyllä luotu, tekoälyllä muokattu tai merkintää ei tarvita – sinä päätät. WordPress lähettää tätä varten jokaisen kuvan 768 pikselin levyisenä nimineen ja käyttöpaikkoineen tekoälypalveluntarjoajallesi (%s). Palveluntarjoaja laskuttaa jokaisen analyysin tililtäsi; tämä lisäosa ja engenty eivät veloita mitään."
+
+#. translators: %d: number of analyses
+#: src/admin/Run.js:449
+#, js-format
+msgid "Estimated from %d analysis on this site this month."
+msgid_plural "Estimated from %d analyses on this site this month."
+msgstr[0] "Arvioitu %d analyysin perusteella tällä sivustolla tässä kuussa."
+msgstr[1] "Arvioitu %d analyysin perusteella tällä sivustolla tässä kuussa."
+
+#: src/admin/Run.js:458
+msgid "No estimate: there was no analysis on this site this month yet."
+msgstr "Ei arviota: tällä sivustolla ei ole vielä tehty analyysia tässä kuussa."
+
+#: src/admin/Run.js:462
+msgid "First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them."
+msgstr "Ensin testi 10 kuvalla: se näyttää, mitä analyysi maksaa tällä sivustolla, ennen kuin käynnistät kaikki."
+
+#: src/admin/Run.js:469
+msgid "Your provider does not report costs: its price per token tells what this costs."
+msgstr "Palveluntarjoajasi ei ilmoita kustannuksia: sen tokenihinta kertoo, mitä tämä maksaa."
+
+#: src/admin/Run.js:538
+msgid "Skip test"
+msgstr "Ohita testi"
+
+#: src/admin/Review.js:228
+msgid "Quick check"
+msgstr "Pikatarkistus"
+
+#: includes/class-analysis.php:70
+msgid "An analysis is already running."
+msgstr "Analyysi on jo käynnissä."
+
+#. translators: 1: first day, 2: last day
+#: src/admin/Run.js:337
+#, js-format
+msgid "Uploaded from %1$s to %2$s"
+msgstr "Ladattu %1$s – %2$s"
+
+#: src/admin/Run.js:362
+msgid "From"
+msgstr "Alkaen"
+
+#: src/admin/Run.js:374
+msgid "To"
+msgstr "Asti"
+
+#: src/admin/Run.js:501
+msgid "Waiting for WP-Cron: the next step comes with the next visit to the site."
+msgstr "Odottaa WP-Cronia: seuraava vaihe tulee seuraavan sivustokäynnin myötä."
+
+#. translators: %s: name of the person who started it
+#: src/admin/Run.js:507
+#, js-format
+msgid "Runs on the server, started by %s – you can close this page."
+msgstr "Käynnissä palvelimella, käynnistäjä %s – voit sulkea tämän sivun."
+
+#: src/admin/Run.js:517
+msgid "Every picture in this time has a decision or an assessment."
+msgstr "Jokaisella tämän ajanjakson kuvalla on päätös tai arvio."
+
+#. translators: %s: the provider's error
+#: src/admin/Run.js:568
+#, js-format
+msgid "The analysis stopped after three failures in a row: %s"
+msgstr "Analyysi pysähtyi kolmen peräkkäisen virheen jälkeen: %s"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:401
+#, js-format
+msgid "%d picture already analyzed"
+msgid_plural "%d pictures already analyzed"
+msgstr[0] "%d kuva jo analysoitu"
+msgstr[1] "%d kuvaa jo analysoitu"
+
+#: includes/class-promo.php:23
+msgid "From engenty, the makers of this plugin"
+msgstr "engentyltä, tämän lisäosan tekijöiltä"
+
+#: includes/class-promo.php:24
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards: ohjatut polut kävijöillesi"
+
+#: includes/class-promo.php:25
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Kyselyt, tarjoukset, ajanvaraukset – vaihe vaiheelta sivustollasi, rakennettu tekoälyllä koodin sijaan."
+
+#: includes/class-promo.php:28
+msgid "Visit engenty.ai"
+msgstr "Siirry engenty.ai:hin"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php:30
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/"
+
+#. Plugin URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"

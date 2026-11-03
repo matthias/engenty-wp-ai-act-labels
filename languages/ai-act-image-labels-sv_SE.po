@@ -1,0 +1,1372 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Act Image Labels 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
+"Last-Translator: engenty\n"
+"Language-Team: engenty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-10T14:42:05+00:00\n"
+"PO-Revision-Date: 2026-10-10T14:42:05+00:00\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: ai-act-image-labels\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: ai-act-labels.php
+msgid "AI Act Image Labels"
+msgstr "AI Act Image Labels"
+
+#. Description of the plugin
+#: ai-act-labels.php
+msgid "Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label."
+msgstr "Märker AI-genererad och AI-ändrad media så som EU:s AI-förordning kräver – direkt i mediabiblioteket, med EU:s officiella ikoner på webbplatsen, och en assistent som hittar det som behöver märkas."
+
+#. Author of the plugin
+#: ai-act-labels.php
+msgid "engenty"
+msgstr "engenty"
+
+#. Author URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai"
+msgstr "https://engenty.ai"
+
+#: includes/admin-columns/class-ac-column.php:18
+#: includes/class-media.php:84
+#: includes/class-media.php:100
+msgid "AI label (AI Act)"
+msgstr "AI-märkning (AI-förordningen)"
+
+#: includes/class-admin.php:49
+#: includes/class-admin.php:50
+#: includes/class-media.php:125
+#: includes/class-media.php:523
+#: src/admin/index.js:54
+#: src/admin/parts.js:130
+msgid "AI labels"
+msgstr "AI-märkningar"
+
+#: includes/class-admin.php:67
+#: src/admin/index.js:101
+msgid "AI labels are loading …"
+msgstr "AI-märkningar laddar …"
+
+#: includes/class-admin.php:130
+msgid "Open"
+msgstr "Öppna"
+
+#: includes/class-assistant.php:141
+msgid "Image analysis (AI) needs WordPress 7.0 or newer."
+msgstr "Bildanalys (AI) kräver WordPress 7.0 eller nyare."
+
+#: includes/class-assistant.php:187
+msgid "The answer was not JSON. Try again."
+msgstr "Svaret var inte JSON. Försök igen."
+
+#: includes/class-assistant.php:315
+#: includes/class-rest.php:157
+#: includes/class-rest.php:283
+msgid "This file does not exist."
+msgstr "Den här filen finns inte."
+
+#. translators: %s: tool name
+#: includes/class-detect.php:328
+#, php-format
+msgid "XMP names %s"
+msgstr "XMP anger %s"
+
+#: includes/class-detect.php:346
+msgid "IPTC: created with AI"
+msgstr "IPTC: skapad med AI"
+
+#: includes/class-detect.php:348
+msgid "IPTC: photo with AI parts"
+msgstr "IPTC: foto med AI-delar"
+
+#: includes/class-detect.php:350
+msgid "IPTC: enhanced with AI (minor)"
+msgstr "IPTC: förbättrad med AI (mindre)"
+
+#. translators: %s: IPTC code like digitalCapture
+#: includes/class-detect.php:353
+#, php-format
+msgid "IPTC: no AI (%s)"
+msgstr "IPTC: ingen AI (%s)"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): modified with AI"
+msgstr "Content Credentials (C2PA): ändrad med AI"
+
+#: includes/class-detect.php:377
+msgid "Content Credentials (C2PA): created with AI"
+msgstr "Content Credentials (C2PA): skapad med AI"
+
+#: includes/class-detect.php:400
+msgid "Content Credentials (C2PA): camera capture"
+msgstr "Content Credentials (C2PA): kamerabild"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:402
+#, php-format
+msgid "Content Credentials (C2PA) from %s"
+msgstr "Content Credentials (C2PA) från %s"
+
+#: includes/class-detect.php:403
+msgid "Content Credentials (C2PA) present"
+msgstr "Content Credentials (C2PA) finns"
+
+#: includes/class-detect.php:472
+#: includes/class-detect.php:523
+msgid "Stable Diffusion generation data"
+msgstr "Genereringsdata från Stable Diffusion"
+
+#: includes/class-detect.php:475
+msgid "ComfyUI generation data"
+msgstr "Genereringsdata från ComfyUI"
+
+#: includes/class-detect.php:478
+msgid "InvokeAI generation data"
+msgstr "Genereringsdata från InvokeAI"
+
+#: includes/class-detect.php:481
+msgid "NovelAI generation data"
+msgstr "Genereringsdata från NovelAI"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:493
+#, php-format
+msgid "PNG text names %s"
+msgstr "PNG-text anger %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:536
+#, php-format
+msgid "EXIF names %s"
+msgstr "EXIF anger %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:559
+#, php-format
+msgid "Tags name %s"
+msgstr "Taggar anger %s"
+
+#. translators: %s: tool name
+#: includes/class-detect.php:583
+#, php-format
+msgid "File name as %s gives it"
+msgstr "Filnamn så som %s namnger dem"
+
+#: includes/class-detect.php:584
+msgid "File name points to AI"
+msgstr "Filnamnet tyder på AI"
+
+#: includes/class-labels.php:264
+#: includes/class-media.php:67
+#: includes/class-media.php:343
+#: includes/class-rest.php:65
+#: src/admin/Knowledge.js:297
+#: src/admin/Look.js:479
+#: src/admin/parts.js:8
+msgid "Modified with AI"
+msgstr "Ändrad med AI"
+
+#: includes/class-labels.php:266
+#: includes/class-media.php:66
+#: includes/class-media.php:342
+#: includes/class-rest.php:64
+#: src/admin/Knowledge.js:301
+#: src/admin/Look.js:114
+#: src/admin/Look.js:467
+#: src/admin/parts.js:7
+msgid "AI-generated"
+msgstr "AI-genererad"
+
+#: includes/class-labels.php:284
+#: includes/class-rest.php:66
+#: src/admin/Look.js:156
+msgid "This image was created with AI."
+msgstr "Den här bilden skapades med AI."
+
+#: includes/class-labels.php:285
+msgid "This video was created with AI."
+msgstr "Den här videon skapades med AI."
+
+#: includes/class-labels.php:286
+msgid "This recording was created with AI."
+msgstr "Den här inspelningen skapades med AI."
+
+#: includes/class-labels.php:287
+msgid "This content was created with AI."
+msgstr "Det här innehållet skapades med AI."
+
+#: includes/class-labels.php:290
+#: includes/class-rest.php:67
+#: src/admin/Look.js:151
+msgid "This image was modified with AI."
+msgstr "Den här bilden ändrades med AI."
+
+#: includes/class-labels.php:291
+msgid "This video was modified with AI."
+msgstr "Den här videon ändrades med AI."
+
+#: includes/class-labels.php:292
+msgid "This recording was modified with AI."
+msgstr "Den här inspelningen ändrades med AI."
+
+#: includes/class-labels.php:293
+msgid "This content was modified with AI."
+msgstr "Det här innehållet ändrades med AI."
+
+#. translators: %s: the AI tool, e.g. Midjourney
+#: includes/class-labels.php:315
+#, php-format
+msgid "Tool: %s."
+msgstr "Verktyg: %s."
+
+#: includes/class-media.php:65
+msgid "Not decided yet"
+msgstr "Inte beslutat ännu"
+
+#: includes/class-media.php:68
+#: includes/class-media.php:347
+#: src/admin/parts.js:9
+#: src/admin/Review.js:23
+msgid "No label needed"
+msgstr "Ingen märkning behövs"
+
+#: includes/class-media.php:136
+#: src/admin/parts.js:146
+msgid "Suggestion"
+msgstr "Förslag"
+
+#: includes/class-media.php:143
+msgid "In the file:"
+msgstr "I filen:"
+
+#: includes/class-media.php:147
+#: src/media/index.js:143
+msgid "Image analysis (AI):"
+msgstr "Bildanalys (AI):"
+
+#: includes/class-media.php:150
+#: src/admin/parts.js:216
+msgid "Strong file metadata conflicts with the AI assessment. Review before applying."
+msgstr "Tydliga filmetadata motsäger AI-bedömningen. Granska innan du tillämpar."
+
+#: includes/class-media.php:155
+#: src/admin/Review.js:315
+msgid "Analyze image (AI)"
+msgstr "Analysera bild (AI)"
+
+#: includes/class-media.php:161
+msgid "AI tool"
+msgstr "AI-verktyg"
+
+#: includes/class-media.php:164
+msgid "optional, e.g. Midjourney"
+msgstr "valfritt, t.ex. Midjourney"
+
+#: includes/class-media.php:165
+msgid "Own notice"
+msgstr "Egen upplysning"
+
+#: includes/class-media.php:169
+msgid "Empty: the default. The tool then appears in the notice."
+msgstr "Tomt: standardtexten. Verktyget visas då i upplysningen."
+
+#: includes/class-media.php:173
+msgid "AI Act, Article 50: the label is required when real or plausible people, places or events look real. Ordinary photo editing needs none."
+msgstr "AI-förordningen, artikel 50: märkning krävs när verkliga eller trovärdiga personer, platser eller händelser ser äkta ut. Vanlig bildredigering behöver ingen."
+
+#: includes/class-media.php:175
+msgid "Review all media →"
+msgstr "Granska all media →"
+
+#: includes/class-media.php:289
+#: includes/class-media.php:292
+msgid "AI"
+msgstr "AI"
+
+#. translators: %s: KI-generiert or Mit KI verändert
+#: includes/class-media.php:328
+#: src/media/index.js:36
+#, php-format,js-format
+msgid "Suggestion: %s"
+msgstr "Förslag: %s"
+
+#: includes/class-media.php:340
+msgid "AI: all"
+msgstr "AI: alla"
+
+#: includes/class-media.php:341
+#: src/admin/Review.js:22
+msgid "Labeled"
+msgstr "Märkta"
+
+#: includes/class-media.php:344
+#: src/admin/Review.js:20
+#: src/admin/Review.js:140
+msgid "Suggestions"
+msgstr "Förslag"
+
+#: includes/class-media.php:345
+#: src/admin/Review.js:21
+msgid "Used, not decided"
+msgstr "Används, inte beslutat"
+
+#: includes/class-media.php:346
+#: src/admin/parts.js:10
+msgid "Not decided"
+msgstr "Inte beslutat"
+
+#: includes/class-media.php:362
+msgid "Filter by AI label"
+msgstr "Filtrera på AI-märkning"
+
+#: includes/class-media.php:401
+msgid "Label as AI-generated"
+msgstr "Märk som AI-genererad"
+
+#: includes/class-media.php:402
+msgid "Label as modified with AI"
+msgstr "Märk som ändrad med AI"
+
+#: includes/class-media.php:403
+msgid "AI: no label needed"
+msgstr "AI: ingen märkning behövs"
+
+#: includes/class-media.php:404
+msgid "Remove AI label"
+msgstr "Ta bort AI-märkning"
+
+#. translators: %d: number of files
+#: includes/class-media.php:447
+#, php-format
+msgid "Removed the AI label from %d file."
+msgid_plural "Removed the AI label from %d files."
+msgstr[0] "Tog bort AI-märkningen från %d fil."
+msgstr[1] "Tog bort AI-märkningen från %d filer."
+
+#. translators: 1: number of files, 2: KI-generiert, Mit KI verändert or Kein Hinweis nötig
+#: includes/class-media.php:449
+#, php-format
+msgid "%1$d file: %2$s."
+msgid_plural "%1$d files: %2$s."
+msgstr[0] "%1$d fil: %2$s."
+msgstr[1] "%1$d filer: %2$s."
+
+#: includes/class-media.php:462
+msgid "AI labels:"
+msgstr "AI-märkningar:"
+
+#. translators: %d: number of files
+#: includes/class-media.php:464
+#, php-format
+msgid "%d file carries traces of AI and has no decision yet."
+msgid_plural "%d files carry traces of AI and have no decision yet."
+msgstr[0] "%d fil har spår av AI och inget beslut ännu."
+msgstr[1] "%d filer har spår av AI och inget beslut ännu."
+
+#: includes/class-media.php:466
+msgid "View"
+msgstr "Visa"
+
+#: includes/class-media.php:468
+msgid "Later"
+msgstr "Senare"
+
+#: includes/class-rest.php:171
+msgid "Decide on at most 200 files per request."
+msgstr "Besluta om högst 200 filer per begäran."
+
+#: includes/class-rest.php:175
+msgid "This label does not exist."
+msgstr "Den här märkningen finns inte."
+
+#: includes/class-rest.php:220
+msgid "Only site administrators can run a site-wide check."
+msgstr "Bara webbplatsens administratörer kan köra en kontroll av hela webbplatsen."
+
+#: includes/class-rest.php:244
+#: includes/class-rest.php:316
+msgid "For the image analysis, WordPress needs an AI provider (Settings › Connectors)."
+msgstr "För bildanalysen behöver WordPress en AI-leverantör (Inställningar › Connectors)."
+
+#: includes/class-rest.php:286
+msgid "You cannot edit this file."
+msgstr "Du kan inte redigera den här filen."
+
+#: includes/class-usage.php:471
+#: includes/class-usage.php:497
+msgid "Website"
+msgstr "Webbplats"
+
+#: includes/class-usage.php:491
+msgid "Site logo"
+msgstr "Webbplatslogga"
+
+#: includes/class-usage.php:493
+#: src/admin/parts.js:42
+msgid "Site icon"
+msgstr "Webbplatsikon"
+
+#: includes/class-usage.php:495
+#: src/admin/parts.js:43
+msgid "Header image"
+msgstr "Sidhuvudsbild"
+
+#: src/admin/api.js:28
+msgid "That did not work."
+msgstr "Det fungerade inte."
+
+#: src/admin/Assistant.js:7
+msgid "set up"
+msgstr "inställd"
+
+#: src/admin/Assistant.js:8
+msgid "API key missing"
+msgstr "API-nyckel saknas"
+
+#: src/admin/Assistant.js:9
+msgid "not responding"
+msgstr "svarar inte"
+
+#: src/admin/Assistant.js:10
+msgid "plugin missing"
+msgstr "tillägg saknas"
+
+#: src/admin/Assistant.js:24
+msgid "Image analysis (AI) needs WordPress 7.0"
+msgstr "Bildanalys (AI) kräver WordPress 7.0"
+
+#: src/admin/Assistant.js:30
+msgid "From 7.0, the image analysis uses the AI provider you set up under Settings › Connectors. Labeling, the check and the traces in files already work."
+msgstr "Från 7.0 använder bildanalysen den AI-leverantör du ställer in under Inställningar › Connectors. Märkning, kontrollen och spåren i filer fungerar redan."
+
+#: src/admin/Assistant.js:37
+msgid "Update WordPress"
+msgstr "Uppdatera WordPress"
+
+#: src/admin/Assistant.js:49
+#: src/admin/Assistant.js:130
+msgid "Set up an AI provider first"
+msgstr "Ställ in en AI-leverantör först"
+
+#: src/admin/Assistant.js:52
+msgid "The image analysis uses the provider you set up in WordPress under Settings › Connectors – your API key stays there. Labeling, the check and the traces in files work without it."
+msgstr "Bildanalysen använder den leverantör du ställer in i WordPress under Inställningar › Connectors – din API-nyckel stannar där. Märkning, kontrollen och spåren i filer fungerar utan den."
+
+#: src/admin/Assistant.js:85
+#: src/media/index.js:154
+msgid "Open Connectors"
+msgstr "Öppna Connectors"
+
+#: src/admin/Assistant.js:89
+msgid "Install Vercel AI Gateway"
+msgstr "Installera Vercel AI Gateway"
+
+#: src/admin/Assistant.js:98
+msgid "No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card."
+msgstr "Inget avtal med någon leverantör? Vercel AI Gateway ger 5 $ i månaden gratis, inget kreditkort."
+
+#: src/admin/Assistant.js:139
+msgid "Close"
+msgstr "Stäng"
+
+#: src/admin/index.js:12
+msgid "Review"
+msgstr "Granska"
+
+#: src/admin/index.js:13
+msgid "Appearance"
+msgstr "Utseende"
+
+#: src/admin/index.js:14
+msgid "Knowledge"
+msgstr "Kunskap"
+
+#: src/admin/index.js:77
+msgid "Article 50 of the AI Regulation (EU) 2024/1689"
+msgstr "Artikel 50 i AI-förordningen (EU) 2024/1689"
+
+#: src/admin/index.js:84
+msgid "AI Act Art. 50 applies since 2 Aug 2026"
+msgstr "AI-förordningen art. 50 gäller sedan 2 aug 2026"
+
+#: src/admin/index.js:90
+msgid "AI Act Art. 50"
+msgstr "AI-förordningen art. 50"
+
+#: src/admin/index.js:94
+msgid "Media Library"
+msgstr "Mediabibliotek"
+
+#: src/admin/Knowledge.js:9
+msgid "Photorealistic AI “team photo”, customer portrait, testimonial"
+msgstr "Fotorealistiskt AI-”teamfoto”, kundporträtt, omdöme"
+
+#: src/admin/Knowledge.js:17
+msgid "Real photo, background or person replaced or added with AI"
+msgstr "Äkta foto där bakgrund eller person bytts ut eller lagts till med AI"
+
+#: src/admin/Knowledge.js:25
+msgid "AI product shot that looks like a real photo of the product"
+msgstr "AI-produktbild som ser ut som ett riktigt foto av produkten"
+
+#: src/admin/Knowledge.js:33
+msgid "AI image of a real building, place or event"
+msgstr "AI-bild av en verklig byggnad, plats eller händelse"
+
+#: src/admin/Knowledge.js:41
+msgid "Recognizable illustration, comic, 3D graphic, abstract background"
+msgstr "Tydlig illustration, serie, 3D-grafik, abstrakt bakgrund"
+
+#: src/admin/Knowledge.js:49
+msgid "Real photo, only color, light, noise or crop with an AI tool"
+msgstr "Äkta foto, bara färg, ljus, brus eller beskärning med ett AI-verktyg"
+
+#: src/admin/Knowledge.js:57
+msgid "Camera or stock photo without AI"
+msgstr "Kamera- eller stockfoto utan AI"
+
+#: src/admin/Knowledge.js:64
+msgid "required"
+msgstr "krävs"
+
+#: src/admin/Knowledge.js:65
+msgid "voluntary"
+msgstr "frivillig"
+
+#: src/admin/Knowledge.js:66
+msgid "no label"
+msgstr "ingen märkning"
+
+#: src/admin/Knowledge.js:71
+msgid "Questions and answers on Article 50 (European Commission)"
+msgstr "Frågor och svar om artikel 50 (Europeiska kommissionen)"
+
+#: src/admin/Knowledge.js:78
+msgid "Code of Practice on labeling AI-generated content"
+msgstr "Uppförandekod för märkning av AI-genererat innehåll"
+
+#: src/admin/Knowledge.js:85
+msgid "The EU icons to download"
+msgstr "EU:s ikoner att ladda ner"
+
+#: src/admin/Knowledge.js:89
+msgid "AI Act in the Official Journal (Regulation (EU) 2024/1689)"
+msgstr "AI-förordningen i Officiella tidningen (förordning (EU) 2024/1689)"
+
+#: src/admin/Knowledge.js:96
+msgid "AI Act Service Desk"
+msgstr "AI Act Service Desk"
+
+#: src/admin/Knowledge.js:112
+msgid "AI Act, Article 50"
+msgstr "AI-förordningen, artikel 50"
+
+#: src/admin/Knowledge.js:115
+msgid "Since 2 August 2026, what AI made has to be visible."
+msgstr "Sedan 2 augusti 2026 måste det synas vad AI har gjort."
+
+#: src/admin/Knowledge.js:121
+msgid "A business that publishes images, videos or recordings that look real but were created or modified with AI has to label them – visibly, at the latest at first sight. The duty is yours as the site owner, not the AI tool maker's."
+msgstr "Ett företag som publicerar bilder, videor eller inspelningar som ser äkta ut men skapades eller ändrades med AI måste märka dem – synligt, senast vid första anblicken. Skyldigheten är din som webbplatsägare, inte AI-verktygets tillverkares."
+
+#: src/admin/Knowledge.js:140
+msgid "You have to label"
+msgstr "Du måste märka"
+
+#: src/admin/Knowledge.js:144
+msgid "Deepfakes: AI images, videos, audio that show real or plausible people, things, places or events and look real – also an invented but photorealistic person."
+msgstr "Deepfakes: AI-bilder, -videor och -ljud som visar verkliga eller trovärdiga personer, saker, platser eller händelser och ser äkta ut – även en påhittad men fotorealistisk person."
+
+#: src/admin/Knowledge.js:150
+msgid "AI texts that inform the public on matters of public interest – unless a person reviewed them and takes responsibility."
+msgstr "AI-texter som informerar allmänheten om frågor av allmänt intresse – om inte en person har granskat dem och tar ansvar."
+
+#: src/admin/Knowledge.js:156
+msgid "Whether you meant to deceive does not matter. What your audience believes counts."
+msgstr "Om du avsåg att vilseleda spelar ingen roll. Det som din publik tror är det som räknas."
+
+#: src/admin/Knowledge.js:168
+msgid "No label needed for"
+msgstr "Ingen märkning behövs för"
+
+#: src/admin/Knowledge.js:172
+msgid "Ordinary editing: crop, light, color, noise, dust, upscaling – also with AI tools."
+msgstr "Vanlig redigering: beskärning, ljus, färg, brus, damm, uppskalning – även med AI-verktyg."
+
+#: src/admin/Knowledge.js:178
+msgid "Obviously artificial images (illustration, comic, abstract): voluntary, but good for trust."
+msgstr "Uppenbart artificiella bilder (illustration, serie, abstrakt): frivilligt, men bra för förtroendet."
+
+#: src/admin/Knowledge.js:184
+msgid "Content created before 2 August 2026 – nothing applies retroactively."
+msgstr "Innehåll skapat före 2 augusti 2026 – ingenting gäller retroaktivt."
+
+#: src/admin/Knowledge.js:190
+msgid "Art, satire, fiction: yes, but so that the work does not suffer (e.g. in the caption)."
+msgstr "Konst, satir, fiktion: ja, men så att verket inte lider (t.ex. i bildtexten)."
+
+#: src/admin/Knowledge.js:202
+msgid "Where the label goes"
+msgstr "Var märkningen ska sitta"
+
+#: src/admin/Knowledge.js:206
+msgid "On or right at the content, visible without a click – not only in the imprint."
+msgstr "På eller direkt vid innehållet, synlig utan klick – inte bara i den juridiska informationen."
+
+#: src/admin/Knowledge.js:212
+msgid "Plain words: “AI-generated”, “Modified with AI”. For screen readers as the icon's name, never instead of the alt text."
+msgstr "Enkla ord: ”AI-genererad”, ”Ändrad med AI”. För skärmläsare som ikonens namn, aldrig i stället för alt-texten."
+
+#: src/admin/Knowledge.js:218
+msgid "Videos: in a corner the whole time. Audio: at the player and in the artwork."
+msgstr "Videor: i ett hörn hela tiden. Ljud: vid spelaren och i omslagsbilden."
+
+#: src/admin/Knowledge.js:224
+msgid "The AI tool's watermark or metadata does not count for you."
+msgstr "AI-verktygets vattenstämpel eller metadata räknas inte för dig."
+
+#: src/admin/Knowledge.js:234
+msgid "The EU's icons"
+msgstr "EU:s ikoner"
+
+#: src/admin/Knowledge.js:235
+msgid "From the Commission since June 2026, free to use, no attribution. Optional – an equivalent label is allowed too."
+msgstr "Från kommissionen sedan juni 2026, fria att använda, ingen källhänvisning. Frivilliga – en likvärdig märkning är också tillåten."
+
+#: src/admin/Knowledge.js:243
+msgid "AI GENERATED"
+msgstr "AI-GENERERAD"
+
+#: src/admin/Knowledge.js:245
+msgid "Fully created with AI, no human-made parts."
+msgstr "Helt skapad med AI, inga delar gjorda av människor."
+
+#: src/admin/Knowledge.js:253
+msgid "AI MODIFIED"
+msgstr "AI-ÄNDRAD"
+
+#: src/admin/Knowledge.js:255
+msgid "Real photo, video or recording, partly modified with AI."
+msgstr "Äkta foto, video eller inspelning, delvis ändrad med AI."
+
+#: src/admin/Knowledge.js:264
+msgctxt "name of the EU basic icon"
+msgid "AI"
+msgstr "AI"
+
+#: src/admin/Knowledge.js:271
+msgid "The basic icon: with your own text, with a second layer or where space is short."
+msgstr "Grundikonen: med egen text, med ett andra lager eller där utrymmet är knappt."
+
+#: src/admin/Knowledge.js:280
+msgid "Typical cases"
+msgstr "Typiska fall"
+
+#: src/admin/Knowledge.js:284
+msgid "File"
+msgstr "Fil"
+
+#: src/admin/Knowledge.js:285
+#: src/admin/Look.js:109
+msgid "Kind"
+msgstr "Typ"
+
+#: src/admin/Knowledge.js:286
+msgid "Label"
+msgstr "Märkning"
+
+#: src/admin/Knowledge.js:321
+msgid "How the plugin recognizes AI"
+msgstr "Så känner tillägget igen AI"
+
+#: src/admin/Knowledge.js:328
+msgid "Many AI tools write into the file that it was made with AI: Content Credentials (C2PA) from ChatGPT, Gemini, Firefly or Photoshop, the IPTC value “trainedAlgorithmicMedia”, the generation data of Stable Diffusion and ComfyUI. The plugin reads them on upload and with every check – on your server, nothing leaves it."
+msgstr "Många AI-verktyg skriver in i filen att den gjordes med AI: Content Credentials (C2PA) från ChatGPT, Gemini, Firefly eller Photoshop, IPTC-värdet ”trainedAlgorithmicMedia”, genereringsdata från Stable Diffusion och ComfyUI. Tillägget läser dem vid uppladdning och vid varje kontroll – på din server, ingenting lämnar den."
+
+#: src/admin/Knowledge.js:334
+msgid "A missing trace means nothing: screenshots, exports and image optimizers remove them. That is why “Used, not decided” shows everything visible on your site that has no decision yet. Only you know for sure how an image was made."
+msgstr "Ett saknat spår betyder ingenting: skärmdumpar, exporter och bildoptimerare tar bort dem. Därför visar ”Används, inte beslutat” allt som syns på din webbplats och inte har något beslut ännu. Bara du vet säkert hur en bild gjordes."
+
+#: src/admin/Knowledge.js:342
+msgid "This knowledge as a skill"
+msgstr "Den här kunskapen som en skill"
+
+#: src/admin/Knowledge.js:349
+msgid "The image analysis thinks with a skill: a guide to the AI Act with sources, in the plugin under skills/eu-ai-act-labels. You can give the same files to any AI agent that reads Agent Skills – Claude, Cursor, Codex and others."
+msgstr "Bildanalysen tänker med en skill: en guide till AI-förordningen med källor, i tillägget under skills/eu-ai-act-labels. Du kan ge samma filer till vilken AI-agent som helst som läser Agent Skills – Claude, Cursor, Codex och andra."
+
+#: src/admin/Knowledge.js:361
+msgid "View SKILL.md"
+msgstr "Visa SKILL.md"
+
+#: src/admin/Knowledge.js:369
+msgid "Sources"
+msgstr "Källor"
+
+#: src/admin/Knowledge.js:370
+msgid "As of 9 October 2026. This is help, not legal advice."
+msgstr "Per 9 oktober 2026. Det här är hjälp, inte juridisk rådgivning."
+
+#: src/admin/Look.js:18
+msgid "EU icon by kind"
+msgstr "EU-ikon efter typ"
+
+#: src/admin/Look.js:19
+msgid "Round EU icon"
+msgstr "Rund EU-ikon"
+
+#: src/admin/Look.js:22
+msgid "Round icon, opens on hover"
+msgstr "Rund ikon, öppnas vid hovring"
+
+#: src/admin/Look.js:25
+msgid "Own icon"
+msgstr "Egen ikon"
+
+#: src/admin/Look.js:26
+msgid "Sparkle"
+msgstr "Gnista"
+
+#: src/admin/Look.js:30
+msgid "Dark"
+msgstr "Mörk"
+
+#: src/admin/Look.js:31
+msgid "Light"
+msgstr "Ljus"
+
+#: src/admin/Look.js:32
+#: src/admin/parts.js:31
+msgid "Image"
+msgstr "Bild"
+
+#: src/admin/Look.js:33
+#: src/admin/Look.js:344
+#: src/admin/Look.js:347
+msgid "Color"
+msgstr "Färg"
+
+#: src/admin/Look.js:52
+msgid "Top left"
+msgstr "Uppe till vänster"
+
+#: src/admin/Look.js:53
+msgid "Top right"
+msgstr "Uppe till höger"
+
+#: src/admin/Look.js:54
+msgid "Bottom left"
+msgstr "Nere till vänster"
+
+#: src/admin/Look.js:55
+msgid "Bottom right"
+msgstr "Nere till höger"
+
+#: src/admin/Look.js:105
+msgid "How it looks on the site"
+msgstr "Så ser det ut på webbplatsen"
+
+#: src/admin/Look.js:118
+msgid "Modified"
+msgstr "Ändrad"
+
+#: src/admin/Look.js:143
+msgid "Our workshop in autumn"
+msgstr "Vår verkstad på hösten"
+
+#: src/admin/Look.js:180
+msgid "On small images (under 400 px) the plugin uses the round icon instead of the wide one."
+msgstr "På små bilder (under 400 px) använder tillägget den runda ikonen i stället för den breda."
+
+#: src/admin/Look.js:188
+msgid "Hover over the icon: the second layer shows the notice. Screen readers read it as the icon's name – the image's alt text stays as it is."
+msgstr "Håll muspekaren över ikonen: det andra lagret visar upplysningen. Skärmläsare läser den som ikonens namn – bildens alt-text förblir som den är."
+
+#: src/admin/Look.js:228
+msgid "Choose your own icon"
+msgstr "Välj din egen ikon"
+
+#: src/admin/Look.js:266
+msgid "Administrators change the appearance. You can still label."
+msgstr "Administratörer ändrar utseendet. Du kan fortfarande märka."
+
+#: src/admin/Look.js:274
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/admin/Look.js:275
+msgid "The default is the European Commission's icons – free to use, no attribution."
+msgstr "Standard är Europeiska kommissionens ikoner – fria att använda, ingen källhänvisning."
+
+#: src/admin/Look.js:327
+msgid "Choose another icon"
+msgstr "Välj en annan ikon"
+
+#: src/admin/Look.js:335
+msgid "Your own mark is allowed if it is as clear as the EU icon. The EU icon is the safer choice."
+msgstr "Ett eget märke är tillåtet om det är lika tydligt som EU-ikonen. EU-ikonen är det säkrare valet."
+
+#: src/admin/Look.js:375
+msgid "Pick a color"
+msgstr "Välj en färg"
+
+#: src/admin/Look.js:384
+#: src/admin/Look.js:392
+msgid "Transparency"
+msgstr "Transparens"
+
+#: src/admin/Look.js:385
+msgid "Of the shape; the letters stay solid."
+msgstr "För formen; bokstäverna förblir täckande."
+
+#. translators: %d: a percentage.
+#: src/admin/Look.js:401
+#, js-format
+msgid "%d%%"
+msgstr "%d %%"
+
+#: src/admin/Look.js:407
+#: src/admin/Look.js:410
+msgid "Size"
+msgstr "Storlek"
+
+#: src/admin/Look.js:420
+#: src/admin/Look.js:429
+msgid "Corner"
+msgstr "Hörn"
+
+#: src/admin/Look.js:421
+msgid "Videos: always at the top, away from the controls."
+msgstr "Videor: alltid högst upp, bort från kontrollerna."
+
+#: src/admin/Look.js:459
+msgid "Words"
+msgstr "Formulering"
+
+#: src/admin/Look.js:460
+msgid "Leave empty: the default in the site's language."
+msgstr "Lämna tomt: standardtexten på webbplatsens språk."
+
+#: src/admin/Look.js:491
+msgid "Notice for AI-generated"
+msgstr "Upplysning för AI-genererad"
+
+#: src/admin/Look.js:503
+msgid "Notice for modified"
+msgstr "Upplysning för ändrad"
+
+#: src/admin/Look.js:518
+msgid "Where the label appears"
+msgstr "Var märkningen visas"
+
+#: src/admin/Look.js:527
+msgid "Images in pages and posts"
+msgstr "Bilder i sidor och inlägg"
+
+#: src/admin/Look.js:531
+msgid "Blocks, galleries, covers, classic editor, HTML"
+msgstr "Block, gallerier, omslag, klassisk redigerare, HTML"
+
+#: src/admin/Look.js:538
+msgid "Featured images and the theme's images"
+msgstr "Utvalda bilder och temats bilder"
+
+#: src/admin/Look.js:542
+msgid "everything that comes through wp_get_attachment_image()"
+msgstr "allt som går genom wp_get_attachment_image()"
+
+#: src/admin/Look.js:549
+msgid "Videos"
+msgstr "Videor"
+
+#: src/admin/Look.js:550
+msgid "Video block, cover with video, [video]"
+msgstr "Videoblock, omslag med video, [video]"
+
+#: src/admin/Look.js:557
+#: src/admin/parts.js:36
+msgid "Audio"
+msgstr "Ljud"
+
+#: src/admin/Look.js:558
+msgid "a line above the player"
+msgstr "en rad ovanför spelaren"
+
+#: src/admin/Look.js:576
+#: src/admin/Look.js:587
+msgid "Notice in captions"
+msgstr "Upplysning i bildtexter"
+
+#: src/admin/Look.js:580
+msgid "Only where there is one already – never in the alt text."
+msgstr "Bara där det redan finns en – aldrig i alt-texten."
+
+#: src/admin/Look.js:596
+#: src/admin/Look.js:607
+msgid "Second layer on hover"
+msgstr "Andra lagret vid hovring"
+
+#: src/admin/Look.js:600
+msgid "The whole notice, with the tool."
+msgstr "Hela upplysningen, med verktyget."
+
+#: src/admin/Look.js:618
+msgid "On upload"
+msgstr "Vid uppladdning"
+
+#: src/admin/Look.js:621
+#: src/admin/Look.js:632
+msgid "Check files for traces of AI"
+msgstr "Kontrollera filer efter spår av AI"
+
+#: src/admin/Look.js:625
+msgid "C2PA, IPTC, generation data, file names – on your server."
+msgstr "C2PA, IPTC, genereringsdata, filnamn – på din server."
+
+#: src/admin/Look.js:641
+#: src/admin/Look.js:652
+msgid "Apply unambiguous traces right away"
+msgstr "Tillämpa entydiga spår direkt"
+
+#: src/admin/Look.js:645
+msgid "If the file itself says it was made with AI, it is labeled right away."
+msgstr "Om filen själv säger att den gjordes med AI märks den direkt."
+
+#: src/admin/parts.js:15
+msgctxt "decision beside the AI icon"
+msgid "generated"
+msgstr "genererad"
+
+#: src/admin/parts.js:20
+msgctxt "decision beside the AI icon"
+msgid "modified"
+msgstr "ändrad"
+
+#: src/admin/parts.js:25
+msgctxt "decision"
+msgid "No label"
+msgstr "Ingen märkning"
+
+#: src/admin/parts.js:30
+msgid "Featured image"
+msgstr "Utvald bild"
+
+#: src/admin/parts.js:32
+msgid "Gallery"
+msgstr "Galleri"
+
+#: src/admin/parts.js:33
+msgid "Cover"
+msgstr "Omslag"
+
+#: src/admin/parts.js:34
+msgid "Media & Text"
+msgstr "Media och text"
+
+#: src/admin/parts.js:35
+msgid "Video"
+msgstr "Video"
+
+#: src/admin/parts.js:37
+msgid "only as a URL"
+msgstr "bara som URL"
+
+#: src/admin/parts.js:38
+msgid "Page builder"
+msgstr "Sidbyggare"
+
+#: src/admin/parts.js:39
+msgid "ACF field"
+msgstr "ACF-fält"
+
+#: src/admin/parts.js:40
+msgid "Product gallery"
+msgstr "Produktgalleri"
+
+#: src/admin/parts.js:41
+msgid "Logo"
+msgstr "Logga"
+
+#: src/admin/parts.js:195
+msgid "Label required"
+msgstr "Märkning krävs"
+
+#: src/admin/parts.js:196
+msgid "Label voluntary"
+msgstr "Märkning frivillig"
+
+#: src/admin/parts.js:197
+msgid "no label needed"
+msgstr "ingen märkning behövs"
+
+#: src/admin/parts.js:198
+msgid "unclear"
+msgstr "oklart"
+
+#: src/admin/parts.js:234
+msgid "label visible"
+msgstr "märkning synlig"
+
+#: src/admin/parts.js:235
+msgid "without label"
+msgstr "utan märkning"
+
+#: src/admin/parts.js:236
+msgid "not on the page"
+msgstr "inte på sidan"
+
+#: src/admin/parts.js:237
+msgid "page not reachable"
+msgstr "sidan kan inte nås"
+
+#: src/admin/parts.js:244
+msgid "Not found on any page"
+msgstr "Hittades inte på någon sida"
+
+#. translators: %d: number of further places
+#: src/admin/parts.js:275
+#, js-format
+msgid "and %d more"
+msgstr "och %d till"
+
+#: src/admin/Review.js:24
+msgid "All"
+msgstr "Alla"
+
+#: src/admin/Review.js:29
+msgid "No file carries traces of AI without a decision. Traces are often missing – go through “Used, not decided” too."
+msgstr "Ingen fil har spår av AI utan beslut. Spår saknas ofta – gå igenom ”Används, inte beslutat” också."
+
+#: src/admin/Review.js:33
+msgid "Everything used on your site has a decision. Or the site has not been checked yet."
+msgstr "Allt som används på din webbplats har ett beslut. Eller så har webbplatsen inte kontrollerats ännu."
+
+#: src/admin/Review.js:37
+msgid "No file labeled yet."
+msgstr "Ingen fil märkt ännu."
+
+#: src/admin/Review.js:38
+msgid "No file decided as needing no label yet."
+msgstr "Ingen fil ännu beslutad till ”ingen märkning behövs”."
+
+#: src/admin/Review.js:42
+msgid "No images, videos or recordings."
+msgstr "Inga bilder, videor eller inspelningar."
+
+#: src/admin/Review.js:117
+msgid "Reading your pages and posts …"
+msgstr "Läser dina sidor och inlägg …"
+
+#: src/admin/Review.js:121
+msgid "Reading the traces in your files …"
+msgstr "Läser spåren i dina filer …"
+
+#: src/admin/Review.js:125
+msgid "Done."
+msgstr "Klart."
+
+#: src/admin/Review.js:157
+msgid "labeled"
+msgstr "märkta"
+
+#. translators: 1: generated count, 2: modified count
+#: src/admin/Review.js:160
+#, js-format
+msgid "%1$d AI-generated · %2$d modified"
+msgstr "%1$d AI-genererade · %2$d ändrade"
+
+#: src/admin/Review.js:141
+msgid "traces of AI, no decision"
+msgstr "spår av AI, inget beslut"
+
+#: src/admin/Review.js:150
+msgid "used, not decided"
+msgstr "används, inte beslutat"
+
+#: src/admin/Review.js:151
+msgid "visible on your site"
+msgstr "synliga på din webbplats"
+
+#. translators: 1: date, 2: pages, 3: files in use
+#: src/admin/Review.js:206
+#, js-format
+msgid "Last checked %1$s: %2$d pages and posts, %3$d files in use."
+msgstr "Senast kontrollerad %1$s: %2$d sidor och inlägg, %3$d filer i användning."
+
+#: src/admin/Review.js:214
+msgid "Not checked yet: where your media is used and which traces of AI it carries."
+msgstr "Inte kontrollerad ännu: var din media används och vilka spår av AI den har."
+
+#: src/admin/Review.js:229
+msgid "Check site"
+msgstr "Kontrollera webbplatsen"
+
+#: src/admin/Review.js:272
+msgid "Open in the Media Library"
+msgstr "Öppna i mediabiblioteket"
+
+#: src/admin/Review.js:302
+msgid "Check on the site"
+msgstr "Kontrollera på webbplatsen"
+
+#: src/admin/Review.js:412
+msgid "Some labels could not be undone. Retry the remaining files."
+msgstr "Vissa märkningar kunde inte ångras. Försök igen med de återstående filerna."
+
+#: src/admin/Review.js:571
+msgid "Media"
+msgstr "Media"
+
+#: src/admin/Review.js:572
+msgid "Decide per file: AI-generated, modified with AI or no label needed. The label is required when something looks real that did not happen that way."
+msgstr "Besluta per fil: AI-genererad, ändrad med AI eller ingen märkning behövs. Märkning krävs när något ser äkta ut som inte hände så."
+
+#: src/admin/Review.js:582
+msgid "Search"
+msgstr "Sök"
+
+#: src/admin/Review.js:586
+msgid "Search media"
+msgstr "Sök media"
+
+#. translators: %d: number of suggestions
+#: src/admin/Review.js:634
+#, js-format
+msgid "Apply all %d suggestions"
+msgstr "Tillämpa alla %d förslag"
+
+#. translators: 1: done, 2: total
+#: src/admin/Run.js:488
+#, js-format
+msgid "Analyzing … %1$d of %2$d"
+msgstr "Analyserar … %1$d av %2$d"
+
+#. translators: %d: number of files
+#: src/admin/Review.js:648
+#, js-format
+msgid "%d suggestions applied."
+msgstr "%d förslag tillämpade."
+
+#: src/admin/Review.js:660
+msgid "Undo"
+msgstr "Ångra"
+
+#: src/admin/Review.js:666
+msgid "Loading …"
+msgstr "Laddar …"
+
+#. translators: 1: page, 2: pages
+#: src/admin/Review.js:705
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr "Sida %1$d av %2$d"
+
+#: src/admin/Review.js:723
+msgid "Also in the Media Library: the “AI” filter, a column and bulk actions in the list view."
+msgstr "Även i mediabiblioteket: filtret ”AI”, en kolumn och massåtgärder i listvyn."
+
+#: src/admin/Review.js:728
+msgid "Open Media Library"
+msgstr "Öppna mediabiblioteket"
+
+#: src/admin/ui.js:331
+msgid "as recommended"
+msgstr "som rekommenderat"
+
+#: src/admin/ui.js:335
+msgid "changed"
+msgstr "ändrad"
+
+#: src/media/index.js:129
+msgid "Analyzing …"
+msgstr "Analyserar …"
+
+#. translators: %d: minutes
+#: src/admin/Run.js:76
+#, js-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minut"
+msgstr[1] "%d minuter"
+
+#. translators: %s: hours, e.g. 2.5
+#: src/admin/Run.js:81
+#, js-format
+msgid "%s hours"
+msgstr "%s timmar"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:416
+#, js-format
+msgid "%d picture without a decision or an assessment"
+msgid_plural "%d pictures without a decision or an assessment"
+msgstr[0] "%d bild utan beslut eller bedömning"
+msgstr[1] "%d bilder utan beslut eller bedömning"
+
+#: src/admin/Run.js:476
+msgid "Image generators for everyone came in 2022 – older uploads rarely need a check."
+msgstr "Bildgeneratorer för alla finns sedan 2022 – äldre uppladdningar behöver sällan kontrolleras."
+
+#: src/admin/Run.js:497
+msgid "Stop"
+msgstr "Stoppa"
+
+#: src/admin/Run.js:531
+msgid "Test with 10"
+msgstr "Testa med 10"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:551
+#, js-format
+msgid "Analyze %d picture"
+msgid_plural "Analyze %d pictures"
+msgstr[0] "Analysera %d bild"
+msgstr[1] "Analysera %d bilder"
+
+#. translators: %d: seconds
+#: src/admin/Run.js:68
+#, js-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekund"
+msgstr[1] "%d sekunder"
+
+#. translators: %s: number of tokens
+#: src/admin/Run.js:98
+#, js-format
+msgid "%s tokens"
+msgstr "%s token"
+
+#. translators: 1: number of pictures, 2: what they would take
+#: src/admin/Run.js:429
+#, js-format
+msgid "All %1$d: about %2$s"
+msgstr "Alla %1$d: ungefär %2$s"
+
+#. translators: 1: number of pictures, 2: what they took
+#: src/admin/Run.js:439
+#, js-format
+msgid "Measured in the test with %1$d pictures: %2$s"
+msgstr "Uppmätt i testet med %1$d bilder: %2$s"
+
+#: src/admin/Review.js:552
+#: src/admin/Run.js:162
+msgid "Analyze image content (AI)"
+msgstr "Analysera bildinnehåll (AI)"
+
+#: src/admin/Run.js:205
+msgid "Every picture used on your site has a decision or an assessment."
+msgstr "Varje bild som används på din webbplats har ett beslut eller en bedömning."
+
+#. translators: %s: names of the AI providers
+#: src/admin/Run.js:167
+#, js-format
+msgid "The AI looks at each picture used on your site that has no decision yet and suggests: AI-generated, modified with AI or no label needed – you decide. WordPress sends each picture, 768 pixels wide, with its name and where it is used to your AI provider (%s). The provider bills each analysis to your account with it; this plugin and engenty charge nothing."
+msgstr "AI:n tittar på varje bild som används på din webbplats och som ännu inte har något beslut och föreslår: AI-genererad, ändrad med AI eller ingen märkning behövs – du bestämmer. WordPress skickar då varje bild, 768 pixlar bred, med namn och var den används till din AI-leverantör (%s). Leverantören debiterar varje analys på ditt konto hos sig; detta tillägg och engenty tar inget betalt."
+
+#. translators: %d: number of analyses
+#: src/admin/Run.js:449
+#, js-format
+msgid "Estimated from %d analysis on this site this month."
+msgid_plural "Estimated from %d analyses on this site this month."
+msgstr[0] "Uppskattat utifrån %d analys på den här webbplatsen den här månaden."
+msgstr[1] "Uppskattat utifrån %d analyser på den här webbplatsen den här månaden."
+
+#: src/admin/Run.js:458
+msgid "No estimate: there was no analysis on this site this month yet."
+msgstr "Ingen uppskattning: det har inte gjorts någon analys på den här webbplatsen den här månaden än."
+
+#: src/admin/Run.js:462
+msgid "First a test with 10 pictures: it shows what the analysis costs on this site, before you start all of them."
+msgstr "Först ett test med 10 bilder: det visar vad analysen kostar på den här webbplatsen innan du startar alla."
+
+#: src/admin/Run.js:469
+msgid "Your provider does not report costs: its price per token tells what this costs."
+msgstr "Din leverantör rapporterar inga kostnader: dess pris per token avgör vad det kostar."
+
+#: src/admin/Run.js:538
+msgid "Skip test"
+msgstr "Hoppa över testet"
+
+#: src/admin/Review.js:228
+msgid "Quick check"
+msgstr "Snabbkontroll"
+
+#: includes/class-analysis.php:70
+msgid "An analysis is already running."
+msgstr "En analys pågår redan."
+
+#. translators: 1: first day, 2: last day
+#: src/admin/Run.js:337
+#, js-format
+msgid "Uploaded from %1$s to %2$s"
+msgstr "Uppladdade från %1$s till %2$s"
+
+#: src/admin/Run.js:362
+msgid "From"
+msgstr "Från"
+
+#: src/admin/Run.js:374
+msgid "To"
+msgstr "Till"
+
+#: src/admin/Run.js:501
+msgid "Waiting for WP-Cron: the next step comes with the next visit to the site."
+msgstr "Väntar på WP-Cron: nästa steg kommer med nästa besök på webbplatsen."
+
+#. translators: %s: name of the person who started it
+#: src/admin/Run.js:507
+#, js-format
+msgid "Runs on the server, started by %s – you can close this page."
+msgstr "Körs på servern, startad av %s – du kan stänga den här sidan."
+
+#: src/admin/Run.js:517
+msgid "Every picture in this time has a decision or an assessment."
+msgstr "Varje bild från den här perioden har ett beslut eller en bedömning."
+
+#. translators: %s: the provider's error
+#: src/admin/Run.js:568
+#, js-format
+msgid "The analysis stopped after three failures in a row: %s"
+msgstr "Analysen stoppades efter tre fel i rad: %s"
+
+#. translators: %d: number of pictures
+#: src/admin/Run.js:401
+#, js-format
+msgid "%d picture already analyzed"
+msgid_plural "%d pictures already analyzed"
+msgstr[0] "%d bild redan analyserad"
+msgstr[1] "%d bilder redan analyserade"
+
+#: includes/class-promo.php:23
+msgid "From engenty, the makers of this plugin"
+msgstr "Från engenty, som gör det här tillägget"
+
+#: includes/class-promo.php:24
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards: guidade flöden för dina besökare"
+
+#: includes/class-promo.php:25
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Förfrågningar, offerter, bokningar – steg för steg på din webbplats, byggda med AI i stället för kod."
+
+#: includes/class-promo.php:28
+msgid "Visit engenty.ai"
+msgstr "Besök engenty.ai"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php:30
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/"
+
+#. Plugin URI of the plugin
+#: ai-act-labels.php
+msgid "https://engenty.ai/wordpress-plugins/ai-act-image-labels"
+msgstr "https://engenty.ai/wordpress-plugins/ai-act-image-labels"

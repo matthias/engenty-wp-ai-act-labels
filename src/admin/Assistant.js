@@ -4,10 +4,10 @@ import { Button, Icon } from './ui';
 
 /** How far a provider in Konnektoren is. */
 const OFFER_STATES = {
-	ready: __( 'set up', 'ai-act-labels' ),
-	key: __( 'API key missing', 'ai-act-labels' ),
-	offline: __( 'not responding', 'ai-act-labels' ),
-	plugin: __( 'plugin missing', 'ai-act-labels' ),
+	ready: __( 'set up', 'ai-act-image-labels' ),
+	key: __( 'API key missing', 'ai-act-image-labels' ),
+	offline: __( 'not responding', 'ai-act-image-labels' ),
+	plugin: __( 'plugin missing', 'ai-act-image-labels' ),
 };
 
 /**
@@ -23,18 +23,18 @@ function Setup( { assistant } ) {
 				<b className="aal-setup__title">
 					{ __(
 						'Image analysis (AI) needs WordPress 7.0',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				</b>
 				<p>
 					{ __(
 						'From 7.0, the image analysis uses the AI provider you set up under Settings › Connectors. Labeling, the check and the traces in files already work.',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				</p>
 				<div className="aal-setup__actions">
 					<Button kind="primary" size="sm" href={ assistant.update }>
-						{ __( 'Update WordPress', 'ai-act-labels' ) }
+						{ __( 'Update WordPress', 'ai-act-image-labels' ) }
 					</Button>
 				</div>
 			</div>
@@ -46,12 +46,12 @@ function Setup( { assistant } ) {
 		<div className="aal-setup">
 			<b className="aal-setup__title">
 				<Icon name="lock" size={ 13 } />{ ' ' }
-				{ __( 'Set up an AI provider first', 'ai-act-labels' ) }
+				{ __( 'Set up an AI provider first', 'ai-act-image-labels' ) }
 			</b>
 			<p>
 				{ __(
 					'The image analysis uses the provider you set up in WordPress under Settings › Connectors – your API key stays there. Labeling, the check and the traces in files work without it.',
-					'ai-act-labels'
+					'ai-act-image-labels'
 				) }
 			</p>
 			{ offers.length ? (
@@ -82,11 +82,14 @@ function Setup( { assistant } ) {
 			) : null }
 			<div className="aal-setup__actions">
 				<Button kind="primary" size="sm" href={ assistant.connectors }>
-					{ __( 'Open Connectors', 'ai-act-labels' ) }
+					{ __( 'Open Connectors', 'ai-act-image-labels' ) }
 				</Button>
 				{ hasVercel ? null : (
 					<Button kind="ghost" size="sm" href={ assistant.vercel }>
-						{ __( 'Install Vercel AI Gateway', 'ai-act-labels' ) }
+						{ __(
+							'Install Vercel AI Gateway',
+							'ai-act-image-labels'
+						) }
 					</Button>
 				) }
 			</div>
@@ -94,7 +97,7 @@ function Setup( { assistant } ) {
 				<span className="aal-fine">
 					{ __(
 						'No contract with a provider? Vercel AI Gateway gives $5 a month free, no credit card.',
-						'ai-act-labels'
+						'ai-act-image-labels'
 					) }
 				</span>
 			) }
@@ -126,14 +129,14 @@ export function SetupDialog( { assistant, onClose } ) {
 				aria-modal="true"
 				aria-label={ __(
 					'Set up an AI provider first',
-					'ai-act-labels'
+					'ai-act-image-labels'
 				) }
 			>
 				<button
 					type="button"
 					className="aal-icon-btn aal-modal__close"
 					onClick={ onClose }
-					aria-label={ __( 'Close', 'ai-act-labels' ) }
+					aria-label={ __( 'Close', 'ai-act-image-labels' ) }
 				>
 					<Icon name="x" size={ 16 } />
 				</button>

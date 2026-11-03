@@ -4,10 +4,10 @@ import { ENGENTY_KINDS } from './engenties';
 import { Button, Chip, Engenty, Icon } from './ui';
 
 export const STATE_LABELS = {
-	generated: __( 'AI-generated', 'ai-act-labels' ),
-	modified: __( 'Modified with AI', 'ai-act-labels' ),
-	none: __( 'No label needed', 'ai-act-labels' ),
-	'': __( 'Not decided', 'ai-act-labels' ),
+	generated: __( 'AI-generated', 'ai-act-image-labels' ),
+	modified: __( 'Modified with AI', 'ai-act-image-labels' ),
+	none: __( 'No label needed', 'ai-act-image-labels' ),
+	'': __( 'Not decided', 'ai-act-image-labels' ),
 };
 
 /** The same, short: beside the AI icon in the decision. */
@@ -15,28 +15,32 @@ const SHORT_LABELS = {
 	generated: _x(
 		'generated',
 		'decision beside the AI icon',
-		'ai-act-labels'
+		'ai-act-image-labels'
 	),
-	modified: _x( 'modified', 'decision beside the AI icon', 'ai-act-labels' ),
-	none: _x( 'No label', 'decision', 'ai-act-labels' ),
+	modified: _x(
+		'modified',
+		'decision beside the AI icon',
+		'ai-act-image-labels'
+	),
+	none: _x( 'No label', 'decision', 'ai-act-image-labels' ),
 };
 
 /** Where a file is used, in words; `auto`: the label comes there by itself. */
 export const CONTEXT_LABELS = {
-	featured: __( 'Featured image', 'ai-act-labels' ),
-	image: __( 'Image', 'ai-act-labels' ),
-	gallery: __( 'Gallery', 'ai-act-labels' ),
-	cover: __( 'Cover', 'ai-act-labels' ),
-	'media-text': __( 'Media & Text', 'ai-act-labels' ),
-	video: __( 'Video', 'ai-act-labels' ),
-	audio: __( 'Audio', 'ai-act-labels' ),
-	url: __( 'only as a URL', 'ai-act-labels' ),
-	builder: __( 'Page builder', 'ai-act-labels' ),
-	acf: __( 'ACF field', 'ai-act-labels' ),
-	shop: __( 'Product gallery', 'ai-act-labels' ),
-	logo: __( 'Logo', 'ai-act-labels' ),
-	icon: __( 'Site icon', 'ai-act-labels' ),
-	header: __( 'Header image', 'ai-act-labels' ),
+	featured: __( 'Featured image', 'ai-act-image-labels' ),
+	image: __( 'Image', 'ai-act-image-labels' ),
+	gallery: __( 'Gallery', 'ai-act-image-labels' ),
+	cover: __( 'Cover', 'ai-act-image-labels' ),
+	'media-text': __( 'Media & Text', 'ai-act-image-labels' ),
+	video: __( 'Video', 'ai-act-image-labels' ),
+	audio: __( 'Audio', 'ai-act-image-labels' ),
+	url: __( 'only as a URL', 'ai-act-image-labels' ),
+	builder: __( 'Page builder', 'ai-act-image-labels' ),
+	acf: __( 'ACF field', 'ai-act-image-labels' ),
+	shop: __( 'Product gallery', 'ai-act-image-labels' ),
+	logo: __( 'Logo', 'ai-act-image-labels' ),
+	icon: __( 'Site icon', 'ai-act-image-labels' ),
+	header: __( 'Header image', 'ai-act-image-labels' ),
 };
 
 /**
@@ -123,7 +127,7 @@ export function Decide( { value, suggests, onChange, busy = false } ) {
 		<span
 			className="aal-decide"
 			role="radiogroup"
-			aria-label={ __( 'AI labels', 'ai-act-labels' ) }
+			aria-label={ __( 'AI labels', 'ai-act-image-labels' ) }
 		>
 			{ [ 'generated', 'modified', 'none' ].map( ( s ) => (
 				<button
@@ -141,7 +145,7 @@ export function Decide( { value, suggests, onChange, busy = false } ) {
 						! value && suggests === s
 							? `${ STATE_LABELS[ s ] } – ${ __(
 									'Suggestion',
-									'ai-act-labels'
+									'ai-act-image-labels'
 							  ) }`
 							: STATE_LABELS[ s ]
 					}
@@ -188,14 +192,14 @@ export function Traces( { signals, max = 3 } ) {
 
 /** The assistant's assessment in words. */
 const DUTY = {
-	required: __( 'Label required', 'ai-act-labels' ),
-	voluntary: __( 'Label voluntary', 'ai-act-labels' ),
-	none: __( 'no label needed', 'ai-act-labels' ),
-	unsure: __( 'unclear', 'ai-act-labels' ),
+	required: __( 'Label required', 'ai-act-image-labels' ),
+	voluntary: __( 'Label voluntary', 'ai-act-image-labels' ),
+	none: __( 'no label needed', 'ai-act-image-labels' ),
+	unsure: __( 'unclear', 'ai-act-image-labels' ),
 };
 
-export function HintLine( { hint } ) {
-	if ( ! hint?.reason ) {
+export function HintLine( { hint, conflict } ) {
+	if ( ! hint?.reason && ! conflict ) {
 		return null;
 	}
 	return (
@@ -207,6 +211,14 @@ export function HintLine( { hint } ) {
 				</b>{ ' ' }
 				{ hint.reason }
 				{ hint.question ? <em> { hint.question }</em> : null }
+				{ conflict ? (
+					<em>
+						{ __(
+							'Strong file metadata conflicts with the AI assessment. Review before applying.',
+							'ai-act-image-labels'
+						) }
+					</em>
+				) : null }
 			</span>
 		</span>
 	);
@@ -219,17 +231,17 @@ export function HintLine( { hint } ) {
  */
 /** What a check of a page found. */
 const CHECKS = {
-	shown: __( 'label visible', 'ai-act-labels' ),
-	missing: __( 'without label', 'ai-act-labels' ),
-	absent: __( 'not on the page', 'ai-act-labels' ),
-	error: __( 'page not reachable', 'ai-act-labels' ),
+	shown: __( 'label visible', 'ai-act-image-labels' ),
+	missing: __( 'without label', 'ai-act-image-labels' ),
+	absent: __( 'not on the page', 'ai-act-image-labels' ),
+	error: __( 'page not reachable', 'ai-act-image-labels' ),
 };
 
 export function UsageLine( { usage } ) {
 	if ( ! usage?.length ) {
 		return (
 			<span className="aal-fine">
-				{ __( 'Not found on any page', 'ai-act-labels' ) }
+				{ __( 'Not found on any page', 'ai-act-image-labels' ) }
 			</span>
 		);
 	}
@@ -260,7 +272,7 @@ export function UsageLine( { usage } ) {
 			{ usage.length > 3
 				? sprintf(
 						/* translators: %d: number of further places */
-						__( 'and %d more', 'ai-act-labels' ),
+						__( 'and %d more', 'ai-act-image-labels' ),
 						usage.length - 3
 				  )
 				: '' }
@@ -269,7 +281,7 @@ export function UsageLine( { usage } ) {
 }
 
 /**
- * The card from engenty: its words come from engenty.ai (includes/class-promo.php), printed as text.
+ * The card from engenty: its words ship with the plugin (includes/class-promo.php), printed as text.
  * @param root0
  * @param root0.promo The card, or null.
  */

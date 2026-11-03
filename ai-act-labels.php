@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name:       AI Act Image Labels
- * Plugin URI:        https://engenty.ai/ai-act-labels
+ * Plugin URI:        https://engenty.ai/wordpress-plugins/ai-act-image-labels
  * Description:       Marks AI-generated and AI-modified media as the EU AI Act asks – right in the media library, with the EU's official icons on the site, and an assistant that finds what needs a label.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.6
  * Requires PHP:      8.1
  * Author:            engenty
  * Author URI:        https://engenty.ai
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       ai-act-labels
+ * Text Domain:       ai-act-image-labels
  * Domain Path:       /languages
  *
  * @package AI_Act_Labels
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AI_ACT_LABELS_VERSION', '0.1.0' );
+define( 'AI_ACT_LABELS_VERSION', '0.2.0' );
 define( 'AI_ACT_LABELS_FILE', __FILE__ );
 define( 'AI_ACT_LABELS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_ACT_LABELS_URL', plugin_dir_url( __FILE__ ) );
@@ -30,6 +30,7 @@ require_once AI_ACT_LABELS_DIR . 'includes/class-usage.php';
 require_once AI_ACT_LABELS_DIR . 'includes/class-front.php';
 require_once AI_ACT_LABELS_DIR . 'includes/class-media.php';
 require_once AI_ACT_LABELS_DIR . 'includes/class-assistant.php';
+require_once AI_ACT_LABELS_DIR . 'includes/class-analysis.php';
 require_once AI_ACT_LABELS_DIR . 'includes/class-promo.php';
 require_once AI_ACT_LABELS_DIR . 'includes/class-rest.php';
 require_once AI_ACT_LABELS_DIR . 'includes/class-admin.php';
@@ -94,15 +95,24 @@ register_activation_hook(
 	}
 );
 
+register_deactivation_hook(
+	__FILE__,
+	static function () {
+		// A running image analysis ends with the plugin.
+		AI_Act_Labels_Analysis::stop();
+	}
+);
+
 add_action(
 	'plugins_loaded',
 	static function () {
 		// The plugin's own translations (de_DE, en_GB); the scripts' come through wp_set_script_translations().
 		$locale = determine_locale();
-		load_textdomain( 'ai-act-labels', AI_ACT_LABELS_DIR . 'languages/ai-act-labels-' . $locale . '.mo', $locale );
+		load_textdomain( 'ai-act-image-labels', AI_ACT_LABELS_DIR . 'languages/ai-act-image-labels-' . $locale . '.mo', $locale );
 		AI_Act_Labels_Front::init();
 		AI_Act_Labels_Media::init();
 		AI_Act_Labels_Rest::init();
+		AI_Act_Labels_Analysis::init();
 		AI_Act_Labels_Admin::init();
 		AI_Act_Labels_Admin_Columns::init();
 	}

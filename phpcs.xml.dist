@@ -16,7 +16,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="ai-act-labels"/>
+				<element value="ai-act-image-labels"/>
 			</property>
 		</properties>
 	</rule>

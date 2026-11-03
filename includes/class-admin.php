@@ -46,8 +46,8 @@ class AI_Act_Labels_Admin {
 	/** The page under Medien. */
 	public static function menu() {
 		add_media_page(
-			__( 'AI labels', 'ai-act-labels' ),
-			__( 'AI labels', 'ai-act-labels' ),
+			__( 'AI labels', 'ai-act-image-labels' ),
+			__( 'AI labels', 'ai-act-image-labels' ),
 			'upload_files',
 			self::SLUG,
 			array( __CLASS__, 'render' )
@@ -64,7 +64,7 @@ class AI_Act_Labels_Admin {
 			'<div class="wrap aal-wrap"><div id="ai-act-labels-app" data-tab="%s" data-filter="%s"><p class="aal-loading">%s</p></div></div>',
 			esc_attr( $tab ),
 			esc_attr( $filter ),
-			esc_html__( 'AI labels are loading …', 'ai-act-labels' )
+			esc_html__( 'AI labels are loading …', 'ai-act-image-labels' )
 		);
 	}
 
@@ -103,7 +103,7 @@ class AI_Act_Labels_Admin {
 			'skill'     => AI_ACT_LABELS_URL . 'skills/eu-ai-act-labels/SKILL.md',
 		);
 		wp_add_inline_script( 'ai-act-labels-admin', 'window.aiActLabelsAdmin = ' . wp_json_encode( $boot ) . ';', 'before' );
-		wp_set_script_translations( 'ai-act-labels-admin', 'ai-act-labels', AI_ACT_LABELS_DIR . 'languages' );
+		wp_set_script_translations( 'ai-act-labels-admin', 'ai-act-image-labels', AI_ACT_LABELS_DIR . 'languages' );
 	}
 
 	/** After activation the tool opens once. */
@@ -127,7 +127,7 @@ class AI_Act_Labels_Admin {
 	 * @return array
 	 */
 	public static function action_links( $links ) {
-		array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( self::url() ), esc_html__( 'Open', 'ai-act-labels' ) ) );
+		array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( self::url() ), esc_html__( 'Open', 'ai-act-image-labels' ) ) );
 		return $links;
 	}
 }

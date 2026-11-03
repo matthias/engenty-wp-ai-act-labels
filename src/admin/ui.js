@@ -327,10 +327,12 @@ export function Accordion( {
 				<b>{ title }</b>
 				<span className="aal-acc__sum">{ summary }</span>
 				{ recommended ? (
-					<Chip>{ __( 'as recommended', 'ai-act-labels' ) }</Chip>
+					<Chip>
+						{ __( 'as recommended', 'ai-act-image-labels' ) }
+					</Chip>
 				) : (
 					<Chip tone="amber">
-						{ __( 'changed', 'ai-act-labels' ) }
+						{ __( 'changed', 'ai-act-image-labels' ) }
 					</Chip>
 				) }
 				<Icon name={ open ? 'down' : 'chevron' } size={ 16 } />

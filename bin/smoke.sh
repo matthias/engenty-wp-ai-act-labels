@@ -5,7 +5,7 @@ set -eu
 WP="wp --path=${WP_PATH:?WP_PATH is the WordPress folder}"
 fail() { echo "FAIL: $1"; exit 1; }
 
-$WP plugin is-active ai-act-labels || fail "the plugin is not active"
+$WP plugin is-active ai-act-image-labels || fail "the plugin is not active"
 
 routes=$($WP eval 'echo implode(" ", array_keys(rest_get_server()->get_routes("ai-act-labels/v1")));')
 for r in state media label settings scan review verify preview; do

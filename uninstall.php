@@ -9,11 +9,12 @@
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 
-foreach ( array( 'ai_act_labels', 'ai_act_labels_index', 'ai_act_labels_run', 'ai_act_labels_last_scan', 'ai_act_labels_ai_usage' ) as $ai_act_labels_option ) {
+foreach ( array( 'ai_act_labels', 'ai_act_labels_index', 'ai_act_labels_run', 'ai_act_labels_last_scan', 'ai_act_labels_ai_usage', 'ai_act_labels_analysis' ) as $ai_act_labels_option ) {
 	delete_option( $ai_act_labels_option );
 }
 foreach ( array( '_ai_act_signals', '_ai_act_hint', '_ai_act_usage', '_ai_act_verify', '_ai_act_tone', '_ai_act_open_s', '_ai_act_open_u' ) as $ai_act_labels_key ) {
 	delete_post_meta_by_key( $ai_act_labels_key );
 }
 delete_metadata( 'user', 0, 'ai_act_labels_dismissed', '', true );
-delete_transient( 'ai_act_labels_promo' );
+delete_transient( 'ai_act_labels_analysis_lock' );
+wp_clear_scheduled_hook( 'ai_act_labels_analysis_step' );
