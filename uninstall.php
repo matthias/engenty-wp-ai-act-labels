@@ -16,4 +16,3 @@ foreach ( array( '_ai_act_signals', '_ai_act_hint', '_ai_act_usage', '_ai_act_ve
 	delete_post_meta_by_key( $ai_act_labels_key );
 }
 delete_metadata( 'user', 0, 'ai_act_labels_dismissed', '', true );
-delete_transient( 'ai_act_labels_promo' );

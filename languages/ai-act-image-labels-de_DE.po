@@ -1181,3 +1181,24 @@ msgstr "Für die Bildanalyse braucht WordPress einen KI-Anbieter (Einstellungen 
 #: src/media/index.js:129
 msgid "Analyzing …"
 msgstr "Analysiere …"
+
+#: includes/class-promo.php
+msgid "From engenty, the makers of this plugin"
+msgstr "Von engenty, dem Team hinter diesem Plugin"
+
+#: includes/class-promo.php
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards: geführte Abläufe für deine Besucher:innen"
+
+#: includes/class-promo.php
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Anfragen, Angebote, Termine – Schritt für Schritt auf deiner Website, mit KI gebaut statt programmiert."
+
+#: includes/class-promo.php
+msgid "Visit engenty.ai"
+msgstr "engenty.ai ansehen"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/de/"

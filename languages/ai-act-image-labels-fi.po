@@ -1313,3 +1313,24 @@ msgstr "muutettu"
 #: src/media/index.js:129
 msgid "Analyzing …"
 msgstr "Analysoidaan …"
+
+#: includes/class-promo.php
+msgid "From engenty, the makers of this plugin"
+msgstr "engentyltä, tämän lisäosan tekijöiltä"
+
+#: includes/class-promo.php
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards: ohjatut polut kävijöillesi"
+
+#: includes/class-promo.php
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Kyselyt, tarjoukset, ajanvaraukset – vaihe vaiheelta sivustollasi, rakennettu tekoälyllä koodin sijaan."
+
+#: includes/class-promo.php
+msgid "Visit engenty.ai"
+msgstr "Siirry engenty.ai:hin"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/"

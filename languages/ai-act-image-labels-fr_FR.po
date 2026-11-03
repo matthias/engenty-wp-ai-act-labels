@@ -1325,3 +1325,24 @@ msgstr "modifié"
 #: src/media/index.js:129
 msgid "Analyzing …"
 msgstr "Analyse …"
+
+#: includes/class-promo.php
+msgid "From engenty, the makers of this plugin"
+msgstr "Par engenty, les créateurs de ce plugin"
+
+#: includes/class-promo.php
+msgid "engenty wizards: guided flows for your visitors"
+msgstr "engenty wizards : des parcours guidés pour vos visiteurs"
+
+#: includes/class-promo.php
+msgid "Enquiries, quotes, appointments – step by step on your site, built with AI instead of code."
+msgstr "Demandes, devis, rendez-vous – étape par étape sur votre site, conçus avec l’IA plutôt qu’avec du code."
+
+#: includes/class-promo.php
+msgid "Visit engenty.ai"
+msgstr "Visiter engenty.ai"
+
+#. translators: engenty.ai in your language, if there is a page for it (https://engenty.ai/de/).
+#: includes/class-promo.php
+msgid "https://engenty.ai/"
+msgstr "https://engenty.ai/"

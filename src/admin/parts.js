@@ -273,7 +273,7 @@ export function UsageLine( { usage } ) {
 }
 
 /**
- * The card from engenty: its words come from engenty.ai (includes/class-promo.php), printed as text.
+ * The card from engenty: its words ship with the plugin (includes/class-promo.php), printed as text.
  * @param root0
  * @param root0.promo The card, or null.
  */

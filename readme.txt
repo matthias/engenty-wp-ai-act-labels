@@ -70,7 +70,7 @@ Yes. The European Commission published the icons in June 2026 for free use, with
 
 == External services ==
 
-Three features make requests to other servers:
+Two features make requests to other servers:
 
 = "Analyze image (AI)" (optional) =
 
@@ -79,10 +79,6 @@ When you click "Analyze image (AI)", the plugin sends the image, its file name, 
 = "Check on the site" =
 
 This check opens the pages of your own site where a file is used (at most six per file) to see whether the label appears. The requests go only to your own site's address.
-
-= The card from engenty =
-
-At the end of the tool, a card from engenty – the maker of this plugin – shows what engenty offers. Its words come from https://engenty.ai/wordpress-plugins/ai-act-image-labels/promo.json: the plugin fetches this file at most once a day, when someone opens the tool. The request is the same for every site and sends nothing about yours – no address, no user, no statistics; engenty.ai's server sees the request like any visit. The file holds only text and a link, which the plugin prints as text. If the file cannot be fetched, no card appears. Privacy policy: https://engenty.ai/privacy
 
 == Changelog ==
 

@@ -23,9 +23,8 @@ applies since 2 August 2026) – right in the media library, with the EU's offic
 - **Configurable:** icon (EU icon by kind, round icon, round icon that opens on hover, own icon, sparkle),
   colour (dark, light, picked per image, own colour), transparency 0–75 %, size, corner, words, where the
   label appears.
-- **Card from engenty:** the words of the card at the end of the tool come from
-  `https://engenty.ai/wordpress-plugins/ai-act-image-labels/promo.json` (once a day, nothing sent about the
-  site; see readme.txt › External services).
+- **Card from engenty:** the words of the card at the end of the tool ship with the plugin
+  (`includes/class-promo.php`) and change with a release; the card makes no request.
 
 The tool lives under **Media › AI labels** (German: *Medien › KI-Kennzeichnung*), tabs *Review*,
 *Appearance*, *Knowledge*. The source strings are English; German (de_DE, also read by de_AT and de_CH)
