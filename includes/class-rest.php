@@ -35,9 +35,9 @@ class AI_Act_Labels_Rest {
 			'/verify'            => array( 'POST', 'verify', $media ),
 			'/preview'           => array( 'POST', 'preview', $media ),
 			'/accept'            => array( 'POST', 'accept', $media ),
-			'/run'               => array( 'GET', 'run', $media ),
-			'/run/start'         => array( 'POST', 'run_start', $media ),
-			'/run/stop'          => array( 'POST', 'run_stop', $media ),
+			'/run'               => array( 'GET', 'run', $settings ),
+			'/run/start'         => array( 'POST', 'run_start', $settings ),
+			'/run/stop'          => array( 'POST', 'run_stop', $settings ),
 		);
 		foreach ( $routes as $path => list( $method, $callback, $permission ) ) {
 			register_rest_route(

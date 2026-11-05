@@ -545,6 +545,7 @@ export default function Review( { state, setState, initial } ) {
 				analyze={
 					<Button
 						icon="sparkle"
+						disabled={ ! state.canSettings }
 						className={ runOpen ? 'is-on' : '' }
 						aria-expanded={ runOpen ? 'true' : 'false' }
 						// The panel's numbers are on their way before the click.

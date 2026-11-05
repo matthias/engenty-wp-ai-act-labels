@@ -56,6 +56,28 @@ class AuditRegressionTest extends AI_Act_Labels_TestCase {
 		}
 	}
 
+	public function test_only_administrators_reach_the_analysis_of_the_whole_site() {
+		$author = wp_insert_user( array( 'user_login' => 'labels-author-' . wp_generate_password( 8, false ), 'role' => 'author', 'user_pass' => wp_generate_password() ) );
+		do_action( 'rest_api_init' );
+		$routes = array( array( 'GET', '/run' ), array( 'POST', '/run/start' ), array( 'POST', '/run/stop' ) );
+		try {
+			wp_set_current_user( $author );
+			foreach ( $routes as list( $method, $route ) ) {
+				$response = rest_do_request( new WP_REST_Request( $method, '/ai-act-labels/v1' . $route ) );
+				$this->assertSame( 403, $response->get_status(), $route );
+			}
+			wp_set_current_user( 1 );
+			foreach ( $routes as list( $method, $route ) ) {
+				$response = rest_do_request( new WP_REST_Request( $method, '/ai-act-labels/v1' . $route ) );
+				$this->assertNotSame( 403, $response->get_status(), $route );
+			}
+		} finally {
+			wp_set_current_user( 1 );
+			require_once ABSPATH . 'wp-admin/includes/user.php';
+			wp_delete_user( $author, 1 );
+		}
+	}
+
 	public function test_scan_skips_detection_and_auto_labels_for_a_denied_object() {
 		$id = $this->attachment( 'scan.jpg', AI_Act_Labels_Test_Files::jpeg_with_xmp( AI_Act_Labels_Test_Files::scene( 'team' ), 'trainedAlgorithmicMedia' ) );
 		delete_post_meta( $id, AI_Act_Labels::META_SIGNALS );
