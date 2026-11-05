@@ -20,6 +20,7 @@ Since 2 August 2026, Article 50 of the EU AI Act asks businesses to label images
 * Reads traces of AI in your files on your server: C2PA Content Credentials, IPTC digital source type, Stable Diffusion and ComfyUI data, file names of AI tools.
 * Shows where each file is used and opens those pages to check the label really appears.
 * "Analyze image (AI)": the AI looks at the picture, its traces and the pages it is on, and says whether a label is required – using the AI provider set up under Settings › Connectors (WordPress 7.0+). Everything else works without AI.
+* "Analyze image content (AI)": the same for every picture used on the site, for administrators. Pick the upload days, test with 10 pictures and see the cost the provider reports, then analyse the rest with WP-Cron.
 * Configurable icon, colour, transparency, size, corner and words.
 
 The tool is under Media › AI labels. This plugin helps with labelling; it is not legal advice.
@@ -48,9 +49,13 @@ It reads traces that many AI tools write into the file: C2PA Content Credentials
 
 As the EU icon in a corner of the image or video, with the notice for screen readers and on hover, and behind captions that are shown anyway. Never in the alt text. Featured images, blocks, galleries, covers, video and audio get it by themselves. A theme that prints images itself can call ai_act_labels_wrap().
 
+= Is any data sent to third parties? =
+
+Not for labelling, the check, the traces in files or the icons: these run on your server, and the plugin has no tracking. Only when you start "Analyze image (AI)" or "Analyze image content (AI)" does the plugin send the image and details about it to the AI provider you set up. See External services below.
+
 = Do I need an AI provider? =
 
-No. Labelling, the check, the traces in files and the icons work without one. Only "Analyze image (AI)" needs a provider set up under Settings › Connectors (WordPress 7.0 or later).
+No. Labelling, the check, the traces in files and the icons work without one. Only "Analyze image (AI)" and "Analyze image content (AI)" need a provider set up under Settings › Connectors (WordPress 7.0 or later).
 
 = Can I use my own icon? =
 
