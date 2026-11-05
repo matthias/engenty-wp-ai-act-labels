@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: AI Act Image Labels 0.2.1\n"
+"Project-Id-Version: AI Act Image Labels 0.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ai-act-image-labels\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
