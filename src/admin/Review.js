@@ -368,7 +368,7 @@ export default function Review( { state, setState, initial } ) {
 
 	// A running image analysis opens its panel, also in a window that did not start it.
 	useEffect( () => {
-		if ( ready && state.last ) {
+		if ( state.canSettings && ready && state.last ) {
 			prefetch().then( ( p ) => {
 				if ( [ 'running', 'stalled' ].includes( p.job?.status ) ) {
 					setRunOpen( true );
