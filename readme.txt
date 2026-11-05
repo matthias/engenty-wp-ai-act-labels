@@ -4,7 +4,7 @@ Tags: ai act, ai label, ai generated, media library, eu
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,10 @@ When you click "Analyze image (AI)", or start "Analyze image content (AI)" for m
 This check opens the pages of your own site where a file is used (at most six per file) to see whether the label appears. The requests go only to your own site's address.
 
 == Changelog ==
+
+= 0.2.2 =
+* Only administrators can start, stop or open the image content analysis of the whole site: it uses the AI provider the site pays for.
+* The readme says what is sent to third parties and describes the analysis of the whole site.
 
 = 0.2.1 =
 * Each analysed file shows when it was analysed, with which model and whether the model saw the picture; its button reads "Analyze again (AI)".
